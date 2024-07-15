@@ -2939,11 +2939,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code-Stuff\\Bê_Rờ_Nờ\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+      "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
       "projectName": "Clinic.WpfApp",
-      "projectPath": "D:\\Code-Stuff\\Bê_Rờ_Nờ\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+      "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Code-Stuff\\Bê_Rờ_Nờ\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\obj\\",
+      "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2961,8 +2961,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Code-Stuff\\Bê_Rờ_Nờ\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj": {
-              "projectPath": "D:\\Code-Stuff\\Bê_Rờ_Nờ\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj"
+            "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj": {
+              "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj"
             }
           }
         }

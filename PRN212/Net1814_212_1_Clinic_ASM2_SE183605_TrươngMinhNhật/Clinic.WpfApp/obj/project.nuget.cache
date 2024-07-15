@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lVQYXxrjsfI=",
+  "dgSpecHash": "4/C/hFgrciQ=",
   "success": true,
-  "projectFilePath": "D:\\Code-Stuff\\Bê_Rờ_Nờ\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+  "projectFilePath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jso\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\jso\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

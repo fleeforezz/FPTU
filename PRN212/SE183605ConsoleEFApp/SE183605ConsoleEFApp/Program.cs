@@ -29,19 +29,39 @@ do
             // Create
             Console.WriteLine("\n");
             Console.WriteLine("Q1 ########################### Create #############################");
-            var createItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentId == 12);
+
+            Console.WriteLine("Choose which Appointment Id and Service Id you want to create");
+            Console.Write("Enter Appointment Id: ");
+            var chooseAppointmentId = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Service Id: ");
+            var chooseServiceId = Convert.ToInt32(Console.ReadLine());
+
+            var createItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentId == chooseAppointmentId && c.ServiceId == chooseServiceId);
             if (createItem != null)
             {
                 createItem = new AppointmentDetail();
-                createItem.AppointmentDetailId = 12;
-                createItem.AppointmentId = 12;
-                createItem.ServiceId = 40;
-                createItem.IsPeriodic = false;
-                createItem.Day = 56;
-                createItem.Month = 32;
-                createItem.Year = 2003;
+                Console.Write("\nEnter Appointment Detail Id: ");
+                createItem.AppointmentDetailId = Convert.ToInt32(Console.ReadLine());
 
-                if (_context.AppointmentDetails.Any(d => d.AppointmentId == 12 && d.ServiceId == 40))
+                Console.Write("Enter Appointment Id: ");
+                createItem.AppointmentId = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Service Id: ");
+                createItem.ServiceId = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Is Periodic: ");
+                createItem.IsPeriodic = Convert.ToBoolean(Console.ReadLine());
+
+                Console.Write("Enter Day: ");
+                createItem.Day = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Month: ");
+                createItem.Month = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Year: ");
+                createItem.Year = Convert.ToInt32(Console.ReadLine());
+
+                if (_context.AppointmentDetails.Any(d => d.AppointmentDetailId == createItem.AppointmentDetailId && d.IsPeriodic == createItem.IsPeriodic && d.Day == createItem.Day && d.Month == createItem.Month && d.Year == createItem.Year))
                 {
                     Console.WriteLine("\nItems exists");
                 }
@@ -49,7 +69,7 @@ do
                 {
                     _context.Add(createItem);
                     _context.SaveChanges();
-                    Console.WriteLine("\nCreated");
+                    Console.WriteLine("\nCreate Successfull");
                 }
             }
             else
@@ -77,8 +97,10 @@ do
         case 3:
             // Read with condition
             Console.WriteLine("\n");
-            Console.WriteLine("Q3 ################### Select * from AppointmentDetail where AppointmentDetailId = 43 ###################");
-            var targetConditionItem = 43;
+            Console.WriteLine("Q3 ################### Select * from AppointmentDetail where AppointmentDetailId = userinput ###################");
+
+            Console.Write("Enter Appointment Detail Id you want to read from: ");
+            var targetConditionItem = Convert.ToInt32(Console.ReadLine());
             var readItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentDetailId == targetConditionItem);
             if (readItem != null && _context.AppointmentDetails.Any(c => c.AppointmentDetailId == targetConditionItem))
             {
@@ -102,17 +124,21 @@ do
         case 4:
             // Update
             Console.WriteLine("\n");
-            Console.WriteLine("Q4 ################### Update Month where AppointmentDetailId = 2 #####################");
-            var updateItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentDetailId == 2);
+            Console.WriteLine("Q4 ################### Update Month #####################");
+
+            Console.Write("Enter Appointment Detail Id you want to update: ");
+            var updateTarget = Convert.ToInt32(Console.ReadLine());
+
+            var updateItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentDetailId == updateTarget);
             if (updateItem != null)
             {
-                if (_context.AppointmentDetails.Any(d => d.Day == 25))
+                if (_context.AppointmentDetails.Any(d => d.Day == 24))
                 {
                     Console.WriteLine("\nDay already updated");
                 }
                 else
                 {
-                    updateItem.Day = 25;
+                    updateItem.Day = 12;
                     _context.Update(updateItem);
                     _context.SaveChanges();
                     Console.WriteLine("\nRecord updated !");
@@ -127,7 +153,7 @@ do
         case 5:
             //Delete
             Console.WriteLine("\n");
-            Console.WriteLine("Q5 ###################### Delete AppointmentDetail where AppointmentDetailId = '30' ######################");
+            Console.WriteLine("Q5 ###################### Delete AppointmentDetail ######################");
             var targetDeleteItem = 12;
             var deleteItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentDetailId == targetDeleteItem);
             if (_context.AppointmentDetails.Any(d => d.AppointmentDetailId == targetDeleteItem))
