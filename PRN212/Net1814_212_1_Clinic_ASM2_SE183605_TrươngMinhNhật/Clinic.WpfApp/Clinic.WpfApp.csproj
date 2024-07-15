@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon-1.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
+    <Page Remove="Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Image\account.png" />
+    <None Remove="Image\bell.png" />
+    <None Remove="Image\choose-alt.png" />
+    <None Remove="Image\circle.png" />
+    <None Remove="Image\donate.png" />
+    <None Remove="Image\down-1.png" />
+    <None Remove="Image\down-arrow.png" />
+    <None Remove="Image\file-circle-info.png" />
+    <None Remove="Image\forest.png" />
+    <None Remove="Image\goal-net.png" />
+    <None Remove="Image\home.png" />
+    <None Remove="Image\hospitals.png" />
+    <None Remove="Image\icon-1.png" />
+    <None Remove="Image\menu-dots.png" />
+    <None Remove="Image\mobile.png" />
+    <None Remove="Image\rectangle-list.png" />
+    <None Remove="Image\room-service.png" />
+    <None Remove="Image\search.png" />
+    <None Remove="Image\settings.png" />
+    <None Remove="Image\trash.png" />
+    <None Remove="Image\user-headset.png" />
+    <None Remove="Image\user-md.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon-1.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clinic.Business\Clinic.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\choose-alt.png" />
+    <Resource Include="Image\icon-1.png" />
+    <Resource Include="Image\rectangle-list.png" />
+    <Resource Include="Image\trash.png" />
+  </ItemGroup>
+
+</Project>

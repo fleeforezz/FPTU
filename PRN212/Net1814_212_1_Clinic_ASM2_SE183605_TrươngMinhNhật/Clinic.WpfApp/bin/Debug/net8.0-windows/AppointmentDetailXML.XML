@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppointmentDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AppointmentDetail>
+    <AppointmentDetailId>12</AppointmentDetailId>
+    <AppointmentId>12</AppointmentId>
+    <ServiceId>12</ServiceId>
+    <IsPeriodic>true</IsPeriodic>
+    <Day>4</Day>
+    <Month>2</Month>
+    <Year>1</Year>
+  </AppointmentDetail>
+</AppointmentDetails>
