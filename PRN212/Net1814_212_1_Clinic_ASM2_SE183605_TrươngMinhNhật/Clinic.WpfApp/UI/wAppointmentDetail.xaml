@@ -7,8 +7,8 @@
     xmlns:local="clr-namespace:Clinic.WpfApp.UI"
     mc:Ignorable="d"
     Title="wAppointmentDetail"
-    Height="1000"
-    Width="1200">
+    Height="770"
+    Width="1220">
     <Window.Resources>
         <Style
             TargetType="DataGridColumnHeader">
@@ -18,31 +18,28 @@
             <Setter
                 Property="Foreground"
                 Value="Black" />
-            <Setter 
+            <Setter
                 Property="Height"
-                Value="40"/>
+                Value="40" />
             <Setter
                 Property="Background"
                 Value="#ffffff" />
             <Setter
                 Property="HorizontalContentAlignment"
                 Value="Center" />
+            <Setter
+                Property="BorderThickness"
+                Value="0" />
         </Style>
         <Style
-            TargetType="DataGridCellsPanel">
+            TargetType="DataGridCell">
             <Setter
-                Property="Height"
-                Value="40" />
+                Property="HorizontalAlignment"
+                Value="Center" />
             <Setter
-                Property="Background"
-                Value="#bee6fd" />
+                Property="Width"
+                Value="Auto" />
         </Style>
-        
-        <XmlDataProvider
-            Source="AppointmentDetailXML.XML"
-            XPath="AppointmentDetailList/AppointmentDetail"
-            x:Key="AppointmentDetailList" />
-
     </Window.Resources>
 
     <Border
@@ -63,7 +60,7 @@
             <!--Heading-->
             <Border
                 BorderThickness="0,0,1,0"
-                BorderBrush="#D9D9D9">
+                BorderBrush="#e8e8e8">
                 <StackPanel
                     Orientation="Horizontal">
 
@@ -109,7 +106,7 @@
             <Border
                 Grid.Row="1"
                 BorderThickness="0,0,1,0"
-                BorderBrush="#D9D9D9">
+                BorderBrush="#e8e8e8">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition
@@ -124,30 +121,374 @@
                         <RowDefinition
                             Height="Auto" />
                     </Grid.RowDefinitions>
-                    
+                    <!--Home-->
+                    <StackPanel
+                        Orientation="Vertical"
+                        Margin="0,10,0,0"
+                        Grid.Row="0">
+                        <Button
+                            Padding="10,15,60,15"
+                            Foreground="Black"
+                            Background="White"
+                            HorizontalAlignment="Center"
+                            BorderThickness="0"
+                            FontSize="14"
+                            IsEnabled="True"
+                            Cursor="Hand">
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="20">
+                                    <Image.Source>
+                                        <BitmapImage
+                                            DecodePixelWidth="20"
+                                            UriSource="/Image/home.png" />
+                                    </Image.Source>
+                                </Image>
+                                <TextBlock
+                                    Text="Home"
+                                    FontSize="15"
+                                    FontWeight="SemiBold"
+                                    VerticalAlignment="Center"
+                                    Margin="20,0,0,0" />
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style
+                                    TargetType="{x:Type Border}">
+                                    <Setter
+                                        Property="CornerRadius"
+                                        Value="6" />
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+
+                    <!--View Detail-->
+                    <StackPanel
+                        Orientation="Vertical"
+                        Margin="10,10,0,0"
+                        Grid.Row="1">
+                        <Button
+                            Padding="10,15,25,15"
+                            Foreground="Black"
+                            Background="White"
+                            HorizontalAlignment="Left"
+                            BorderThickness="0"
+                            FontSize="14"
+                            Cursor="Hand">
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="20">
+                                    <Image.Source>
+                                        <BitmapImage
+                                            DecodePixelWidth="20"
+                                            UriSource="/Image/file-circle-info.png" />
+                                    </Image.Source>
+                                </Image>
+                                <TextBlock
+                                    Text="View Detail"
+                                    FontSize="15"
+                                    FontWeight="SemiBold"
+                                    VerticalAlignment="Center"
+                                    Margin="18,0,0,0" />
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style
+                                    TargetType="{x:Type Border}">
+                                    <Setter
+                                        Property="CornerRadius"
+                                        Value="6" />
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+
+                    <!--More-->
+                    <StackPanel
+                        Orientation="Vertical"
+                        Margin="10,10,0,0"
+                        Grid.Row="2">
+                        <Button
+                            Padding="10,15,65,15"
+                            Foreground="Black"
+                            Background="White"
+                            HorizontalAlignment="Left"
+                            BorderThickness="0"
+                            FontSize="14"
+                            Cursor="Hand">
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="20">
+                                    <Image.Source>
+                                        <BitmapImage
+                                            DecodePixelWidth="20"
+                                            UriSource="/Image/menu-dots.png" />
+                                    </Image.Source>
+                                </Image>
+                                <TextBlock
+                                    Text="More"
+                                    FontSize="15"
+                                    FontWeight="SemiBold"
+                                    VerticalAlignment="Center"
+                                    Margin="20,0,0,0" />
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style
+                                    TargetType="{x:Type Border}">
+                                    <Setter
+                                        Property="CornerRadius"
+                                        Value="6" />
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+
+                    <!--Settings-->
+                    <StackPanel
+                        Orientation="Vertical"
+                        Margin="10,10,0,10"
+                        Grid.Row="7">
+                        <Button
+                            Padding="10,15,45,15"
+                            Foreground="Black"
+                            Background="Transparent"
+                            HorizontalAlignment="Left"
+                            BorderThickness="0"
+                            FontSize="14"
+                            Cursor="Hand">
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="20">
+                                    <Image.Source>
+                                        <BitmapImage
+                                            DecodePixelWidth="20"
+                                            UriSource="/Image/settings.png" />
+                                    </Image.Source>
+                                </Image>
+                                <TextBlock
+                                    Text="Settings"
+                                    FontSize="15"
+                                    FontWeight="SemiBold"
+                                    VerticalAlignment="Center"
+                                    Margin="20,0,0,0" />
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style
+                                    TargetType="{x:Type Border}">
+                                    <Setter
+                                        Property="CornerRadius"
+                                        Value="6" />
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
 
                 </Grid>
             </Border>
 
             <!--Top Box-->
             <Grid
-                Grid.Column="1"
-                Background="#F6F7FA">
+                Grid.Column="1">
             </Grid>
+
+            <!--Greeting text-->
             <StackPanel
                 Orientation="Horizontal"
-                HorizontalAlignment="Center"
+                Grid.Column="1"
                 VerticalAlignment="Center"
-                Grid.Row="1"
+                HorizontalAlignment="Left"
+                Margin="20,0,0,0">
+                <Label
+                    Content="Appointment Detail"
+                    FontSize="25"
+                    FontWeight="SemiBold" />
+            </StackPanel>
+
+            <!--Search Box-->
+            <Grid
+                HorizontalAlignment="Left"
                 Grid.Column="1">
+
+            </Grid>
+
+            <!--Notification-->
+            <Button
+                Grid.Column="1"
+                Panel.ZIndex="1"
+                HorizontalAlignment="Right"
+                Margin="0,0,120,0"
+                BorderThickness="0"
+                Height="22"
+                Cursor="Hand">
+                <Button.Resources>
+                    <Style
+                        TargetType="{x:Type Border}">
+                        <Setter
+                            Property="CornerRadius"
+                            Value="10" />
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style
+                        TargetType="{x:Type Button}">
+                        <Setter
+                            Property="Background"
+                            Value="Transparent" />
+                        <Setter
+                            Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate
+                                    TargetType="{x:Type Button}">
+                                    <Border
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger
+                                Property="IsMouseOver"
+                                Value="True">
+                                <Setter
+                                    Property="Background"
+                                    Value="Transparent" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image
+                    Width="18">
+                    <Image.Source>
+                        <BitmapImage
+                            DecodePixelWidth="50"
+                            UriSource="/Image/bell.png" />
+                    </Image.Source>
+                </Image>
+            </Button>
+
+            <!--Profile-->
+            <StackPanel
+                Orientation="Horizontal"
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                Margin="0,0,30,0">
+                <Grid>
+                    <Image
+                        Width="18"
+                        Panel.ZIndex="1"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0">
+                        <Image.Source>
+                            <BitmapImage
+                                DecodePixelWidth="20"
+                                UriSource="/Image/search.png" />
+                        </Image.Source>
+                    </Image>
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="40,0,0,0"
+                        Text="Search..."
+                        Panel.ZIndex="1" />
+                    <Border
+                        BorderThickness="1"
+                        BorderBrush="#D9D9D9"
+                        Background="Transparent"
+                        CornerRadius="10"
+                        Padding="35,10,10,10"
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        Panel.ZIndex="1">
+                        <TextBox
+                            x:Name="Search"
+                            Width="250"
+                            Height="20"
+                            FontSize="14"
+                            BorderThickness="0"
+                            Background="Transparent" />
+
+                    </Border>
+                </Grid>
+                <Button
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Padding="0,0,10,0"
+                    Margin="50,0,0,0"
+                    Height="35"
+                    Grid.Column="1"
+                    Cursor="Hand">
+                    <Button.Resources>
+                        <Style
+                            TargetType="{x:Type Border}">
+                            <Setter
+                                Property="CornerRadius"
+                                Value="20" />
+                        </Style>
+                    </Button.Resources>
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <Image
+                            Width="35"
+                            HorizontalAlignment="Right">
+                            <Image.Source>
+                                <BitmapImage
+                                    DecodePixelWidth="90"
+                                    UriSource="/Image/account.png" />
+                            </Image.Source>
+                        </Image>
+                        <Image
+                            Width="12"
+                            VerticalAlignment="Center"
+                            Margin="8,0,0,0">
+                            <Image.Source>
+                                <BitmapImage
+                                    DecodePixelWidth="90"
+                                    UriSource="/Image/down-arrow.png" />
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel
+                Orientation="Vertical"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="1040"
+                Height="670">
                 <StackPanel
                     Orientation="Vertical"
-                    Margin="0,0,50,0">
+                    VerticalAlignment="Center"
+                    Margin="20,20,20,20">
                     <Grid
                         HorizontalAlignment="Left"
                         Grid.Column="0"
                         Grid.Row="1">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
+                            <ColumnDefinition
+                                Width="Auto" />
                             <ColumnDefinition
                                 Width="Auto" />
                             <ColumnDefinition
@@ -178,45 +519,48 @@
                                 Height="Auto" />
                             <RowDefinition
                                 Height="Auto" />
-                            <RowDefinition
-                                Height="Auto" />
-                            <RowDefinition
-                                Height="Auto" />
-                            <RowDefinition
-                                Height="Auto" />
-                            <RowDefinition
-                                Height="Auto" />
                         </Grid.RowDefinitions>
 
                         <!--Appointment Detail ID-->
                         <Grid
-                            Grid.Row="0"
+                            Grid.Row="1"
                             Grid.Column="1"
-                            Grid.ColumnSpan="2"
-                            Margin="0,0,0,20">
+                            Margin="0,0,20,10">
                             <Label
                                 Content="Detail ID"
                                 FontSize="13"
                                 FontWeight="SemiBold"
                                 Foreground="LightGray"
-                                Width="286"
+                                Width="226"
+                                Margin="12,0,0,0"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
-                                x:Name="tbPlaceholder1" />
+                                x:Name="tbPlaceholder1"
+                                HorizontalAlignment="Left" />
+                            <Image
+                                Width="6"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,6,0">
+                                <Image.Source>
+                                    <BitmapImage
+                                        DecodePixelWidth="30"
+                                        UriSource="/Image/circle.png" />
+                                </Image.Source>
+                            </Image>
                             <Border
                                 BorderThickness="1"
                                 BorderBrush="#ADADAD"
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="300"
+                                Width="250"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="AppointmentDetailId"
                                     Text="{Binding AppointmentDetailId, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="280"
+                                    Width="220"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
@@ -226,103 +570,127 @@
 
                         <!--Appointment ID-->
                         <Grid
-                            HorizontalAlignment="Left"
+                            Grid.Row="2"
                             Grid.Column="1"
-                            Grid.Row="1">
+                            Margin="0,0,0,10">
                             <Label
-                                Content="Appointment Id"
+                                Content="Appointment ID"
                                 FontSize="13"
-                                Width="107"
                                 FontWeight="SemiBold"
                                 Foreground="LightGray"
+                                Width="226"
+                                Margin="12,0,0,0"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
-                                x:Name="tbPlaceholder2" />
+                                x:Name="tbPlaceholder2"
+                                HorizontalAlignment="Left" />
+                            <Image
+                                Width="6"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,25,0">
+                                <Image.Source>
+                                    <BitmapImage
+                                        DecodePixelWidth="30"
+                                        UriSource="/Image/circle.png" />
+                                </Image.Source>
+                            </Image>
                             <Border
                                 BorderThickness="1"
                                 BorderBrush="#ADADAD"
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="145"
+                                Width="250"
+                                HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="AppointmentId"
                                     Text="{Binding AppointmentId, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="100"
+                                    Width="220"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
                                     Background="Transparent" />
                             </Border>
                         </Grid>
-                        
+
                         <!--Service ID-->
                         <Grid
-                            HorizontalAlignment="Left"
-                            Grid.Column="2"
-                            Grid.Row="1">
+                            Grid.Row="3"
+                            Grid.Column="1">
                             <Label
-                                Content="Service Id"
+                                Content="Service ID"
                                 FontSize="13"
                                 FontWeight="SemiBold"
-                                Width="107"
                                 Foreground="LightGray"
+                                Width="226"
+                                Margin="12,0,0,0"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
-                                x:Name="tbPlaceholder3" />
+                                x:Name="tbPlaceholder3"
+                                HorizontalAlignment="Left" />
+                            <Image
+                                Width="6"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,25,0">
+                                <Image.Source>
+                                    <BitmapImage
+                                        DecodePixelWidth="30"
+                                        UriSource="/Image/circle.png" />
+                                </Image.Source>
+                            </Image>
                             <Border
                                 BorderThickness="1"
                                 BorderBrush="#ADADAD"
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="145"
+                                Width="250"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="ServiceId"
                                     Text="{Binding ServiceId, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="100"
+                                    Width="220"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
                                     Background="Transparent" />
                             </Border>
                         </Grid>
-                        
+
                         <!--IsPeriodic-->
                         <Grid
-                            HorizontalAlignment="Left"
-                            Grid.Column="1"
-                            Grid.Row="3"
-                            Grid.ColumnSpan="2"
-                            Margin="0,20,0,20">
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="0,0,0,10">
                             <Label
                                 Content="Is Periodic"
                                 FontSize="13"
                                 FontWeight="SemiBold"
-                                Width="286"
                                 Foreground="LightGray"
+                                Width="226"
+                                Margin="12,0,0,0"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
-                                x:Name="tbPlaceholder4" />
+                                x:Name="tbPlaceholder4"
+                                HorizontalAlignment="Left" />
                             <Border
                                 BorderThickness="1"
                                 BorderBrush="#ADADAD"
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="300"
+                                Width="250"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="IsPeriodic"
                                     Text="{Binding IsPeriodic, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="280"
+                                    Width="220"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
@@ -333,32 +701,31 @@
                         <!--Day-->
                         <Grid
                             HorizontalAlignment="Left"
-                            Grid.Column="1"
-                            Grid.Row="4"
-                            Margin="0,0,0,0">
+                            Grid.Column="2"
+                            Grid.Row="2">
                             <Label
                                 Content="Day"
                                 FontSize="13"
                                 FontWeight="SemiBold"
-                                Width="107"
+                                Width="66"
                                 Foreground="LightGray"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
-                                x:Name="tbPlaceholder5"/>
+                                x:Name="tbPlaceholder5" />
                             <Border
                                 BorderThickness="1"
                                 BorderBrush="#ADADAD"
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="145"
+                                Width="80"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="Day"
                                     Text="{Binding Day, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="100"
+                                    Width="60"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
@@ -368,15 +735,15 @@
 
                         <!--Month-->
                         <Grid
-                            HorizontalAlignment="Left"
+                            HorizontalAlignment="Center"
                             Grid.Column="2"
-                            Grid.Row="4"
+                            Grid.Row="2"
                             Margin="0,0,0,0">
                             <Label
                                 Content="Month"
                                 FontSize="13"
                                 FontWeight="SemiBold"
-                                Width="107"
+                                Width="65"
                                 Foreground="LightGray"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
@@ -387,14 +754,14 @@
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="145"
+                                Width="80"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="Month"
                                     Text="{Binding Month, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="100"
+                                    Width="60"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
@@ -404,17 +771,15 @@
 
                         <!--Year-->
                         <Grid
-                            HorizontalAlignment="Left"
-                            Grid.Column="1"
-                            Grid.Row="6"
-                            Grid.ColumnSpan="2"
-                            Margin="0,20,0,0">
+                            HorizontalAlignment="Right"
+                            Grid.Column="2"
+                            Grid.Row="2">
                             <Label
                                 Content="Year"
                                 FontSize="13"
                                 FontWeight="SemiBold"
                                 Foreground="LightGray"
-                                Width="286"
+                                Width="65"
                                 VerticalAlignment="Center"
                                 Panel.ZIndex="-1"
                                 x:Name="tbPlaceholder7" />
@@ -424,20 +789,25 @@
                                 Background="Transparent"
                                 CornerRadius="10"
                                 Padding="10,10,10,10"
-                                Width="300"
+                                Width="80"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
                                 <TextBox
                                     x:Name="Year"
                                     Text="{Binding Year, Mode=TwoWay}"
                                     TextChanged="txtInput_TextChanged"
-                                    Width="280"
+                                    Width="60"
                                     Height="20"
                                     FontSize="14"
                                     BorderThickness="0"
                                     Background="Transparent" />
                             </Border>
                         </Grid>
+                    </Grid>
+
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Margin="0,0,0,20">
 
                         <!--Button Add-->
                         <Button
@@ -445,12 +815,12 @@
                             Content="Add"
                             FontSize="13"
                             FontWeight="SemiBold"
-                            Foreground="#00A3FF"
-                            Background="#eaf4fe"
+                            Foreground="White"
                             BorderThickness="0"
-                            Padding="65,10,65,10"
-                            Margin="0,20,0,0"
-                            Grid.Row="9"
+                            Width="150"
+                            Height="40"
+                            Margin="0,20,20,0"
+                            Grid.Row="7"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             Cursor="Hand"
@@ -465,20 +835,52 @@
                                 </Style>
                             </Button.Resources>
 
+                            <Button.Style>
+                                <Style
+                                    TargetType="{x:Type Button}">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#1a2122" />
+                                    <Setter
+                                        Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate
+                                                TargetType="{x:Type Button}">
+                                                <Border
+                                                    Background="{TemplateBinding Background}">
+                                                    <ContentPresenter
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger
+                                            Property="IsMouseOver"
+                                            Value="True">
+                                            <Setter
+                                                Property="Background"
+                                                Value="#3D4D51" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
                         </Button>
 
                         <!--Button SaveJson-->
                         <Button
-                            x:Name="mySaveJson"
-                            Content="SaveJSON"
+                            x:Name="myButtonSaveJson"
+                            Content="SaveJson"
                             FontSize="13"
                             FontWeight="SemiBold"
-                            Foreground="#00A3FF"
-                            Background="#eaf4fe"
+                            Foreground="White"
                             BorderThickness="0"
-                            Padding="65,10,65,10"
-                            Margin="0,15,0,0"
-                            Grid.Row="10"
+                            Width="150"
+                            Height="40"
+                            Margin="0,20,20,0"
+                            Grid.Row="7"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             Cursor="Hand"
@@ -493,20 +895,52 @@
                                 </Style>
                             </Button.Resources>
 
+                            <Button.Style>
+                                <Style
+                                    TargetType="{x:Type Button}">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#1a2122" />
+                                    <Setter
+                                        Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate
+                                                TargetType="{x:Type Button}">
+                                                <Border
+                                                    Background="{TemplateBinding Background}">
+                                                    <ContentPresenter
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger
+                                            Property="IsMouseOver"
+                                            Value="True">
+                                            <Setter
+                                                Property="Background"
+                                                Value="#3D4D51" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
                         </Button>
 
                         <!--Button LoadJson-->
                         <Button
-                            x:Name="myLoadJson"
-                            Content="LoadJSON"
+                            x:Name="myButtonLoadJson"
+                            Content="LoadJson"
                             FontSize="13"
                             FontWeight="SemiBold"
-                            Foreground="#00A3FF"
-                            Background="#eaf4fe"
+                            Foreground="White"
                             BorderThickness="0"
-                            Padding="65,10,65,10"
-                            Margin="0,15,0,0"
-                            Grid.Row="11"
+                            Width="150"
+                            Height="40"
+                            Margin="0,20,20,0"
+                            Grid.Row="7"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             Cursor="Hand"
@@ -521,20 +955,52 @@
                                 </Style>
                             </Button.Resources>
 
+                            <Button.Style>
+                                <Style
+                                    TargetType="{x:Type Button}">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#1a2122" />
+                                    <Setter
+                                        Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate
+                                                TargetType="{x:Type Button}">
+                                                <Border
+                                                    Background="{TemplateBinding Background}">
+                                                    <ContentPresenter
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger
+                                            Property="IsMouseOver"
+                                            Value="True">
+                                            <Setter
+                                                Property="Background"
+                                                Value="#3D4D51" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
                         </Button>
 
                         <!--Button SaveXML-->
                         <Button
-                            x:Name="mySaveXML"
+                            x:Name="myButtonSaveXML"
                             Content="SaveXML"
                             FontSize="13"
                             FontWeight="SemiBold"
-                            Foreground="#00A3FF"
-                            Background="#eaf4fe"
+                            Foreground="White"
                             BorderThickness="0"
-                            Padding="65,10,65,10"
-                            Margin="0,15,0,0"
-                            Grid.Row="12"
+                            Width="150"
+                            Height="40"
+                            Margin="0,20,20,0"
+                            Grid.Row="7"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             Cursor="Hand"
@@ -549,20 +1015,52 @@
                                 </Style>
                             </Button.Resources>
 
+                            <Button.Style>
+                                <Style
+                                    TargetType="{x:Type Button}">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#1a2122" />
+                                    <Setter
+                                        Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate
+                                                TargetType="{x:Type Button}">
+                                                <Border
+                                                    Background="{TemplateBinding Background}">
+                                                    <ContentPresenter
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger
+                                            Property="IsMouseOver"
+                                            Value="True">
+                                            <Setter
+                                                Property="Background"
+                                                Value="#3D4D51" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
                         </Button>
 
                         <!--Button LoadXML-->
                         <Button
-                            x:Name="myLoadXML"
+                            x:Name="myButtonLoadXML"
                             Content="LoadXML"
                             FontSize="13"
                             FontWeight="SemiBold"
-                            Foreground="#00A3FF"
-                            Background="#eaf4fe"
+                            Foreground="White"
                             BorderThickness="0"
-                            Padding="65,10,65,10"
-                            Margin="0,15,0,0"
-                            Grid.Row="13"
+                            Width="150"
+                            Height="40"
+                            Margin="0,20,20,0"
+                            Grid.Row="7"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             Cursor="Hand"
@@ -577,7 +1075,41 @@
                                 </Style>
                             </Button.Resources>
 
+                            <Button.Style>
+                                <Style
+                                    TargetType="{x:Type Button}">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#1a2122" />
+                                    <Setter
+                                        Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate
+                                                TargetType="{x:Type Button}">
+                                                <Border
+                                                    Background="{TemplateBinding Background}">
+                                                    <ContentPresenter
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger
+                                            Property="IsMouseOver"
+                                            Value="True">
+                                            <Setter
+                                                Property="Background"
+                                                Value="#3D4D51" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
                         </Button>
+
+
 
                         <!--Button Cancel-->
                         <Button
@@ -586,12 +1118,11 @@
                             FontSize="13"
                             FontWeight="SemiBold"
                             Foreground="Black"
-                            Background="#F6F7FA"
                             BorderThickness="0"
                             BorderBrush="#F6F7FA"
-                            Padding="65,10,65,10"
-                            Margin="0,15,0,0"
-                            Grid.Row="14"
+                            Width="150"
+                            Margin="0,20,0,0"
+                            Grid.Row="10"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             Cursor="Hand"
@@ -606,118 +1137,146 @@
                                 </Style>
                             </Button.Resources>
 
+                            <Button.Style>
+                                <Style
+                                    TargetType="{x:Type Button}">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#F6F7FA" />
+                                    <Setter
+                                        Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate
+                                                TargetType="{x:Type Button}">
+                                                <Border
+                                                    Background="{TemplateBinding Background}">
+                                                    <ContentPresenter
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger
+                                            Property="IsMouseOver"
+                                            Value="True">
+                                            <Setter
+                                                Property="Background"
+                                                Value="#E2E2E2" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
                         </Button>
-                    </Grid>
-                </StackPanel>
+                    </StackPanel>
 
-                <StackPanel
-                    Width="Auto"
-                    Height="Auto">
-                    <DataGrid
-                        x:Name="AppointmentDetailList"
-                        AutoGenerateColumns="False"
-                        GridLinesVisibility="None"
-                        ItemsSource="{Binding AppointmentDetail}"
-                        CanUserAddRows="False"
-                        FrozenColumnCount="3"
-                        Height="650"
-                        CanUserResizeColumns="False"
-                        CanUserResizeRows="False"
-                        AlternatingRowBackground="#f6f7fa"
-                        SelectionChanged="AppointmentDetailList_SelectionChanged">
-                        <DataGrid.Columns>
-
-                            <DataGridTextColumn
-                                Header="Detail ID"
-                                Binding="{Binding Path=AppointmentDetailId}"
-                                Width="70"
-                                Visibility="Visible" />
-                            <DataGridTextColumn
-                                Header="Appointment ID"
-                                Binding="{Binding Path=AppointmentId}"
-                                Width="95"
-                                IsReadOnly="True" />
-                            <DataGridTextColumn
-                                Header="Service ID"
-                                Binding="{Binding Path=ServiceId}"
-                                Width="100"
-                                IsReadOnly="True" />
-                            <DataGridTextColumn
-                                Header="Periodic"
-                                Binding="{Binding Path=IsPeriodic}"
-                                Width="55"
-                                IsReadOnly="True" />
-                            <DataGridTextColumn
-                                Header="Day"
-                                Binding="{Binding Path=Day}"
-                                Width="35"
-                                IsReadOnly="True" />
-                            <DataGridTextColumn
-                                Header="Month"
-                                Binding="{Binding Path=Month}"
-                                Width="50"
-                                IsReadOnly="True" />
-                            <DataGridTextColumn
-                                Header="Year"
-                                Binding="{Binding Path=Year}"
-                                Width="50"
-                                IsReadOnly="True" />
-                            <DataGridTemplateColumn
-                                Width="Auto">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <!--<Button
-                                        Content="Select"
-                                        x:Name="ButtonEdit"
-                                        CommandParameter="{Binding Path=Id}"
-                                        Command="{Binding Path=DataContext.EditCommand,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />-->
-
-                                            <Button
-                                                BorderThickness="0"
-                                                x:Name="ButtonSelect"
-                                                Height="25"
-                                                Width="25"
-                                                Click="ButtonSelect_Click">
-                                                <Image
-                                                    Source="/Image/choose-alt.png"
-                                                    Width="15"
-                                                    Height="15" />
-                                            </Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn
-                                Width="Auto">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <!--<Button
-                                        Content="Delete"
-                                        x:Name="ButtonRemove"
-                                        CommandParameter="{Binding Path=ButtonDelete}"
-                                        Command="{Binding Path=DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor,
-                                        AncestorType=Window}}" />-->
-                                            <Button
-                                                x:Name="ButtonDelete"
-                                                BorderThickness="0"
-                                                BorderBrush="#ff99a4"
-                                                Background="#ff99a4"
-                                                Height="25"
-                                                Width="25"
-                                                Click="ButtonDelete_Click">
-                                                <Image
-                                                    Source="/Image/trash.png"
-                                                    Width="15"
-                                                    Height="15" />
-                                            </Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <StackPanel
+                        Width="Auto"
+                        Height="Auto">
+                        <DataGrid
+                            x:Name="AppointmentDetailList"
+                            AutoGenerateColumns="False"
+                            GridLinesVisibility="none"
+                            ItemsSource="{Binding AppointmentDetail}"
+                            CanUserAddRows="False"
+                            HeadersVisibility="Column"
+                            FrozenColumnCount="3"
+                            Height="350"
+                            CanUserResizeColumns="False"
+                            CanUserResizeRows="False"
+                            CanUserSortColumns="True"
+                            AlternatingRowBackground="#E6E7EA"
+                            SelectionMode="Single"
+                            SelectionUnit="FullRow">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+                                    Header="Detail ID"
+                                    Binding="{Binding Path=AppointmentDetailId}"
+                                    Width="125"
+                                    Visibility="Visible" />
+                                <DataGridTextColumn
+                                    Header="Appointment ID"
+                                    Binding="{Binding Path=AppointmentId}"
+                                    Width="125"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Header="Service ID"
+                                    Binding="{Binding Path=ServiceId}"
+                                    Width="125"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Header="Periodic"
+                                    Binding="{Binding Path=IsPeriodic}"
+                                    Width="125"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Header="Day"
+                                    Binding="{Binding Path=Day}"
+                                    Width="125"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Header="Month"
+                                    Binding="{Binding Path=Month}"
+                                    Width="150"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Header="Year"
+                                    Binding="{Binding Path=Year}"
+                                    Width="125"
+                                    IsReadOnly="True" />
+                                <!--<DataGridTemplateColumn
+                                    Width="Auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Button
+                                                    x:Name="Open_WAppointmentDetailWindow_Click"
+                                                    CommandParameter="{Binding Path=AppointmentDetailId}"
+                                                    Command="{Binding Path=DataContext.EditCommand,RelativeSource={RelativeSource FindAncestor,
+                                                    AncestorType=Window}}"
+                                                    BorderThickness="0"
+                                                    BorderBrush="#eaf4fe"
+                                                    Background="Transparent"
+                                                    Width="35"
+                                                    Height="35"
+                                                    Cursor="Hand">
+                                                    <Image
+                                                        Source="/Image/eye.png"
+                                                        Width="15"
+                                                        Height="15" />
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+                                <DataGridTemplateColumn
+                                    Width="Auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Button
+                                                    x:Name="ButtonDelete"
+                                                    BorderThickness="0"
+                                                    BorderBrush="#FFD5D5"
+                                                    Background="Transparent"
+                                                    Height="35"
+                                                    Width="40"
+                                                    Cursor="Hand"
+                                                    Click="btnDelete_Click">
+                                                    <Image
+                                                        Source="/Image/trash.png"
+                                                        Width="15"
+                                                        Height="15" />
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </Grid>

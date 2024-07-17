@@ -38,21 +38,6 @@ namespace Clinic.WpfApp.UI
             GetAllData();
         }
 
-        //######################### Delete Button #########################\\
-        private async void ButtonDelete_Click(object sender, RoutedEventArgs e)
-        {
-            AppointmentDetail appointmentDetail = AppointmentDetailList.SelectedItem as AppointmentDetail;
-            if (appointmentDetail == null)
-            {
-                MessageBox.Show("AppointmentDetailID not found", "Warning");
-                return;
-            }
-
-            var result = await _appointmentDetailBusiness.DeleteById(appointmentDetail.AppointmentDetailId);
-            MessageBox.Show(result.Message, "Delete");
-            GetAllData();
-        }
-
         //######################### Cancel Button #########################\\
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
@@ -63,19 +48,6 @@ namespace Clinic.WpfApp.UI
             Day.Text = string.Empty;
             Month.Text = string.Empty;
             Year.Text = string.Empty;
-        }
-
-        //######################### Select Button #########################\\
-        private void ButtonSelect_Click(object sender, RoutedEventArgs e)
-        {
-            AppointmentDetail appointmentDetail = AppointmentDetailList.SelectedItem as AppointmentDetail;
-            AppointmentDetailId.Text = appointmentDetail.AppointmentDetailId.ToString();
-            AppointmentId.Text = appointmentDetail.AppointmentId.ToString();
-            ServiceId.Text = appointmentDetail.ServiceId.ToString();
-            IsPeriodic.Text = appointmentDetail.IsPeriodic.ToString();
-            Day.Text = appointmentDetail.Day.ToString();
-            Month.Text = appointmentDetail.Month.ToString();
-            Year.Text = appointmentDetail.Year.ToString();
         }
 
         //######################### Update Button #########################\\
@@ -173,7 +145,19 @@ namespace Clinic.WpfApp.UI
             ClearInputs();
         }
 
-
+        private void DeleteAppointmentDetail(int appointmentDetailId)
+        {
+            var appointmentDetailToRemove = _appointmentDetailList.FirstOrDefault(a => a.AppointmentDetailId == appointmentDetailId);
+            if (appointmentDetailToRemove != null)
+            {
+                _appointmentDetailList.Remove(appointmentDetailToRemove);
+                MessageBox.Show("Appointment deleted successfully.\", \"Delete Appointment");
+            }
+            else
+            {
+                MessageBox.Show($"Appointment with Id {appointmentDetailId} not found.", "Delete Appointment");
+            }
+        }
 
         //######################### SaveJSON Button #########################\\
         private async void btnSaveJSON_Click(object sender, RoutedEventArgs e)
@@ -212,6 +196,17 @@ namespace Clinic.WpfApp.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        //######################### DeleteJSON Button #########################\\
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.DataContext is AppointmentDetail appointmentDetail)
+            {
+                DeleteAppointmentDetail(appointmentDetail.AppointmentDetailId);
+                AppointmentDetailList.ItemsSource = null;
+                AppointmentDetailList.ItemsSource = _appointmentDetailList;
             }
         }
 

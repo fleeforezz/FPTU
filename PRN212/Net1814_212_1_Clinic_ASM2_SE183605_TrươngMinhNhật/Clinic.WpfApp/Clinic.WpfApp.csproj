@@ -50,9 +50,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Image\account.png" />
+    <Resource Include="Image\bell.png" />
     <Resource Include="Image\choose-alt.png" />
+    <Resource Include="Image\circle.png" />
+    <Resource Include="Image\down-arrow.png" />
+    <Resource Include="Image\file-circle-info.png" />
+    <Resource Include="Image\home.png" />
     <Resource Include="Image\icon-1.png" />
+    <Resource Include="Image\menu-dots.png" />
     <Resource Include="Image\rectangle-list.png" />
+    <Resource Include="Image\search.png" />
+    <Resource Include="Image\settings.png" />
     <Resource Include="Image\trash.png" />
   </ItemGroup>
 

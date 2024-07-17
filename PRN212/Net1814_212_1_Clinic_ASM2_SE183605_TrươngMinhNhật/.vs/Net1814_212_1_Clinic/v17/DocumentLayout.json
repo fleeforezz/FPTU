@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\net1814_212_1_clinic_asm2_se183605_tr\u01B0\u01A1ngminhnh\u1EADt\\clinic.wpfapp\\ui\\wappointmentdetail.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|solutionrelative:clinic.wpfapp\\ui\\wappointmentdetail.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\net1814_212_1_clinic_asm2_se183605_tr\u01B0\u01A1ngminhnh\u1EADt\\clinic.wpfapp\\ui\\wappointmentdetail.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|solutionrelative:clinic.wpfapp\\ui\\wappointmentdetail.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\net1814_212_1_clinic_asm2_se183605_tr\u01B0\u01A1ngminhnh\u1EADt\\clinic.wpfapp\\ui\\wappointmentdetail.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|solutionrelative:clinic.wpfapp\\ui\\wappointmentdetail.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{58894B8A-AD46-40CB-B5C8-B4FE6296CE99}|Clinic.Data\\Clinic.Data.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\net1814_212_1_clinic_asm2_se183605_tr\u01B0\u01A1ngminhnh\u1EADt\\clinic.data\\models\\appointmentdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58894B8A-AD46-40CB-B5C8-B4FE6296CE99}|Clinic.Data\\Clinic.Data.csproj|solutionrelative:clinic.data\\models\\appointmentdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\net1814_212_1_clinic_asm2_se183605_tr\u01B0\u01A1ngminhnh\u1EADt\\clinic.wpfapp\\clinic.wpfapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{42A53932-EA5E-4CEE-A5B4-96801A82D95D}|Clinic.WpfApp\\Clinic.WpfApp.csproj|solutionrelative:clinic.wpfapp\\clinic.wpfapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58894B8A-AD46-40CB-B5C8-B4FE6296CE99}|Clinic.Data\\Clinic.Data.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\net1814_212_1_clinic_asm2_se183605_tr\u01B0\u01A1ngminhnh\u1EADt\\clinic.data\\models\\net1814_212_1_cliniccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,6 +83,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Clinic.WpfApp",
+              "DocumentMoniker": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+              "RelativeDocumentMoniker": "Clinic.WpfApp\\Clinic.WpfApp.csproj",
+              "ToolTip": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+              "RelativeToolTip": "Clinic.WpfApp\\Clinic.WpfApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-17T03:24:14.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Net1814_212_1_ClinicContext.cs",
               "DocumentMoniker": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.Data\\Models\\Net1814_212_1_ClinicContext.cs",
               "RelativeDocumentMoniker": "Clinic.Data\\Models\\Net1814_212_1_ClinicContext.cs",
@@ -96,25 +113,27 @@
               "RelativeDocumentMoniker": "Clinic.Data\\Models\\AppointmentDetail.cs",
               "ToolTip": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.Data\\Models\\AppointmentDetail.cs",
               "RelativeToolTip": "Clinic.Data\\Models\\AppointmentDetail.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBwAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T16:45:23.908Z"
+              "WhenOpened": "2024-07-14T16:45:23.908Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "wAppointmentDetail.xaml.cs",
               "DocumentMoniker": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.WpfApp\\UI\\wAppointmentDetail.xaml.cs",
               "RelativeDocumentMoniker": "Clinic.WpfApp\\UI\\wAppointmentDetail.xaml.cs",
               "ToolTip": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.WpfApp\\UI\\wAppointmentDetail.xaml.cs",
               "RelativeToolTip": "Clinic.WpfApp\\UI\\wAppointmentDetail.xaml.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAAACYAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T01:16:29.724Z"
+              "WhenOpened": "2024-07-11T01:16:29.724Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "wAppointmentDetail.xaml",
               "DocumentMoniker": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_Tr\u01B0\u01A1ngMinhNh\u1EADt\\Clinic.WpfApp\\UI\\wAppointmentDetail.xaml",
               "RelativeDocumentMoniker": "Clinic.WpfApp\\UI\\wAppointmentDetail.xaml",
