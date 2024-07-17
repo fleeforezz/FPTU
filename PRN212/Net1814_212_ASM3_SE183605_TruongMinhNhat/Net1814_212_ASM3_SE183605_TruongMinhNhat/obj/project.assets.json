@@ -2753,11 +2753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code-Stuff\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat.csproj",
+      "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat.csproj",
       "projectName": "Net1814_212_ASM3_SE183605_TruongMinhNhat",
-      "projectPath": "D:\\Code-Stuff\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat.csproj",
+      "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Code-Stuff\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\obj\\",
+      "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\Net1814_212_ASM3_SE183605_TruongMinhNhat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
