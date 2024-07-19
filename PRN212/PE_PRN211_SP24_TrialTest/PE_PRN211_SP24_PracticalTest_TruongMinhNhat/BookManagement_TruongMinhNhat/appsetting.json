@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnectionStringDB": "server=SHADOW; database=BookManagementDb;uid=jso;pwd=0822863716; TrustServerCertificate=True"
+  }
+}
+

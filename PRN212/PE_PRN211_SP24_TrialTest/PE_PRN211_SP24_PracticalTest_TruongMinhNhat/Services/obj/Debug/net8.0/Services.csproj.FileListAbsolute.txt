@@ -1,0 +1,5 @@
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.AssemblyInfoInputs.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.AssemblyInfo.cs
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.csproj.CoreCompileInputs.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.sourcelink.json

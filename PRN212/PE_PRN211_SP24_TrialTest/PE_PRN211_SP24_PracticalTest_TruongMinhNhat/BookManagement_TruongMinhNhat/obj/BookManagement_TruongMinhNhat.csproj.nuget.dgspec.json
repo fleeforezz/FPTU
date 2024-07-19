@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj": {}
+  },
+  "projects": {
+    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj",
+        "projectName": "BookManagement_TruongMinhNhat",
+        "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj",
+        "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
+        "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
