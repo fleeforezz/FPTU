@@ -5,8 +5,112 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookManagement_TruongMinhNhat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="300" />
+        </Grid.ColumnDefinitions>
 
+        <DataGrid
+            x:Name="BooksDataGrid"
+            AutoGenerateColumns="False"
+            IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="BookId"
+                    Binding="{Binding BookId}" />
+                <DataGridTextColumn
+                    Header="CategoryId"
+                    Binding="{Binding BookCategoryId}" />
+                <DataGridTextColumn
+                    Header="BookName"
+                    Binding="{Binding BookName}" />
+                <DataGridTextColumn
+                    Header="Description"
+                    Binding="{Binding Description}" />
+                <DataGridTextColumn
+                    Header="Publication Date"
+                    Binding="{Binding PublicationDate}" />
+                <DataGridTextColumn
+                    Header="Quantity"
+                    Binding="{Binding Quantity}" />
+                <DataGridTextColumn
+                    Header="Price"
+                    Binding="{Binding Price}" />
+                <DataGridTextColumn
+                    Header="Author"
+                    Binding="{Binding Author}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel
+            Grid.Column="1"
+            Margin="10">
+            <TextBlock
+                Text="Book Details"
+                FontWeight="Bold"
+                Margin="0,0,0,10" />
+            <Label
+                Content="Book ID:" />
+            <TextBox
+                x:Name="BookIdTextBox"
+                IsReadOnly="True" />
+            <Label
+                Content="Category ID:" />
+            <TextBox
+                x:Name="CategoryIdTextBox" />
+            <Label
+                Content="Book Name:" />
+            <TextBox
+                x:Name="BookNameTextBox" />
+            <Label
+                Content="Description:" />
+            <TextBox
+                x:Name="DescriptionTextBox" />
+            <Label
+                Content="Publication Date:" />
+            <DatePicker
+                x:Name="PublicationDatePicker" />
+            <Label
+                Content="Quantity:" />
+            <TextBox
+                x:Name="QuantityTextBox" />
+            <Label
+                Content="Price:" />
+            <TextBox
+                x:Name="PriceTextBox" />
+            <Label
+                Content="Author:" />
+            <TextBox
+                x:Name="AuthorTextBox" />
+
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="0,20,0,0">
+                <Button
+                    Content="Add"
+                    Width="70"
+                    Margin="0,0,10,0"
+                    Click="AddButton_Click" />
+                <Button
+                    Content="Update"
+                    Width="70"
+                    Margin="0,0,10,0"
+                    Click="UpdateButton_Click" />
+                <Button
+                    Content="Delete"
+                    Width="70"
+                    Click="DeleteButton_Click" />
+            </StackPanel>
+            <Button
+                Content="Clear"
+                Width="70"
+                HorizontalAlignment="Left"
+                Margin="0,10,0,0"
+                Click="ClearButton_Click" />
+        </StackPanel>
     </Grid>
 </Window>

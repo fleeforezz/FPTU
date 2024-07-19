@@ -20,11 +20,11 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
             <Label
-                Content="Username" 
+                Content="Email" 
                 FontSize="15"
                 Margin="0,0,12,0"/>
-            <TextBox 
-                x:Name="Username"
+            <TextBox
+                x:Name="EmailTextBox"
                 Width="200"
                 Height="20"/>
         </StackPanel>
@@ -36,10 +36,18 @@
                 Content="Password"
                 FontSize="15"
                 Margin="0,0,12,0" />
-            <TextBox
-                x:Name="Password"
+            <PasswordBox
+                x:Name="PasswordBox"
                 Width="200"
                 Height="20" />
         </StackPanel>
+        <Button
+            Content="Login"
+            Margin="0,20,0,0"
+            Width="200"
+            Height="30"
+            Click="LoginButton_Click">
+            
+        </Button>
     </StackPanel>
 </Window>

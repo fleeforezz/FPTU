@@ -9,8 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="appsetting.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

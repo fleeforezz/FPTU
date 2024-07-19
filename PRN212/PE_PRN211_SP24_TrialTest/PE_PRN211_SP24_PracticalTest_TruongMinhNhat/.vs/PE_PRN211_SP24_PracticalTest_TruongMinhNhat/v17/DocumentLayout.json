@@ -1,14 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\",
+  "WorkspaceRootPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45473DA4-AF1E-48CE-A638-5CBFCBA3DF45}|Services\\Services.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\services\\useraccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADA3A8D0-6ABE-4822-80CE-FFEDFFD7E541}|BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\bookmanagement_truongminhnhat\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADA3A8D0-6ABE-4822-80CE-FFEDFFD7E541}|BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj|solutionrelative:bookmanagement_truongminhnhat\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45473DA4-AF1E-48CE-A638-5CBFCBA3DF45}|Services\\Services.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\services\\useraccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45473DA4-AF1E-48CE-A638-5CBFCBA3DF45}|Services\\Services.csproj|solutionrelative:services\\useraccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D4A23CA-A09C-421C-9917-77C38945420F}|Repositories\\Repositories.csproj|d:\\pc_stuff\\github_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\repositories\\useraccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D4A23CA-A09C-421C-9917-77C38945420F}|Repositories\\Repositories.csproj|solutionrelative:repositories\\useraccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45473DA4-AF1E-48CE-A638-5CBFCBA3DF45}|Services\\Services.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45473DA4-AF1E-48CE-A638-5CBFCBA3DF45}|Services\\Services.csproj|solutionrelative:services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADA3A8D0-6ABE-4822-80CE-FFEDFFD7E541}|BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\bookmanagement_truongminhnhat\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADA3A8D0-6ABE-4822-80CE-FFEDFFD7E541}|BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj|solutionrelative:bookmanagement_truongminhnhat\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADA3A8D0-6ABE-4822-80CE-FFEDFFD7E541}|BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\bookmanagement_truongminhnhat\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ADA3A8D0-6ABE-4822-80CE-FFEDFFD7E541}|BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj|solutionrelative:bookmanagement_truongminhnhat\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D4A23CA-A09C-421C-9917-77C38945420F}|Repositories\\Repositories.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\repositories\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D4A23CA-A09C-421C-9917-77C38945420F}|Repositories\\Repositories.csproj|solutionrelative:repositories\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D4A23CA-A09C-421C-9917-77C38945420F}|Repositories\\Repositories.csproj|d:\\code-stuff\\gitrepo_landing\\fptu\\prn212\\pe_prn211_sp24_trialtest\\pe_prn211_sp24_practicaltest_truongminhnhat\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D4A23CA-A09C-421C-9917-77C38945420F}|Repositories\\Repositories.csproj|solutionrelative:repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -66,32 +86,96 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserAccountService.cs",
-              "DocumentMoniker": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\UserAccountService.cs",
-              "RelativeDocumentMoniker": "Services\\UserAccountService.cs",
-              "ToolTip": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\UserAccountService.cs",
-              "RelativeToolTip": "Services\\UserAccountService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "BookManagement_TruongMinhNhat\\Login.xaml.cs",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\Login.xaml.cs",
+              "RelativeToolTip": "BookManagement_TruongMinhNhat\\Login.xaml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAC0AAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T05:42:53.3Z",
+              "WhenOpened": "2024-07-19T14:41:34.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\BookRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\BookRepository.cs",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\BookRepository.cs",
+              "RelativeToolTip": "Repositories\\BookRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:24:19.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserAccountRepository.cs",
-              "DocumentMoniker": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\UserAccountRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\UserAccountRepository.cs",
-              "ToolTip": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\UserAccountRepository.cs",
-              "RelativeToolTip": "Repositories\\UserAccountRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Title": "UserAccountService.cs",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\UserAccountService.cs",
+              "RelativeDocumentMoniker": "Services\\UserAccountService.cs",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\UserAccountService.cs",
+              "RelativeToolTip": "Services\\UserAccountService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T05:35:47.033Z",
+              "WhenOpened": "2024-07-19T10:21:21.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "Services\\BookService.cs",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\BookService.cs",
+              "RelativeToolTip": "Services\\BookService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:18:14.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Repositories\\Models\\Book.cs",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Models\\Book.cs",
+              "RelativeToolTip": "Repositories\\Models\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T10:15:00.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BookManagement_TruongMinhNhat\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BookManagement_TruongMinhNhat\\MainWindow.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAADAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T09:54:05.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BookManagement_TruongMinhNhat\\MainWindow.xaml",
+              "ToolTip": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\MainWindow.xaml",
+              "RelativeToolTip": "BookManagement_TruongMinhNhat\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-19T09:53:46.315Z",
               "EditorCaption": ""
             }
           ]
@@ -102,11 +186,11 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         },
