@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj": {}
+    "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj": {}
   },
   "projects": {
-    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj": {
+    "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj",
+        "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj",
         "projectName": "Clinic.Business",
-        "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj",
+        "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\obj\\",
+        "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,11 +29,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj": {
-                "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj"
+              "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj": {
+                "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj"
               },
-              "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj": {
-                "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj"
+              "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj": {
+                "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj": {
+    "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj",
+        "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj",
         "projectName": "Clinic.Common",
-        "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj",
+        "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\Clinic.Common.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\obj\\",
+        "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -133,14 +133,14 @@
         }
       }
     },
-    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj": {
+    "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj",
+        "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj",
         "projectName": "Clinic.Data",
-        "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj",
+        "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\Clinic.Data.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\obj\\",
+        "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -210,14 +210,14 @@
         }
       }
     },
-    "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj": {
+    "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+        "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
         "projectName": "Clinic.WpfApp",
-        "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
+        "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\Clinic.WpfApp.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\obj\\",
+        "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.WpfApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -235,8 +235,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj": {
-                "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj"
+              "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj": {
+                "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_1_Clinic_ASM2_SE183605_TrươngMinhNhật\\Clinic.Business\\Clinic.Business.csproj"
               }
             }
           }

@@ -15,9 +15,9 @@ do
     Console.WriteLine("\n");
     Console.WriteLine("1. Create");
     Console.WriteLine("2. Read All");
-    Console.WriteLine("3. Read all AppointmentDetail where AppointmentDetailId = 43");
-    Console.WriteLine("4. Update Month where AppointmentDetailId = 2");
-    Console.WriteLine("5. Delete AppointmentDetail where AppointmentDetailId = 30");
+    Console.WriteLine("3. Read all AppointmentDetail where AppointmentDetailId = someId");
+    Console.WriteLine("4. Update Month where AppointmentDetailId = someId");
+    Console.WriteLine("5. Delete AppointmentDetail where AppointmentDetailId = someId");
     Console.WriteLine("6. ===> Exit");
 
     Console.Write("Enter choice: ");
@@ -35,6 +35,7 @@ do
             var chooseAppointmentId = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter Service Id: ");
             var chooseServiceId = Convert.ToInt32(Console.ReadLine());
+
 
             var createItem = _context.AppointmentDetails.FirstOrDefault(c => c.AppointmentId == chooseAppointmentId && c.ServiceId == chooseServiceId);
             if (createItem != null)
@@ -170,6 +171,25 @@ do
     }
 
 } while (choice <= 5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

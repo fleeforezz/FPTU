@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp.csproj",
+      "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_ASM1_TruongMinhNhat\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp.csproj",
       "projectName": "SE183605ConsoleEFApp",
-      "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp.csproj",
+      "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_ASM1_TruongMinhNhat\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\SE183605ConsoleEFApp\\SE183605ConsoleEFApp\\obj\\",
+      "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\Net1814_212_ASM1_TruongMinhNhat\\SE183605ConsoleEFApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
