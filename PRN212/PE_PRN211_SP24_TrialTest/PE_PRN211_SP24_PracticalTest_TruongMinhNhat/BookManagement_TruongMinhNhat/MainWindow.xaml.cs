@@ -68,7 +68,7 @@ namespace BookManagement_TruongMinhNhat
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             var book = GetBookFromInput();
-            if (book != null)
+            if (book != null && (book.Price >= 0 && book.Price < 4000000))
             {
                 Books.Add(book);
                 MessageBox.Show("Add Successful");
