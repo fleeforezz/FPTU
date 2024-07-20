@@ -1,0 +1,33 @@
+# Package must be install in Repository folder
++ Microsoft.EntityFrameworkCore
++ Microsoft.EntityFrameworkCore.SqlServer
++ Microsoft.EntityFrameworkCore.Tools
++ Microsoft.Extensions.Configuration
++ Microsoft.Extensions.Configuration.Json
+
+# Connection to Database using appsetting.json
++ In appsetting.json:
+{
+  "ConnectionStrings": {
+    "DefaultConnectionStringDB": "server=SHADOW; database=BookManagementDb;uid=jso;pwd=0822863716; TrustServerCertificate=True"
+  }
+}
+
++ In DbContext:
+private string GetConnectionString()
+{
+    IConfiguration config = new ConfigurationBuilder()
+         .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+    var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
+
+    return strConn;
+}
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    optionsBuilder.UseSqlServer(GetConnectionString());
+}
+
+
