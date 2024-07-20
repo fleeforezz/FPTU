@@ -1,0 +1,137 @@
+﻿<Window x:Class="AirConditionerShop_TruongMinhNhat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirConditionerShop_TruongMinhNhat"
+        mc:Ignorable="d"
+        Title="Main AirConditioner Management Window" Height="500" Width="800"
+        FontFamily="Arial"
+        FontSize="14"
+        Background="#FFD4F7D4"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid
+            x:Name="AirConditionerDataGrid"
+            AutoGenerateColumns="False"
+            IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="AirConditionerId"
+                    Binding="{Binding AirConditionerId}" />
+                <DataGridTextColumn
+                    Header="SupplierId"
+                    Binding="{Binding SupplierId}" />
+                <DataGridTextColumn
+                    Header="AirConditionerName"
+                    Binding="{Binding AirConditionerName}" />
+                <DataGridTextColumn
+                    Header="Warranty"
+                    Binding="{Binding Warranty}" />
+                <DataGridTextColumn
+                    Header="SoundPressure Level"
+                    Binding="{Binding SoundPressureLevel}" />
+                <DataGridTextColumn
+                    Header="Feature Function"
+                    Binding="{Binding FeatureFunction}" />
+                <DataGridTextColumn
+                    Header="Quantity"
+                    Binding="{Binding Quantity}" />
+                <DataGridTextColumn
+                    Header="DollarPrice"
+                    Binding="{Binding DollarPrice}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel
+            Grid.Column="1"
+            Margin="10">
+            <TextBlock
+                Text="Air Conditioner"
+                FontWeight="Bold"
+                Margin="0,0,0,10" />
+            <Label
+                Content="Air Conditioner ID:" 
+                FontFamily="Arial"
+                Foreground="Blue"/>
+            <TextBox
+                x:Name="AirCondionerIdTextBox"
+                IsReadOnly="True" />
+            <Label
+                Content="Supplier ID:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="SupplierIdTextBox"
+                IsReadOnly="True" />
+            <Label
+                Content="Air Conditioner Name:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="AirConditionerNameTextBox" />
+            <Label
+                Content="Warranty:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="WarrantyTextBox" />
+            <Label
+                Content="SoundPressure Level:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="SoundPressureLevelTextBox" />
+            <Label
+                Content="Feature Function:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="FeatureFunctionTextBox" />
+            <Label
+                Content="Quantity:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="QuantityTextBox" />
+            <Label
+                Content="Dollar Price:"
+                FontFamily="Arial"
+                Foreground="Blue" />
+            <TextBox
+                x:Name="DollarPriceTextBox" />
+
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="0,20,0,0">
+                <Button
+                    Content="Add"
+                    Width="70"
+                    Margin="0,0,10,0"
+                    Click="AddButton_Click" />
+                <Button
+                    Content="Update"
+                    Width="70"
+                    Margin="0,0,10,0"
+                    Click="UpdateButton_Click" />
+                <Button
+                    Content="Delete"
+                    Width="70"
+                    Click="DeleteButton_Click" />
+            </StackPanel>
+            <Button
+                Content="Clear"
+                Width="70"
+                HorizontalAlignment="Left"
+                Margin="0,10,0,0"
+                Click="ClearButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\bin\Debug\net8.0\Repositoriy.deps.json
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\bin\Debug\net8.0\Repositoriy.runtimeconfig.json
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\bin\Debug\net8.0\Repositoriy.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\bin\Debug\net8.0\Repositoriy.pdb
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.csproj.AssemblyReference.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.AssemblyInfoInputs.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.AssemblyInfo.cs
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.csproj.CoreCompileInputs.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.sourcelink.json
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\refint\Repositoriy.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.pdb
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\Repositoriy.genruntimeconfig.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN212_SU24TrialTest\PE_PRN212_SU24TrialTest_TruongMinhNhat\Repositoriy\obj\Debug\net8.0\ref\Repositoriy.dll

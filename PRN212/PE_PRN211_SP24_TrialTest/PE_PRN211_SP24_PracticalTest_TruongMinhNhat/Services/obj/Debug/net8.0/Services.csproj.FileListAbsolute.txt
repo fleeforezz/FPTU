@@ -19,3 +19,14 @@ D:\Code-Stuff\GitRepo_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP2
 D:\Code-Stuff\GitRepo_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\refint\Services.dll
 D:\Code-Stuff\GitRepo_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.pdb
 D:\Code-Stuff\GitRepo_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\ref\Services.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\bin\Debug\net8.0\Services.deps.json
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\bin\Debug\net8.0\Services.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\bin\Debug\net8.0\Services.pdb
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\bin\Debug\net8.0\Repositories.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\bin\Debug\net8.0\Repositories.pdb
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.csproj.AssemblyReference.cache
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.csproj.Up2Date
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\refint\Services.dll
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\Services.pdb
+D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\obj\Debug\net8.0\ref\Services.dll

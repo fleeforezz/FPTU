@@ -4415,11 +4415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj",
+      "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\obj\\",
+      "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",

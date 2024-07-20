@@ -3289,11 +3289,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj",
+      "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj",
       "projectName": "BookManagement_TruongMinhNhat",
-      "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj",
+      "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\BookManagement_TruongMinhNhat.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\obj\\",
+      "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\BookManagement_TruongMinhNhat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3311,8 +3311,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj": {
-              "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj"
+            "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj": {
+              "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj"
             }
           }
         }
