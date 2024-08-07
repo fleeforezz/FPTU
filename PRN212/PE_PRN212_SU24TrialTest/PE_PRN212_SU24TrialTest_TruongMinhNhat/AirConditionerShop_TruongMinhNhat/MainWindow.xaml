@@ -28,7 +28,7 @@
                     Binding="{Binding AirConditionerId}" />
                 <DataGridTextColumn
                     Header="SupplierId"
-                    Binding="{Binding SupplierId}" />
+                    Binding="{Binding SupplierId.SupplierName}" />
                 <DataGridTextColumn
                     Header="AirConditionerName"
                     Binding="{Binding AirConditionerName}" />
@@ -63,14 +63,14 @@
                 Foreground="Blue"/>
             <TextBox
                 x:Name="AirCondionerIdTextBox"
-                IsReadOnly="True" />
+                IsReadOnly="False" />
             <Label
                 Content="Supplier ID:"
                 FontFamily="Arial"
                 Foreground="Blue" />
             <TextBox
                 x:Name="SupplierIdTextBox"
-                IsReadOnly="True" />
+                IsReadOnly="False" />
             <Label
                 Content="Air Conditioner Name:"
                 FontFamily="Arial"

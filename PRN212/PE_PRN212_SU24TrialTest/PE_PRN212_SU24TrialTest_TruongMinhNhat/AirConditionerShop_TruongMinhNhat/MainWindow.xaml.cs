@@ -20,21 +20,93 @@ namespace AirConditionerShop_TruongMinhNhat
     /// </summary>
     public partial class MainWindow : Window
     {
-        public AirConditionerService _airConditionerService;
+        private AirConditionerService _airConditionerService;
+        private SupplierCompanyService _supplierCompanyService;
         public List<AirConditioner> airConditioners { get; set; }
         public MainWindow()
         {
-            _airConditionerService = new AirConditionerService();
             InitializeComponent();
+            _airConditionerService = new AirConditionerService();
+            _supplierCompanyService = new SupplierCompanyService();
         }
 
         private void LoadData()
         {
-            airConditioners = new List<AirConditioner>();
-            airConditioners = _airConditionerService.GetAll();
-            if (airConditioners != null)
+            SupplierId.ItemsSource = _supplierCompanyService.GetSupplierCompanies();
+            SupplierName.DisplayMemberPath = "SupplierName";
+            Supplier.SelectedValuePath = "SupplierId";
+            if (AirConditioner != null)
             {
-                AirConditionerDataGrid.ItemsSource = airConditioners;
+                var suppliers = _supplierCompanyService.GetSupplierCompanies();
+                AirConditionerId.Text = AirConditioner.AirConditionerId.ToString();
+                AirConditionerName.Text = AirConditioner.AirConditionerName;
+                Warranty.Text = AirConditioner.Warranty;
+                SoundPressureLevel.Text = AirConditioner.SoundPressureLevel;
+                FeatureFunction.Text = AirConditioner.FeatureFunction;
+                Quantity.Text = AirConditioner.Quantity.ToString();
+                DollarPrice.Text = AirConditioner.DollarPrice.ToString();
+                Supplier.SelectedIndex = suppliers.FindIndex(x => x.SupplierId == AirConditioner.SupplierId);
+            }
+            else
+            {
+                Supplier.SelectedIndex = 0;
+            }
+        }
+
+        private AirConditioner GetAirConditionerFromInput()
+        {
+            return new AirConditioner
+            {
+                AirConditionerId = int.Parse(AirCondionerIdTextBox.Text),
+                AirConditionerName = AirConditionerNameTextBox.Text,
+                SupplierId = SupplierIdTextBox.Text,
+                Warranty = WarrantyTextBox.Text,
+                SoundPressureLevel = SoundPressureLevelTextBox.Text,
+                FeatureFunction = FeatureFunctionTextBox.Text,
+                Quantity = int.Parse(QuantityTextBox.Text),
+                DollarPrice = int.Parse(DollarPriceTextBox.Text)
+            };
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            var airConditioner = GetAirConditionerFromInput();
+            if (airConditioner != null)
+            {
+                airConditioners.Add(airConditioner);
+                System.Windows.MessageBox.Show("Add Successful");
+                LoadData();
+                clearInput();
+            }
+        }
+
+        private void UpdateButton_Click(Object sender, RoutedEventArgs e)
+        {
+            if (AirConditionerDataGrid.SelectedItems is AirConditioner selectedAirConditioner)
+            {
+                AirCondionerIdTextBox.Text = selectedAirConditioner.AirConditionerId.ToString();
+                AirConditionerNameTextBox.Text = selectedAirConditioner.AirConditionerName.ToString();
+                SupplierIdTextBox.Text = selectedAirConditioner.SupplierId.ToString();
+                WarrantyTextBox.Text = selectedAirConditioner.Warranty.ToString();
+                SoundPressureLevelTextBox.Text = selectedAirConditioner.SoundPressureLevel.ToString();
+                FeatureFunctionTextBox.Text = selectedAirConditioner.FeatureFunction.ToString();
+                QuantityTextBox.Text = selectedAirConditioner.Quantity.ToString();
+                DollarPriceTextBox.Text = selectedAirConditioner.DollarPrice.ToString();
+                System.Windows.MessageBox.Show("Update Successful");
+                clearInput();
+            } 
+            else
+            {
+                System.Windows.MessageBox.Show("Update Fail");
+            }
+        }
+
+        private void DeleteButton_Click(Object sender, RoutedEventArgs e)
+        {
+            if (AirConditionerDataGrid.SelectedItems is AirConditioner selectedAirConditioner)
+            {
+                airConditioners.Remove(selectedAirConditioner);
+                clearInput();
             }
         }
 

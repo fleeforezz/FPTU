@@ -33,7 +33,7 @@ namespace AirConditionerShop_TruongMinhNhat
             string password = PasswordBox.Password;
 
             var temp = _userAccountService.Login(email, password);
-            if (temp != null && temp.Role == 1)
+            if (temp != null)
             {
                 MainWindow mainWindow = new MainWindow();
                 MessageBox.Show("Login successful!");

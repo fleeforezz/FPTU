@@ -4415,11 +4415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\Repositoriy\\Repositoriy.csproj",
+      "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\Repositoriy\\Repositoriy.csproj",
       "projectName": "Repositoriy",
-      "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\Repositoriy\\Repositoriy.csproj",
+      "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\Repositoriy\\Repositoriy.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\Repositoriy\\obj\\",
+      "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\Repositoriy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",

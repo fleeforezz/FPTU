@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Services
-build_property.ProjectDir = D:\Pc_Stuff\Github_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\
+build_property.ProjectDir = D:\Code-Stuff\GitRepo_Landing\FPTU\PRN212\PE_PRN211_SP24_TrialTest\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\Services\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

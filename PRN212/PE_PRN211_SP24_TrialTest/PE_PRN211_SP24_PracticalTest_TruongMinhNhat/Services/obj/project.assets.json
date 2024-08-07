@@ -3138,11 +3138,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj",
+      "projectUniqueName": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj",
+      "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\obj\\",
+      "outputPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3160,8 +3160,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj"
+            "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN211_SP24_TrialTest\\PE_PRN211_SP24_PracticalTest_TruongMinhNhat\\Repositories\\Repositories.csproj"
             }
           }
         }

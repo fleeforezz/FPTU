@@ -15,10 +15,25 @@ namespace Services
         {
             _airconditionerRepository = new AirConditionerRepository();
         }
-
-        public List<AirConditioner> GetAll()
+        public List<AirConditioner> GetAirConditioners()
         {
-            return _airconditionerRepository.GetAll();
+            return _airconditionerRepository.getAll();
+        }
+        public void DeleteAirConditioner(AirConditioner airConditioner)
+        {
+            _airconditionerRepository.Delete(airConditioner);
+        }
+        public void AddAirConditioner(AirConditioner airConditioner)
+        {
+            _airconditionerRepository.Add(airConditioner);
+        }
+        public void UpdateAirConditioner(AirConditioner airConditioner)
+        {
+            _airconditionerRepository.Update(airConditioner);
+        }
+        public AirConditioner? GetAirConditionerById(int id)
+        {
+            return _airconditionerRepository.GetById(id);
         }
     }
 }

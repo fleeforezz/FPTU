@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tHR90ZmstIU=",
+  "dgSpecHash": "jTZuNeE5RCw=",
   "success": true,
-  "projectFilePath": "D:\\Pc_Stuff\\Github_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\AirConditionerShop_TruongMinhNhat\\AirConditionerShop_TruongMinhNhat.csproj",
+  "projectFilePath": "D:\\Code-Stuff\\GitRepo_Landing\\FPTU\\PRN212\\PE_PRN212_SU24TrialTest\\PE_PRN212_SU24TrialTest_TruongMinhNhat\\AirConditionerShop_TruongMinhNhat\\AirConditionerShop_TruongMinhNhat.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jso\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\jso\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
