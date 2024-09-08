@@ -53,7 +53,7 @@ public class SeeImage extends HttpServlet {
                     break;
             }
             out.println("<img src='"+imgPath+"' alt='Sample image' style='width: 400px; height: 400px; object-fit: cover;'/>");
-            out.println("<a href='...'>Return to homepage</a>");
+            out.println("<a href='http://localhost:8084/imagica/'>Return to homepage</a>");
             out.println("</body>");
             out.println("</html>");
         }
