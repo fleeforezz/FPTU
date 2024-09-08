@@ -57,6 +57,11 @@ and open the template in the editor.
     font-size: 1.3em;
 }
 
+.registry {
+    display: flex;
+    gap: 1rem;
+}
+
 .enterprice {
     border: 1px solid #949596;
     border-radius: 50px;
@@ -65,6 +70,7 @@ and open the template in the editor.
     font-size: 1.1em;
     font-weight: 500;
     cursor: pointer;
+    text-align: center;
 }
 
 .login {
