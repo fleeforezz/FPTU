@@ -4,20 +4,26 @@
         <servlet-name>SeeImage</servlet-name>
         <servlet-class>mh.SeeImage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Calculator</servlet-name>
+        <servlet-class>mh.Calculator</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SeeImage</servlet-name>
         <url-pattern>/SeeImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Calculator</servlet-name>
+        <url-pattern>/Calculator</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-    
     <error-page>
         <error-code>404</error-code>
         <location>/404_not_found.html</location>
