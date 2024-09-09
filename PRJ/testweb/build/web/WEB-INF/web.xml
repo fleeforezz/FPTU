@@ -8,6 +8,10 @@
         <servlet-name>Calculator</servlet-name>
         <servlet-class>mh.Calculator</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestDBConnection</servlet-name>
+        <servlet-class>test.TestDBConnection</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SeeImage</servlet-name>
         <url-pattern>/SeeImage</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Calculator</servlet-name>
         <url-pattern>/Calculator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestDBConnection</servlet-name>
+        <url-pattern>/TestDBConnection</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
