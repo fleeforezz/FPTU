@@ -10,6 +10,32 @@
 <project name="imagica" default="default" basedir=".">
     <description>Builds, tests, and runs the project imagica.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <!-- Define properties -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="war.file" value="${dist.dir}/imagica.war"/>
+
+    <!-- Clean target -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="${war.file}"/>
+    </target>
+
+    <!-- Compile target -->
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false"/>
+    </target>
+
+    <!-- Build target -->
+    <target name="build" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <war destfile="${war.file}" basedir="${build.dir}">
+            <webxml file="web/WEB-INF/web.xml"/>
+        </war>
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
