@@ -43,8 +43,10 @@
         <war destfile="${war.file}" webxml="web/WEB-INF/web.xml">
             <classes dir="${build.dir}"/>
             <lib file="${servlet.api.jar}"/>
-            <manifest file="${src.dir}/conf/MANIFEST.MF"/>
         </war>
+        <echo file="${src.dir}/info/MANIFEST.MF">
+            Manifest-Version: 1.0
+        </echo>
     </target>
     
     <!--
