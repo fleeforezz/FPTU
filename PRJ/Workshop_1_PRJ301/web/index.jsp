@@ -63,9 +63,39 @@
         </div>
 
         <div class="buy-now">
-            
+            <img class="coffee-roaster" src="assets/battlecreek-coffee-roasters.jpg" />
+            <div class="buy-now-container">
+                <div class="buy-now-heading">
+                    <p>
+                        Collaborative Services
+                    </p>
+                    <h1>
+                        Exquisite Coffee
+                        <br>
+                        Bean Quality
+                    </h1>
+                </div>
+                <div class="buy-now-para">
+                    <p>
+                        We put product quality and hygiene safety in 
+                        <br>
+                        the production process first.
+                    </p>
+                    <p>
+                        <span>01.</span>
+                        Different blends
+                    </p>
+                    <div class="separate-line"></div>
+                    <p>
+                        <span>02.</span>
+                        Professional roasting
+                    </p>
+                </div>
+                <a href="#">Buy Now!</a>
+            </div>
+            <img class="leaf-deco" src="assets/roaster-deco-1.webp" />
         </div>
-        
+
         <div class="list-product">
             <div class="heading">
                 <p>
@@ -77,9 +107,9 @@
                     of the perfect coffee
                 </h1>
             </div>
-            
+
             <div class="product-gallary">
-                
+
             </div>
         </div>
     </body>

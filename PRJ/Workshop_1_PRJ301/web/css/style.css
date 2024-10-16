@@ -68,17 +68,13 @@ body {
     border-radius: 50px;
 }
 
-.hero {
-    padding: 0px 40px 0px 40px;
-}
-
 .upper-hero {
     display: flex;
     align-items: center;
 }
 
 .upper-hero h1 {
-    font-size: 5.4rem;
+    font-size: 5.4vw;
     width: 80%;
     text-transform: uppercase;
 }
@@ -89,7 +85,7 @@ body {
 
 .upper-hero p {
     color: #6e6e6e;
-    font-size: 1.1rem;
+    font-size: 1.1vw;
     line-height: 1.7;
     width: 30%;
 }
@@ -113,11 +109,90 @@ body {
 }
 
 .heading p {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: 400;
 }
 
 .heading h1 {
-    font-size: 3rem;
+    font-size: 3vw;
     font-weight: 500;
+}
+
+.buy-now {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.buy-now .coffee-roaster {
+    width: 500px;
+    height: 650px;
+    object-fit: cover;
+}
+
+.buy-now .coffee-roaster::after {
+    content: "Only pure coffee beans";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 100px;
+    background-color: #efae54;
+    width: 35%;
+}
+
+.buy-now-heading p {
+    font-size: 1.5vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.buy-now-heading h1 {
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+.buy-now-para p:nth-child(1) {
+    color: #6e6e7c;
+    margin-bottom: 60px;
+}
+
+.buy-now-para p:nth-child(2), p:nth-child(4) {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.separate-line {
+    padding: 0.5px;
+    background: black;
+}
+
+.buy-now-para span {
+    font-size: 1.4rem;
+    opacity: 60%;
+}
+
+.buy-now-container a {
+    text-decoration: none;
+    padding: 1em 3em;
+    font-size: 1.2rem;
+    transition: 250ms;
+    color: white;
+    background: #e4594d;
+    border: 1px solid #e4594d;
+}
+
+.buy-now-container a:hover {
+    color: black;
+    background: transparent;
+    border: 1px solid #e4594d;
+}
+
+.leaf-deco {
+    position: absolute;
+    right: 0;
+    margin-top: 1000px;
+    z-index: -2;
 }
