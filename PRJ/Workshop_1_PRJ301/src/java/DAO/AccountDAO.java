@@ -12,7 +12,10 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 
 /**
@@ -24,13 +27,10 @@ public class AccountDAO implements Business<Account> {
     private ServletContext sc;
     private Connection conn;
     private PreparedStatement ps = null;
+    private ResultSet resultSet = null;
 
     public Connection getConnection(ServletContext sc) throws ClassNotFoundException, SQLException {
-        if (sc == null) {
-            return new DBContext().getConnection();
-        } else {
-            return new DBContext().getConnection();
-        }
+        return new DBContext().getConnection();
     }
 
     public AccountDAO() throws ClassNotFoundException, SQLException {
@@ -45,16 +45,14 @@ public class AccountDAO implements Business<Account> {
 
     @Override
     public int insertData(Account account) {
-        ResultSet resultSet = null;
         int rs = 0;
-        
 
         String sql = "INSERT INTO [dbo].[accounts] ([account], [pass], [lastName], [firstName], [birthday], [gender], [phone], [isUse], [roleInSystem]) \n"
                 + "VALUES (?,?,?,?,?,?,?,?,?);";
-        
+
         try {
             ps = conn.prepareStatement(sql);
-            
+
             ps.setString(1, account.getAccount());
             ps.setString(2, account.getPass());
             ps.setString(3, account.getLastName());
@@ -64,42 +62,100 @@ public class AccountDAO implements Business<Account> {
             ps.setString(7, account.getPhone());
             ps.setBoolean(8, account.isIsUse());
             ps.setInt(9, account.getRoleInSystem());
-            
+
             ps.executeUpdate();
-            
-            while (resultSet.next()) {
-                return new Account(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4),
-                        resultSet.getDate(5),
-                        resultSet.getBoolean(6),
-                        resultSet.getString(7),
-                        resultSet.getBoolean(8),
-                        resultSet.getInt(9)
-                );
-            }
-            
-        } catch (Exception e) {
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return rs;
     }
 
     @Override
-    public int updateData(Account obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int updateData(Account account) {
+        int rs = 0;
+
+        String sql = "UPDATE [dbo].[accounts]\n"
+                + "SET [pass]=?, [firstName]=?, [lastName]=?, [birthday]=?, [gender]=?, [phone]=?, [isUse]=?, [roleInSystem]=?\n"
+                + "WHERE ([dbo].[accounts].[account] = ?)\n"
+                + ";";
+
+        try {
+            ps = conn.prepareStatement(sql);
+
+            ps.setString(1, account.getPass());
+            ps.setString(2, account.getFirstName());
+            ps.setString(3, account.getLastName());
+            ps.setDate(4, (Date) account.getBirthday());
+            ps.setBoolean(5, account.isGender());
+            ps.setString(6, account.getPhone());
+            ps.setBoolean(7, account.isIsUse());
+            ps.setInt(8, account.getRoleInSystem());
+            ps.setString(9, account.getAccount());
+            
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return rs;
     }
 
     @Override
-    public int deleteData(Account obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int deleteData(Account account) {
+        int rs = 0;
+
+        String sql = "DELETE FROM [dbo].[accounts]\n"
+                + "WHERE ([dbo].[accounts].[account] = ?)\n"
+                + ";";
+        try {
+            ps = conn.prepareStatement(sql);
+
+            ps.setString(1, account.getAccount());
+            
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return rs;
     }
 
     @Override
     public List<Account> listAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Account> list = new ArrayList<>();
+
+        String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass], [dbo].[accounts].[lastName], [dbo].[accounts].[firstName], [dbo].[accounts].[birthday], [dbo].[accounts].[gender], [dbo].[accounts].[phone], [dbo].[accounts].[isUse], [dbo].[accounts].[roleInSystem]\n"
+                + "FROM [dbo].[accounts]\n"
+                + ";";
+        
+        try {
+            ps = conn.prepareStatement(sql);
+            
+            while(resultSet.next()) {
+                Account account = new Account();
+                
+                account.setAccount(resultSet.getString(1));
+                account.setPass(resultSet.getString(2));
+                account.setLastName(resultSet.getString(3));
+                account.setFirstName(resultSet.getString(4));
+                account.setBirthday(resultSet.getDate(5));
+                account.setGender(resultSet.getBoolean(6));
+                account.setPhone(resultSet.getString(7));
+                account.setIsUse(resultSet.getBoolean(8));
+                account.setRoleInSystem(resultSet.getInt(9));
+                
+                list.add(account);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return list;
     }
 
 }
