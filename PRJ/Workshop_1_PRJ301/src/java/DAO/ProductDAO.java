@@ -149,4 +149,14 @@ public class ProductDAO implements Business<Product> {
         return list;
     }
 
+    @Override
+    public Product checkDataExist(String account) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Product getData(String account, String pass) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

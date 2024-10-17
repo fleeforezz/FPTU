@@ -5,8 +5,14 @@
  */
 package Controller;
 
+import DAO.ProductDAO;
+import Entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,9 +36,17 @@ public class HomeController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> product = productDAO.listAll();
+        
+        for (Product product1 : product) {
+            System.out.println(product1);
+        }
+        
+        request.setAttribute("productList", product);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
@@ -48,7 +62,13 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -62,7 +82,13 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

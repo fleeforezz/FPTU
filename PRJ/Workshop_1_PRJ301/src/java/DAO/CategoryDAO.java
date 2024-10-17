@@ -138,4 +138,14 @@ public class CategoryDAO implements Business<Category> {
         return list;
     }
 
+    @Override
+    public Category checkDataExist(String account) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Category getData(String account, String pass) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

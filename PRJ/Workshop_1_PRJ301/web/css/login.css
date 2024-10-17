@@ -197,7 +197,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
+    /*height: 70vh;*/
+    padding-bottom: 70px; 
 }
 
 .login-form h1 {

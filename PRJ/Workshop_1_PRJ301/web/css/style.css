@@ -326,6 +326,20 @@ body {
     z-index: -2;
 }
 
+.product-gallary {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    gap: 2rem;
+    flex-direction: row;
+    
+}
+
+.product-item img {
+    width: 400px;
+    height: 400px;
+}
+
 /*Footer*/
 .footer {
     display: flex;

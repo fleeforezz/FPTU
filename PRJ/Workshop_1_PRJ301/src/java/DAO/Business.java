@@ -18,6 +18,6 @@ public interface Business<T> {
     List<T> listAll();
     
 //    Account
-    T checkAccountExist(String account);
-    T getAccount(String account, String pass);
+    T checkDataExist(String account);
+    T getData(String account, String pass);
 }

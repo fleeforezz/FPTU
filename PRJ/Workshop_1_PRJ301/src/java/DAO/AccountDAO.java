@@ -159,7 +159,7 @@ public class AccountDAO implements Business<Account> {
     }
 
     @Override
-    public Account checkAccountExist(String account) {
+    public Account checkDataExist(String account) {
         String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass]\n"
                 + "FROM [dbo].[accounts]\n"
                 + "WHERE [dbo].[accounts].[account] = ?\n"
@@ -192,7 +192,7 @@ public class AccountDAO implements Business<Account> {
     }
 
     @Override
-    public Account getAccount(String account, String pass) {
+    public Account getData(String account, String pass) {
         String sql = "SELECT account, pass\n"
                 + "FROM accounts\n"
                 + "WHERE account = ? AND pass = ?\n"
@@ -205,19 +205,8 @@ public class AccountDAO implements Business<Account> {
             ps.executeQuery();
 
             while (resultSet.next()) {
-//                return new Account(
-//                        resultSet.getString(1),
-//                        resultSet.getString(2),
-//                        resultSet.getString(3),
-//                        resultSet.getString(4),
-//                        resultSet.getDate(5),
-//                        resultSet.getBoolean(6),
-//                        resultSet.getString(7),
-//                        resultSet.getBoolean(8),
-//                        resultSet.getInt(9) 
-//                );
-
-                Account acc = new Account(resultSet.getString(1),
+                return new Account(
+                        resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
@@ -225,9 +214,8 @@ public class AccountDAO implements Business<Account> {
                         resultSet.getBoolean(6),
                         resultSet.getString(7),
                         resultSet.getBoolean(8),
-                        resultSet.getInt(9));
-                System.out.println(acc.getAccount());
-                return acc;
+                        resultSet.getInt(9) 
+                );
             }
 
         } catch (SQLException ex) {

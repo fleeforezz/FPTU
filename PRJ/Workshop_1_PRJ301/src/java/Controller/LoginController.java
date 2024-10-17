@@ -43,7 +43,7 @@ public class LoginController extends HttpServlet {
         String password_raw = request.getParameter("pass");
         
         AccountDAO accountDAO = new AccountDAO();
-        Account loginAccount = accountDAO.getAccount(username_raw, password_raw);
+        Account loginAccount = accountDAO.getData(username_raw, password_raw);
         
         if (loginAccount == null) {
             request.getRequestDispatcher("login.jsp").forward(request, response);

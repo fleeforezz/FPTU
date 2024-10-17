@@ -4,6 +4,7 @@
     Author     : jso
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -82,7 +83,12 @@
                 </div>
 
                 <div class="product-gallary">
-
+                <c:forEach begin="1" end="9" >
+                    <a href="#" class="product-item">
+                        <img src="assets/prod9-copyright-480x528.jpg" />
+                        <p>Basecamp Blend</p>
+                    </a>
+                </c:forEach>
                 </div>
             </div>
 
