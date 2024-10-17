@@ -93,9 +93,9 @@ public class AccountDAO implements Business<Account> {
             ps.setBoolean(7, account.isIsUse());
             ps.setInt(8, account.getRoleInSystem());
             ps.setString(9, account.getAccount());
-            
+
             ps.executeUpdate();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -114,9 +114,9 @@ public class AccountDAO implements Business<Account> {
             ps = conn.prepareStatement(sql);
 
             ps.setString(1, account.getAccount());
-            
+
             ps.executeUpdate();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -131,13 +131,13 @@ public class AccountDAO implements Business<Account> {
         String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass], [dbo].[accounts].[lastName], [dbo].[accounts].[firstName], [dbo].[accounts].[birthday], [dbo].[accounts].[gender], [dbo].[accounts].[phone], [dbo].[accounts].[isUse], [dbo].[accounts].[roleInSystem]\n"
                 + "FROM [dbo].[accounts]\n"
                 + ";";
-        
+
         try {
             ps = conn.prepareStatement(sql);
-            
-            while(resultSet.next()) {
+
+            while (resultSet.next()) {
                 Account account = new Account();
-                
+
                 account.setAccount(resultSet.getString(1));
                 account.setPass(resultSet.getString(2));
                 account.setLastName(resultSet.getString(3));
@@ -147,15 +147,94 @@ public class AccountDAO implements Business<Account> {
                 account.setPhone(resultSet.getString(7));
                 account.setIsUse(resultSet.getBoolean(8));
                 account.setRoleInSystem(resultSet.getInt(9));
-                
+
                 list.add(account);
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return list;
+    }
+
+    @Override
+    public Account checkAccountExist(String account) {
+        String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass]\n"
+                + "FROM [dbo].[accounts]\n"
+                + "WHERE [dbo].[accounts].[account] = ?\n"
+                + ";";
+
+        try {
+
+            ps = conn.prepareStatement(sql);
+            ps.executeQuery();
+
+            while (resultSet.next()) {
+                return new Account(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getDate(5),
+                        resultSet.getBoolean(6),
+                        resultSet.getString(7),
+                        resultSet.getBoolean(8),
+                        resultSet.getInt(9)
+                );
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    @Override
+    public Account getAccount(String account, String pass) {
+        String sql = "SELECT account, pass\n"
+                + "FROM accounts\n"
+                + "WHERE account = ? AND pass = ?\n"
+                + ";";
+
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, account);
+            ps.setString(2, pass);
+            ps.executeQuery();
+
+            while (resultSet.next()) {
+//                return new Account(
+//                        resultSet.getString(1),
+//                        resultSet.getString(2),
+//                        resultSet.getString(3),
+//                        resultSet.getString(4),
+//                        resultSet.getDate(5),
+//                        resultSet.getBoolean(6),
+//                        resultSet.getString(7),
+//                        resultSet.getBoolean(8),
+//                        resultSet.getInt(9) 
+//                );
+
+                Account acc = new Account(resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getDate(5),
+                        resultSet.getBoolean(6),
+                        resultSet.getString(7),
+                        resultSet.getBoolean(8),
+                        resultSet.getInt(9));
+                System.out.println(acc.getAccount());
+                return acc;
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
     }
 
 }
