@@ -32,7 +32,7 @@
                             <a href="#" >Explore more</a>
                         </p>
                     </div>
-                    <video autoplay="autoplay" loop="loop" muted="muted" src="assets/Coffee-ad.mp4" ></video>
+                    <!--<video autoplay="autoplay" loop="loop" muted="muted" src="assets/Coffee-ad.mp4" ></video>-->
                 </section>
             </div>
 
@@ -83,14 +83,20 @@
                 </div>
 
                 <div class="product-gallary">
-                <c:forEach begin="1" end="9" >
+                <c:forEach items="${productList}" var="o" >
                     <a href="#" class="product-item">
-                        <img src="assets/prod9-copyright-480x528.jpg" />
-                        <p>Basecamp Blend</p>
+                        <img src="${o.productImage}" />
+                        <p>${o.productName}</p>
+                        <div>
+                            <p>${o.price}</p>
+                            <c:if test="${o.discount > 0}" >
+                                <span class="discountPrice">Sale ${o.discount}%</span>
+                            </c:if>
+                        </div>
                     </a>
                 </c:forEach>
-                </div>
             </div>
+        </div>
 
         <jsp:include page="components/footer.jsp"></jsp:include>
     </body>

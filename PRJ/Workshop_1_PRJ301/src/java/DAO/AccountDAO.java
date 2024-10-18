@@ -28,6 +28,7 @@ public class AccountDAO implements Business<Account> {
     private Connection conn;
     private PreparedStatement ps = null;
     private ResultSet resultSet = null;
+    int rs = 0;
 
     public Connection getConnection(ServletContext sc) throws ClassNotFoundException, SQLException {
         return new DBContext().getConnection();
@@ -45,7 +46,6 @@ public class AccountDAO implements Business<Account> {
 
     @Override
     public int insertData(Account account) {
-        int rs = 0;
 
         String sql = "INSERT INTO [dbo].[accounts] ([account], [pass], [lastName], [firstName], [birthday], [gender], [phone], [isUse], [roleInSystem]) \n"
                 + "VALUES (?,?,?,?,?,?,?,?,?);";
@@ -74,7 +74,6 @@ public class AccountDAO implements Business<Account> {
 
     @Override
     public int updateData(Account account) {
-        int rs = 0;
 
         String sql = "UPDATE [dbo].[accounts]\n"
                 + "SET [pass]=?, [firstName]=?, [lastName]=?, [birthday]=?, [gender]=?, [phone]=?, [isUse]=?, [roleInSystem]=?\n"
@@ -105,7 +104,6 @@ public class AccountDAO implements Business<Account> {
 
     @Override
     public int deleteData(Account account) {
-        int rs = 0;
 
         String sql = "DELETE FROM [dbo].[accounts]\n"
                 + "WHERE ([dbo].[accounts].[account] = ?)\n"
@@ -128,8 +126,8 @@ public class AccountDAO implements Business<Account> {
     public List<Account> listAll() {
         List<Account> list = new ArrayList<>();
 
-        String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass], [dbo].[accounts].[lastName], [dbo].[accounts].[firstName], [dbo].[accounts].[birthday], [dbo].[accounts].[gender], [dbo].[accounts].[phone], [dbo].[accounts].[isUse], [dbo].[accounts].[roleInSystem]\n"
-                + "FROM [dbo].[accounts]\n"
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
+                + "FROM accounts\n"
                 + ";";
 
         try {
@@ -158,7 +156,6 @@ public class AccountDAO implements Business<Account> {
         return list;
     }
 
-    @Override
     public Account checkDataExist(String account) {
         String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass]\n"
                 + "FROM [dbo].[accounts]\n"
@@ -191,9 +188,8 @@ public class AccountDAO implements Business<Account> {
         return null;
     }
 
-    @Override
     public Account getData(String account, String pass) {
-        String sql = "SELECT account, pass\n"
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
                 + "FROM accounts\n"
                 + "WHERE account = ? AND pass = ?\n"
                 + ";";
@@ -202,7 +198,7 @@ public class AccountDAO implements Business<Account> {
             ps = conn.prepareStatement(sql);
             ps.setString(1, account);
             ps.setString(2, pass);
-            ps.executeQuery();
+            resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
                 return new Account(
@@ -214,7 +210,7 @@ public class AccountDAO implements Business<Account> {
                         resultSet.getBoolean(6),
                         resultSet.getString(7),
                         resultSet.getBoolean(8),
-                        resultSet.getInt(9) 
+                        resultSet.getInt(9)
                 );
             }
 

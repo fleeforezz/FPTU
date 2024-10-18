@@ -17,7 +17,4 @@ public interface Business<T> {
     int deleteData(T obj);
     List<T> listAll();
     
-//    Account
-    T checkDataExist(String account);
-    T getData(String account, String pass);
 }

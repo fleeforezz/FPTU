@@ -54,11 +54,28 @@
         <c:if test="${sessionScope.acc != null}" >
             <div class="account">
                 <img src="assets/profile-1.jpg" />
-                <p>Name</p>
+                <p>${sessionScope.acc.account}</p>
                 <i class="ph ph-caret-down"></i>
+                <div class="dropdown">
+                    <ul>
+                        <c:if test="${sessionScope.acc.roleInSystem == 1}">
+                            <li>
+                                <a href="admin">Admin Dashboard</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${sessionScope.acc.roleInSystem == 2}">
+                            <li>
+                                <a href="manager">Manager Dashboard</a>
+                            </li>
+                        </c:if>
+                        <li>
+                            <a href="logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </c:if>
-        
+
         <c:if test="${sessionScope.acc == null}" >
             <div class="account">
                 <a href="home" class="register-butn">
