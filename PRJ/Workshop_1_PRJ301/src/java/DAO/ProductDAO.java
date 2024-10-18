@@ -183,7 +183,7 @@ public class ProductDAO implements Business<Product> {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return list;
+        return list ;
     }
 
 }
