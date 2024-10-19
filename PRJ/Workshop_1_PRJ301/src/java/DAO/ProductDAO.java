@@ -102,9 +102,7 @@ public class ProductDAO implements Business<Product> {
 
         try {
             ps = conn.prepareStatement(sql);
-
             ps.setString(1, product.getProductId());
-
             ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -183,7 +181,39 @@ public class ProductDAO implements Business<Product> {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return list ;
+        return list;
+    }
+
+    public Product getProductByProductId(Product product) {
+        String sql = "SELECT productId, productName, productImage, brief, postedDate, typeId, account, unit, price, discount\n"
+                + "FROM products\n"
+                + "WHERE productId = '7823080768'\n"
+                + ";";
+        
+        try {
+            ps = conn.prepareStatement(sql);
+            resultSet = ps.executeQuery();
+            
+            while(resultSet.next()) {
+                return new Product(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getDate(5),
+                        resultSet.getInt(6),
+                        resultSet.getString(7),
+                        resultSet.getString(8),
+                        resultSet.getInt(9),
+                        resultSet.getInt(10)
+                );
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
     }
 
 }

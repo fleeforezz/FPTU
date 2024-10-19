@@ -10,11 +10,11 @@ import java.util.List;
 /**
  *
  * @author jso
+ * @param <T>
  */
 public interface Business<T> {
     int insertData(T obj);
     int updateData(T obj);
     int deleteData(T obj);
     List<T> listAll();
-    
 }

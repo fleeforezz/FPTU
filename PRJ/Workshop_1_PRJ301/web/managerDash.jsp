@@ -18,6 +18,7 @@
     <body>
         <jsp:include page="components/navbar.jsp"></jsp:include>
             <div class="product-table">
+            <%--<jsp:include page="components/sidebar.jsp"></jsp:include>--%>
                 <div class="product-table-container">
                     <table>
                         <tr style="height: 50px; background: #f1f1f1;">
@@ -49,7 +50,7 @@
                                 ${o.discount}
                             </td>
                             <td class="">
-                                <a href="editDetail?ProductId=${o.productId}" class="edit-button">
+                                <a href="editProduct?ProductId=${o.productId}" class="edit-button">
                                     <i class="ph ph-pencil-line"></i>
                                 </a>
                                 <a href="deleteProduct?ProductId=${o.productId}" class="delete-button">
