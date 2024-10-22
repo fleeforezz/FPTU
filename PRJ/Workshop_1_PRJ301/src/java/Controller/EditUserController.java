@@ -5,11 +5,16 @@
  */
 package Controller;
 
-import DAO.ProductDAO;
-import Entity.Product;
+import DAO.AccountDAO;
+import Entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -17,13 +22,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author jso
  */
-@WebServlet(name = "EditProductController", urlPatterns = {"/editProduct"})
-public class EditProductController extends HttpServlet {
+@WebServlet(name = "EditUserController", urlPatterns = {"/editUser"})
+public class EditUserController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,39 +43,45 @@ public class EditProductController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        // Get Parament
-        String productId_raw = request.getParameter("ProductId");
-        String productName_raw = request.getParameter("productName");
-        String productImage_raw = request.getParameter("productImage");
-        String brief_raw = request.getParameter("brief");
-        String postedDate_raw = request.getParameter("postedDate");
-        String unit_raw = request.getParameter("unit");
-        String price_raw = request.getParameter("price");
-        String discount_raw = request.getParameter("discount");
-        
-        //  
-        ProductDAO productDAO = new ProductDAO();
-        Product convertedProduct = new Product();
-        
-        // Get Product By ProductId
-        convertedProduct.setProductId(productId_raw);
-        Product getProductInfo = productDAO.getDataById(convertedProduct);
-        request.setAttribute("getProductInfo", getProductInfo);
+
+        request.setCharacterEncoding("UTF-8");
+        // Get User Account from session
+        HttpSession session = request.getSession();
+        Account userSession = (Account) session.getAttribute("acc");
+
+        // Get Paramenter from jsp
+        String lastName_raw = request.getParameter("lastName");
+        String firstName_raw = request.getParameter("firstName");
+        boolean gender_raw = "1".equals(request.getParameter("gender"));
+        String birthday_raw = request.getParameter("birthday");
+        // Convert String to DateTimeFormat
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
+//        LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
+        String phone_raw = request.getParameter("phone");
         
         
-        // Check if the input from JSP is not null
-        if (productName_raw == null || productImage_raw == null || brief_raw == null || postedDate_raw == null || unit_raw == null || price_raw == null || discount_raw == null) {
-            request.getRequestDispatcher("editProduct.jsp").forward(request, response);
-        }
+        AccountDAO accountDAO = new AccountDAO();
+        Account account = new Account();
+//        account.setAccount(userSession.getAccount());
+        account.setAccount(userSession.getAccount());
+        account.setPass(userSession.getPass());
+        account.setFirstName(firstName_raw);
+        account.setLastName(lastName_raw);
+//        account.setBirthday(Date.valueOf(convertedBirthdate));
+        account.setPhone(phone_raw);
+        account.setGender(gender_raw);
+        account.setIsUse(userSession.isIsUse());
+        account.setRoleInSystem(userSession.getRoleInSystem());
         
-        // Update product info
-        Product updateProduct = new Product();
-        updateProduct.setProductId(getProductInfo.getProductId());
-        System.out.println(updateProduct.getProductId());
-        productDAO.updateData(updateProduct);
         
-        request.getRequestDispatcher("editProduct.jsp").forward(request, response);
+        // Get Account Info logic
+        Account getAccountInfo = accountDAO.getDataById(account);
+        request.setAttribute("getAccountInfo", getAccountInfo);
+        
+        // Update Account Info logic
+        accountDAO.updateData(account);
+        
+        request.getRequestDispatcher("editUser.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -87,10 +99,11 @@ public class EditProductController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     /**
@@ -107,9 +120,9 @@ public class EditProductController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

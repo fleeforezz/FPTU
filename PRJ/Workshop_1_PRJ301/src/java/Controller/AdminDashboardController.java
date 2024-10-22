@@ -5,11 +5,14 @@
  */
 package Controller;
 
-import DAO.ProductDAO;
-import Entity.Product;
+import DAO.AccountDAO;
+import DAO.CategoryDAO;
+import Entity.Account;
+import Entity.Category;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -22,8 +25,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jso
  */
-@WebServlet(name = "EditProductController", urlPatterns = {"/editProduct"})
-public class EditProductController extends HttpServlet {
+@WebServlet(name = "AdminDashboardController", urlPatterns = {"/admin"})
+public class AdminDashboardController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,38 +41,23 @@ public class EditProductController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
-        // Get Parament
-        String productId_raw = request.getParameter("ProductId");
-        String productName_raw = request.getParameter("productName");
-        String productImage_raw = request.getParameter("productImage");
-        String brief_raw = request.getParameter("brief");
-        String postedDate_raw = request.getParameter("postedDate");
-        String unit_raw = request.getParameter("unit");
-        String price_raw = request.getParameter("price");
-        String discount_raw = request.getParameter("discount");
+        String category_name_raw = request.getParameter("categoryName");
         
-        //  
-        ProductDAO productDAO = new ProductDAO();
-        Product convertedProduct = new Product();
+        AccountDAO accountDAO = new AccountDAO();
+        List<Account> listAccount = accountDAO.listAll();
         
-        // Get Product By ProductId
-        convertedProduct.setProductId(productId_raw);
-        Product getProductInfo = productDAO.getDataById(convertedProduct);
-        request.setAttribute("getProductInfo", getProductInfo);
+        CategoryDAO categoryDAO = new CategoryDAO();
+        List<Category> listCategory = categoryDAO.listAll();
+        
+        Category category = new Category();
+        category.setCategoryName(category_name_raw);
+        categoryDAO.insertData(category);
+        
+        request.setAttribute("listAccount", listAccount);
+        request.setAttribute("listCategory", listCategory);
         
         
-        // Check if the input from JSP is not null
-        if (productName_raw == null || productImage_raw == null || brief_raw == null || postedDate_raw == null || unit_raw == null || price_raw == null || discount_raw == null) {
-            request.getRequestDispatcher("editProduct.jsp").forward(request, response);
-        }
-        
-        // Update product info
-        Product updateProduct = new Product();
-        updateProduct.setProductId(getProductInfo.getProductId());
-        System.out.println(updateProduct.getProductId());
-        productDAO.updateData(updateProduct);
-        
-        request.getRequestDispatcher("editProduct.jsp").forward(request, response);
+        request.getRequestDispatcher("adminSetting.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -87,9 +75,9 @@ public class EditProductController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -107,9 +95,9 @@ public class EditProductController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

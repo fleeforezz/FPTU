@@ -74,7 +74,7 @@ public class ProductDAO implements Business<Product> {
     }
 
     @Override
-    public int updateData(Product product) {
+    public int updateData(Product productId) {
         String sql = "UPDATE [dbo].[products]\n"
                 + "SET [productName]=?, [productImage]=?, [brief]=?, [postedDate]=?, [typeId]=?, [account]=?, [unit]=?, [price]=?, [discount]=?\n"
                 + "WHERE ([dbo].[products].[productId] = ?)\n"
@@ -82,9 +82,7 @@ public class ProductDAO implements Business<Product> {
 
         try {
             ps = conn.prepareStatement(sql);
-
-            ps.setString(1, product.getProductId());
-
+            ps.setString(1, productId.getProductId());
             ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -184,17 +182,19 @@ public class ProductDAO implements Business<Product> {
         return list;
     }
 
-    public Product getProductByProductId(Product product) {
+    @Override
+    public Product getDataById(Product product) {
         String sql = "SELECT productId, productName, productImage, brief, postedDate, typeId, account, unit, price, discount\n"
                 + "FROM products\n"
-                + "WHERE productId = '7823080768'\n"
+                + "WHERE productId = ?\n"
                 + ";";
-        
+
         try {
             ps = conn.prepareStatement(sql);
+            ps.setString(1, product.getProductId());
             resultSet = ps.executeQuery();
-            
-            while(resultSet.next()) {
+
+            while (resultSet.next()) {
                 return new Product(
                         resultSet.getString(1),
                         resultSet.getString(2),
@@ -208,11 +208,11 @@ public class ProductDAO implements Business<Product> {
                         resultSet.getInt(10)
                 );
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return null;
     }
 

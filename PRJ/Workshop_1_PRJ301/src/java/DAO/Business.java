@@ -17,4 +17,6 @@ public interface Business<T> {
     int updateData(T obj);
     int deleteData(T obj);
     List<T> listAll();
+    
+    T getDataById(T obj);
 }

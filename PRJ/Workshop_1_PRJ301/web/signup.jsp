@@ -19,7 +19,7 @@
             <div class="login-form">
                 <h1>Sign Up</h1>
                 <p>Fill your information to create a new account</p>
-                <form method="post" action="login">
+                <form method="post" action="signup">
                     <label>Username</label>
                     <input class="username" type="text" name="account" placeholder="Enter username" required="required"/>
 
@@ -45,22 +45,26 @@
                     <div class="radio-container">
                         <div class="gender">
                             <div>
-                                <input type="radio" id="male" />
-                                <label for="male">male</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="female" />
-                                <label for="female">female</label>
+                                <label for="male">
+                                    <input type="radio" id="male" name="gender" value="1" checked/>
+                                    Male
+                                </label>
+                                <label for="female">
+                                    <input type="radio" id="female" name="gender" value="0" />
+                                    Female
+                                </label>
                             </div>
                         </div>
                         <div class="isUse">
-                            <input type="radio" id="isUse"/>
-                            <label for="isUse">Activate account ?</label>
+                            <label for="isUse">
+                                <input type="radio" id="isUse" name="isUse" value="1" checked/>
+                                Activate account ?
+                            </label>
                         </div>
                     </div>
 
                     <label>Phone Number</label>
-                    <input class="phoneNumber" type="number"  name="phone" placeholder="xxxxxxxxx"/>
+                    <input class="phoneNumber" type="number" name="phone" placeholder="xxxxxxxxx"/>
 
                     <p>
                         Already have an account ?<a href="login">Login</a>

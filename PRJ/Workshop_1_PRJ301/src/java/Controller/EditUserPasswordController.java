@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import DAO.ProductDAO;
-import Entity.Product;
+import DAO.AccountDAO;
+import Entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -17,13 +17,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author jso
  */
-@WebServlet(name = "EditProductController", urlPatterns = {"/editProduct"})
-public class EditProductController extends HttpServlet {
+@WebServlet(name = "EditUserPasswordController", urlPatterns = {"/editPassword"})
+public class EditUserPasswordController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,39 +38,41 @@ public class EditProductController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+
+        HttpSession session = request.getSession();
+        Account userAccount = (Account) session.getAttribute("acc");
         
-        // Get Parament
-        String productId_raw = request.getParameter("ProductId");
-        String productName_raw = request.getParameter("productName");
-        String productImage_raw = request.getParameter("productImage");
-        String brief_raw = request.getParameter("brief");
-        String postedDate_raw = request.getParameter("postedDate");
-        String unit_raw = request.getParameter("unit");
-        String price_raw = request.getParameter("price");
-        String discount_raw = request.getParameter("discount");
+        String old_password_raw = request.getParameter("old-password");
+        String new_password_raw = request.getParameter("new-password");
+
+        AccountDAO accountDAO = new AccountDAO();
+        Account account = new Account();
         
-        //  
-        ProductDAO productDAO = new ProductDAO();
-        Product convertedProduct = new Product();
+        if (old_password_raw == null || new_password_raw == null) {
+            request.getRequestDispatcher("editPassword.jsp").forward(request, response);
+            return;
+        }
+
+        account.setAccount(userAccount.getAccount());
+        account.setPass(new_password_raw);
+        account.setFirstName(userAccount.getFirstName());
+        account.setLastName(userAccount.getLastName());
+        account.setBirthday(userAccount.getBirthday());
+        account.setGender(userAccount.isGender());
+        account.setIsUse(userAccount.isIsUse());
+        account.setPhone(userAccount.getPhone());
+        account.setRoleInSystem(userAccount.getRoleInSystem());
+
+        Account getAccountInfo = accountDAO.getDataById(account);
         
-        // Get Product By ProductId
-        convertedProduct.setProductId(productId_raw);
-        Product getProductInfo = productDAO.getDataById(convertedProduct);
-        request.setAttribute("getProductInfo", getProductInfo);
-        
-        
-        // Check if the input from JSP is not null
-        if (productName_raw == null || productImage_raw == null || brief_raw == null || postedDate_raw == null || unit_raw == null || price_raw == null || discount_raw == null) {
-            request.getRequestDispatcher("editProduct.jsp").forward(request, response);
+        if (old_password_raw.equals(getAccountInfo.getPass()) && (!new_password_raw.equals(old_password_raw))) {
+            accountDAO.updateData(account);
+        } else {
+            System.out.println("Invalid");
         }
         
-        // Update product info
-        Product updateProduct = new Product();
-        updateProduct.setProductId(getProductInfo.getProductId());
-        System.out.println(updateProduct.getProductId());
-        productDAO.updateData(updateProduct);
-        
-        request.getRequestDispatcher("editProduct.jsp").forward(request, response);
+        request.getRequestDispatcher("editPassword.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -87,9 +90,9 @@ public class EditProductController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -107,9 +110,9 @@ public class EditProductController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(EditProductController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

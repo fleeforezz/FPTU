@@ -5,9 +5,17 @@
  */
 package Controller;
 
+import DAO.AccountDAO;
+import Entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,16 +39,37 @@ public class SignUpController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String username_raw = request.getParameter("account");
         String password_raw = request.getParameter("pass");
         String lastName_raw = request.getParameter("lastName");
         String firstName_raw = request.getParameter("firstName");
         String birthday_raw = request.getParameter("birthday");
+        boolean gender_raw = "1".equals(request.getParameter("gender"));
         
-        request.getRequestDispatcher("signup.jsp").forward(request, response);
+        // Convert String to DateTimeFormat
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH); 
+        LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
+        
+        boolean isUse_raw = "1".equals(request.getParameter("isUse"));
+        String phone_raw = request.getParameter("phone");
+
+        // SignUp logic
+        AccountDAO accountDAO = new AccountDAO();
+        Account account = new Account();
+        account.setAccount(username_raw);
+        account.setPass(password_raw);
+        account.setLastName(lastName_raw);
+        account.setFirstName(firstName_raw);
+        account.setBirthday(Date.valueOf(convertedBirthdate));
+        account.setGender(gender_raw);
+        account.setIsUse(isUse_raw);
+        account.setPhone(phone_raw);
+
+        accountDAO.insertData(account);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -55,7 +84,14 @@ public class SignUpController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        try {
+//            processRequest(request, response);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     /**
@@ -69,7 +105,13 @@ public class SignUpController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

@@ -46,17 +46,15 @@ public class CategoryDAO implements Business<Category> {
     public int insertData(Category category) {
         int rs = 0;
 
-        String sql = "INSERT INTO [dbo].[categories] ([typeId], [categoryName], [memo])\n"
-                + "VALUES (?,?,?)\n"
+        String sql = "INSERT INTO [dbo].[categories] ([categoryName]) \n"
+                + "VALUES (?)\n"
                 + ";";
 
         try {
             ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, category.getTypeId());
-            ps.setString(2, category.getCategoryName());
-            ps.setString(3, category.getMemo());
-            
+            ps.setString(1, category.getCategoryName());
+
             ps.executeUpdate();
 
         } catch (Exception ex) {
@@ -79,9 +77,9 @@ public class CategoryDAO implements Business<Category> {
             ps = conn.prepareStatement(sql);
 
             ps.setInt(1, category.getTypeId());
-            
+
             ps.executeUpdate();
-            
+
         } catch (Exception ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -100,9 +98,9 @@ public class CategoryDAO implements Business<Category> {
             ps = conn.prepareStatement(sql);
 
             ps.setInt(1, category.getTypeId());
-            
+
             ps.executeUpdate();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -118,23 +116,24 @@ public class CategoryDAO implements Business<Category> {
         String sql = "SELECT [dbo].[categories].[typeId], [dbo].[categories].[categoryName], [dbo].[categories].[memo]\n"
                 + "FROM [dbo].[categories]\n"
                 + ";";
-        
+
         try {
             ps = conn.prepareStatement(sql);
-            
+            resultSet = ps.executeQuery();
+
             while (resultSet.next()) {
                 Category category = new Category();
-                
+
                 category.setTypeId(resultSet.getInt(1));
                 category.setCategoryName(resultSet.getString(2));
                 category.setMemo(resultSet.getString(3));
-                
+
                 list.add(category);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return list;
     }
 
@@ -143,6 +142,11 @@ public class CategoryDAO implements Business<Category> {
     }
 
     public Category getData(String account, String pass) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Category getDataById(Category obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -105,14 +105,32 @@ public class AccountDAO implements Business<Account> {
     @Override
     public int deleteData(Account account) {
 
-        String sql = "DELETE FROM [dbo].[accounts]\n"
+        String sql = "UPDATE [dbo].[accounts]\n"
+                + "SET [isUse]='false'\n"
                 + "WHERE ([dbo].[accounts].[account] = ?)\n"
                 + ";";
         try {
             ps = conn.prepareStatement(sql);
-
             ps.setString(1, account.getAccount());
+            ps.executeUpdate();
 
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return rs;
+    }
+
+    public int setActive(Account account) {
+
+        String sql = "UPDATE [dbo].[accounts]\n"
+                + "SET [isUse]='true'\n"
+                + "WHERE ([dbo].[accounts].[account] = ?)\n"
+                + ";";
+
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, account.getAccount());
             ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -132,6 +150,7 @@ public class AccountDAO implements Business<Account> {
 
         try {
             ps = conn.prepareStatement(sql);
+            resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
                 Account account = new Account();
@@ -198,6 +217,39 @@ public class AccountDAO implements Business<Account> {
             ps = conn.prepareStatement(sql);
             ps.setString(1, account);
             ps.setString(2, pass);
+            resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                return new Account(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getDate(5),
+                        resultSet.getBoolean(6),
+                        resultSet.getString(7),
+                        resultSet.getBoolean(8),
+                        resultSet.getInt(9)
+                );
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    @Override
+    public Account getDataById(Account account) {
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
+                + "FROM accounts\n"
+                + "WHERE account = ?\n"
+                + ";";
+
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, account.getAccount());
             resultSet = ps.executeQuery();
 
             while (resultSet.next()) {

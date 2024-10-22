@@ -32,7 +32,7 @@
                             <a href="#" >Explore more</a>
                         </p>
                     </div>
-                    <video autoplay="autoplay" loop="loop" muted="muted" src="assets/Coffee-ad.mp4" ></video>
+                    <!--<video autoplay="autoplay" loop="loop" muted="muted" src="assets/Coffee-ad.mp4" ></video>-->
                 </section>
             </div>
 

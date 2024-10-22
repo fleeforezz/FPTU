@@ -69,6 +69,9 @@
                             </li>
                         </c:if>
                         <li>
+                            <a href="editUser" >Edit Profile</a>
+                        </li>
+                        <li>
                             <a href="logout">Logout</a>
                         </li>
                     </ul>

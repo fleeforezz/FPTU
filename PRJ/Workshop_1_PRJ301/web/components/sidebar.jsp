@@ -9,6 +9,10 @@
 <body>
     <div class="sidebar">
         <div class="general-menu">
+            <div class="logo">
+                <img src="assets/coffee.png" />
+                <h1>Espresso</h1>
+            </div>
             <p>General Menu</p>
             <ul>
                 <li>
@@ -30,6 +34,9 @@
             <ul>
                 <li>
                     <a href="setting">Setting</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
                 </li>
             </ul>
         </div>
