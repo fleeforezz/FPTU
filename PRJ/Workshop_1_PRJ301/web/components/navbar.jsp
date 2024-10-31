@@ -18,7 +18,7 @@
                 <a href="home">Home</a>
             </li>
             <li>
-                <a href="#" class="product">Product</a>
+                <a href="collection" class="product">Product</a>
                 <i class="ph ph-caret-down"></i>
                 <div class="product-dropdown">
                     <ul>

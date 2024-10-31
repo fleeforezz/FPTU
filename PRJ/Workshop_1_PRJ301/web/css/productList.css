@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(navbar.css);
+@import url(banner.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
+}
+
+.product-view {
+    margin: 0 auto;
+    padding: 40px;
+    width: 65%;
+}
+
+.product-view ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+}
+
+.product-view > ul li {
+    position: relative;
+    width: fit-content;
+    border: 1px solid #d5d5d5;
+    transition: 250ms ease-out;
+}
+
+.product-view > ul li:hover {
+    box-shadow: 0px 0px 30px rgb(0, 0, 0, 0.1);
+}
+
+.product-view img{
+    width: 250px;
+    height: 250px;
+    /*margin: 0 auto;*/
+    object-fit: cover;
+}
+
+.product-view > ul > li a {
+    text-decoration: none;
+}
+
+.heading {
+    font-weight: 500;
+    color: black;
+}
+
+.product-info {
+    padding: 10px 20px 20px 20px;
+}
+
+.product-info i {
+    color: #c49b7a;
+}
+
+.product-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-view h2 {
+    color: black;
+    font-size: 1.2rem;
+    color: #262626;
+    white-space: pre-line;
+}
+
+.product-view p {
+    font-size: 0.8rem;
+    color: #888;
+}
