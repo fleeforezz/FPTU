@@ -33,7 +33,7 @@
                 <ul>
                 <c:forEach items="${productList}" var="o" >
                     <li>
-                        <a href="detail?productId">
+                        <a href="products?productId=${o.productId}">
                             <div class="item">
                                 <img src="${o.productImage}" />
                                 <div class="product-info">

@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,26 +39,6 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession();
-
-        String username_raw = request.getParameter("account");
-        String password_raw = request.getParameter("pass");
-
-        AccountDAO accountDAO = new AccountDAO();
-        Account loginAccount = accountDAO.getData(username_raw, password_raw);
-
-        if (loginAccount == null) {
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        } else {
-            if (loginAccount.isIsUse()) {
-                session.setAttribute("acc", loginAccount);
-                response.sendRedirect("home");
-            } else {
-                System.out.println("This account is inactive");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
-            }
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -72,13 +53,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     /**
@@ -92,11 +67,50 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        String username_raw = request.getParameter("account");
+        String password_raw = request.getParameter("pass");
+        String remember_me_raw = request.getParameter("remember");
+        
+        // Need to save 3 cookies: username, password, remember-me
+        Cookie username_cookie = new Cookie("username_cookie", username_raw);
+        Cookie password_cookie = new Cookie("password_cookie", password_raw);
+        Cookie remember_cookie = new Cookie("remember_cookie", remember_me_raw);
+        
+        if (remember_me_raw != null) {
+            username_cookie.setMaxAge(60*60*24*7); // Save 7 days
+            password_cookie.setMaxAge(60*60*24*7); // Save 7 days
+            remember_cookie.setMaxAge(60*60*24*7); // Save 7 days
+        } else {
+            username_cookie.setMaxAge(0); // Save 7 days
+            password_cookie.setMaxAge(0); // Save 7 days
+            remember_cookie.setMaxAge(0); // Save 7 days
+        }
+        
+        response.addCookie(username_cookie);
+        response.addCookie(password_cookie);
+        response.addCookie(remember_cookie);
+        
+
+        AccountDAO accountDAO;
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            accountDAO = new AccountDAO();
+
+            Account loginAccount = accountDAO.getData(username_raw, password_raw);
+
+            if (loginAccount == null) {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } else {
+                if (loginAccount.isIsUse()) {
+                    session.setAttribute("acc", loginAccount);
+                    response.sendRedirect("home");
+                } else {
+                    System.out.println("This account is inactive");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                }
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
