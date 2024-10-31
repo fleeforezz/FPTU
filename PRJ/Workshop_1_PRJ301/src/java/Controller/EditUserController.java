@@ -81,6 +81,12 @@ public class EditUserController extends HttpServlet {
         // Update Account Info logic
         accountDAO.updateData(account);
         
+        System.out.println(getAccountInfo.getBirthday());
+        
+        if (accountDAO.updateData(account) == 1) {
+            System.out.println("update success");
+        }
+        
         request.getRequestDispatcher("editUser.jsp").forward(request, response);
     }
 

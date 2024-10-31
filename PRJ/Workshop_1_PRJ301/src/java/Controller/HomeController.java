@@ -42,6 +42,12 @@ public class HomeController extends HttpServlet {
         ProductDAO productDAO = new ProductDAO();
         List<Product> productList = productDAO.listAll();
         
+        System.out.println(request.getRemoteAddr().toString());
+        System.out.println(request.getRemoteHost());
+        System.out.println(request.getRemotePort());
+        System.out.println(request.getRemoteUser());
+        System.out.println(request.getRequestURL());
+        
         request.setAttribute("productList", productList);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
