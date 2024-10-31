@@ -253,22 +253,28 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 40px;
+    position: relative;
+    width: 100%;
 }
 
-.buy-now .coffee-roaster {
+.coffee-roaster {
     width: 500px;
     height: 650px;
     object-fit: cover;
+    
 }
 
-.coffee-roaster::after {
+.coffee-roaster::before {
     content: "Only pure coffee beans";
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 100px;
-    background-color: #efae54;
+    bottom: 4px;
+    left: 35%;
     width: 35%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    position: absolute;
+    padding: 20px;
+    background-color: #efae54;
 }
 
 .buy-now-heading p {

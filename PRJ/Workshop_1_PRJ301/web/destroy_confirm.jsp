@@ -23,10 +23,10 @@
                         We’re sorry to see you go
                     </h1>
                     <p class="para-1">
-                        If you just want to change your username, you can <a href="profile">do that here.</a>
+                        If you just want to change your username, you can<br> <a href="profile">do that here.</a>
                     </p>
                     <p class="para-1">
-                        Be advised, account deletion is final. There will be no way to restore your account.
+                        Be advised, account deletion is final. There will be<br> no way to restore your account.
                     </p>
 
                     <div class="decision-button">

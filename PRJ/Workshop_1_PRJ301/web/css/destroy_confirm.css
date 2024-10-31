@@ -10,7 +10,6 @@ body {
     padding: 0;
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Work Sans', sans-serif;
-    background: #f2ede0;
 }
 
 /*navigation bar*/
@@ -18,7 +17,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 40px 40px 40px;
+    padding: 0px 40px 10px 40px;
 }
 
 .logo {
@@ -193,16 +192,15 @@ body {
 
 
 .confirm-container {
-    display: flex;
-    justify-content: center;
     width: 100%;
 }
 
 .confirm-child {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     padding: 0px 40px 40px 40px;
-    width: 30%;
+    width: 25%;
 }
 
 .confirm-child img {
@@ -214,10 +212,12 @@ body {
 .confirm-child h1 {
     font-size: 2rem;
     font-weight: 700;
+    text-wrap: nowrap;
 }
 
 .confirm-child p {
     color: #6e6d7a;
+    text-wrap: nowrap;
 }
 
 .para-1 {
@@ -243,6 +243,12 @@ body {
     background-color: #fec887;
     font-size: 0.9rem;
     cursor: pointer;
+    transition: 250ms;
+    text-wrap: nowrap;
+}
+
+.nevermind:hover {
+    background: transparent;
 }
 
 .confirmDelete {
@@ -250,9 +256,10 @@ body {
     color: black;
     padding: 13px 13px 13px 13px;
     border: 1px solid #aba198;
-    background-color: #f2ede0;
+    /*background-color: #f2ede0;*/
     font-size: 0.9rem;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 

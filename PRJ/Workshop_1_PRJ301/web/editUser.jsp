@@ -17,6 +17,18 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp"></jsp:include>
+        <div class="banner">
+                <img class="coffee-banner" src="assets/coffee-jar.jpg" />
+                <ul>
+                    <li>
+                        <a href="home">Home</a>
+                    </li>
+                    <li>
+                        Account
+                    </li>
+                </ul>
+            </div>
+
             <div class="main-container">
                 <div class="bottom-setting">
                     <div class="bottom-setting-left">
