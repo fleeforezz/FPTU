@@ -4,6 +4,7 @@
     Author     : jso
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <footer class="footer">
     <nav>
@@ -14,10 +15,10 @@
 
         <ul class="footer-menu">
             <li>
-                <a href="#">Home</a>
+                <a href="home">Home</a>
             </li>
             <li>
-                <a href="#">Product</a>
+                <a href="collection">Product</a>
             </li>
             <li>
                 <a href="#">About Us</a>
@@ -48,9 +49,16 @@
         </div>
         <div class="register">
             <p>Latest update from us</p>
-            <a href="signup">
-                Sign up now!
-            </a>
+            <c:if test="${sessionScope.acc == null}">
+                <a href="signup">
+                    Sign up now!
+                </a>
+            </c:if>
+            <c:if test="${sessionScope.acc != null}">
+                <p>
+                    Hi! ${sessionScope.acc.account}
+                </p>
+            </c:if>
         </div>
     </div>
 
