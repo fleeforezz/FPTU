@@ -45,8 +45,8 @@ public class HomeController extends HttpServlet {
         System.out.println(request.getRemoteAddr().toString());
         System.out.println(request.getRemoteHost());
         System.out.println(request.getRemotePort());
-        System.out.println(request.getRemoteUser());
-        System.out.println(request.getRequestURL());
+        System.out.println(request.getRequestURI());
+        System.out.println(request.getServletPath());
         
         request.setAttribute("productList", productList);
         request.getRequestDispatcher("index.jsp").forward(request, response);
