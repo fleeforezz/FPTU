@@ -1,0 +1,23 @@
+@import url(navbar.css);
+
+/*Navigation bar*/
+
+
+
+@media only screen and (max-width: 1050px) {
+    .menu {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+

@@ -53,6 +53,11 @@
 
 
         <div class="right-nav">
+            <div class="hamburger-menu">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+                    <i class="ph ph-list"></i>
+                </span>
+            </div>
             <div class="shopping-cart">
                 <a href="">
                     <i class="ph ph-magnifying-glass"></i>
@@ -108,5 +113,33 @@
             </c:if>
         </div>
 
+<!--        <div id="cart" class="cart">
+            <div class="top-cart">
+                <p>Shoping Cart</p>
+                <a href="javascript:void(0)" class="close-cart">
+                    &times;
+                </a>
+            </div>
+            <span class="cart-separator"></span>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <img src="./assets/3d-coffee-package-mockup_1272625-6385.avif" />
+                    
+                </div>
+            </div>
+        </div>-->
+
+        <div id="hamburger-btn" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                &times;
+            </a>
+            <div class="overlay-content">
+                <a href="home">Home</a>	
+                <a href="collection">Product</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
     </nav>
+
 </body>
