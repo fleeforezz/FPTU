@@ -46,15 +46,32 @@ body {
     padding: 40px;
 }
 
-.upper-hero p > a {
-    text-decoration: none;
-}
-
 .hero video {
     width: 100%;
 }
 
+.explore-more {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: black;
+    margin-top: 15px;
+}
 
+.explore-more i {
+    text-decoration: none;
+    color: #e4594d;
+    font-size: 2rem;
+    transition: 250ms;
+}
+
+.explore-more:hover i {
+    transform: rotate(40deg);
+}
 
 .list-product {
     padding: 40px 40px 40px 40px;

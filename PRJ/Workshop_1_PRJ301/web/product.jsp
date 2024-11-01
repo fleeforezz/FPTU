@@ -23,7 +23,7 @@
                         <a href="home">Home</a>
                     </li>
                     <li>
-                        Products
+                        ${productDetail.productName}
                     </li>
                 </ul>
             </div>

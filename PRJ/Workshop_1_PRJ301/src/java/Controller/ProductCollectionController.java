@@ -79,9 +79,7 @@ public class ProductCollectionController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ProductCollectionController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ProductCollectionController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

@@ -51,50 +51,62 @@
             </li>
         </ul>
 
-        <c:if test="${sessionScope.acc != null}" >
-            <div class="account">
-                <img src="assets/profile-1.jpg" />
-                <p>${sessionScope.acc.account}</p>
-                <i class="ph ph-caret-down"></i>
-                <div class="dropdown">
-                    <ul>
-                        <c:if test="${sessionScope.acc.roleInSystem == 1}">
-                            <li>
-                                <a href="admin">Admin Dashboard</a>
-                            </li>
-                        </c:if>
-                        <c:if test="${sessionScope.acc.roleInSystem == 2}">
-                            <li>
-                                <a href="manager">Manager Dashboard</a>
-                            </li>
-                        </c:if>
-                        <li>
-                            <a href="editUser" >Edit Profile</a>
-                        </li>
-                        <li>
-                            <a href="logout">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </c:if>
 
-        <c:if test="${sessionScope.acc == null}" >
-            <div class="account">
-                <a href="home" class="register-butn">
-                    <i class="ph ph-user"></i>
+        <div class="right-nav">
+            <div class="shopping-cart">
+                <a href="">
+                    <i class="ph ph-magnifying-glass"></i>
                 </a>
-                <div class="dropdown">
-                    <ul>
-                        <li>
-                            <a href="login" class="login">Login</a>
-                        </li>
-                        <li>
-                            <a href="signup" class="signup">Sign up</a>
-                        </li>
-                    </ul>
-                </div>
+                <a href="">
+                    <i class="ph ph-basket"></i>
+                </a>
             </div>
-        </c:if>
+            <c:if test="${sessionScope.acc != null}" >
+                <div class="account">
+                    <img src="assets/profile-1.jpg" />
+                    <p>${sessionScope.acc.account}</p>
+                    <i class="ph ph-caret-down"></i>
+                    <div class="dropdown">
+                        <ul>
+                            <c:if test="${sessionScope.acc.roleInSystem == 1}">
+                                <li>
+                                    <a href="admin">Admin Dashboard</a>
+                                </li>
+                            </c:if>
+                            <c:if test="${sessionScope.acc.roleInSystem == 2}">
+                                <li>
+                                    <a href="manager">Manager Dashboard</a>
+                                </li>
+                            </c:if>
+                            <li>
+                                <a href="editUser" >Edit Profile</a>
+                            </li>
+                            <li>
+                                <a href="logout">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </c:if>
+
+            <c:if test="${sessionScope.acc == null}" >
+                <div class="account">
+                    <a href="home" class="register-butn">
+                        <i class="ph ph-user"></i>
+                    </a>
+                    <div class="dropdown">
+                        <ul>
+                            <li>
+                                <a href="login" class="login">Login</a>
+                            </li>
+                            <li>
+                                <a href="signup" class="signup">Sign up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </c:if>
+        </div>
+
     </nav>
 </body>

@@ -29,7 +29,10 @@
                             The quality of Expresso coffee has become one of its strengths and 
                             is famous all over the world. Our coffee is produced from quality coffee beans. 
                             <br>
-                            <a href="#" >Explore more</a>
+                            <a href="collection" class="explore-more">
+                                Explore more
+                                <i class="ph-fill ph-arrow-circle-up-right"></i>
+                            </a>
                         </p>
                     </div>
                     <video autoplay="autoplay" loop="loop" muted="muted" src="assets/Coffee-ad.mkv" ></video>

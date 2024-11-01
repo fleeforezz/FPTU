@@ -5,11 +5,11 @@
  */
 package Filter;
 
+import Entity.Account;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Date;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author jso
  */
-public class authFilter implements Filter {
+public class roleFilter implements Filter {
 
     private static final boolean debug = true;
 
@@ -33,13 +33,13 @@ public class authFilter implements Filter {
     // configured. 
     private FilterConfig filterConfig = null;
 
-    public authFilter() {
+    public roleFilter() {
     }
 
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
-            log("authFilter:DoBeforeProcessing");
+            log("roleFilter:DoBeforeProcessing");
         }
 
         // Write code here to process the request and/or response before
@@ -67,7 +67,7 @@ public class authFilter implements Filter {
     private void doAfterProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
-            log("authFilter:DoAfterProcessing");
+            log("roleFilter:DoAfterProcessing");
         }
 
         // Write code here to process the request and/or response after
@@ -101,23 +101,72 @@ public class authFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        // Check if user is logged in
-        HttpSession session = httpRequest.getSession(false);
-        boolean isLoggedIn = (session != null && session.getAttribute("acc") != null);
+        if (debug) {
+            log("roleFilter:doFilter()");
+        }
+
+        doBeforeProcessing(request, response);
+
+        //        HttpServletRequest httpRequest = (HttpServletRequest) request;
+//        HttpSession session = httpRequest.getSession(false);
+//
+//        Integer roleInSystem = (session != null) ? (Integer) session.getAttribute("roleInSystem") : null;
+//
+//        String requestURI = httpRequest.getRequestURI();
+//
+//        // Check if the request is for the add product page
+//        if (requestURI.contains("/addAccount.jsp")) {
+//            // If the user is not an admin (1), deny access
+//            if (roleInSystem == null || !roleInSystem.equals(1)) {
+//                httpRequest.setAttribute("errorMessage", "You do not have permission to access this page.");
+//                request.getRequestDispatcher("/error.jsp").forward(request, response);
+//            }
+//        }
+
+
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+        String uri = req.getServletPath();
+
+        HttpSession session = req.getSession();
+        Account userSession = (Account) session.getAttribute("acc");
         
-        if (isLoggedIn) {
-            // Continue with the request if logged in
+        if (userSession != null && uri.contains("/manager")) {
+            if (userSession.getRoleInSystem() != 1 && userSession.getRoleInSystem() != 2) {
+                req.getRequestDispatcher("permissionDenied.jsp").forward(request, response);
+            }
+        }
+
+        Throwable problem = null;
+        try {
             chain.doFilter(request, response);
-        } else {
-            // Redirect to login page if not logged in
-            httpResponse.sendRedirect("login");
+        } catch (Throwable t) {
+            // If an exception is thrown somewhere down the filter chain,
+            // we still want to execute our after processing, and then
+            // rethrow the problem after that.
+            problem = t;
+            t.printStackTrace();
+        }
+
+        doAfterProcessing(request, response);
+
+        // If there was a problem, we want to rethrow it if it is
+        // a known type, otherwise log it.
+        if (problem != null) {
+            if (problem instanceof ServletException) {
+                throw (ServletException) problem;
+            }
+            if (problem instanceof IOException) {
+                throw (IOException) problem;
+            }
+            sendProcessingError(problem, response);
         }
     }
 
+    /**
+     * Return the filter configuration object for this filter.
+     */
     public FilterConfig getFilterConfig() {
         return (this.filterConfig);
     }
@@ -144,7 +193,7 @@ public class authFilter implements Filter {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
             if (debug) {
-                log("authFilter:Initializing filter");
+                log("roleFilter:Initializing filter");
             }
         }
     }
@@ -155,9 +204,9 @@ public class authFilter implements Filter {
     @Override
     public String toString() {
         if (filterConfig == null) {
-            return ("authFilter()");
+            return ("roleFilter()");
         }
-        StringBuffer sb = new StringBuffer("authFilter(");
+        StringBuffer sb = new StringBuffer("roleFilter(");
         sb.append(filterConfig);
         sb.append(")");
         return (sb.toString());
