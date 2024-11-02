@@ -91,7 +91,7 @@ public class SignUpController extends HttpServlet {
 //        } catch (SQLException ex) {
 //            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("signup.jsp").forward(request, response);
     }
 
     /**

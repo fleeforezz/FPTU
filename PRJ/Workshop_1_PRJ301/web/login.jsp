@@ -17,9 +17,15 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp"></jsp:include>
-            <div class="login-form">
-                <h1>Welcome back!</h1>
-                <p>Fill your account information to login</p>
+        <%
+            String error_message = (String) request.getAttribute("ErrorMessage");
+        %>
+        <div class="error-message">
+            <%=error_message%>
+        </div>
+        <div class="login-form">
+            <h1>Welcome back!</h1>
+            <p>Fill your account information to login</p>
             <c:set var="coolie" value="${pageContext.request.cookies}" />
             <form method="post" action="login">
                 <label>Username</label>

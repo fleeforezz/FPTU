@@ -52,6 +52,7 @@
                 </c:forEach>
             </ul>
         </div>
+        <script src="script/main.js"></script>
         <jsp:include page="components/footer.jsp"></jsp:include>
     </body>
 </html>

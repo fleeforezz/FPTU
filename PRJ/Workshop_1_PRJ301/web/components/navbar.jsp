@@ -113,22 +113,6 @@
             </c:if>
         </div>
 
-<!--        <div id="cart" class="cart">
-            <div class="top-cart">
-                <p>Shoping Cart</p>
-                <a href="javascript:void(0)" class="close-cart">
-                    &times;
-                </a>
-            </div>
-            <span class="cart-separator"></span>
-            <div class="cart-content">
-                <div class="cart-items">
-                    <img src="./assets/3d-coffee-package-mockup_1272625-6385.avif" />
-                    
-                </div>
-            </div>
-        </div>-->
-
         <div id="hamburger-btn" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
                 &times;

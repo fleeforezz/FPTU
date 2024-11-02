@@ -17,7 +17,7 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp"></jsp:include>
-        <div class="banner">
+            <div class="banner">
                 <img class="coffee-banner" src="assets/coffee-jar.jpg" />
                 <ul>
                     <li>
@@ -90,6 +90,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="script/main.js"></script>
         <jsp:include page="components/footer.jsp"></jsp:include>
     </body>
 </html>

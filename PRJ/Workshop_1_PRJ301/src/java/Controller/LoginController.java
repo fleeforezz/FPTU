@@ -99,9 +99,7 @@ public class LoginController extends HttpServlet {
 
             Account loginAccount = accountDAO.getData(username_raw, password_raw);
 
-            if (loginAccount == null) {
-                request.getRequestDispatcher("login.jsp").forward(request, response);
-            } else {
+            if (loginAccount != null) {
                 if (loginAccount.isIsUse()) {
                     session.setAttribute("acc", loginAccount);
                     response.sendRedirect("home");
@@ -109,6 +107,10 @@ public class LoginController extends HttpServlet {
                     System.out.println("This account is inactive");
                     request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
+                
+            } else {
+                request.setAttribute("ErrorMessage", "Incorrect username or password");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
