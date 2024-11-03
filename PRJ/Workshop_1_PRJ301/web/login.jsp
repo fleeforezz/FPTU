@@ -17,31 +17,41 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp"></jsp:include>
-        <%
-            String error_message = (String) request.getAttribute("ErrorMessage");
-        %>
-        <div class="error-message">
-            <%=error_message%>
-        </div>
-        <div class="login-form">
-            <h1>Welcome back!</h1>
-            <p>Fill your account information to login</p>
+            <div class="login-form">
+                <h1>Welcome back!</h1>
+                <p>Fill your account information to login</p>
             <c:set var="coolie" value="${pageContext.request.cookies}" />
             <form method="post" action="login">
+                <%
+                    if (request.getAttribute("ErrorMessage") != null) {
+                        String error_message = (String) request.getAttribute("ErrorMessage");
+                %>
+                <div class="error-banner">
+                    <i class="ph-bold ph-warning-circle"></i>
+                    <div class="error-message">
+                        <span>Login failed</span>
+                        <br>
+                        <%=error_message%>
+                    </div>
+                </div>
+                <%
+                    }
+                %>
                 <label>Username</label>
                 <input class="username" type="text" name="account" placeholder="Enter username" required="required" value="${cookie.username_cookie.value}"/>
 
                 <label>Password</label>
                 <input class="password" type="password" name="pass" placeholder="Enter password" required="required" value="${cookie.password_cookie.value}"/>
 
-                <div class="remember-me">
-                    <label>Remember me</label>
-                    <input type="checkbox" name="remember" value="ON" ${(cookie.remember_cookie != null ?'checked' : '')}/>
-                </div>
-
-                <p>
+                <span class="dont-have-account">
+                    <div class="remember-me">
+                        <input type="checkbox" name="remember" value="ON" ${(cookie.remember_cookie != null ?'checked' : '')}/>
+                        <label>Remember me</label>
+                    </div>
                     Don't have account yet?<a href="signup">Sign Up</a>
-                </p>
+                </span>
+
+
                 <button class="submit-btn" type="submit">Login</button>
             </form>
         </div>

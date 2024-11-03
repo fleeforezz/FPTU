@@ -36,8 +36,31 @@ body {
 .login-form form {
     display: flex;
     gap: 1rem;
-    width: 40%;
+    width: 30%;
     flex-direction: column;
+}
+
+.error-banner {
+    display: flex;
+    flex-direction: row;
+    background: #fce8e8;
+    padding: 8px 16px;
+    color: black;
+    border: 1px solid #e42233;
+}
+
+.error-message span {
+    font-weight: 500;
+}
+
+.error-banner i {
+    color: #e42233;
+    font-size: 1.5rem;
+    padding: 8px 16px 0px 0px;
+}
+
+.error-message {
+    padding: 8px 16px 0px 0px;
 }
 
 .login-form > form .username {
@@ -57,10 +80,20 @@ body {
     width: 100%;
 }
 
+.dont-have-account {
+    text-align: right;
+}
+
+.dont-have-account a {
+    margin-left: 5px;
+    color: black;
+    font-weight: 500;
+}
+
 .remember-me {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.4rem;
 }
 
 .submit-btn {
