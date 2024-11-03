@@ -44,50 +44,6 @@ public class EditUserController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
 
-        request.setCharacterEncoding("UTF-8");
-        // Get User Account from session
-        HttpSession session = request.getSession();
-        Account userSession = (Account) session.getAttribute("acc");
-
-        // Get Paramenter from jsp
-        String lastName_raw = request.getParameter("lastName");
-        String firstName_raw = request.getParameter("firstName");
-        boolean gender_raw = "1".equals(request.getParameter("gender"));
-        String birthday_raw = request.getParameter("birthday");
-        // Convert String to DateTimeFormat
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
-//        LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
-        String phone_raw = request.getParameter("phone");
-        
-        
-        AccountDAO accountDAO = new AccountDAO();
-        Account account = new Account();
-//        account.setAccount(userSession.getAccount());
-        account.setAccount(userSession.getAccount());
-        account.setPass(userSession.getPass());
-        account.setFirstName(firstName_raw);
-        account.setLastName(lastName_raw);
-//        account.setBirthday(Date.valueOf(convertedBirthdate));
-        account.setPhone(phone_raw);
-        account.setGender(gender_raw);
-        account.setIsUse(userSession.isIsUse());
-        account.setRoleInSystem(userSession.getRoleInSystem());
-        
-        
-        // Get Account Info logic
-        Account getAccountInfo = accountDAO.getDataById(account);
-        request.setAttribute("getAccountInfo", getAccountInfo);
-        
-        // Update Account Info logic
-        accountDAO.updateData(account);
-        
-        System.out.println(getAccountInfo.getBirthday());
-        
-        if (accountDAO.updateData(account) == 1) {
-            System.out.println("update success");
-        }
-        
-        request.getRequestDispatcher("editUser.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -102,14 +58,54 @@ public class EditUserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        // Get User Account from session
+        HttpSession session = request.getSession();
+        Account userSession = (Account) session.getAttribute("acc");
+
+        // Get Paramenter from jsp
+        String lastName_raw = request.getParameter("lastName");
+        String firstName_raw = request.getParameter("firstName");
+        boolean gender_raw = "1".equals(request.getParameter("gender"));
+        String birthday_raw = request.getParameter("birthday");
+        // Convert String to DateTimeFormat
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
+//        LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
+        String phone_raw = request.getParameter("phone");
+
+        AccountDAO accountDAO;
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            accountDAO = new AccountDAO();
+            Account account = new Account();
+//        account.setAccount(userSession.getAccount());
+            account.setAccount(userSession.getAccount());
+            account.setPass(userSession.getPass());
+            account.setFirstName(firstName_raw);
+            account.setLastName(lastName_raw);
+//            account.setBirthday(Date.valueOf(convertedBirthdate));
+            account.setPhone(phone_raw);
+            account.setGender(gender_raw);
+            account.setIsUse(userSession.isIsUse());
+            account.setRoleInSystem(userSession.getRoleInSystem());
+
+            // Get Account Info logic
+            Account getAccountInfo = accountDAO.getDataById(account);
+            request.setAttribute("getAccountInfo", getAccountInfo);
+            
+            System.out.println(birthday_raw);
+
+            // Update Account Info logic
+            accountDAO.updateData(account);
+
+            if (accountDAO.updateData(account) == 1) {
+                System.out.println("update success");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
+        request.getRequestDispatcher("editUser.jsp").forward(request, response);
+
     }
 
     /**

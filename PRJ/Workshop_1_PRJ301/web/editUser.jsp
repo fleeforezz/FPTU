@@ -51,7 +51,7 @@
                             <input type="text" class="firstName" placeholder="Change first name" name="firstName" value="${getAccountInfo.firstName}"/>
 
                             <label>Birthday</label>
-                            <input type="date" class="birthday" name="birthday" value="${displayBirthday}" />
+                            <input type="date" class="birthday" name="birthday" value="${getAccountInfo.birthday}" />
 
                             <label>Gender</label>
                             <div class="radio-container">

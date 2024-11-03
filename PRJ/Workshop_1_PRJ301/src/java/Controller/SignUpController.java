@@ -42,6 +42,7 @@ public class SignUpController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
 
+        
         String username_raw = request.getParameter("account");
         String password_raw = request.getParameter("pass");
         String lastName_raw = request.getParameter("lastName");
@@ -69,6 +70,7 @@ public class SignUpController extends HttpServlet {
         account.setPhone(phone_raw);
 
         accountDAO.insertData(account);
+        response.sendRedirect("login");
 
     }
 

@@ -38,21 +38,69 @@
                     </div>
                     <div class="bottom-setting-right">
                         <form method="post" action="editPassword">
-                            <div class="bottom-setting-right-child-top">
-                                <label>Old Password</label>
-                                <input type="password" class="old-password" placeholder="Enter your old password" name="old-password"/>
-                                <label>New Password</label>
-                                <input type="password" class="new-password" placeholder="Enter your new password" name="new-password"/>
-                                <p>You have to re-login to see the changed</p>
+                            <!--New password same with old password error-->
+                        <%
+                            if (request.getAttribute("newPassSameOldPass") != null) {
+                                String newPassSameOldPass = (String) request.getAttribute("newPassSameOldPass");
+                        %>
+                        <div class="error-banner">
+                            <i class="ph-bold ph-warning-circle"></i>
+                            <div class="error-message">
+                                <span>Login failed</span>
+                                <br>
+                                <%=newPassSameOldPass%>
                             </div>
-                            <div class="button-setting-right-child-bottom">
-                                <input type="submit" class="submit-button" name="submit" value="Save Changes" />
+                        </div>
+                        <%
+                            }
+                        %>
+                        <!--The old password doesn't match with the old one-->
+                        <%
+                            if (request.getAttribute("sameOldPassError") != null) {
+                                String sameOldPassError = (String) request.getAttribute("sameOldPassError");
+                        %>
+                        <div class="error-banner">
+                            <i class="ph-bold ph-warning-circle"></i>
+                            <div class="error-message">
+                                <span>Login failed</span>
+                                <br>
+                                <%=sameOldPassError%>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <!--Update success-->
+                        <%
+                            if (request.getAttribute("updateSuccess") != null) {
+                                String updateSuccess = (String) request.getAttribute("updateSuccess");
+                        %>
+                        <div class="success-banner">
+                            <i class="ph-bold ph-warning-circle"></i>
+                            <div class="success-message">
+                                <span>Updated !</span>
+                                <br>
+                                <%=updateSuccess%>
+                            </div>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <div class="bottom-setting-right-child-top">
+                            <label>Old Password</label>
+                            <input type="password" class="old-password" placeholder="Enter your old password" name="old-password"/>
+                            <label>New Password</label>
+                            <input type="password" class="new-password" placeholder="Enter your new password" name="new-password"/>
+                            <p>You have to re-login to see the changed</p>
+                        </div>
+                        <div class="button-setting-right-child-bottom">
+                            <input type="submit" class="submit-button" name="submit" value="Save Changes" />
+                        </div>
+                    </form>
                 </div>
             </div>
-            <script src="script/main.js"></script>
+        </div>
+        <script src="script/main.js"></script>
         <jsp:include page="components/footer.jsp"></jsp:include>
     </body>
 </html>

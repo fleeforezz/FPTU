@@ -38,41 +38,6 @@ public class EditUserPasswordController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession();
-        Account userAccount = (Account) session.getAttribute("acc");
-        
-        String old_password_raw = request.getParameter("old-password");
-        String new_password_raw = request.getParameter("new-password");
-
-        AccountDAO accountDAO = new AccountDAO();
-        Account account = new Account();
-        
-        if (old_password_raw == null || new_password_raw == null) {
-            request.getRequestDispatcher("editPassword.jsp").forward(request, response);
-            return;
-        }
-
-        account.setAccount(userAccount.getAccount());
-        account.setPass(new_password_raw);
-        account.setFirstName(userAccount.getFirstName());
-        account.setLastName(userAccount.getLastName());
-        account.setBirthday(userAccount.getBirthday());
-        account.setGender(userAccount.isGender());
-        account.setIsUse(userAccount.isIsUse());
-        account.setPhone(userAccount.getPhone());
-        account.setRoleInSystem(userAccount.getRoleInSystem());
-
-        Account getAccountInfo = accountDAO.getDataById(account);
-        
-        if (old_password_raw.equals(getAccountInfo.getPass()) && (!new_password_raw.equals(old_password_raw))) {
-            accountDAO.updateData(account);
-        } else {
-            System.out.println("Invalid");
-        }
-        
-        request.getRequestDispatcher("editPassword.jsp").forward(request, response);
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -87,13 +52,7 @@ public class EditUserPasswordController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        request.getRequestDispatcher("editPassword.jsp").forward(request, response);
     }
 
     /**
@@ -108,10 +67,41 @@ public class EditUserPasswordController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            HttpSession session = request.getSession();
+            Account userAccount = (Account) session.getAttribute("acc");
+            
+            String old_password_raw = request.getParameter("old-password");
+            String new_password_raw = request.getParameter("new-password");
+            
+            AccountDAO accountDAO = new AccountDAO();
+            Account account = new Account();
+            
+            account.setAccount(userAccount.getAccount());
+            account.setPass(new_password_raw);
+            account.setFirstName(userAccount.getFirstName());
+            account.setLastName(userAccount.getLastName());
+            account.setBirthday(userAccount.getBirthday());
+            account.setGender(userAccount.isGender());
+            account.setIsUse(userAccount.isIsUse());
+            account.setPhone(userAccount.getPhone());
+            account.setRoleInSystem(userAccount.getRoleInSystem());
+            
+            Account getAccountInfo = accountDAO.getDataById(account);
+            
+            if (old_password_raw.equals(getAccountInfo.getPass())) {
+                if (!new_password_raw.equals(old_password_raw)) {
+                    accountDAO.updateData(account);
+                    request.setAttribute("updateSuccess", "Update password success");
+                    request.getRequestDispatcher("editPassword.jsp").forward(request, response);
+                } else {
+                    request.setAttribute("newPassSameOldPass", "New password cannot be the same as old password");
+                    request.getRequestDispatcher("editPassword.jsp").forward(request, response);
+                }
+            } else {
+                request.setAttribute("sameOldPassError", "Your old password is incorrect");
+                request.getRequestDispatcher("editPassword.jsp").forward(request, response);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EditUserPasswordController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

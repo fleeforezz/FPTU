@@ -104,7 +104,7 @@ public class LoginController extends HttpServlet {
                     session.setAttribute("acc", loginAccount);
                     response.sendRedirect("home");
                 } else {
-                    System.out.println("This account is inactive");
+                    request.setAttribute("ErrorMessage", "Incorrect username or password");
                     request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
                 
