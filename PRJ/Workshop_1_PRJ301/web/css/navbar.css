@@ -59,7 +59,7 @@
 }
 
 .signup:hover {
-    color: black;
+    color: #d9544d;
     background: transparent;
 }
 
@@ -69,6 +69,11 @@
     border: 1px solid #d9544d;
     padding: 10px 20px;
     transition: 250ms;
+}
+
+.login:hover {
+    color: white;
+    background: #d9544d;
 }
 
 .account img {
