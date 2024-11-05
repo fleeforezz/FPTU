@@ -96,19 +96,21 @@
 
             <c:if test="${sessionScope.acc == null}" >
                 <div class="account">
-                    <a href="home" class="register-butn">
-                        <i class="ph ph-user"></i>
-                    </a>
-                    <div class="dropdown">
-                        <ul>
-                            <li>
-                                <a href="login" class="login">Login</a>
-                            </li>
-                            <li>
-                                <a href="signup" class="signup">Sign up</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <!--                    <a href="home" class="register-butn">
+                                            <i class="ph ph-user"></i>
+                                        </a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li>
+                                                    <a href="login" class="login">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="signup" class="signup">Sign up</a>
+                                                </li>
+                                            </ul>
+                                        </div>-->
+                    <a class="signup" href="signup">Sign Up</a>
+                    <a class="login" href="login">Login</a>
                 </div>
             </c:if>
         </div>

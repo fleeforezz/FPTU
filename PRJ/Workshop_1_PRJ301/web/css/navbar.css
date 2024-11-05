@@ -46,6 +46,31 @@
     cursor: pointer;
 }
 
+.account a {
+    text-decoration: none;
+}
+
+.signup {
+    color: white;
+    background: #d9544d;
+    border: 1px solid #d9544d;
+    padding: 10px 20px;
+    transition: 250ms;
+}
+
+.signup:hover {
+    color: black;
+    background: transparent;
+}
+
+.login {
+    color: #d9544d;
+    background: transparent;
+    border: 1px solid #d9544d;
+    padding: 10px 20px;
+    transition: 250ms;
+}
+
 .account img {
     width: 37px;
     height: 37px;
