@@ -46,7 +46,7 @@
                         <div class="error-banner">
                             <i class="ph-bold ph-warning-circle"></i>
                             <div class="error-message">
-                                <span>Login failed</span>
+                                <span>Update failed</span>
                                 <br>
                                 <%=newPassSameOldPass%>
                             </div>
@@ -62,7 +62,7 @@
                         <div class="error-banner">
                             <i class="ph-bold ph-warning-circle"></i>
                             <div class="error-message">
-                                <span>Login failed</span>
+                                <span>Update failed</span>
                                 <br>
                                 <%=sameOldPassError%>
                             </div>

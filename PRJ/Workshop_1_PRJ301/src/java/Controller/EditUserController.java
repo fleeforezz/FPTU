@@ -91,20 +91,20 @@ public class EditUserController extends HttpServlet {
             // Get Account Info logic
             Account getAccountInfo = accountDAO.getDataById(account);
             request.setAttribute("getAccountInfo", getAccountInfo);
-            
-            System.out.println(birthday_raw);
 
             // Update Account Info logic
             accountDAO.updateData(account);
 
             if (accountDAO.updateData(account) == 1) {
-                System.out.println("update success");
+                request.setAttribute("updateSuccess", "Update account success");
+                request.getRequestDispatcher("editUser.jsp").forward(request, response);
+            } else {
+                request.setAttribute("updateFailed", "Update account failed");
+                request.getRequestDispatcher("editUser.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(EditUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        request.getRequestDispatcher("editUser.jsp").forward(request, response);
 
     }
 

@@ -162,3 +162,54 @@ body {
 .submit-button:hover {
     background: transparent;
 }
+
+
+/*Error banner*/
+.error-banner {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    background: #fce8e8;
+    padding: 8px 16px;
+    color: black;
+    border: 1px solid #e42233;
+}
+
+.error-message span {
+    font-weight: 500;
+}
+
+.error-banner i {
+    color: #e42233;
+    font-size: 1.5rem;
+    padding: 8px 16px 0px 0px;
+}
+
+.error-message {
+    padding: 8px 16px 0px 0px;
+}
+
+/*Success banner*/
+.success-banner {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    background: #ccffcc;
+    padding: 8px 16px;
+    color: black;
+    border: 1px solid #33ff99;
+}
+
+.success-message span {
+    font-weight: 500;
+}
+
+.success-banner i {
+    color: #124022;
+    font-size: 1.5rem;
+    padding: 8px 16px 0px 0px;
+}
+
+.success-message {
+    padding: 8px 16px 0px 0px;
+}

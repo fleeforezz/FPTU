@@ -40,9 +40,40 @@
                     </div>
                     <div class="bottom-setting-right">
                         <form method="post" action="editUser">
-                            <div class="bottom-setting-right-child-top">
-                                <label>Username</label>
-                                <input type="text" class="username" placeholder="Rename your account" name="account" value="${getAccountInfo.account}" readonly="true"/>
+                        <%
+                            if (request.getAttribute("updateFailed") != null) {
+                                String updateFailed = (String) request.getAttribute("updateFailed");
+                        %>
+                        <div class="error-banner">
+                            <i class="ph-bold ph-warning-circle"></i>
+                            <div class="error-message">
+                                <span>Update failed</span>
+                                <br>
+                                <%=updateFailed%>
+                            </div>
+                        </div>
+                        <%
+                            }
+                        %>
+
+                        <%
+                            if (request.getAttribute("updateSuccess") != null) {
+                                String updateSuccess = (String) request.getAttribute("updateSuccess");
+                        %>
+                        <div class="success-banner">
+                            <i class="ph-bold ph-warning-circle"></i>
+                            <div class="success-message">
+                                <span>Updated !</span>
+                                <br>
+                                <%=updateSuccess%>
+                            </div>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <div class="bottom-setting-right-child-top">
+                            <label>Username</label>
+                            <input type="text" class="username" placeholder="Rename your account" name="account" value="${getAccountInfo.account}" readonly="true"/>
 
                             <label>Last Name</label>
                             <input type="text" class="lastName" placeholder="Change last name" name="lastName" value="${getAccountInfo.lastName}"/>
