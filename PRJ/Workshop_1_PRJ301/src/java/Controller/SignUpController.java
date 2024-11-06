@@ -41,36 +41,7 @@ public class SignUpController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-
-        
-        String username_raw = request.getParameter("account");
-        String password_raw = request.getParameter("pass");
-        String lastName_raw = request.getParameter("lastName");
-        String firstName_raw = request.getParameter("firstName");
-        String birthday_raw = request.getParameter("birthday");
-        boolean gender_raw = "1".equals(request.getParameter("gender"));
-        
-        // Convert String to DateTimeFormat
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH); 
-        LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
-        
-        boolean isUse_raw = "1".equals(request.getParameter("isUse"));
-        String phone_raw = request.getParameter("phone");
-
-        // SignUp logic
-        AccountDAO accountDAO = new AccountDAO();
-        Account account = new Account();
-        account.setAccount(username_raw);
-        account.setPass(password_raw);
-        account.setLastName(lastName_raw);
-        account.setFirstName(firstName_raw);
-        account.setBirthday(Date.valueOf(convertedBirthdate));
-        account.setGender(gender_raw);
-        account.setIsUse(isUse_raw);
-        account.setPhone(phone_raw);
-
-        accountDAO.insertData(account);
-        response.sendRedirect("login");
+        request.setCharacterEncoding("UTF-8");
 
     }
 
@@ -107,13 +78,43 @@ public class SignUpController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setCharacterEncoding("UTF-8");
+        
+        String username_raw = request.getParameter("account");
+        String password_raw = request.getParameter("pass");
+        String lastName_raw = request.getParameter("lastName");
+        String firstName_raw = request.getParameter("firstName");
+        String birthday_raw = request.getParameter("birthday");
+        boolean gender_raw = "1".equals(request.getParameter("gender"));
+        boolean isUse_raw = "1".equals(request.getParameter("isUse"));
+        String phone_raw = request.getParameter("phone");
+        
+        // Convert String to DateTimeFormat
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
+        LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
+
+        // SignUp logic
+        AccountDAO accountDAO;
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            accountDAO = new AccountDAO();
+
+            Account account = new Account();
+            account.setAccount(username_raw);
+            account.setPass(password_raw);
+            account.setLastName(lastName_raw);
+            account.setFirstName(firstName_raw);
+            account.setBirthday(Date.valueOf(convertedBirthdate));
+            account.setGender(gender_raw);
+            account.setIsUse(isUse_raw);
+            account.setPhone(phone_raw);
+
+            accountDAO.insertData(account);
+            response.sendRedirect("login");
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     /**

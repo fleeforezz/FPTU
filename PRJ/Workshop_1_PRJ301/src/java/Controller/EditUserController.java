@@ -125,16 +125,6 @@ public class EditUserController extends HttpServlet {
             account.setIsUse(userSession.isIsUse());
             account.setRoleInSystem(userSession.getRoleInSystem());
 
-            System.out.println(account.getAccount());
-            System.out.println(account.getPass());
-            System.out.println(account.getFirstName());
-            System.out.println(account.getLastName());
-            System.out.println(account.getBirthday());
-            System.out.println(account.getPhone());
-            System.out.println(account.isGender());
-            System.out.println(account.isIsUse());
-            System.out.println(account.getRoleInSystem());
-
             // Update Account Info logic
             int updatedAccount = accountDAO.updateData(account);
 
