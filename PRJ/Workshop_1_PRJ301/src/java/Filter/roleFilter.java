@@ -108,23 +108,6 @@ public class roleFilter implements Filter {
 
         doBeforeProcessing(request, response);
 
-        //        HttpServletRequest httpRequest = (HttpServletRequest) request;
-//        HttpSession session = httpRequest.getSession(false);
-//
-//        Integer roleInSystem = (session != null) ? (Integer) session.getAttribute("roleInSystem") : null;
-//
-//        String requestURI = httpRequest.getRequestURI();
-//
-//        // Check if the request is for the add product page
-//        if (requestURI.contains("/addAccount.jsp")) {
-//            // If the user is not an admin (1), deny access
-//            if (roleInSystem == null || !roleInSystem.equals(1)) {
-//                httpRequest.setAttribute("errorMessage", "You do not have permission to access this page.");
-//                request.getRequestDispatcher("/error.jsp").forward(request, response);
-//            }
-//        }
-
-
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         String uri = req.getServletPath();
