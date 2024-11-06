@@ -89,33 +89,28 @@
                                 <div class="gender">
                                     <div>
                                         <label for="male">
-                                            <input type="radio" id="male" name="gender" value="1"/>
-                                            Male
-                                        </label>
-                                        <label for="female">
-                                            <input type="radio" id="female" name="gender" value="0" />
-                                            Female
-                                        </label>
-                                        <c:if test="${sessionScope.acc.gender == true}" >
-                                            <p>Choosed gender</p>
-                                            <p>Female</p>
-                                        </c:if>
-                                        <c:if test="${sessionScope.acc.gender == false}" >
-                                            <p>Selected gender</p>
-                                            <p>Female</p>
-                                        </c:if>
-
+                                            <input type="radio" id="male" name="gender" value="1"
+                                                   <c:if test="${getAccountInfo.gender == true}">checked</c:if>
+                                                       />
+                                                   Male
+                                            </label>
+                                            <label for="female">
+                                                <input type="radio" id="female" name="gender" value="0" 
+                                                <c:if test="${getAccountInfo.gender == false}">checked</c:if>
+                                                    />
+                                                Female
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <label>Phone Number</label>
-                            <input type="number" class="phoneNumber" placeholder="Change phone number" name="phone" value="${getAccountInfo.phone}"/>
+                                <label>Phone Number</label>
+                                <input type="number" class="phoneNumber" placeholder="Change phone number" name="phone" value="${getAccountInfo.phone}"/>
 
                             <p>You have to re-login to see the changed</p>
                         </div>
                         <div class="button-setting-right-child-bottom">
-                            <input type="submit" class="submit-button" name="submit" value="Save Changes" />
+                            <input type="submit" class="submit-button" value="Save Changes" />
                         </div>
                     </form>
                 </div>

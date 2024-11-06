@@ -26,7 +26,7 @@ public class DBContext {
         this.hostname = "localhost";
         this.port = "1433";
         this.dbName = "ProductIntro";
-        this.userName = "jso";
+        this.userName = "sa";
         this.password = "0822863716";
     }
 

@@ -28,7 +28,7 @@ public class AccountDAO implements Business<Account> {
     private Connection conn;
     private PreparedStatement ps = null;
     private ResultSet resultSet = null;
-    int rs = 0;
+    int rowsAffected = 0;
 
     public Connection getConnection(ServletContext sc) throws ClassNotFoundException, SQLException {
         return new DBContext().getConnection();
@@ -63,13 +63,13 @@ public class AccountDAO implements Business<Account> {
             ps.setBoolean(8, account.isIsUse());
             ps.setInt(9, account.getRoleInSystem());
 
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
@@ -93,13 +93,13 @@ public class AccountDAO implements Business<Account> {
             ps.setInt(8, account.getRoleInSystem());
             ps.setString(9, account.getAccount());
 
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
@@ -112,13 +112,13 @@ public class AccountDAO implements Business<Account> {
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, account.getAccount());
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     public int setActive(Account account) {
@@ -131,13 +131,13 @@ public class AccountDAO implements Business<Account> {
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, account.getAccount());
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
