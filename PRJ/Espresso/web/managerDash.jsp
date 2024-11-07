@@ -16,9 +16,9 @@
         <title>Manager - Espresso</title>
     </head>
     <body>
-        <jsp:include page="components/navbar.jsp"></jsp:include>
+        <%--<jsp:include page="components/navbar.jsp"></jsp:include>--%>
             <div class="product-table">
-            <%--<jsp:include page="components/sidebar.jsp"></jsp:include>--%>
+            <jsp:include page="components/sidebar.jsp"></jsp:include>
             <div class="heading">
                 <div class="heading-child">
                     <h1>Product list</h1>

@@ -115,10 +115,22 @@
                         seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.F
                         </p>
                     </div>
-                        
-                        <div class="discount">
-                            
+
+                    <div class="review">
+                        <div class="rating">
+                            <c:forEach begin="1" end="5" >
+                                <i class="ph-fill ph-star"></i>
+                            </c:forEach>
+                            <span>4.8</span>
                         </div>
+                        <div class="separator"></div>
+                        <p class="discount">
+                            Todays product
+                            <br>
+                            discount over
+                            ${productDetail.discount}%
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
