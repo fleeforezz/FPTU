@@ -1,4 +1,8 @@
 
+* {
+    padding: 0;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -6,6 +10,81 @@
     flex-direction: column;
     padding: 20px;
     background: white;
-    height: 100vh;
+    height: 100%;
 }
 
+.general-menu ul, .help-center ul {
+    list-style: none;
+}
+
+.general-menu ul li, .help-center ul li {
+    padding: 10px;
+    position: relative;
+}
+
+.general-menu ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.general-menu p {
+    color: #999999;
+}
+
+.help-center ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.help-center p {
+    color: #999999;
+}
+
+/* general-menu */
+.general-menu ul li a:focus::after,
+.general-menu ul li a:hover::after {
+    width: 100%;
+    left: 2%;
+}
+.general-menu ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 2%;
+    width: 0%;
+    height: 2px;
+    background-color: #5740e6;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+/* help-center */
+.help-center ul li a:focus::after,
+.help-center ul li a:hover::after {
+    width: 100%;
+    left: 2%;
+}
+.help-center ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 2%;
+    width: 0%;
+    height: 2px;
+    background-color: #5740e6;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    left: -10px;
+    background: #5740e6;
+}

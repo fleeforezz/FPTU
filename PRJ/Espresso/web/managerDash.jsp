@@ -67,9 +67,15 @@
                         </div>
                     </div>
                 </div>
-                            
-                <h1>Product List</h1>
-                
+
+                <div class="product-list">
+                    <h1>Product List</h1>
+                    <a href="addProduct" class="addProduct">
+                        <i class="ph ph-plus"></i>
+                        Add product
+                    </a>
+                </div>
+
                 <table>
                     <tr class="top-table">
                         <th>Name</th>

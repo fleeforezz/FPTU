@@ -8,24 +8,36 @@
 
 <body>
     <div class="sidebar">
+        <div class="logo">
+            <img src="assets/coffee.png" />
+            <h1>Espresso</h1>
+        </div>
         <div class="general-menu">
-            <div class="logo">
-                <img src="assets/coffee.png" />
-                <h1>Espresso</h1>
-            </div>
             <p>General Menu</p>
             <ul>
                 <li>
-                    <a href="home" class="home">Home</a>
+                    <a href="home" class="home">
+                        <i class="ph-bold ph-house"></i>
+                        Home
+                    </a>
                 </li>
                 <li>
-                    <a href="manager" class="manager active">Product</a>
+                    <a href="manager" class="manager active">
+                        <i class="ph-bold ph-package"></i>
+                        Product
+                    </a>
                 </li>
                 <li>
-                    <a href="manager" class="finance">Finance</a>
+                    <a href="manager" class="finance">
+                        <i class="ph-bold ph-chart-line"></i>
+                        Finance
+                    </a>
                 </li>
                 <li>
-                    <a href="analytics" class="analytics">Analytics</a>
+                    <a href="analytics" class="analytics">
+                        <i class="ph-bold ph-chart-pie"></i>
+                        Analytics
+                    </a>
                 </li>
             </ul>
         </div>
@@ -33,10 +45,16 @@
             <p>Help Center</p>
             <ul>
                 <li>
-                    <a href="setting">Setting</a>
+                    <a href="setting" class="setting">
+                        <i class="ph-bold ph-gear-six"></i>
+                        Setting
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Help</a>
+                    <a href="#" class="help">
+                        <i class="ph-bold ph-question"></i>
+                        Help
+                    </a>
                 </li>
             </ul>
         </div>

@@ -80,19 +80,18 @@ public class LoginController extends HttpServlet {
         
         if (remember_me_raw != null) {
             username_cookie.setMaxAge(60*60*24*7); // Save 7 days
-            password_cookie.setMaxAge(60*60*24*7); // Save 7 days
-            remember_cookie.setMaxAge(60*60*24*7); // Save 7 days
+            password_cookie.setMaxAge(60*60*24*7);
+            remember_cookie.setMaxAge(60*60*24*7);
         } else {
-            username_cookie.setMaxAge(0); // Save 7 days
-            password_cookie.setMaxAge(0); // Save 7 days
-            remember_cookie.setMaxAge(0); // Save 7 days
+            username_cookie.setMaxAge(0);
+            password_cookie.setMaxAge(0);
+            remember_cookie.setMaxAge(0);
         }
         
         response.addCookie(username_cookie);
         response.addCookie(password_cookie);
         response.addCookie(remember_cookie);
-        
-
+       
         AccountDAO accountDAO;
         try {
             accountDAO = new AccountDAO();
