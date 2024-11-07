@@ -28,7 +28,7 @@ public class AccountDAO implements Business<Account> {
     private Connection conn;
     private PreparedStatement ps = null;
     private ResultSet resultSet = null;
-    int rowsAffected = 0;
+    private int rowsAffected = 0;
 
     public Connection getConnection(ServletContext sc) throws ClassNotFoundException, SQLException {
         return new DBContext().getConnection();

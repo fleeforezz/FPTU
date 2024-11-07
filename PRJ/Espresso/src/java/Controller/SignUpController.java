@@ -41,7 +41,6 @@ public class SignUpController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
 
     }
 
@@ -57,13 +56,6 @@ public class SignUpController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        try {
-//            processRequest(request, response);
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         request.getRequestDispatcher("signup.jsp").forward(request, response);
     }
 

@@ -27,6 +27,7 @@ public class CategoryDAO implements Business<Category> {
     private Connection conn;
     private PreparedStatement ps = null;
     private ResultSet resultSet = null;
+    private int rowsAffected = 0;
 
     public Connection getConnection(ServletContext sc) throws ClassNotFoundException, SQLException {
         return new DBContext().getConnection();
@@ -44,7 +45,6 @@ public class CategoryDAO implements Business<Category> {
 
     @Override
     public int insertData(Category category) {
-        int rs = 0;
 
         String sql = "INSERT INTO [dbo].[categories] ([categoryName]) \n"
                 + "VALUES (?)\n"
@@ -55,18 +55,17 @@ public class CategoryDAO implements Business<Category> {
 
             ps.setString(1, category.getCategoryName());
 
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
-        } catch (Exception ex) {
-            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
     public int updateData(Category category) {
-        int rs = 0;
 
         String sql = "UPDATE [dbo].[categories]\n"
                 + "SET [typeId]=?, [categoryName]=?, [memo]=?\n"
@@ -78,18 +77,17 @@ public class CategoryDAO implements Business<Category> {
 
             ps.setInt(1, category.getTypeId());
 
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
     public int deleteData(Category category) {
-        int rs = 0;
 
         String sql = "DELETE FROM [dbo].[categories]\n"
                 + "WHERE ([dbo].[accounts].[typeId] = ?)\n"
@@ -99,13 +97,13 @@ public class CategoryDAO implements Business<Category> {
 
             ps.setInt(1, category.getTypeId());
 
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override

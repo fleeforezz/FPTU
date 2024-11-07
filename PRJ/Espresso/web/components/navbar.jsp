@@ -63,7 +63,7 @@
                     <i class="ph ph-magnifying-glass"></i>
                 </a>
                 <a href="">
-                    <i class="ph ph-basket"></i>
+                    <i class="ph ph-shopping-bag"></i>
                 </a>
             </div>
             <c:if test="${sessionScope.acc != null}" >

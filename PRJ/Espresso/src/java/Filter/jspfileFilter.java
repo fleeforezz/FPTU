@@ -111,8 +111,8 @@ public class jspfileFilter implements Filter {
         String uri_jsp = req.getServletPath();
         String uri = req.getRequestURI();
 
-        if ("/workshop1/".equals(uri)) {
-            res.sendRedirect("/workshop1/home");
+        if ("/espresso/".equals(uri)) {
+            res.sendRedirect("/espresso/home");
             return;
         }
 
