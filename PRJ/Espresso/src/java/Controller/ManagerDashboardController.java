@@ -40,16 +40,6 @@ public class ManagerDashboardController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        HttpSession session = request.getSession();
-        
-        Account userSession = (Account) session.getAttribute("acc");
-        
-        ProductDAO productDAO = new ProductDAO();
-        List<Product> listProduct = productDAO.listProductByAccountName(userSession.getAccount());
-        
-        request.setAttribute("listProduct", listProduct);
-        request.getRequestDispatcher("managerDash.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -64,13 +54,33 @@ public class ManagerDashboardController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        Account userSession = (Account) session.getAttribute("acc");
+
+        ProductDAO productDAO;
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            productDAO = new ProductDAO();
+            
+            List<Product> listProduct = productDAO.listProductByAccountName(userSession.getAccount());
+            int listSize = listProduct.size();
+            
+            int sumOfUnit = 0;
+            
+            for (Product product : listProduct) {
+                sumOfUnit += Integer.parseInt(product.getUnit());
+            }
+            
+            request.setAttribute("sumOfUnit", sumOfUnit);
+            request.setAttribute("listSize", listSize);
+            request.setAttribute("listProduct", listProduct);
+            
+            
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        request.getRequestDispatcher("managerDash.jsp").forward(request, response);
     }
 
     /**

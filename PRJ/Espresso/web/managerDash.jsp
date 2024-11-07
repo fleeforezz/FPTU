@@ -17,22 +17,61 @@
     </head>
     <body>
         <%--<jsp:include page="components/navbar.jsp"></jsp:include>--%>
-            <div class="product-table">
+        <div class="product-table">
             <jsp:include page="components/sidebar.jsp"></jsp:include>
-            <div class="heading">
-                <div class="heading-child">
-                    <h1>Product list</h1>
-                    <p>Efficiently oversee and elevate coffee product with expertise.</p>
-                </div>
-                <a href="addProduct">
-                    <i class="ph ph-plus"></i>
-                    Add product
-                </a>
-            </div>
+                <!--                <div class="heading">
+                                    <div class="heading-child">
+                                        <h1>Product list</h1>
+                                        <p>Efficiently oversee and elevate coffee product with expertise.</p>
+                                    </div>
+                                    <a href="addProduct">
+                                        <i class="ph ph-plus"></i>
+                                        Add product
+                                    </a>
+                                </div>-->
 
-            <div class="product-table-container">
+
+
+                <div class="product-table-container">
+                    <div class="summary-container">
+                        <h1>Quick Access</h1>
+
+                        <div class="summary-child">
+                            <div class="number-of-product">
+                                <i class="ph ph-package"></i>
+                                <span>
+                                    <p>
+                                    ${listSize}
+                                </p>
+                                products
+                            </span>
+                        </div>
+                        <div class="number-of-unit">
+                            <i class="ph ph-unite-square"></i>
+                            <span>
+                                <p>
+                                    ${sumOfUnit}
+                                </p>
+                                units
+                            </span>
+                        </div>
+                        <div class="account-info">
+                            <i class="ph ph-user"></i>
+                            <span>
+                                <p>
+                                    ${sessionScope.acc.account}
+                                </p>
+                                ${sessionScope.acc.lastName}
+                                ${sessionScope.acc.firstName}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                            
+                <h1>Product List</h1>
+                
                 <table>
-                    <tr style="height: 50px; background: #dfdfc5; position: sticky; top: 0px;">
+                    <tr class="top-table">
                         <th>Name</th>
                         <th>Brief</th>
                         <th>Date</th>
@@ -78,6 +117,5 @@
         </div>
 
         <script src="script/main.js"></script>
-        <jsp:include page="components/footer.jsp" ></jsp:include>
     </body>
 </html>
