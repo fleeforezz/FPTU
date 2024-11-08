@@ -4,6 +4,7 @@
     Author     : jso
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <body>
@@ -12,6 +13,9 @@
             <img src="assets/coffee.png" />
             <h1>Espresso</h1>
         </div>
+        <c:if test="${sessionScope.acc.roleInSystem == 1}" >
+            <p>Admin Dashboard</p>
+        </c:if>
         <div class="general-menu">
             <p>General Menu</p>
             <ul>
@@ -22,7 +26,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="manager" class="manager active">
+                    <a href="admin" class="admin active">
+                        <i class="ph-bold ph-user-circle"></i>
+                        Accounts
+                    </a>
+                </li>
+                <li>
+                    <a href="manager" class="manager">
                         <i class="ph-bold ph-package"></i>
                         Product
                     </a>

@@ -7,8 +7,10 @@ package Controller;
 
 import DAO.AccountDAO;
 import DAO.CategoryDAO;
+import DAO.ProductDAO;
 import Entity.Account;
 import Entity.Category;
+import Entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -40,24 +42,6 @@ public class AdminDashboardController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String category_name_raw = request.getParameter("categoryName");
-        
-        AccountDAO accountDAO = new AccountDAO();
-        List<Account> listAccount = accountDAO.listAll();
-        
-        CategoryDAO categoryDAO = new CategoryDAO();
-        List<Category> listCategory = categoryDAO.listAll();
-        
-        Category category = new Category();
-        category.setCategoryName(category_name_raw);
-        categoryDAO.insertData(category);
-        
-        request.setAttribute("listAccount", listAccount);
-        request.setAttribute("listCategory", listCategory);
-        
-        
-        request.getRequestDispatcher("adminSetting.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -72,13 +56,41 @@ public class AdminDashboardController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String category_name_raw = request.getParameter("categoryName");
+
+        AccountDAO accountDAO;
+        ProductDAO productDAO;
+        CategoryDAO categoryDAO;
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            accountDAO = new AccountDAO();
+            productDAO = new ProductDAO();
+            categoryDAO = new CategoryDAO();
+            
+            List<Account> listAccount = accountDAO.listAll();
+            int listAccountSize = listAccount.size();
+            
+            List<Product> listProduct = productDAO.listAll();
+            int listProductSize = listProduct.size();
+            
+            List<Category> listCategory = categoryDAO.listAll();
+            int listCategorySize = listCategory.size();
+
+            Category category = new Category();
+            category.setCategoryName(category_name_raw);
+            categoryDAO.insertData(category);
+
+            request.setAttribute("listAccount", listAccount);
+            request.setAttribute("listAccountSize", listAccountSize);
+            request.setAttribute("listProduct", listProduct);
+            request.setAttribute("listProductSize", listProductSize);
+            request.setAttribute("listCategory", listCategory);
+            request.setAttribute("listCategorySize", listCategorySize);
+
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        request.getRequestDispatcher("adminDash.jsp").forward(request, response);
     }
 
     /**

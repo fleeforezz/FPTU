@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(sidebar.css);
+@import url(banner.css);
+@import url(footer.css);
+@import url(mediaQuery.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.brief {
+    width: 40%;
+}
+
+.product-table {
+    width: 100%;
+    display: flex;
+}
+
+.product-table-container {
+    border-radius: 16px;
+    padding: 40px;
+    margin: 20px;
+    height: 95vh;
+    overflow: auto;
+    width: 100%;
+    margin-left: 250px;
+    background: #f7f7f9;
+}
+
+.product-table-container h1 {
+    font-weight: 600;
+}
+
+.top-table {
+    position: sticky;
+    top: -40px;
+    height: 40px;
+    background: #e6e6e6;
+}
+
+table {
+    /*border-collapse: collapse;*/
+    border: 1px solid black;
+    padding: 20px;
+    background: white;
+    width: 100%;
+    border-radius: 16px;
+}
+
+th:nth-child(1) {
+    border-radius: 16px 0px 0px 16px;
+}
+
+th:nth-child(6) {
+    border-radius: 0px 16px 16px 0px;
+}
+
+td {
+    padding: 20px;
+}
+
+tr {
+    /*text-align: center;*/
+}
+
+tr:hover {
+    background: #e6e6e6;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    object-fit: cover;
+}
+
+.product-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addProduct {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 15px 15px;
+    border-radius: 16px;
+    border: 1px solid #5740e6;
+    text-decoration: none;
+    color: white;
+    background: #5740e6;
+    transition: 250ms
+}
+
+.addProduct:hover {
+    background: transparent;
+    color: #5740e6;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.edit-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.delete-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.delete-button i {
+    color: red;
+}
+
+.summary-container {
+    width: 100%;
+}
+
+.summary-container h1 {
+    font-weight: 600;
+}
+
+.summary-child {
+    display: flex;
+    gap: 1.3rem;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.number-of-account {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #db522c;
+}
+
+.number-of-account i {
+    font-size: 1.7rem;
+    color: white;
+}
+
+.number-of-account span {
+    color: white;
+    margin: 0;
+}
+
+.number-of-account p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.number-of-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #172671;
+}
+
+.number-of-category i {
+    font-size: 1.7rem;
+    color: white;
+}
+
+.number-of-category span {
+    color: white;
+    margin: 0;
+}
+
+.number-of-category p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.number-of-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #5841e6;
+}
+
+.number-of-product i {
+    font-size: 1.7rem;
+    color: white;
+}
+
+.number-of-product span {
+    color: white;
+    margin: 0;
+}
+
+.number-of-product p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #242424;
+}
+
+.account-info i {
+    font-size: 1.7rem;
+    color: white;
+}
+
+.account-info span {
+    color: white;
+    margin: 0;
+}
+
+.account-info p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.edit-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.active-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.active-button i {
+    color: green;
+}
+
+.unActive-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.unActive-button i {
+    color: red;
+}

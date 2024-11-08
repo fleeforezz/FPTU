@@ -80,7 +80,7 @@
     transition-property: width, left;
 }
 
-.active::before {
+.help-center ul li a:checked::before {
     content: "";
     position: absolute;
     width: 5px;

@@ -22,6 +22,7 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +34,11 @@ import javax.servlet.http.Part;
  *
  * @author jso
  */
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024 * 1,  // 1 MB
+    maxFileSize = 1024 * 1024 * 10,       // 10 MB
+    maxRequestSize = 1024 * 1024 * 50     // 50 MB
+)
 @WebServlet(name = "AddProductController", urlPatterns = {"/addProduct"})
 public class AddProductController extends HttpServlet {
 
@@ -113,7 +119,7 @@ public class AddProductController extends HttpServlet {
         String fileName = productImage_raw.getSubmittedFileName();
         
         // 2. Define the upload path
-        String uploadPath = getServletContext().getRealPath("") + File.separator + UPLOAD_DIRECTORY;
+        String uploadPath = getServletContext().getRealPath("") + UPLOAD_DIRECTORY;
         
         // 3. Create upload directory if it's doesn't exist
         File uploadDir = new File(uploadPath);
@@ -131,7 +137,7 @@ public class AddProductController extends HttpServlet {
             
             product.setProductId(productId_raw);
             product.setProductName(productName_raw);
-            product.setProductImage(filePath);
+            product.setProductImage(UPLOAD_DIRECTORY + File.separator + fileName);
             product.setBrief(brief_raw);
             product.setPostedDate(Date.valueOf(convertedBirthdate));
             product.setTypeId(typeId_raw);

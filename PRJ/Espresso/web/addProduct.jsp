@@ -19,82 +19,97 @@
 
         <div class="main-container">
             <jsp:include page="components/sidebar.jsp"></jsp:include>
-            <div class="add-product-container">
-                <div class="path">
-                    <ul>
-                        <li>
-                            <a href="manager">Product</a>
-                        </li>
-                        <li>
-                            <a href="addProduct">Add Product</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <form method="post" action="addProduct" enctype="multipart/form-data">
-                    <div class="add-product-heading">
-                        <div class="heading">
-                            <i class="ph-bold ph-storefront"></i>
-                            <h1>Add New Product</h1>
-                        </div>
-                        <button type="submit" class="submit">
-                            Save
-                        </button>
+                <div class="add-product-container">
+                    <div class="path">
+                        <ul>
+                            <li>
+                                <a href="manager">Product</a>
+                            </li>
+                            <li>
+                                <a href="addProduct">Add Product</a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="input-field">
-                        <h2>General information</h2>
+                    <form method="post" action="addProduct" enctype="multipart/form-data">
+                        <div class="add-product-heading">
+                            <div class="heading">
+                                <i class="ph-bold ph-storefront"></i>
+                                <h1>Add New Product</h1>
+                            </div>
+                            <button type="submit" class="submit">
+                                Save
+                            </button>
+                        </div>
 
-                        <label>Product ID</label>
-                        <input type="text" class="productID" name="productId" required/>
-                        
-                        <label>Name Product</label>
-                        <input type="text" class="product-name" name="productName" required/>
+                        <div class="input-field">
+                            <div class="input-field-child-1">
+                                <div class="input-field-inner-child-1">
+                                    <h2>General information</h2>
 
-                        <label>Choose an image:</label>
-                        <input type="file" name="productImage" id="file" accept="image/*" required>
+                                    <label class="label">Product ID</label>
+                                    <input type="text" class="productID input" name="productId" required/>
 
-                        <label>Description</label>
-                        <textarea name="brief" class="brief"></textarea>
+                                    <label class="label">Name Product</label>
+                                    <input type="text" class="product-name input" name="productName" required/>
 
-                        <label>Posted Date</label>
-                        <input type="date" class="posted-date" name="postedDate" required/>
+                                    <label class="label">Description</label>
+                                    <textarea name="brief" class="brief input"></textarea>
 
-                        <label>Category</label>
-                        <select class="category-name" name="typeId">
-                            <c:forEach items="${listProductCategory}" var="o">
-                                <option value="${o.typeId}">
-                                    ${o.categoryName}
-                                </option>
-                            </c:forEach>
-                        </select>
+                                    <label class="label">Posted Date</label>
+                                    <input type="date" class="posted-date input" name="postedDate" required/>
 
-                        <label>Unit</label>
-                        <input type="number" class="unit" name="unit" required/>
+                                    <label class="label">Category</label>
+                                    <select class="category-name input" name="typeId">
+                                    <c:forEach items="${listProductCategory}" var="o">
+                                        <option value="${o.typeId}">
+                                            ${o.categoryName}
+                                        </option>
+                                    </c:forEach>
+                                </select>
+                            </div>
 
-                        <label>Price</label>
-                        <input type="number" class="price" name="price" required/>
+                            <div class="input-field-inner-child-2">
+                                <h2>Upload Image</h2>
+                                <img class="imagePreview" id="imagePreview" src="assets/collection-empty.svg" alt="Image Preview">
+                                <div class="upload-btn-wrapper">
+                                    <button class="btn">Upload a file</button>
+                                    <input type="file" name="productImage" class="file input" id="file" accept="image/*" required onchange="previewImage(event)">
+                                </div>
+                            </div>
 
-                        <label>Discount</label>
-                        <select class="discount" name="discount">
-                            <option value="0">0%</option>
-                            <option value="10">10%</option>
-                            <option value="20">20%</option>
-                            <option value="30">30%</option>
-                            <option value="40">40%</option>
-                            <option value="50">50%</option>
-                            <option value="60">60%</option>
-                            <option value="70">70%</option>
-                            <option value="80">80%</option>
-                            <option value="90">90%</option>
-                            <option value="100">100%</option>       
-                        </select>
+                        </div>
+                            
+                        <div class="input-field-child-2">
+                            <h2>Pricing And Unit</h2>
 
+                            <label class="label">Unit</label>
+                            <input type="text" class="unit input" name="unit" required/>
+
+                            <label class="label">Price</label>
+                            <input type="text" class="price input" name="price" required/>
+
+                            <label class="label">Discount</label>
+                            <select class="discount input" name="discount">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                                <option value="40">40%</option>
+                                <option value="50">50%</option>
+                                <option value="60">60%</option>
+                                <option value="70">70%</option>
+                                <option value="80">80%</option>
+                                <option value="90">90%</option>
+                                <option value="100">100%</option>       
+                            </select>
+                        </div>
                     </div>
                 </form>
 
             </div>
         </div>
 
+        <script src="script/main.js"></script>
     </body>
 </html>
