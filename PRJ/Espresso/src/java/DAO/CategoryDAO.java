@@ -111,8 +111,8 @@ public class CategoryDAO implements Business<Category> {
 
         List<Category> list = new ArrayList<>();
 
-        String sql = "SELECT [dbo].[categories].[typeId], [dbo].[categories].[categoryName], [dbo].[categories].[memo]\n"
-                + "FROM [dbo].[categories]\n"
+        String sql = "SELECT typeId, categoryName, memo\n"
+                + "FROM categories\n"
                 + ";";
 
         try {

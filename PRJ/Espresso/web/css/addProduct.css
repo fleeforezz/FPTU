@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(sidebar.css);
+@import url(banner.css);
+@import url(footer.css);
+@import url(mediaQuery.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+}
+
+.add-product-container {
+    border-radius: 16px;
+    padding: 40px;
+    margin: 20px;
+    height: 95vh;
+    overflow: auto;
+    width: 100%;
+    margin-left: 250px;
+    background: #f7f7f9;
+}
+
+.path {
+    position: relative;
+}
+
+.path ul {
+    position: absolute;
+    /*top: -20px;*/
+    text-align: center;
+}
+
+.path ul li {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.path ul li a {
+    text-decoration: none;
+    color: black;
+    margin-right: 3px;
+    transition: 250ms;
+}
+
+.path ul li a:hover {
+    color: black;
+}
+
+.path ul li:nth-child(2) {
+    color: black;
+}
+
+.path ul li:nth-child(2)::before {
+    content: "/";
+    color: black;
+}
+
+.add-product-heading {
+    margin-top: 40px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.heading h1 {
+    font-weight: 500;
+}
+
+.heading i {
+    font-size: 2rem;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 13px;
+    border: 1px solid #5740e6;
+    color: white;
+    background: #5740e6;
+    cursor: pointer;
+    transition: 250ms
+}
+
+.submit:hover {
+    background: transparent;
+    color: #5740e6;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 16px;
+}
+
+.input-field h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+}

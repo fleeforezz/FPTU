@@ -28,7 +28,7 @@ public class ProductDAO implements Business<Product> {
     private Connection conn;
     private PreparedStatement ps = null;
     private ResultSet resultSet = null;
-    int rs = 0;
+    private int rowsAffected = 0;
 
     public Connection getConnection(ServletContext sc) throws ClassNotFoundException, SQLException {
         return new DBContext().getConnection();
@@ -47,30 +47,31 @@ public class ProductDAO implements Business<Product> {
     @Override
     public int insertData(Product product) {
 
-        String sql = "INSERT INTO [dbo].[products] ([productName], [productImage], [brief], [postedDate], [typeId], [account], [unit], [price], [discount])\n"
+        String sql = "INSERT INTO products ([productId], [productName], [productImage], [brief], [postedDate], [typeId], [account], [unit], [price], [discount])\n"
                 + "VALUES (?,?,?,?,?,?,?,?,?,?)\n"
                 + ";";
 
         try {
             ps = conn.prepareStatement(sql);
 
-            ps.setString(1, product.getProductName());
-            ps.setString(2, product.getProductImage());
-            ps.setString(3, product.getBrief());
-            ps.setDate(4, (Date) product.getPostedDate());
-            ps.setInt(5, product.getTypeId());
-            ps.setString(6, product.getAccount());
-            ps.setString(7, product.getUnit());
-            ps.setInt(8, product.getPrice());
-            ps.setInt(9, product.getDiscount());
+            ps.setString(1, product.getProductId());
+            ps.setString(2, product.getProductName());
+            ps.setString(3, product.getProductImage());
+            ps.setString(4, product.getBrief());
+            ps.setDate(5, (Date) product.getPostedDate());
+            ps.setInt(6, product.getTypeId());
+            ps.setString(7, product.getAccount());
+            ps.setString(8, product.getUnit());
+            ps.setInt(9, product.getPrice());
+            ps.setInt(10, product.getDiscount());
 
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
@@ -83,13 +84,13 @@ public class ProductDAO implements Business<Product> {
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, productId.getProductId());
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override
@@ -101,13 +102,13 @@ public class ProductDAO implements Business<Product> {
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, product.getProductId());
-            ps.executeUpdate();
+            rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return rs;
+        return rowsAffected;
     }
 
     @Override

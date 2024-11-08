@@ -19,19 +19,6 @@
         <%--<jsp:include page="components/navbar.jsp"></jsp:include>--%>
         <div class="product-table">
             <jsp:include page="components/sidebar.jsp"></jsp:include>
-                <!--                <div class="heading">
-                                    <div class="heading-child">
-                                        <h1>Product list</h1>
-                                        <p>Efficiently oversee and elevate coffee product with expertise.</p>
-                                    </div>
-                                    <a href="addProduct">
-                                        <i class="ph ph-plus"></i>
-                                        Add product
-                                    </a>
-                                </div>-->
-
-
-
                 <div class="product-table-container">
                     <div class="summary-container">
                         <h1>Quick Access</h1>
