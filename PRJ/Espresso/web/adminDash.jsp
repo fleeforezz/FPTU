@@ -130,12 +130,13 @@
                                 </div>
                             </td>
                         </tr>
+
                     </c:forEach>
                 </table>
 
                 <div class="product-list">
                     <h1>Category List</h1>
-                    <a href="addProduct" class="addProduct">
+                    <a href="addCategory" class="addProduct">
                         <i class="ph ph-plus"></i>
                         Add Category
                     </a>

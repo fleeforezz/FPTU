@@ -46,14 +46,15 @@ public class CategoryDAO implements Business<Category> {
     @Override
     public int insertData(Category category) {
 
-        String sql = "INSERT INTO [dbo].[categories] ([categoryName]) \n"
-                + "VALUES (?)\n"
+        String sql = "INSERT INTO [dbo].[categories] ([categoryName], [memo]) \n"
+                + "VALUES (?,?)\n"
                 + ";";
 
         try {
             ps = conn.prepareStatement(sql);
 
             ps.setString(1, category.getCategoryName());
+            ps.setString(2, category.getMemo());
 
             rowsAffected = ps.executeUpdate();
 

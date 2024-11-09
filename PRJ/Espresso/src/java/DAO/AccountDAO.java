@@ -240,6 +240,34 @@ public class AccountDAO implements Business<Account> {
         return null;
     }
 
+    public Account getDataFalse() {
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem FROM accounts WHERE isUse = 'false';";
+
+        try {
+            ps = conn.prepareStatement(sql);
+            resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                return new Account(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getDate(5),
+                        resultSet.getBoolean(6),
+                        resultSet.getString(7),
+                        resultSet.getBoolean(8),
+                        resultSet.getInt(9)
+                );
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
     @Override
     public Account getDataById(Account account) {
         String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
