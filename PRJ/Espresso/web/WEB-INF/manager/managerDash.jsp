@@ -56,7 +56,7 @@
 
                 <div class="product-list">
                     <h1>Product List</h1>
-                    <a href="addProduct" class="addProduct">
+                    <a href="add" class="addProduct">
                         <i class="ph ph-plus"></i>
                         Add product
                     </a>

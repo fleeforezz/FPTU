@@ -31,7 +31,7 @@
                         </ul>
                     </div>
 
-                    <form method="post" action="addProduct" enctype="multipart/form-data">
+                    <form method="post" action="add" enctype="multipart/form-data">
                         <div class="add-product-heading">
                             <div class="heading">
                                 <i class="ph-bold ph-storefront"></i>
@@ -71,7 +71,7 @@
 
                             <div class="input-field-inner-child-2">
                                 <h2>Upload Image</h2>
-                                <img class="imagePreview" id="imagePreview" src="assets/collection-empty.svg" alt="Image Preview">
+                                <img class="imagePreview" id="imagePreview" src="${pageContext.request.contextPath}/resources/assets/collection-empty.svg" alt="Image Preview">
                                 <div class="upload-btn-wrapper">
                                     <button class="btn">Upload a file</button>
                                     <input type="file" name="productImage" class="file input" id="file" accept="image/*" required onchange="previewImage(event)">
@@ -110,6 +110,6 @@
             </div>
         </div>
 
-        <script src="script/main.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
     </body>
 </html>
