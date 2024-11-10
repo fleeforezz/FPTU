@@ -72,9 +72,32 @@ public class CollectionController extends HttpServlet {
                     request.setAttribute("productList", productList);
 
                 } catch (ClassNotFoundException | SQLException ex) {
-                    Logger.getLogger(ProductCollectionController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(CollectionController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 request.getRequestDispatcher(VIEW_PATH + "productList.jsp").forward(request, response);
+                break;
+            case "product":
+                String productId_raw = request.getParameter("productId");
+
+                if (productId_raw != null) {
+                    try {
+                        productDAO = new ProductDAO();
+                        Product product = new Product();
+
+                        product.setProductId(productId_raw);
+
+                        Product productDetail = productDAO.getDataById(product);
+                        request.setAttribute("productDetail", productDetail);
+
+                        request.getRequestDispatcher(VIEW_PATH + "productDetail.jsp").forward(request, response);
+
+                    } catch (ClassNotFoundException | SQLException ex) {
+                        Logger.getLogger(CollectionController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                }
+
+                request.getRequestDispatcher(VIEW_PATH + "productDetail.jsp").forward(request, response);
                 break;
             default:
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Invalid action");

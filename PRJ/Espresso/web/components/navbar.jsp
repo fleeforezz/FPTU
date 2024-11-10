@@ -75,12 +75,12 @@
                         <ul>
                             <c:if test="${sessionScope.acc.roleInSystem == 1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin">Admin Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/admin/dashboard">Admin Dashboard</a>
                                 </li>
                             </c:if>
                             <c:if test="${sessionScope.acc.roleInSystem == 2}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/manager">Manager Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/manager/dashboard">Manager Dashboard</a>
                                 </li>
                             </c:if>
                             <li>

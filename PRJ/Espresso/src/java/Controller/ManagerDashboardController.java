@@ -25,8 +25,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author jso
  */
-@WebServlet(name = "ManagerDashboardController", urlPatterns = {"/manager"})
+@WebServlet(name = "ManagerDashboardController", urlPatterns = {"/manager/*"})
 public class ManagerDashboardController extends HttpServlet {
+
+    private static final String VIEW_PATH = "/WEB-INF/manager/";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -54,33 +56,49 @@ public class ManagerDashboardController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
 
-        Account userSession = (Account) session.getAttribute("acc");
+        String pathInfo = request.getPathInfo();
 
-        ProductDAO productDAO;
-        try {
-            productDAO = new ProductDAO();
-            
-            List<Product> listProduct = productDAO.listProductByAccountName(userSession.getAccount());
-            int listSize = listProduct.size();
-            
-            int sumOfUnit = 0;
-            
-            for (Product product : listProduct) {
-                sumOfUnit += Integer.parseInt(product.getUnit());
-            }
-            
-            request.setAttribute("sumOfUnit", sumOfUnit);
-            request.setAttribute("listSize", listSize);
-            request.setAttribute("listProduct", listProduct);
-            
-            
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        if (pathInfo == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "Action not specified");
         }
 
-        request.getRequestDispatcher("managerDash.jsp").forward(request, response);
+        String action = pathInfo.substring(1);
+
+        switch (action) {
+            case "dashboard":
+                HttpSession session = request.getSession();
+
+                Account userSession = (Account) session.getAttribute("acc");
+
+                ProductDAO productDAO;
+                try {
+                    productDAO = new ProductDAO();
+
+                    List<Product> listProduct = productDAO.listProductByAccountName(userSession.getAccount());
+                    int listSize = listProduct.size();
+
+                    int sumOfUnit = 0;
+
+                    for (Product product : listProduct) {
+                        sumOfUnit += Integer.parseInt(product.getUnit());
+                    }
+
+                    request.setAttribute("sumOfUnit", sumOfUnit);
+                    request.setAttribute("listSize", listSize);
+                    request.setAttribute("listProduct", listProduct);
+
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                request.getRequestDispatcher(VIEW_PATH + "managerDash.jsp").forward(request, response);
+                break;
+            case "add":
+                request.getRequestDispatcher(VIEW_PATH + "addProduct.jsp").forward(request, response);
+                break;
+        }
+
     }
 
     /**

@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/signup.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/signup.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
         <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
         <title>Signup - Espresso</title>

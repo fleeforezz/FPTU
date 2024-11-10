@@ -10,15 +10,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/managerDash.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/managerDash.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
-        <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assets/coffee.png" type="image/x-icon">
         <title>Manager - Espresso</title>
     </head>
     <body>
-        <%--<jsp:include page="components/navbar.jsp"></jsp:include>--%>
         <div class="product-table">
-            <jsp:include page="components/sidebar.jsp"></jsp:include>
+            <jsp:include page="../../components/sidebar.jsp"></jsp:include>
                 <div class="product-table-container">
                     <div class="summary-container">
                         <h1>Quick Access</h1>
@@ -76,7 +75,7 @@
                         <tr>
                             <td style="width: 25%;">
                                 <div class="product-info">
-                                    <img src="${o.productImage}" />
+                                    <img src="${pageContext.request.contextPath}/${o.productImage}" />
                                     ${o.productName}
                                 </div>
                             </td>

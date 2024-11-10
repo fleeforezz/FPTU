@@ -29,7 +29,7 @@
                             The quality of Expresso coffee has become one of its strengths and 
                             is famous all over the world. Our coffee is produced from quality coffee beans. 
                             <br>
-                            <a href="collection" class="explore-more">
+                            <a href="collection/list" class="explore-more">
                                 Explore more
                                 <i class="ph-fill ph-arrow-circle-up-right"></i>
                             </a>
@@ -68,7 +68,7 @@
                             Professional roasting
                         </p>
                     </div>
-                    <a href="#">Buy Now!</a>
+                    <a href="collection/list">Buy Now!</a>
                 </div>
                 <img class="leaf-deco" src="${pageContext.request.contextPath}/resources/assets/roaster-deco-1.webp" />
             </div>

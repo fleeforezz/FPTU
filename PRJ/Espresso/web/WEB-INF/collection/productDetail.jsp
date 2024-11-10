@@ -10,15 +10,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/product.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/product.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
-        <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assets/coffee.png" type="image/x-icon">
         <title>Product - Espresso</title>
     </head>
     <body>
-        <jsp:include page="components/navbar.jsp" ></jsp:include>
+        <jsp:include page="../../components/navbar.jsp" ></jsp:include>
             <div class="banner">
-                <img class="coffee-banner" src="assets/coffee-jar.jpg" />
+                <img class="coffee-banner" src="${pageContext.request.contextPath}/resources/assets/coffee-jar.jpg" />
                 <ul>
                     <li>
                         <a href="home">Home</a>
@@ -31,7 +31,7 @@
 
         <div class="product">
             <div class="product-view">
-                <img src="${productDetail.productImage}" />
+                <img src="${pageContext.request.contextPath}/${productDetail.productImage}" />
                 <div class="product-info">
                     <h1 class="product-name">
                         ${productDetail.productName}
@@ -135,7 +135,7 @@
             </div>
         </div>
 
-        <script src="script/main.js"></script>
-        <jsp:include page="components/footer.jsp"></jsp:include>
+        <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
+        <jsp:include page="../../components/footer.jsp"></jsp:include>
     </body>
 </html>

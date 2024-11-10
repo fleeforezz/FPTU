@@ -10,7 +10,7 @@
 <body>
     <div class="sidebar">
         <div class="logo">
-            <img src="assets/coffee.png" />
+            <img src="${pageContext.request.contextPath}/resources/assets/coffee.png" />
             <h1>Espresso</h1>
         </div>
         <c:if test="${sessionScope.acc.roleInSystem == 1}" >
@@ -20,7 +20,7 @@
             <p>General Menu</p>
             <ul>
                 <li>
-                    <a href="home" class="home">
+                    <a href="${pageContext.request.contextPath}/home" class="home">
                         <i class="ph-bold ph-house"></i>
                         Home
                     </a>
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="manager" class="manager">
+                    <a href="${pageContext.request.contextPath}/manager/dashboard" class="manager">
                         <i class="ph-bold ph-package"></i>
                         Product
                     </a>

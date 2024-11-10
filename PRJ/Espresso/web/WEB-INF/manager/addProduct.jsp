@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/addProduct.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/addProduct.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
         <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
         <title>Add Product - Espresso</title>
@@ -18,7 +18,7 @@
     <body>
 
         <div class="main-container">
-            <jsp:include page="components/sidebar.jsp"></jsp:include>
+            <jsp:include page="../../components/sidebar.jsp"></jsp:include>
                 <div class="add-product-container">
                     <div class="path">
                         <ul>
