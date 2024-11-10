@@ -84,7 +84,7 @@
                                 </li>
                             </c:if>
                             <li>
-                                <a href="editUser" >Edit Profile</a>
+                                <a href="${pageContext.request.contextPath}/account/general" >Edit Profile</a>
                             </li>
                             <li>
                                 <a href="${pageContext.request.contextPath}/logout">Logout</a>

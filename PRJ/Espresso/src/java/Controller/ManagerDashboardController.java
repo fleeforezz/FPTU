@@ -91,11 +91,7 @@ public class ManagerDashboardController extends HttpServlet {
                 } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
                 request.getRequestDispatcher(VIEW_PATH + "managerDash.jsp").forward(request, response);
-                break;
-            case "add":
-                request.getRequestDispatcher(VIEW_PATH + "addProduct.jsp").forward(request, response);
                 break;
         }
 

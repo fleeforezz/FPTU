@@ -10,18 +10,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/editUser.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/editUser.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
         <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
         <title>Edit - Espresso</title>
     </head>
     <body>
-        <jsp:include page="components/navbar.jsp"></jsp:include>
+        <jsp:include page="../../components/navbar.jsp"></jsp:include>
             <div class="banner">
-                <img class="coffee-banner" src="assets/coffee-jar.jpg" />
+                <img class="coffee-banner" src="${pageContext.request.contextPath}/resources/assets/coffee-jar.jpg" />
                 <ul>
                     <li>
-                        <a href="home">Home</a>
+                        <a href="${pageContext.request.contextPath}/home">Home</a>
                     </li>
                     <li>
                         Account
@@ -32,14 +32,14 @@
             <div class="main-container">
                 <div class="bottom-setting">
                     <div class="bottom-setting-left">
-                        <a href="editUser" class="active">General</a>
-                        <a href="editPassword">Password</a>
+                        <a href="general" class="active">General</a>
+                        <a href="password">Password</a>
                         <a href="export">Data Export</a>
                         <div class="separator"></div>
-                        <a href="destroy_confirm">Delete Account</a>
+                        <a href="delete">Delete Account</a>
                     </div>
                     <div class="bottom-setting-right">
-                        <form method="post" action="editUser">
+                        <form method="post" action="general">
                         <%
                             if (request.getAttribute("updateFailed") != null) {
                                 String updateFailed = (String) request.getAttribute("updateFailed");
@@ -118,6 +118,6 @@
         </div>
 
         <script src="script/main.js"></script>
-        <jsp:include page="components/footer.jsp"></jsp:include>
+        <jsp:include page="../../components/footer.jsp"></jsp:include>
     </body>
 </html>
