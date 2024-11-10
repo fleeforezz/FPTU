@@ -11,8 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assets/coffee.png" type="image/x-icon">
         <title>Espresso</title>
     </head>
     <body>
@@ -35,12 +35,12 @@
                             </a>
                         </p>
                     </div>
-                    <video autoplay="autoplay" loop="loop" muted="muted" src="assets/Coffee-ad.mkv" ></video>
+                    <video autoplay="autoplay" loop="loop" muted="muted" src="${pageContext.request.contextPath}/resources/assets/Coffee-ad.mkv" ></video>
                 </section>
             </div>
 
             <div class="buy-now">
-                <img class="coffee-roaster" src="assets/battlecreek-coffee-roasters.jpg" />
+                <img class="coffee-roaster" src="${pageContext.request.contextPath}/resources/assets/battlecreek-coffee-roasters.jpg" />
                 <div class="buy-now-container">
                     <div class="buy-now-heading">
                         <p>
@@ -70,7 +70,7 @@
                     </div>
                     <a href="#">Buy Now!</a>
                 </div>
-                <img class="leaf-deco" src="assets/roaster-deco-1.webp" />
+                <img class="leaf-deco" src="${pageContext.request.contextPath}/resources/assets/roaster-deco-1.webp" />
             </div>
 
             <div class="list-product">
@@ -104,12 +104,12 @@
         <div class="infinite-scroll">
             <div class="scroll">
                 <div class="RightToLeft">
-                    <p>Coffee <img src="assets/coffee-bean.png" alt=""> Espresso <img src="assets/coffee-bean.png"
-                                                                                      alt=""> Bar <img src="assets/coffee-bean.png" alt=""> Menu <img
+                    <p>Coffee <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Espresso <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png"
+                                                                                      alt=""> Bar <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Menu <img
                                                                                       src="assets/coffee-bean.png" alt="">
-                        Coffee <img src="assets/coffee-bean.png" alt=""> Espresso <img src="assets/coffee-bean.png"
-                                                                                       alt=""> Bar <img src="assets/coffee-bean.png" alt=""> Menu <img
-                                                                                       src="assets/coffee-bean.png" alt="">
+                        Coffee <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Espresso <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png"
+                                                                                       alt=""> Bar <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Menu <img
+                                                                                       src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt="">
                     </p>
                 </div>
             </div>
@@ -224,12 +224,12 @@
         <div class="clients">
             <div class="clients-parent">
                 <div class="clients-row">
-                    <img src="assets/coffee-client-1.png" alt="">
-                    <img src="assets/coffee-client-2.png" alt="">
-                    <img src="assets/coffee-client-3.png" alt="">
-                    <img src="assets/coffee-client-4.png" alt="">
-                    <img src="assets/coffee-client-5.png" alt="">
-                    <img src="assets/coffee-client-6.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/assets/coffee-client-1.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/assets/coffee-client-2.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/assets/coffee-client-3.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/assets/coffee-client-4.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/assets/coffee-client-5.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/assets/coffee-client-6.png" alt="">
                 </div>
             </div>
             <!--<img src="assets/roaster-deco-2-2.png" alt="" class="roaster-decor">-->
@@ -238,7 +238,7 @@
         
 
 
-        <script src="script/main.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
         <jsp:include page="components/footer.jsp"></jsp:include>
     </body>
 </html>

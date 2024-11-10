@@ -23,8 +23,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jso
  */
-@WebServlet(name = "ProductCollectionController", urlPatterns = {"/product"})
-public class ProductCollectionController extends HttpServlet {
+@WebServlet(name = "CollectionController", urlPatterns = {"/collection/*"})
+public class CollectionController extends HttpServlet {
+
+    private static final String VIEW_PATH = "/WEB-INF/collection/";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +38,7 @@ public class ProductCollectionController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException, SQLException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
     }
@@ -53,17 +55,31 @@ public class ProductCollectionController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductDAO productDAO;
-        try {
-            productDAO = new ProductDAO();
-            List<Product> productList = productDAO.listAll();
-            request.setAttribute("productList", productList);
-            
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ProductCollectionController.class.getName()).log(Level.SEVERE, null, ex);
+        String pathInfo = request.getPathInfo();
+
+        if (pathInfo == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "Action not specified");
         }
 
-        request.getRequestDispatcher("/WEB-INF/collection/productList.jsp").forward(request, response);
+        String action = pathInfo.substring(1);
+
+        switch (action) {
+            case "list":
+                ProductDAO productDAO;
+                try {
+                    productDAO = new ProductDAO();
+                    List<Product> productList = productDAO.listAll();
+                    request.setAttribute("productList", productList);
+
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(ProductCollectionController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                request.getRequestDispatcher(VIEW_PATH + "productList.jsp").forward(request, response);
+                break;
+            default:
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Invalid action");
+                break;
+        }
     }
 
     /**
@@ -77,11 +93,7 @@ public class ProductCollectionController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ProductCollectionController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

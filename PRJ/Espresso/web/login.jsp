@@ -10,9 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
-        <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/assets/coffee.png" type="image/x-icon">
         <title>Login - Espresso</title>
     </head>
     <body>

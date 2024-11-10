@@ -9,7 +9,7 @@
 <footer class="footer">
     <nav>
         <div class="logo">
-            <img src="assets/coffee.png" />
+            <img src="${pageContext.request.contextPath}/resources/assets/coffee.png" />
             <h1>Expresso</h1>
         </div>
 

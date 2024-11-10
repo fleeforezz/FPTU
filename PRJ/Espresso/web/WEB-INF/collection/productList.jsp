@@ -11,14 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
-        <link rel="stylesheet" href="css/productList.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/productList.css">
         <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
         <title>Products - Espresso</title>
     </head>
     <body>
-        <jsp:include page="components/navbar.jsp" ></jsp:include>
+        <jsp:include page="../../components/navbar.jsp" ></jsp:include>
             <div class="banner">
-                <img class="coffee-banner" src="assets/coffee-jar.jpg" />
+                <img class="coffee-banner" src="${pageContext.request.contextPath}/resources/assets/coffee-jar.jpg" />
                 <ul>
                     <li>
                         <a href="home">Home</a>
@@ -33,9 +33,9 @@
                 <ul>
                 <c:forEach items="${productList}" var="o" >
                     <li>
-                        <a href="products?productId=${o.productId}">
+                        <a href="product?productId=${o.productId}">
                             <div class="item">
-                                <img src="${o.productImage}" />
+                                <img src="${pageContext.request.contextPath}/${o.productImage}" />
                                 <div class="product-info">
                                     <div class="product-name product-price">
                                         <p class="heading">${o.productName}</p>
@@ -52,7 +52,7 @@
                 </c:forEach>
             </ul>
         </div>
-        <script src="script/main.js"></script>
-        <jsp:include page="components/footer.jsp"></jsp:include>
+        <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
+        <jsp:include page="../../components/footer.jsp"></jsp:include>
     </body>
 </html>
