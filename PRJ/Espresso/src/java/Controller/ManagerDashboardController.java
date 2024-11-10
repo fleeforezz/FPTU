@@ -116,13 +116,25 @@ public class ManagerDashboardController extends HttpServlet {
                     request.setAttribute("listProductCategory", listProductCategory);
 
                 } catch (ClassNotFoundException | SQLException ex) {
-                    Logger.getLogger(AddProductController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 request.getRequestDispatcher(VIEW_PATH + "addProduct.jsp").forward(request, response);
                 break;
             case "edit":
                 break;
             case "delete":
+                String productId_raw = request.getParameter("ProductId");
+                try {
+                    productDAO = new ProductDAO();
+                    Product product = new Product();
+                    product.setProductId(productId_raw);
+
+                    productDAO.deleteData(product);
+
+                    response.sendRedirect("dashboard");
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
         }
 
@@ -208,7 +220,7 @@ public class ManagerDashboardController extends HttpServlet {
                     }
 
                 } catch (ClassNotFoundException | SQLException ex) {
-                    Logger.getLogger(AddProductController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 request.getRequestDispatcher(VIEW_PATH + "addProduct.jsp").forward(request, response);
                 break;

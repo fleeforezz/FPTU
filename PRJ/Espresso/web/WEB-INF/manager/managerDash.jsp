@@ -93,10 +93,10 @@
                             </td>
                             <td>
                                 <div class="action-btn">
-                                    <a href="editProduct?ProductId=${o.productId}" class="edit-button">
+                                    <a href="edit?ProductId=${o.productId}" class="edit-button">
                                         <i class="ph ph-pencil-line"></i>
                                     </a>
-                                    <a href="deleteProduct?ProductId=${o.productId}" class="delete-button">
+                                    <a href="delete?ProductId=${o.productId}" class="delete-button">
                                         <i class="ph ph-trash"></i>
                                     </a>
                                 </div>
