@@ -36,56 +36,56 @@
                         </p>
                     </div>
                     <video autoplay="autoplay" loop="loop" muted="muted" src="${pageContext.request.contextPath}/resources/assets/Coffee-ad.mkv" ></video>
-                </section>
-            </div>
+            </section>
+        </div>
 
-            <div class="buy-now">
-                <img class="coffee-roaster" src="${pageContext.request.contextPath}/resources/assets/battlecreek-coffee-roasters.jpg" />
-                <div class="buy-now-container">
-                    <div class="buy-now-heading">
-                        <p>
-                            Collaborative Services
-                        </p>
-                        <h1>
-                            Exquisite Coffee
-                            <br>
-                            Bean Quality
-                        </h1>
-                    </div>
-                    <div class="buy-now-para">
-                        <p>
-                            We put product quality and hygiene safety in 
-                            <br>
-                            the production process first.
-                        </p>
-                        <p>
-                            <span>01.</span>
-                            Different blends
-                        </p>
-                        <div class="separate-line"></div>
-                        <p>
-                            <span>02.</span>
-                            Professional roasting
-                        </p>
-                    </div>
-                    <a href="collection/list">Buy Now!</a>
-                </div>
-                <img class="leaf-deco" src="${pageContext.request.contextPath}/resources/assets/roaster-deco-1.webp" />
-            </div>
-
-            <div class="list-product">
-                <div class="heading">
+        <div class="buy-now">
+            <img class="coffee-roaster" src="${pageContext.request.contextPath}/resources/assets/battlecreek-coffee-roasters.jpg" />
+            <div class="buy-now-container">
+                <div class="buy-now-heading">
                     <p>
-                        Featured Products
+                        Collaborative Services
                     </p>
                     <h1>
-                        Discover the taste
+                        Exquisite Coffee
                         <br>
-                        of the perfect coffee
+                        Bean Quality
                     </h1>
                 </div>
+                <div class="buy-now-para">
+                    <p>
+                        We put product quality and hygiene safety in 
+                        <br>
+                        the production process first.
+                    </p>
+                    <p>
+                        <span>01.</span>
+                        Different blends
+                    </p>
+                    <div class="separate-line"></div>
+                    <p>
+                        <span>02.</span>
+                        Professional roasting
+                    </p>
+                </div>
+                <a href="collection/list">Buy Now!</a>
+            </div>
+            <img class="leaf-deco" src="${pageContext.request.contextPath}/resources/assets/roaster-deco-1.webp" />
+        </div>
 
-                <div class="product-gallary">
+        <div class="list-product">
+            <div class="heading">
+                <p>
+                    Featured Products
+                </p>
+                <h1>
+                    Discover the taste
+                    <br>
+                    of the perfect coffee
+                </h1>
+            </div>
+
+            <div class="product-gallary">
                 <c:forEach items="${productList}" var="o" >
                     <a href="${pageContext.request.contextPath}/collection/product?productId=${o.productId}" class="product-item">
                         <img src="${o.productImage}" />
@@ -125,111 +125,33 @@
             </div>
         </div>
 
-<!--        <div class="testimonials-container">
-            <div class="testimonials-child">
-                <div class="customer-say-container-1">
-                    <div class="customer-say-child-1">
-                        <p>
-                            Testimonials
-                        </p>
-                        <h1>
-                            What our customers say about us
-                        </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipisicing elit. Quos perferendis asperiores 
-                            consequatur, amet reiciendis quibusdam?
-                        </p>
-                    </div>
-
-                    <div class="customer-say-child-2">
-                        <div class="customer-say-subchild-2">
-                            <div class="customer-says-message-parent">
-                                <div class="customer-says-message customer-fade">
-                                    <div class="customer-says-message-icon">
-                                        <a onclick="nextSlides(-1)" class="customer-says-next">
-                                            <i class="ph ph-arrow-left"></i>
-                                        </a>
-                                        <img src="./assets/profile-1.jpg" alt="">
-                                        <a onclick="nextSlides(1)" class="customer-says-prev">
-                                            <i class="ph ph-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="customer-says-message-content">
-                                        <p class="customer-says-message-content-heading-1">
-                                            I recently tried a new coffee product, and I have to say it has<br> 
-                                            completely transformed the way I start my mornings! As a coffee lover, I am quite picky about the coffee I drink,
-                                            and this product has exceeded my expectations in every way.
-                                        </p>
-                                        <p class="customer-says-message-content-heading-2">
-                                            <i class="ph-fill ph-quotes"></i>
-                                            <br>
-                                            <span>Lucy Jsor</span>
-                                            <br>
-                                            Barista
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="customer-says-message customer-fade">
-                                    <div class="customer-says-message-icon">
-                                        <a onclick="nextSlides(-1)" class="customer-says-next">
-                                            <i class="ph ph-arrow-left"></i>
-                                        </a>
-                                        <img src="./assets/profile-2.jpg" alt="">
-                                        <a onclick="nextSlides(1)" class="customer-says-prev">
-                                            <i class="ph ph-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="customer-says-message-content">
-                                        <p class="customer-says-message-content-heading-1">
-                                            The aroma of this product was enough to wake me up and put a smile on my face.
-                                            The coffee beans were clearly of high quality and seemed to have been roasted to perfection.
-                                            The flavor was rich and robust, with a perfect balance of acidity and
-                                            sweetness. It had a smooth, velvety texture that made each sip a real pleasure.
-                                        </p>
-                                        <p class="customer-says-message-content-heading-2">
-                                            <i class="ph-fill ph-quotes"></i>
-                                            <br>
-                                            <span>Jennifer Quinn</span>
-                                            <br>
-                                            Barista
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="customer-says-message customer-fade">
-                                    <div class="customer-says-message-icon">
-                                        <a onclick="nextSlides(-1)" class="customer-says-next">
-                                            <i class="ph ph-arrow-left"></i>
-                                        </a>
-                                        <img src="./assets/profile-3.jpg" alt="">
-                                        <a onclick="nextSlides(1)" class="customer-says-prev">
-                                            <i class="ph ph-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="customer-says-message-content">
-                                        <p class="customer-says-message-content-heading-1">
-                                            What impressed me most was the convenience. The packaging is not only environmentally
-                                            friendly but also extremely practical. The resealable bag keeps the coffee fresh for a
-                                            long time, and the grind is just right for my coffee maker.
-                                        </p>
-                                        <p class="customer-says-message-content-heading-2">
-                                            <i class="ph-fill ph-quotes"></i>
-                                            <br>
-                                            <span>James Rinar</span>
-                                            <br>
-                                            Barista
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="customer-say-container-2">
-                    <img src="assets/staff.jpg" />
-                </div>
+        <div class="list-product">
+            <div class="heading">
+                <p>
+                    Today's On Sale Products
+                </p>
+                <h1>
+                    Discover the taste
+                    <br>
+                    of the perfect coffee
+                </h1>
             </div>
-        </div>-->
+
+            <div class="product-gallary">
+                <c:forEach items="${saleProductList}" var="o" >
+                    <a href="${pageContext.request.contextPath}/collection/product?productId=${o.productId}" class="product-item">
+                        <img src="${o.productImage}" />
+                        <p>${o.productName}</p>
+                        <div>
+                            <p>$${o.price}</p>
+                            <c:if test="${o.discount > 0}" >
+                                <span class="discountPrice">Sale ${o.discount}%</span>
+                            </c:if>
+                        </div>
+                    </a>
+                </c:forEach>
+            </div>
+        </div>
 
         <div class="clients">
             <div class="clients-parent">
@@ -245,7 +167,7 @@
             <!--<img src="assets/roaster-deco-2-2.png" alt="" class="roaster-decor">-->
         </div>
 
-        
+
 
 
         <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>

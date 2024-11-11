@@ -61,6 +61,9 @@ public class HomeController extends HttpServlet {
             List<Product> productList = productDAO.listFeatureProd();
             request.setAttribute("productList", productList);
             
+            List<Product> saleProductList = productDAO.listSaleProd();
+            request.setAttribute("saleProductList", saleProductList);
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }

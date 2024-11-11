@@ -20,6 +20,7 @@ body {
 
 .product-view {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 60px 100px 60px 100px;
 }
@@ -30,7 +31,7 @@ body {
 
 .product-view img {
     width: 600px;
-    height: 600px;
+    height: auto;
     object-fit: cover;
 }
 
@@ -139,6 +140,7 @@ body {
 
 .description-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 

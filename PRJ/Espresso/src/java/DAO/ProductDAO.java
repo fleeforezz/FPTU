@@ -197,7 +197,7 @@ public class ProductDAO implements Business<Product> {
                 + "      ,[price]\n"
                 + "      ,[discount]\n"
                 + "  FROM [ProductIntro].[dbo].[products]";
-        
+
         try {
             ps = conn.prepareStatement(sql);
             resultSet = ps.executeQuery();
@@ -221,7 +221,41 @@ public class ProductDAO implements Business<Product> {
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
+        return list;
+    }
+
+    public List<Product> listSaleProd() {
+        List<Product> list = new ArrayList<>();
+
+        String sql = "SELECT productId, productName, productImage, brief, postedDate, typeId, account, unit, price, discount\n"
+                + "FROM products\n"
+                + "WHERE discount > 0";
+
+        try {
+            ps = conn.prepareStatement(sql);
+            resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                Product product = new Product();
+
+                product.setProductId(resultSet.getString(1));
+                product.setProductName(resultSet.getString(2));
+                product.setProductImage(resultSet.getString(3));
+                product.setBrief(resultSet.getString(4));
+                product.setPostedDate(resultSet.getDate(5));
+                product.setTypeId(resultSet.getInt(6));
+                product.setAccount(resultSet.getString(7));
+                product.setUnit(resultSet.getString(8));
+                product.setPrice(resultSet.getInt(9));
+                product.setDiscount(resultSet.getInt(10));
+
+                list.add(product);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         return list;
     }
 

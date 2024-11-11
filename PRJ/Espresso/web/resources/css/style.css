@@ -102,9 +102,9 @@ body {
 }
 
 .coffee-roaster {
-    width: 500px;
-    height: 650px;
-    object-fit: cover;
+    position: relative;
+    width: 35%;
+    height: auto;
 
 }
 
@@ -112,13 +112,15 @@ body {
     content: "Only pure coffee beans";
     bottom: 4px;
     left: 35%;
-    width: 35%;
+    width: 100px;
+    height: 100px;
     font-size: 1rem;
     font-weight: 500;
     color: white;
     position: absolute;
     padding: 20px;
     background-color: #efae54;
+    z-index: 999;
 }
 
 .buy-now-heading p {
@@ -184,8 +186,8 @@ body {
 }
 
 .product-item img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 .product-item {
