@@ -38,12 +38,7 @@ public class HomeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        ProductDAO productDAO = new ProductDAO();
-        List<Product> productList = productDAO.listFeatureProd();
-        
-        request.setAttribute("productList", productList);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -58,13 +53,19 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        ProductDAO productDAO;
         try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            productDAO = new ProductDAO();
+
+            List<Product> productList = productDAO.listFeatureProd();
+            request.setAttribute("productList", productList);
+            
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     /**

@@ -115,7 +115,7 @@ public class roleFilter implements Filter {
         HttpSession session = req.getSession();
         Account userSession = (Account) session.getAttribute("acc");
         
-        if (userSession != null && uri.contains("/manager")) {
+        if (userSession != null && uri.contains("/manager/*")) {
             if (userSession.getRoleInSystem() != 1 && userSession.getRoleInSystem() != 2) {
                 req.getRequestDispatcher("permissionDenied.jsp").forward(request, response);
             }

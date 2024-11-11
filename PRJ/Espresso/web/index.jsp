@@ -87,11 +87,11 @@
 
                 <div class="product-gallary">
                 <c:forEach items="${productList}" var="o" >
-                    <a href="#" class="product-item">
+                    <a href="${pageContext.request.contextPath}/collection/product?productId=${o.productId}" class="product-item">
                         <img src="${o.productImage}" />
                         <p>${o.productName}</p>
                         <div>
-                            <p>${o.price}</p>
+                            <p>$${o.price}</p>
                             <c:if test="${o.discount > 0}" >
                                 <span class="discountPrice">Sale ${o.discount}%</span>
                             </c:if>
@@ -104,12 +104,22 @@
         <div class="infinite-scroll">
             <div class="scroll">
                 <div class="RightToLeft">
-                    <p>Coffee <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Espresso <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png"
-                                                                                      alt=""> Bar <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Menu <img
-                                                                                      src="assets/coffee-bean.png" alt="">
-                        Coffee <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Espresso <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png"
-                                                                                       alt=""> Bar <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> Menu <img
-                                                                                       src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt="">
+                    <p>Coffee 
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt="">
+                        Espresso 
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt="">
+                        Bar 
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> 
+                        Menu 
+                        <img src="assets/coffee-bean.png" alt="">
+                        Coffee 
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> 
+                        Espresso 
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> 
+                        Bar 
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt=""> 
+                        Menu
+                        <img src="${pageContext.request.contextPath}/resources/assets/coffee-bean.png" alt="">
                     </p>
                 </div>
             </div>

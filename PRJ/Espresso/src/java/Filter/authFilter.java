@@ -114,7 +114,7 @@ public class authFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             // Redirect to login page if not logged in
-            httpResponse.sendRedirect("login");
+            httpResponse.sendRedirect("/espresso/login");
         }
     }
 
