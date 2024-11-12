@@ -88,6 +88,10 @@ public class CollectionController extends HttpServlet {
 
                         Product productDetail = productDAO.getDataById(product);
                         request.setAttribute("productDetail", productDetail);
+                        
+                        int discountProduct = (int) (productDetail.getPrice() * (1 - (productDetail.getDiscount() / 100.0)));
+                        System.out.println(discountProduct + "=" + productDetail.getPrice() + "x" + "(1-" + productDetail.getDiscount() + "/100)");
+                        request.setAttribute("discountProduct", discountProduct);
 
                         request.getRequestDispatcher(VIEW_PATH + "productDetail.jsp").forward(request, response);
 

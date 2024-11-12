@@ -43,7 +43,20 @@
                         Reviews
                     </span>
                     <p class="price">
-                        $${productDetail.price}
+                        <c:if test="${productDetail.discount > 0}">
+                            <span class="discount-value" style="">
+                                $${discountProduct}
+                            </span>
+                            <span class="actual-price" style="text-decoration: line-through; font-weight: 400; font-size: 1.2rem;">
+                                $${productDetail.price}
+                            </span>
+                        </c:if>
+                        
+                        <c:if test="${productDetail.discount == 0}">
+                            <span class="actual-price">
+                                $${productDetail.price}
+                            </span>
+                        </c:if>
                     </p>
                     <p class="Availability">
                         <span class="title">Availability:</span>
