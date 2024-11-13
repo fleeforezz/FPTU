@@ -39,7 +39,7 @@ public class EditProductController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         // Get Parament
-        String productId_raw = request.getParameter("ProductId");
+        int productId_raw = Integer.parseInt(request.getParameter("ProductId"));
         String productName_raw = request.getParameter("productName");
         String productImage_raw = request.getParameter("productImage");
         String brief_raw = request.getParameter("brief");

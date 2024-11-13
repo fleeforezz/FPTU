@@ -12,7 +12,7 @@ import java.util.Date;
  * @author jso
  */
 public class Product {
-    private String productId;
+    private int productId;
     private String productName;
     private String productImage;
     private String brief;
@@ -26,7 +26,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String productId, String productName, String productImage, String brief, Date postedDate, int typeId, String account, String unit, int price, int discount) {
+    public Product(int productId, String productName, String productImage, String brief, Date postedDate, int typeId, String account, String unit, int price, int discount) {
         this.productId = productId;
         this.productName = productName;
         this.productImage = productImage;
@@ -39,11 +39,11 @@ public class Product {
         this.discount = discount;
     }
 
-    public String getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 

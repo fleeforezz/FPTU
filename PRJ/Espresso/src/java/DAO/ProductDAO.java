@@ -54,7 +54,7 @@ public class ProductDAO implements Business<Product> {
         try {
             ps = conn.prepareStatement(sql);
 
-            ps.setString(1, product.getProductId());
+            ps.setInt(1, product.getProductId());
             ps.setString(2, product.getProductName());
             ps.setString(3, product.getProductImage());
             ps.setString(4, product.getBrief());
@@ -83,7 +83,7 @@ public class ProductDAO implements Business<Product> {
 
         try {
             ps = conn.prepareStatement(sql);
-            ps.setString(1, productId.getProductId());
+            ps.setInt(1, productId.getProductId());
             rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -101,7 +101,7 @@ public class ProductDAO implements Business<Product> {
 
         try {
             ps = conn.prepareStatement(sql);
-            ps.setString(1, product.getProductId());
+            ps.setInt(1, product.getProductId());
             rowsAffected = ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -126,7 +126,7 @@ public class ProductDAO implements Business<Product> {
             while (resultSet.next()) {
                 Product product = new Product();
 
-                product.setProductId(resultSet.getString(1));
+                product.setProductId(resultSet.getInt(1));
                 product.setProductName(resultSet.getString(2));
                 product.setProductImage(resultSet.getString(3));
                 product.setBrief(resultSet.getString(4));
@@ -163,7 +163,7 @@ public class ProductDAO implements Business<Product> {
             while (resultSet.next()) {
                 Product product = new Product();
 
-                product.setProductId(resultSet.getString(1));
+                product.setProductId(resultSet.getInt(1));
                 product.setProductName(resultSet.getString(2));
                 product.setProductImage(resultSet.getString(3));
                 product.setBrief(resultSet.getString(4));
@@ -205,7 +205,7 @@ public class ProductDAO implements Business<Product> {
             while (resultSet.next()) {
                 Product product = new Product();
 
-                product.setProductId(resultSet.getString(1));
+                product.setProductId(resultSet.getInt(1));
                 product.setProductName(resultSet.getString(2));
                 product.setProductImage(resultSet.getString(3));
                 product.setBrief(resultSet.getString(4));
@@ -239,7 +239,7 @@ public class ProductDAO implements Business<Product> {
             while (resultSet.next()) {
                 Product product = new Product();
 
-                product.setProductId(resultSet.getString(1));
+                product.setProductId(resultSet.getInt(1));
                 product.setProductName(resultSet.getString(2));
                 product.setProductImage(resultSet.getString(3));
                 product.setBrief(resultSet.getString(4));
@@ -268,12 +268,12 @@ public class ProductDAO implements Business<Product> {
 
         try {
             ps = conn.prepareStatement(sql);
-            ps.setString(1, product.getProductId());
+            ps.setInt(1, product.getProductId());
             resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
                 return new Product(
-                        resultSet.getString(1),
+                        resultSet.getInt(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),

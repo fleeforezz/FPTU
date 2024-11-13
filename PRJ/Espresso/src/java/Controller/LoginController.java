@@ -104,16 +104,16 @@ public class LoginController extends HttpServlet {
                     response.sendRedirect("home");
                 } else {
                     request.setAttribute("ErrorMessage", "Incorrect username or password");
-                    request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
                 
             } else {
                 request.setAttribute("ErrorMessage", "Incorrect username or password");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     /**

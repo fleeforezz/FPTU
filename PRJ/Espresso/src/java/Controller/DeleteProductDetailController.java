@@ -40,7 +40,7 @@ public class DeleteProductDetailController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String productId_raw = request.getParameter("ProductId");
+        int productId_raw = Integer.parseInt(request.getParameter("ProductId"));
         HttpSession session = request.getSession();
         Account userSession = (Account) session.getAttribute("acc");
         ProductDAO productDAO = new ProductDAO();

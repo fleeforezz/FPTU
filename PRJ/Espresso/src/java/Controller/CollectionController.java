@@ -77,9 +77,9 @@ public class CollectionController extends HttpServlet {
                 request.getRequestDispatcher(VIEW_PATH + "productList.jsp").forward(request, response);
                 break;
             case "product":
-                String productId_raw = request.getParameter("productId");
+                int productId_raw = Integer.parseInt(request.getParameter("productId"));
 
-                if (productId_raw != null) {
+                if (productId_raw > 0) {
                     try {
                         productDAO = new ProductDAO();
                         Product product = new Product();

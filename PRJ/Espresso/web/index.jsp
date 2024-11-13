@@ -88,7 +88,12 @@
             <div class="product-gallary">
                 <c:forEach items="${productList}" var="o" >
                     <a href="${pageContext.request.contextPath}/collection/product?productId=${o.productId}" class="product-item">
-                        <img src="${o.productImage}" />
+                        <c:if test="${o.productImage != null}">
+                            <img src="${pageContext.request.contextPath}/${o.productImage}" />
+                        </c:if>
+                        <c:if test="${o.productImage == null}">
+                            <img src="${pageContext.request.contextPath}/resources/assets/image-placeholder.jpg" />
+                        </c:if>
                         <p>${o.productName}</p>
                         <div>
                             <p>$${o.price}</p>
