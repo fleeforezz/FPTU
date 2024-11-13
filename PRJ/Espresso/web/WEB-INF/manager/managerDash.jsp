@@ -86,10 +86,10 @@
                                 ${o.postedDate}
                             </td>
                             <td>
-                                ${o.price}
+                                $${o.price}
                             </td>
                             <td>
-                                ${o.discount}
+                                ${o.discount}%
                             </td>
                             <td>
                                 <div class="action-btn">

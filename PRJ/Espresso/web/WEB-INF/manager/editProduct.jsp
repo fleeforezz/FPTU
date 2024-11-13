@@ -9,64 +9,106 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/editProduct.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/editProduct.css">
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
         <link rel="shortcut icon" href="assets/coffee.png" type="image/x-icon">
         <title>Edit - Espresso</title>
     </head>
     <body>
-        <jsp:include page="components/navbar.jsp"></jsp:include>
 
-            <div class="edit-form">
-                <h1>Edit Product</h1>
-                <p>Change product information</p>
-                <form class="form" method="post" action="editProduct">
-                    <div>
-                        <label>Product Name</label>
-                        <input class="productName" type="text" name="productName" placeholder="${getProductInfo.productName}"/>
+        <div class="main-container">
+            <jsp:include page="../../components/sidebar.jsp"></jsp:include>
+                <div class="add-product-container">
+                    <div class="path">
+                        <ul>
+                            <li>
+                                <a href="dashboard">Product</a>
+                            </li>
+                            <li>
+                                <a href="add">Edit Product</a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div>
-                        <label>Product Image</label>
-                        <input class="password" type="password" name="productImage" placeholder="${getProductInfo.productImage}"/>
-                    </div>
+                    <form method="post" action="edit" enctype="multipart/form-data">
+                        <div class="add-product-heading">
+                            <div class="heading">
+                                <i class="ph-bold ph-storefront"></i>
+                                <h1>Edit Product</h1>
+                            </div>
+                            <button type="submit" class="submit">
+                                Save Changes
+                            </button>
+                        </div>
 
-                    <div>
-                        <label>Brief</label>
-                        <textarea class="brief" name="brief">${getProductInfo.brief}</textarea>
-                    </div>
+                        <div class="input-field">
+                            <div class="input-field-child-1">
+                                <div class="input-field-inner-child-1">
+                                    <h2>General information</h2>
 
-                    <div>
-                        <label>Posted Date</label>
-                        <input class="postedDate" type="date" name="postedDate"/>
-                    </div>
+                                    <label class="label">Name Product</label>
+                                    <input type="text" class="product-name input" name="productName" value="${listProductDetail.productName}"/>
 
-                    <div>
-                        <label>Category</label>
-                        <select>
-                            <option>yay</option>
-                        </select>
-                    </div>
+                                    <label class="label">Description</label>
+                                    <textarea name="brief" class="brief input">
+                                        ${listProductDetail.brief}
+                                    </textarea>
 
-                    <div>
-                        <label>Unit</label>
-                        <input class="unit" type="text" name="unit" placeholder="${getProductInfo.unit}" />
-                    </div>
+                                    <label class="label">Posted Date</label>
+                                    <input type="date" class="posted-date input" name="postedDate" value="${listProductDetail.postedDate}"/>
 
-                    <div>
-                        <label>Price</label>
-                        <input class="price" type="number" name="price" placeholder="${getProductInfo.price}"/>
-                    </div>
+                                    <label class="label">Category</label>
+                                    <select class="category-name input" name="typeId">
+                                        <c:forEach items="${listProductCategory}" var="o">
+                                        <option value="${o.typeId}">
+                                            ${o.categoryName}
+                                        </option>
+                                    </c:forEach>
+                                </select>
+                            </div>
 
-                    <div>
-                        <label>Discount</label>
-                        <input class="discount" type="number" name="discount" placeholder="${getProductInfo.discount}" />
-                    </div>
+                            <div class="input-field-inner-child-2">
+                                <h2>Upload Image</h2>
+                                <img class="imagePreview" id="imagePreview" src="${pageContext.request.contextPath}/${listProductDetail.productImage}" alt="Image Preview">
+                                <div class="upload-btn-wrapper">
+                                    <button class="btn">Upload a file</button>
+                                    <input type="file" name="productImage" class="file input" id="file" accept="image/*" onchange="previewImage(event)">
+                                </div>
+                            </div>
 
-                    <button class="submit-btn" type="submit">Save Changes</button>
+                        </div>
+
+                        <div class="input-field-child-2">
+                            <h2>Pricing And Unit</h2>
+
+                            <label class="label">Unit</label>
+                            <input type="text" class="unit input" name="unit" value="${listProductDetail.unit}"/>
+
+                            <label class="label">Price</label>
+                            <input type="text" class="price input" name="price" value="${listProductDetail.price}"/>
+
+                            <label class="label">Discount</label>
+                            <select class="discount input" name="discount">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                                <option value="40">40%</option>
+                                <option value="50">50%</option>
+                                <option value="60">60%</option>
+                                <option value="70">70%</option>
+                                <option value="80">80%</option>
+                                <option value="90">90%</option>
+                                <option value="100">100%</option>       
+                            </select>
+                        </div>
+                    </div>
                 </form>
-            </div>
 
-        <jsp:include page="components/footer.jsp"></jsp:include>
+            </div>
+        </div>
+
+        <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
+
     </body>
 </html>

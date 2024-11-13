@@ -95,8 +95,8 @@ public class ProductDAO implements Business<Product> {
     @Override
     public int deleteData(Product product) {
         String sql = "UPDATE products\n"
-                + "SET account=NULL\n"
-                + "WHERE productId = ?)\n"
+                + "SET account='none'\n"
+                + "WHERE productId = ?\n"
                 + ";";
 
         try {
@@ -117,6 +117,7 @@ public class ProductDAO implements Business<Product> {
 
         String sql = "SELECT productId, productName, productImage, brief, postedDate, typeId, account, unit, price, discount\n"
                 + "FROM dbo.products\n"
+                + "where account != 'none'\n"
                 + ";";
 
         try {

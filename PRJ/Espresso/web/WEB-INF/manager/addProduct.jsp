@@ -23,10 +23,10 @@
                     <div class="path">
                         <ul>
                             <li>
-                                <a href="manager">Product</a>
+                                <a href="dashboard">Product</a>
                             </li>
                             <li>
-                                <a href="addProduct">Add Product</a>
+                                <a href="add">Add Product</a>
                             </li>
                         </ul>
                     </div>

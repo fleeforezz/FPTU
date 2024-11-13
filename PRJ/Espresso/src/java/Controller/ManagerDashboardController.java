@@ -71,6 +71,9 @@ public class ManagerDashboardController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        ProductDAO productDAO;
+        Product product;
 
         String pathInfo = request.getPathInfo();
 
@@ -86,7 +89,6 @@ public class ManagerDashboardController extends HttpServlet {
 
                 Account userSession = (Account) session.getAttribute("acc");
 
-                ProductDAO productDAO;
                 try {
                     productDAO = new ProductDAO();
 
@@ -95,8 +97,8 @@ public class ManagerDashboardController extends HttpServlet {
 
                     int sumOfUnit = 0;
 
-                    for (Product product : listProduct) {
-                        sumOfUnit += Integer.parseInt(product.getUnit());
+                    for (Product product1 : listProduct) {
+                        sumOfUnit += Integer.parseInt(product1.getUnit());
                     }
 
                     request.setAttribute("sumOfUnit", sumOfUnit);
@@ -121,13 +123,32 @@ public class ManagerDashboardController extends HttpServlet {
                 request.getRequestDispatcher(VIEW_PATH + "addProduct.jsp").forward(request, response);
                 break;
             case "edit":
-                break;
-            case "delete":
                 int productId_raw = Integer.parseInt(request.getParameter("ProductId"));
                 
                 try {
                     productDAO = new ProductDAO();
-                    Product product = new Product();
+                    product = new Product();
+                    
+                    product.setProductId(productId_raw);
+                    
+                    Product listProductDetail = (Product) productDAO.getDataById(product);
+                    request.setAttribute("listProductDetail", listProductDetail);
+                    
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ManagerDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                request.getRequestDispatcher(VIEW_PATH + "editProduct.jsp").forward(request, response);
+                break;
+            case "delete":
+                productId_raw = Integer.parseInt(request.getParameter("ProductId"));
+
+                try {
+                    productDAO = new ProductDAO();
+                    product = new Product();
+                    
                     product.setProductId(productId_raw);
 
                     productDAO.deleteData(product);
@@ -224,6 +245,7 @@ public class ManagerDashboardController extends HttpServlet {
                 request.getRequestDispatcher(VIEW_PATH + "addProduct.jsp").forward(request, response);
                 break;
             case "edit":
+                request.getRequestDispatcher(VIEW_PATH + "editProduct.jsp").forward(request, response);
                 break;
             case "delete":
                 break;
