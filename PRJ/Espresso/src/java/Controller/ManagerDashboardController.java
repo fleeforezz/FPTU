@@ -123,7 +123,8 @@ public class ManagerDashboardController extends HttpServlet {
             case "edit":
                 break;
             case "delete":
-                int productId_raw = Integer.parseInt(request.getParameter("productId"));
+                int productId_raw = Integer.parseInt(request.getParameter("ProductId"));
+                
                 try {
                     productDAO = new ProductDAO();
                     Product product = new Product();
@@ -165,7 +166,6 @@ public class ManagerDashboardController extends HttpServlet {
                 HttpSession session = request.getSession();
                 Account userSession = (Account) session.getAttribute("acc");
 
-                int productId_raw = Integer.parseInt(request.getParameter("productId"));
                 String productName_raw = request.getParameter("productName");
                 String brief_raw = request.getParameter("brief");
                 String postedDate_raw = request.getParameter("postedDate");
@@ -200,7 +200,6 @@ public class ManagerDashboardController extends HttpServlet {
                     ProductDAO productDAO = new ProductDAO();
                     Product product = new Product();
 
-                    product.setProductId(productId_raw);
                     product.setProductName(productName_raw);
                     product.setProductImage(UPLOAD_DIRECTORY + File.separator + fileName);
                     product.setBrief(brief_raw);

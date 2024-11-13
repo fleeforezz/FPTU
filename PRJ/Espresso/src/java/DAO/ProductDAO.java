@@ -47,23 +47,22 @@ public class ProductDAO implements Business<Product> {
     @Override
     public int insertData(Product product) {
 
-        String sql = "INSERT INTO products ([productId], [productName], [productImage], [brief], [postedDate], [typeId], [account], [unit], [price], [discount])\n"
-                + "VALUES (?,?,?,?,?,?,?,?,?,?)\n"
+        String sql = "INSERT INTO products ([productName], [productImage], [brief], [postedDate], [typeId], [account], [unit], [price], [discount])\n"
+                + "VALUES (?,?,?,?,?,?,?,?,?)\n"
                 + ";";
 
         try {
             ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, product.getProductId());
-            ps.setString(2, product.getProductName());
-            ps.setString(3, product.getProductImage());
-            ps.setString(4, product.getBrief());
-            ps.setDate(5, (Date) product.getPostedDate());
-            ps.setInt(6, product.getTypeId());
-            ps.setString(7, product.getAccount());
-            ps.setString(8, product.getUnit());
-            ps.setInt(9, product.getPrice());
-            ps.setInt(10, product.getDiscount());
+            ps.setString(1, product.getProductName());
+            ps.setString(2, product.getProductImage());
+            ps.setString(3, product.getBrief());
+            ps.setDate(4, (Date) product.getPostedDate());
+            ps.setInt(5, product.getTypeId());
+            ps.setString(6, product.getAccount());
+            ps.setString(7, product.getUnit());
+            ps.setInt(8, product.getPrice());
+            ps.setInt(9, product.getDiscount());
 
             rowsAffected = ps.executeUpdate();
 
@@ -95,8 +94,9 @@ public class ProductDAO implements Business<Product> {
 
     @Override
     public int deleteData(Product product) {
-        String sql = "DELETE FROM [dbo].[products]\n"
-                + "WHERE ([dbo].[products].[productId] = ?)\n"
+        String sql = "UPDATE products\n"
+                + "SET account=NULL\n"
+                + "WHERE productId = ?)\n"
                 + ";";
 
         try {

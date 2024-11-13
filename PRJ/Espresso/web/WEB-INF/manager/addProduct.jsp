@@ -47,9 +47,6 @@
                                 <div class="input-field-inner-child-1">
                                     <h2>General information</h2>
 
-                                    <label class="label">Product ID</label>
-                                    <input type="text" class="productID input" name="productId" required/>
-
                                     <label class="label">Name Product</label>
                                     <input type="text" class="product-name input" name="productName" required/>
 
