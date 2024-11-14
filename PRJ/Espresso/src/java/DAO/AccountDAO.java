@@ -47,7 +47,7 @@ public class AccountDAO implements Business<Account> {
     @Override
     public int insertData(Account account) {
 
-        String sql = "INSERT INTO [dbo].[accounts] ([account], [pass], [lastName], [firstName], [birthday], [gender], [phone], [isUse], [roleInSystem]) \n"
+        String sql = "INSERT INTO [dbo].[accounts] ([account], [pass], [lastName], [firstName], [birthday], [gender], [phone], [isUse], [roleInSystem], [accountImage]) \n"
                 + "VALUES (?,?,?,?,?,?,?,?,?);";
 
         try {
@@ -62,6 +62,7 @@ public class AccountDAO implements Business<Account> {
             ps.setString(7, account.getPhone());
             ps.setBoolean(8, account.isIsUse());
             ps.setInt(9, account.getRoleInSystem());
+            ps.setString(10, account.getAccountImage());
 
             rowsAffected = ps.executeUpdate();
 
@@ -75,8 +76,8 @@ public class AccountDAO implements Business<Account> {
     @Override
     public int updateData(Account account) {
 
-        String sql = "UPDATE [dbo].[accounts]\n"
-                + "SET [pass]=?, [firstName]=?, [lastName]=?, [birthday]=?, [gender]=?, [phone]=?, [isUse]=?, [roleInSystem]=?\n"
+        String sql = "UPDATE accounts\n"
+                + "SET [pass]=?, [firstName]=?, [lastName]=?, [birthday]=?, [gender]=?, [phone]=?, [isUse]=?, [roleInSystem]=?, [accountImage]=?\n"
                 + "WHERE ([dbo].[accounts].[account] = ?)\n"
                 + ";";
 
@@ -91,7 +92,8 @@ public class AccountDAO implements Business<Account> {
             ps.setString(6, account.getPhone());
             ps.setBoolean(7, account.isIsUse());
             ps.setInt(8, account.getRoleInSystem());
-            ps.setString(9, account.getAccount());
+            ps.setString(9, account.getAccountImage());
+            ps.setString(10, account.getAccount());
 
             rowsAffected = ps.executeUpdate();
 
@@ -105,9 +107,9 @@ public class AccountDAO implements Business<Account> {
     @Override
     public int deleteData(Account account) {
 
-        String sql = "UPDATE [dbo].[accounts]\n"
-                + "SET [isUse]='false'\n"
-                + "WHERE ([dbo].[accounts].[account] = ?)\n"
+        String sql = "UPDATE accounts\n"
+                + "SET isUse='false'\n"
+                + "WHERE account = ?)\n"
                 + ";";
         try {
             ps = conn.prepareStatement(sql);
@@ -144,7 +146,7 @@ public class AccountDAO implements Business<Account> {
     public List<Account> listAll() {
         List<Account> list = new ArrayList<>();
 
-        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem, accountImage\n"
                 + "FROM accounts\n"
                 + ";";
 
@@ -164,6 +166,7 @@ public class AccountDAO implements Business<Account> {
                 account.setPhone(resultSet.getString(7));
                 account.setIsUse(resultSet.getBoolean(8));
                 account.setRoleInSystem(resultSet.getInt(9));
+                account.setAccountImage(resultSet.getString(10));
 
                 list.add(account);
 
@@ -175,40 +178,8 @@ public class AccountDAO implements Business<Account> {
         return list;
     }
 
-    public Account checkDataExist(String account) {
-        String sql = "SELECT [dbo].[accounts].[account], [dbo].[accounts].[pass]\n"
-                + "FROM [dbo].[accounts]\n"
-                + "WHERE [dbo].[accounts].[account] = ?\n"
-                + ";";
-
-        try {
-
-            ps = conn.prepareStatement(sql);
-            ps.executeQuery();
-
-            while (resultSet.next()) {
-                return new Account(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4),
-                        resultSet.getDate(5),
-                        resultSet.getBoolean(6),
-                        resultSet.getString(7),
-                        resultSet.getBoolean(8),
-                        resultSet.getInt(9)
-                );
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return null;
-    }
-
     public Account getData(String account, String pass) {
-        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem, accountImage\n"
                 + "FROM accounts\n"
                 + "WHERE account = ? AND pass = ?\n"
                 + ";";
@@ -229,35 +200,8 @@ public class AccountDAO implements Business<Account> {
                         resultSet.getBoolean(6),
                         resultSet.getString(7),
                         resultSet.getBoolean(8),
-                        resultSet.getInt(9)
-                );
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return null;
-    }
-
-    public Account getDataFalse() {
-        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem FROM accounts WHERE isUse = 'false';";
-
-        try {
-            ps = conn.prepareStatement(sql);
-            resultSet = ps.executeQuery();
-
-            while (resultSet.next()) {
-                return new Account(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4),
-                        resultSet.getDate(5),
-                        resultSet.getBoolean(6),
-                        resultSet.getString(7),
-                        resultSet.getBoolean(8),
-                        resultSet.getInt(9)
+                        resultSet.getInt(9),
+                        resultSet.getString(10)
                 );
             }
 
@@ -270,7 +214,7 @@ public class AccountDAO implements Business<Account> {
 
     @Override
     public Account getDataById(Account account) {
-        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem\n"
+        String sql = "SELECT account, pass, lastName, firstName, birthday, gender, phone, isUse, roleInSystem, accountImage\n"
                 + "FROM accounts\n"
                 + "WHERE account = ?\n"
                 + ";";
@@ -290,7 +234,8 @@ public class AccountDAO implements Business<Account> {
                         resultSet.getBoolean(6),
                         resultSet.getString(7),
                         resultSet.getBoolean(8),
-                        resultSet.getInt(9)
+                        resultSet.getInt(9),
+                        resultSet.getString(10)
                 );
             }
 

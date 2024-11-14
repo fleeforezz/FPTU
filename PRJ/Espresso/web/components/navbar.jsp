@@ -68,26 +68,57 @@
             </div>
             <c:if test="${sessionScope.acc != null}" >
                 <div class="account">
-                    <img src="${pageContext.request.contextPath}/resources/assets/profile-1.jpg" />
-                    <p>${sessionScope.acc.account}</p>
+                    <c:if test="${sessionScope.acc.accountImage == null}">
+                        <img src="${pageContext.request.contextPath}/resources/assets/account.png" />
+                    </c:if>
+                    <c:if test="${sessionScope.acc.accountImage != null}">
+                        <img src="${pageContext.request.contextPath}/${sessionScope.acc.accountImage}"/>
+                    </c:if>
                     <i class="ph ph-caret-down"></i>
                     <div class="dropdown">
                         <ul>
+                            <li class="top-info">
+                                <c:if test="${sessionScope.acc.accountImage == null}">
+                                    <img src="${pageContext.request.contextPath}/resources/assets/account.png" />
+                                </c:if>
+                                <c:if test="${sessionScope.acc.accountImage != null}">
+                                    <img src="${pageContext.request.contextPath}/${sessionScope.acc.accountImage}"/>
+                                </c:if>
+                                <a href="${pageContext.request.contextPath}/account/general" class="name-info">
+                                    ${sessionScope.acc.account} <br>
+                                    ${sessionScope.acc.lastName}
+                                    ${sessionScope.acc.firstName}
+                                </a>
+                            </li>
+                            <span class="separator"></span>
                             <c:if test="${sessionScope.acc.roleInSystem == 1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin/dashboard">Admin Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/admin/dashboard">
+                                        <i class="ph ph-gauge"></i>
+                                        Admin Dashboard
+                                    </a>
                                 </li>
                             </c:if>
                             <c:if test="${sessionScope.acc.roleInSystem == 2}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/manager/dashboard">Manager Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/manager/dashboard">
+                                        <i class="ph ph-gauge"></i>
+                                        Manager Dashboard
+                                    </a>
                                 </li>
                             </c:if>
                             <li>
-                                <a href="${pageContext.request.contextPath}/account/general" >Edit Profile</a>
+                                <a href="${pageContext.request.contextPath}/account/general">
+                                    <i class="ph ph-user"></i>
+                                    Account Settings
+                                </a>
                             </li>
+                            <span class="separator"></span>
                             <li>
-                                <a href="${pageContext.request.contextPath}/logout">Logout</a>
+                                <a href="${pageContext.request.contextPath}/logout">
+                                    <i class="ph ph-sign-out"></i>
+                                    Log out
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -107,8 +138,8 @@
                 &times;
             </a>
             <div class="overlay-content">
-                <a href="home">Home</a>	
-                <a href="collection">Product</a>
+                <a href="${pageContext.request.contextPath}/home">Home</a>	
+                <a href="${pageContext.request.contextPath}/collection/list">Product</a>
                 <a href="#">About Us</a>
                 <a href="#">Contact</a>
             </div>

@@ -1,4 +1,9 @@
 /*navigation bar*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .nav-bar {
     display: flex;
     align-items: center;
@@ -92,10 +97,11 @@
     position: absolute;
     top: 68px;
     right: 40px;
+    width: 13%;
     visibility: hidden;
+    padding: 20px;
     background: #0f121c;
     border: 1px solid gray;
-    padding: 15px 15px;
     transform: translateY(-10px);
     transition: opacity 250ms ease-in-out, transform 250ms ease-in-out, visibility 0ms ease-in-out 250ms;
     opacity: 0;
@@ -111,22 +117,28 @@
 }
 
 .dropdown ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
     display: flex;
+    gap: 1rem;
     flex-direction: column;
     list-style-type: none;
-    gap: 8px;
-    padding: 0px 10px;
 }
 
 .dropdown > ul a {
     display: flex;
+    gap: 0.5rem;
     align-items: center;
-    gap: 1rem;
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
     color: #9c9cac;
     transition: 250ms;
+}
+
+.dropdown > ul a i {
+    font-size: 1.2rem;
 }
 
 .dropdown > ul a:hover {
@@ -135,17 +147,18 @@
 
 .dropdown ul li {
     display: flex;
-    align-items: center;
     color: #7e8590;
-    gap: 10px;
     transition: all 0.3s ease-out;
-    padding: 4px 7px;
-    border-radius: 6px;
     cursor: pointer;
 }
 
 .dropdown i {
     font-size: 1.4rem;
+}
+
+.top-info {
+    display: flex;
+    gap: 1rem;
 }
 
 .product-dropdown {
@@ -238,6 +251,11 @@
     font-size: 1.5rem;
     padding: 0;
     text-align: center;
+}
+
+.separator {
+    padding: 0.5px;
+    background: #21242b;
 }
 
 

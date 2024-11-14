@@ -21,11 +21,12 @@ public class Account {
     private String phone;
     private boolean isUse;
     private int roleInSystem;
+    private String accountImage;
 
     public Account() {
     }
 
-    public Account(String account, String pass, String lastName, String firstName, Date birthday, boolean gender, String phone, boolean isUse, int roleInSystem) {
+    public Account(String account, String pass, String lastName, String firstName, Date birthday, boolean gender, String phone, boolean isUse, int roleInSystem, String accountImage) {
         this.account = account;
         this.pass = pass;
         this.lastName = lastName;
@@ -35,6 +36,7 @@ public class Account {
         this.phone = phone;
         this.isUse = isUse;
         this.roleInSystem = roleInSystem;
+        this.accountImage = accountImage;
     }
 
     public String getAccount() {
@@ -109,9 +111,17 @@ public class Account {
         this.roleInSystem = roleInSystem;
     }
 
+    public String getAccountImage() {
+        return accountImage;
+    }
+
+    public void setAccountImage(String accountImage) {
+        this.accountImage = accountImage;
+    }
+
     @Override
     public String toString() {
-        return "Account{" + "account=" + account + ", pass=" + pass + ", lastName=" + lastName + ", firstName=" + firstName + ", birthday=" + birthday + ", gender=" + gender + ", phone=" + phone + ", isUse=" + isUse + ", roleInSystem=" + roleInSystem + '}';
+        return "Account{" + "account=" + account + ", pass=" + pass + ", lastName=" + lastName + ", firstName=" + firstName + ", birthday=" + birthday + ", gender=" + gender + ", phone=" + phone + ", isUse=" + isUse + ", roleInSystem=" + roleInSystem + ", accountImage=" + accountImage + '}';
     }
     
 }
