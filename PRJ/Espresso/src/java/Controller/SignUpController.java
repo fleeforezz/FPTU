@@ -72,6 +72,8 @@ public class SignUpController extends HttpServlet {
             throws ServletException, IOException {
         
         request.setCharacterEncoding("UTF-8");
+        AccountDAO accountDAO;
+        Account account;
         
         String username_raw = request.getParameter("account");
         String password_raw = request.getParameter("pass");
@@ -87,11 +89,10 @@ public class SignUpController extends HttpServlet {
         LocalDate convertedBirthdate = LocalDate.parse(birthday_raw, formatter);
 
         // SignUp logic
-        AccountDAO accountDAO;
         try {
             accountDAO = new AccountDAO();
-
-            Account account = new Account();
+            account = new Account();
+            
             account.setAccount(username_raw);
             account.setPass(password_raw);
             account.setLastName(lastName_raw);

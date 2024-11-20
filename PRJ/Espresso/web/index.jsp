@@ -17,8 +17,8 @@
     </head>
     <body>
 
+        <jsp:include page="components/navbar.jsp"></jsp:include>
         <div class="header">
-            <jsp:include page="components/navbar.jsp"></jsp:include>
 
                 <section class="hero">
                     <div class="upper-hero">

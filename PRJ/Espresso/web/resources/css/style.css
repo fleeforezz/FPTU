@@ -13,13 +13,9 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
-.nav-bar {
-    padding: 0px;
-}
-
 .header {
     background: #f2f0ea;
-    padding: 0px 40px 40px 40px;
+    padding: 40px 40px 40px 40px;
 }
 
 /*Hero Section*/

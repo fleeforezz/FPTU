@@ -1,3 +1,4 @@
+// Hamburger Button
 function openNav() {
     document.getElementById("hamburger-btn").style.width = "100%";
 }
@@ -53,3 +54,11 @@ function previewImage(event) {
     }
 }
 
+// Sidebar collapse
+function openNav() {
+  document.getElementById("mySidenav").style.width = "30%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

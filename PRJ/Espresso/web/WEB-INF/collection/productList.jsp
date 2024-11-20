@@ -17,8 +17,9 @@
     </head>
     <body>
         <jsp:include page="../../components/navbar.jsp" ></jsp:include>
-            <div class="banner">
-                <img class="coffee-banner" src="${pageContext.request.contextPath}/resources/assets/coffee-jar.jpg" />
+            <div class="container">
+                <div class="banner">
+                    <img class="coffee-banner" src="${pageContext.request.contextPath}/resources/assets/coffee-jar.jpg" />
                 <ul>
                     <li>
                         <a href="home">Home</a>
@@ -31,26 +32,27 @@
 
             <div class="product-view">
                 <ul>
-                <c:forEach items="${productList}" var="o" >
-                    <li>
-                        <a href="product?productId=${o.productId}">
-                            <div class="item">
-                                <img src="${pageContext.request.contextPath}/${o.productImage}" />
-                                <div class="product-info">
-                                    <div class="product-name product-price">
-                                        <p class="heading">${o.productName}</p>
-                                        <p class="price">$${o.price}</p>
+                    <c:forEach items="${productList}" var="o" >
+                        <li>
+                            <a href="product?productId=${o.productId}">
+                                <div class="item">
+                                    <img src="${pageContext.request.contextPath}/${o.productImage}" />
+                                    <div class="product-info">
+                                        <div class="product-name product-price">
+                                            <p class="heading">${o.productName}</p>
+                                            <p class="price">$${o.price}</p>
+                                        </div>
+                                        <c:forEach begin="1" end="5" >
+                                            <i class="ph ph-star"></i>
+                                        </c:forEach>
                                     </div>
-                                    <c:forEach begin="1" end="5" >
-                                        <i class="ph ph-star"></i>
-                                    </c:forEach>
-                                </div>
 
-                            </div>
-                        </a>
-                    </li>
-                </c:forEach>
-            </ul>
+                                </div>
+                            </a>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
         </div>
         <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
         <jsp:include page="../../components/footer.jsp"></jsp:include>

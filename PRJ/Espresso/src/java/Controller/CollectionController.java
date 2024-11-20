@@ -55,6 +55,10 @@ public class CollectionController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        ProductDAO productDAO;
+        Product product;
+        
         String pathInfo = request.getPathInfo();
 
         if (pathInfo == null) {
@@ -65,7 +69,7 @@ public class CollectionController extends HttpServlet {
 
         switch (action) {
             case "list":
-                ProductDAO productDAO;
+                
                 try {
                     productDAO = new ProductDAO();
                     List<Product> productList = productDAO.listAll();
@@ -82,7 +86,7 @@ public class CollectionController extends HttpServlet {
                 if (productId_raw > 0) {
                     try {
                         productDAO = new ProductDAO();
-                        Product product = new Product();
+                        product = new Product();
 
                         product.setProductId(productId_raw);
 

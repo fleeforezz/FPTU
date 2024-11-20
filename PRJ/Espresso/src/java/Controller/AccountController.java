@@ -68,6 +68,8 @@ public class AccountController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        request.setCharacterEncoding("UTF-8");
+
         HttpSession session = request.getSession();
         Account userSession = (Account) session.getAttribute("acc");
         AccountDAO accountDAO;
@@ -83,8 +85,7 @@ public class AccountController extends HttpServlet {
 
         switch (action) {
             case "general":
-                request.setCharacterEncoding("UTF-8");
-                // Get User Account from session
+
                 try {
                     accountDAO = new AccountDAO();
 
@@ -97,24 +98,31 @@ public class AccountController extends HttpServlet {
                 }
                 request.getRequestDispatcher(VIEW_PATH + "editUser.jsp").forward(request, response);
                 break;
+
             case "profile":
+
                 try {
                     accountDAO = new AccountDAO();
                     account = new Account();
-                    
+
                     Account getAccount = accountDAO.getDataById(account);
                     request.setAttribute("getAccount", getAccount);
                 } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-            request.getRequestDispatcher(VIEW_PATH + "editProfile.jsp").forward(request, response);
-            break;
+                request.getRequestDispatcher(VIEW_PATH + "editProfile.jsp").forward(request, response);
+                break;
+
             case "password":
+                
                 request.getRequestDispatcher(VIEW_PATH + "editPassword.jsp").forward(request, response);
                 break;
+                
             case "delete":
+                
                 request.getRequestDispatcher(VIEW_PATH + "deleteAccount.jsp").forward(request, response);
+                break;
         }
     }
 
@@ -129,6 +137,8 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setCharacterEncoding("UTF-8");
 
         HttpSession session = request.getSession();
         Account userSession = (Account) session.getAttribute("acc");
@@ -145,8 +155,7 @@ public class AccountController extends HttpServlet {
 
         switch (action) {
             case "general":
-                request.setCharacterEncoding("UTF-8");
-
+                
                 // Get Parameters from jsp
                 String lastName_raw = request.getParameter("lastName");
                 String firstName_raw = request.getParameter("firstName");
@@ -189,6 +198,7 @@ public class AccountController extends HttpServlet {
 
                 request.getRequestDispatcher(VIEW_PATH + "editUser.jsp").forward(request, response);
                 break;
+                
             case "profile":
 
                 // File upload logic
@@ -212,7 +222,7 @@ public class AccountController extends HttpServlet {
                 try {
                     accountDAO = new AccountDAO();
                     account = new Account();
-                    
+
                     account.setAccount(userSession.getAccount());
                     account.setPass(userSession.getPass());
                     account.setLastName(userSession.getLastName());
@@ -223,9 +233,9 @@ public class AccountController extends HttpServlet {
                     account.setIsUse(userSession.isIsUse());
                     account.setRoleInSystem(userSession.getRoleInSystem());
                     account.setAccountImage(UPLOAD_DIRECTORY + File.separator + fileName);
-                    
+
                     int updateAccount = accountDAO.updateData(account);
-                    
+
                     if (updateAccount == 1) {
                         request.setAttribute("SUCCESS_MESSAGE", "Update profile image success");
                     } else {
@@ -238,7 +248,9 @@ public class AccountController extends HttpServlet {
 
                 request.getRequestDispatcher(VIEW_PATH + "editProfile.jsp").forward(request, response);
                 break;
+                
             case "password":
+                
                 try {
                     session = request.getSession();
                     Account userAccount = (Account) session.getAttribute("acc");
@@ -277,7 +289,9 @@ public class AccountController extends HttpServlet {
 
                 request.getRequestDispatcher(VIEW_PATH + "editPassword.jsp").forward(request, response);
                 break;
+                
             case "delete":
+                
                 session = request.getSession();
                 Account userAccount = (Account) session.getAttribute("acc");
 

@@ -108,6 +108,6 @@
 
         </div>
 
-        <script src="script/main.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/script/main.js"></script>
     </body>
 </html>

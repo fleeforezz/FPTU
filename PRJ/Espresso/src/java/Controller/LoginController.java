@@ -67,6 +67,8 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        AccountDAO accountDAO;
         HttpSession session = request.getSession();
 
         String username_raw = request.getParameter("account");
@@ -92,7 +94,7 @@ public class LoginController extends HttpServlet {
         response.addCookie(password_cookie);
         response.addCookie(remember_cookie);
        
-        AccountDAO accountDAO;
+        
         try {
             accountDAO = new AccountDAO();
 
