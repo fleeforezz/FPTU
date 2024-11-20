@@ -31,6 +31,7 @@
                 <div class="bottom-setting">
                     <div class="bottom-setting-left">
                         <a href="general">General</a>
+                        <a href="profile">Edit Profile</a>
                         <a href="password" class="active">Password</a>
                         <a href="export">Data Export</a>
                         <div class="separator"></div>

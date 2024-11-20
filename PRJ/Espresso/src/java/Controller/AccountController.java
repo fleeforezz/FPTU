@@ -7,6 +7,7 @@ package Controller;
 
 import DAO.AccountDAO;
 import Entity.Account;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -17,20 +18,28 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author jso
  */
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+        maxFileSize = 1024 * 1024 * 10, // 10 MB
+        maxRequestSize = 1024 * 1024 * 50 // 50 MB
+)
 @WebServlet(name = "AccountController", urlPatterns = {"/account/*"})
 public class AccountController extends HttpServlet {
 
     private static final String VIEW_PATH = "/WEB-INF/account/";
+    private static final String UPLOAD_DIRECTORY = "uploads/usersProfile";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -58,6 +67,12 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        Account userSession = (Account) session.getAttribute("acc");
+        AccountDAO accountDAO;
+        Account account;
+
         String pathInfo = request.getPathInfo();
 
         if (pathInfo == null) {
@@ -70,10 +85,6 @@ public class AccountController extends HttpServlet {
             case "general":
                 request.setCharacterEncoding("UTF-8");
                 // Get User Account from session
-                HttpSession session = request.getSession();
-                Account userSession = (Account) session.getAttribute("acc");
-
-                AccountDAO accountDAO;
                 try {
                     accountDAO = new AccountDAO();
 
@@ -86,6 +97,19 @@ public class AccountController extends HttpServlet {
                 }
                 request.getRequestDispatcher(VIEW_PATH + "editUser.jsp").forward(request, response);
                 break;
+            case "profile":
+                try {
+                    accountDAO = new AccountDAO();
+                    account = new Account();
+                    
+                    Account getAccount = accountDAO.getDataById(account);
+                    request.setAttribute("getAccount", getAccount);
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            request.getRequestDispatcher(VIEW_PATH + "editProfile.jsp").forward(request, response);
+            break;
             case "password":
                 request.getRequestDispatcher(VIEW_PATH + "editPassword.jsp").forward(request, response);
                 break;
@@ -105,6 +129,12 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        Account userSession = (Account) session.getAttribute("acc");
+        AccountDAO accountDAO;
+        Account account;
+
         String pathInfo = request.getPathInfo();
 
         if (pathInfo == null) {
@@ -116,11 +146,6 @@ public class AccountController extends HttpServlet {
         switch (action) {
             case "general":
                 request.setCharacterEncoding("UTF-8");
-
-                HttpSession session = request.getSession();
-                Account userSession = (Account) session.getAttribute("acc");
-                AccountDAO accountDAO;
-                Account account;
 
                 // Get Parameters from jsp
                 String lastName_raw = request.getParameter("lastName");
@@ -163,6 +188,55 @@ public class AccountController extends HttpServlet {
                 }
 
                 request.getRequestDispatcher(VIEW_PATH + "editUser.jsp").forward(request, response);
+                break;
+            case "profile":
+
+                // File upload logic
+                // 1. Get the file part from the request
+                Part accountImage_raw = request.getPart("accountImage");
+                String fileName = accountImage_raw.getSubmittedFileName();
+
+                // 2. Define the upload path
+                String uploadPath = getServletContext().getRealPath("") + UPLOAD_DIRECTORY;
+
+                // 3. Create upload directory if it's doesn't exist
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdir();
+                }
+
+                // 4. Save the file on serber
+                String filePath = uploadPath + File.separator + fileName;
+                accountImage_raw.write(filePath);
+
+                try {
+                    accountDAO = new AccountDAO();
+                    account = new Account();
+                    
+                    account.setAccount(userSession.getAccount());
+                    account.setPass(userSession.getPass());
+                    account.setLastName(userSession.getLastName());
+                    account.setFirstName(userSession.getFirstName());
+                    account.setBirthday(userSession.getBirthday());
+                    account.setGender(userSession.isGender());
+                    account.setPhone(userSession.getPhone());
+                    account.setIsUse(userSession.isIsUse());
+                    account.setRoleInSystem(userSession.getRoleInSystem());
+                    account.setAccountImage(UPLOAD_DIRECTORY + File.separator + fileName);
+                    
+                    int updateAccount = accountDAO.updateData(account);
+                    
+                    if (updateAccount == 1) {
+                        request.setAttribute("SUCCESS_MESSAGE", "Update profile image success");
+                    } else {
+                        request.setAttribute("FAILED_MESSAGE", "Update profile image fail");
+                    }
+
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                request.getRequestDispatcher(VIEW_PATH + "editProfile.jsp").forward(request, response);
                 break;
             case "password":
                 try {
@@ -220,7 +294,7 @@ public class AccountController extends HttpServlet {
                         } else {
                             System.out.println("The user already diactivate");
                         }
-                        
+
                     } catch (ClassNotFoundException | SQLException ex) {
                         Logger.getLogger(AccountController.class.getName()).log(Level.SEVERE, null, ex);
                     }
