@@ -1,13 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author jso
- */
 public class main {
 
     /**
@@ -23,7 +13,6 @@ public class main {
     
     public static int calcNum(int x, int y) {
         int sum = 0;
-        
         return sum = x + y;
     }
 }
