@@ -1,0 +1,2 @@
+So luong phan tu khac nhau: 7
+8 3 5 1 9 7 2 5 8 3 3 
