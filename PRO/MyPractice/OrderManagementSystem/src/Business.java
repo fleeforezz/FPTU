@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,9 +10,11 @@
  * @param <Object>
  */
 public interface Business<Object> {
-    public int addRec(Object obj);
+    int addRec(Object obj);
     
-    public int updateRec(Object obj);
+    int updateRec(Object obj);
     
-    public void listAll();
+    void listAll();
+    
+    Object getRecById(Object obj);
 }

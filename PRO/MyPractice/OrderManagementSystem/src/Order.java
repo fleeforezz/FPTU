@@ -74,7 +74,7 @@ public class Order implements Business<Order> {
         if (isAdd) {
             return 1;
         }
-        
+
         return 0;
     }
 
@@ -86,8 +86,17 @@ public class Order implements Business<Order> {
     @Override
     public void listAll() {
         for (Object object : orderList) {
-            System.out.println(object);
+            if (object != null) {
+                System.out.println(object);
+            } else {
+                System.out.println("The list is empty");
+            }
         }
+    }
+
+    @Override
+    public Order getRecById(Order obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
