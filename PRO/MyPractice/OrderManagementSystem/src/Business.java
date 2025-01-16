@@ -14,6 +14,8 @@ public interface Business<Object> {
     
     int updateRec(Object obj);
     
+    int deleteRec(String id);
+    
     void listAll();
     
     Object getRecById(Object obj);

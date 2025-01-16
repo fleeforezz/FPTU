@@ -65,7 +65,7 @@ public class Order implements Business<Order> {
 
     @Override
     public String toString() {
-        return "Order{" + "orderId=" + orderId + ", createdDate=" + createdDate + ", customerName=" + customerName + ", customerAddress=" + customerAddress + ", orderList=" + orderList.size() + '}';
+        return "orderId=" + orderId + "\n" + "createdDate=" + createdDate + "\n" + "customerName=" + customerName + "\n" + "customerAddress=" + customerAddress;
     }
 
     @Override
@@ -86,8 +86,8 @@ public class Order implements Business<Order> {
     @Override
     public void listAll() {
         for (Object object : orderList) {
-            if (object != null) {
-                System.out.println(object);
+            if (orderList != null && !orderList.isEmpty()) {
+                System.out.println(object + "\n");
             } else {
                 System.out.println("The list is empty");
             }
@@ -97,6 +97,26 @@ public class Order implements Business<Order> {
     @Override
     public Order getRecById(Order obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int deleteRec(String orderID) {
+        if (orderList != null && !orderList.isEmpty()) {
+            for (int i = 0; i < orderList.size(); i++) {
+                Order order = (Order) orderList.get(i);
+                if (order.getOrderId().equals(orderID)) {
+                    orderList.remove(i);
+                    System.out.println("Delete success");
+                    System.out.println("Order with ID " + orderID + " has been removed.");
+                    return 1; // Successfully deleted
+                }
+            }
+            System.out.println("Order with ID " + orderID + " is not found in the list.");
+        } else {
+            System.out.println("Error: List is empty");
+        }
+
+        return 0;
     }
 
 }

@@ -22,14 +22,6 @@ public class Main {
 
         Order order = new Order();
 
-        // Test field
-        Order order1 = new Order("O1", "2025-01-01", "John Doe", "123 Main St");
-        Order order2 = new Order("O2", "2025-01-02", "Jane Smith", "456 Elm St");
-
-        Order orderManager = new Order();
-        orderManager.addRec(order1);
-        orderManager.addRec(order2);
-
         // Initialize firstMenuChoice
         int firstMenuChoice = 0;
 
@@ -49,7 +41,8 @@ public class Main {
                         System.out.println("\n");
                         System.out.println("1. Create Order");
                         System.out.println("2. List all Order");
-                        System.out.println("3. Exit");
+                        System.out.println("3. Remove Order");
+                        System.out.println("4. Exit");
                         System.out.print("--> Your input: ");
                         orderMenuChoice = sc.nextInt();
 
@@ -67,6 +60,8 @@ public class Main {
                                 order.setCustomerName(sc.nextLine());
                                 System.out.print("Customer Address: ");
                                 order.setCustomerAddress(sc.nextLine());
+                                System.out.println("Add product to order by select a product from below list");
+                                System.out.println("Product ID \t Product Name \t Product Price");
 
                                 int isAdd = order.addRec(order);
                                 if (isAdd == 1) {
@@ -80,19 +75,34 @@ public class Main {
 
                                 System.out.println("\n");
                                 System.out.println("----Order List----");
-                                orderManager.listAll();
+                                order.listAll();
 
                                 break;
                             case 3:
+                                
+                                sc = new Scanner(System.in); // Refresh scanner
+                                System.out.print("Select order ID to delete: ");
+                                String orderID_raw = sc.nextLine();
+                                
+                                int isRemove = order.deleteRec(orderID_raw);
+                                if (isRemove == 1) {
+                                    System.out.println("Remove success");
+                                } else {
+                                    System.out.println("Remove failed");
+                                }
+                                
+                                break;
+                            case 4:
                                 break;
                             default:
                                 System.out.println("Invalid input");
                                 break;
                         }
 
-                    } while (orderMenuChoice > 0 && orderMenuChoice < 3);
+                    } while (orderMenuChoice > 0 && orderMenuChoice < 4);
                     break;
                 case 2:
+                    
                     break;
                 case 3:
                     break;
