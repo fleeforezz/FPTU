@@ -1,4 +1,9 @@
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,6 +122,41 @@ public class Order implements Business<Order> {
         }
 
         return 0;
+    }
+
+    public boolean isFileDBExist() {
+        try {
+            File fileDB = new File("orderDB.txt");
+            if (fileDB.exists()) {
+                return true;
+            } else {
+                fileDB.createNewFile();
+                return false;
+            }
+        } catch (IOException e) {
+            System.out.println("There's an error occur: " + e.getMessage());
+        }
+        return false;
+    }
+
+    public boolean saveOrdersToFile(String filepath) throws FileNotFoundException, IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))) {
+            if (orderList != null && !orderList.isEmpty()) {
+                for (Object object : orderList) {
+                    Order order = (Order) object;
+                    writer.write(order.toString());
+                    writer.newLine(); // add new line on each order
+                }
+                System.out.println("Orders saved successfully to: " + filepath);
+                return true;
+            } else {
+                System.out.println("Error: Order list is empty. Nothing to save");
+                return false;
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+            return false;
+        }
     }
 
 }

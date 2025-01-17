@@ -17,7 +17,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // Scanner
         Scanner sc = new Scanner(System.in);
@@ -67,20 +67,29 @@ public class Main {
 
                                 int isAdd = order.addRec(order);
                                 if (isAdd == 1) {
-                                    System.out.println("Add success");
+                                    System.out.println("Order add to list successfully");
                                 } else {
-                                    System.out.println("Add failed");
+                                    System.out.println("Failed to add order to list");
                                 }
-                                
-                                try {
-                                    File orderDB = new File("orderDB.txt");
-                                    if (orderDB.createNewFile()) {
-                                        System.out.println("File created: " + orderDB.getPath());
+
+                                // Save to file
+                                System.out.print("Save order to file? (Y/n): ");
+                                String saveChoice = sc.nextLine();
+                                if (saveChoice.equalsIgnoreCase("y")) {
+
+                                    // Check if the fileDB exist
+                                    boolean fileDBExist = order.isFileDBExist();
+
+                                    if (fileDBExist) {
+                                        boolean success = order.saveOrdersToFile("orderDB.txt");
+                                        if (success) {
+                                            System.out.println("Order saved successfully");
+                                        } else {
+                                            System.out.println("Failed to save orders");
+                                        }
                                     } else {
-                                        System.out.println("File already exists");
+                                        System.out.println("FileDB not exist");
                                     }
-                                } catch (IOException e) {
-                                    e.printStackTrace();
                                 }
 
                                 break;
@@ -92,18 +101,18 @@ public class Main {
 
                                 break;
                             case 3:
-                                
+
                                 sc = new Scanner(System.in); // Refresh scanner
                                 System.out.print("Select order ID to delete: ");
                                 String orderID_raw = sc.nextLine();
-                                
+
                                 int isRemove = order.deleteRec(orderID_raw);
                                 if (isRemove == 1) {
                                     System.out.println("Remove success");
                                 } else {
                                     System.out.println("Remove failed");
                                 }
-                                
+
                                 break;
                             case 4:
                                 break;
@@ -115,7 +124,7 @@ public class Main {
                     } while (orderMenuChoice > 0 && orderMenuChoice < 4);
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
                     break;

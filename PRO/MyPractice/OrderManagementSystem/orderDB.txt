@@ -1,0 +1,4 @@
+orderId=1
+createdDate=3/12/2004
+customerName=Jso
+customerAddress=HoChiMinh
