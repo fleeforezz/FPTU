@@ -1,4 +1,6 @@
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 /*
@@ -68,6 +70,17 @@ public class Main {
                                     System.out.println("Add success");
                                 } else {
                                     System.out.println("Add failed");
+                                }
+                                
+                                try {
+                                    File orderDB = new File("orderDB.txt");
+                                    if (orderDB.createNewFile()) {
+                                        System.out.println("File created: " + orderDB.getPath());
+                                    } else {
+                                        System.out.println("File already exists");
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
                                 }
 
                                 break;
