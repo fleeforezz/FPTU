@@ -1,4 +1,7 @@
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,9 +73,22 @@ public class Order implements Business<Order> {
 
     @Override
     public int addRec(Order order) {
-        boolean isAdd = orderList.add(order);
-        if (isAdd) {
-            return 1;
+        try {
+            File orderDB = new File("orderDB.txt");
+            FileWriter writeFile = new FileWriter(orderDB);
+
+            if (orderDB.createNewFile()) {
+                System.out.println("File created: " + orderDB.getPath());
+                boolean isAdd = orderList.add(order);
+                if (isAdd) {
+                    writeFile.write(orderList.toString());
+                    return 1;
+                }
+            } else {
+                System.out.println("File already exists");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         return 0;

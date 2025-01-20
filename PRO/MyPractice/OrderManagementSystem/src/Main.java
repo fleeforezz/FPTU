@@ -71,17 +71,6 @@ public class Main {
                                 } else {
                                     System.out.println("Add failed");
                                 }
-                                
-                                try {
-                                    File orderDB = new File("orderDB.txt");
-                                    if (orderDB.createNewFile()) {
-                                        System.out.println("File created: " + orderDB.getPath());
-                                    } else {
-                                        System.out.println("File already exists");
-                                    }
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
 
                                 break;
                             case 2:
