@@ -119,21 +119,19 @@ public class MyList {
         Scanner sca = new Scanner(System.in);
 
         System.out.print("Nhap so can them: ");
-        int n = sca.nextInt();
-        sca.nextLine();
+        int inputNumber = sca.nextInt();
 
-        System.out.println("Nhap vi tri them: ");
-        int k = sca.nextInt();
-        sca.nextLine();
+        System.out.print("Nhap vi tri them: ");
+        int position = sca.nextInt();
 
         Node m = head;
-        int step = k - 1;
+        int step = position - 2;
         while (step > 0) {
             m = m.next;
             step -= 1;
         }
 
-        Node node_N = new Node(n);
+        Node node_N = new Node(inputNumber);
         node_N.next = m.next;
         m.next = node_N;
 
