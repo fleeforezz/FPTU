@@ -1,0 +1,10 @@
+Patient (Emergency): NVA-8.0
+Patient (Emergency): NVD-9.0
+Patient (Emergency): LVX-10.0
+Patient: LVB-3.0
+Patient: TTC-5.0
+Patient: LTH-2.0
+Patient: LHD-1.0
+Patient: LMS-4.0
+Emergency:     
+Normal:     
