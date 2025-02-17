@@ -20,6 +20,7 @@ public class Part2 {
                 String pattern = "^SE\\d.*";
                 
                 Scanner sc = new Scanner(System.in);
+                System.out.print("Enter a String: ");
                 s = sc.nextLine();
                 
                 if ( !s.matches(pattern) ) {
