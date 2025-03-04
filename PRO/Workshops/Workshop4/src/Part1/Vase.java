@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author jso
  */
 public class Vase extends Item {
+
     private int height;
     private String material;
 
@@ -39,23 +40,27 @@ public class Vase extends Item {
     public void setMaterial(String material) {
         this.material = material;
     }
-    
-    public void outputVase() {
-        output();
+
+    public void output() {
+        super.output();
         System.out.println("Height: " + this.getHeight());
         System.out.println("Material: " + this.getMaterial());
     }
-    
-    public void inputVase() {
-        input();
+
+    public void input() {
+        super.input();
         Scanner sc = new Scanner(System.in);
         System.out.print("Input height: ");
         this.height = sc.nextInt();
-        
+
         System.out.print("Input material: ");
         sc = new Scanner(System.in);
         this.material = sc.nextLine();
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Vase{" + "height=" + height + ", material=" + material + '}';
+    }
+
 }

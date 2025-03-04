@@ -11,7 +11,8 @@ import java.util.Scanner;
  *
  * @author jso
  */
-public class Statue extends Item{
+public class Statue extends Item {
+
     private int weight;
     public String colour;
 
@@ -39,21 +40,27 @@ public class Statue extends Item{
     public void setColour(String colour) {
         this.colour = colour;
     }
-    
-    public void outputStatue() {
-        output();
+
+    public void output() {
+        this.output();
         System.out.println("Weight: " + this.getWeight());
         System.out.println("Colour: " + this.getColour());
-    }   
-    
-    public void inputStatue() {
-        input();
+    }
+
+    public void input() {
+        this.input();
         Scanner sc = new Scanner(System.in);
         System.out.print("Input Weight: ");
         weight = sc.nextInt();
-        
+
         System.out.print("Input colour: ");
         sc = new Scanner(System.in);
         colour = sc.nextLine();
     }
+
+    @Override
+    public String toString() {
+        return "Statue{" + "weight=" + weight + ", colour=" + colour + '}';
+    }
+
 }

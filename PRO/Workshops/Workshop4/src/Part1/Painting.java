@@ -11,7 +11,8 @@ import java.util.Scanner;
  *
  * @author jso
  */
-public class Painting extends Item{
+public class Painting extends Item {
+
     private int height;
     private int width;
     private boolean isWatercolour;
@@ -59,29 +60,35 @@ public class Painting extends Item{
     public void setIsFramed(boolean isFramed) {
         this.isFramed = isFramed;
     }
-    
-    public void outputPainting() {
-        output();
+
+    public void output() {
+        this.output();
         System.out.println("Height: " + this.getHeight());
         System.out.println("Width: " + this.getWidth());
         System.out.println("isWatercolour: " + this.isWatercolour);
         System.out.println("isFramed: " + this.isFramed);
     }
-    
-    public void inputPainting() {
-        input();
+
+    public void input() {
+        this.input();
         Scanner sc = new Scanner(System.in);
         System.out.print("Input height: ");
         height = sc.nextInt();
-        
+
         System.out.print("Input width: ");
         sc = new Scanner(System.in);
         width = sc.nextInt();
-        
+
         System.out.print("Input IsWaterColour: ");
         isWatercolour = sc.nextBoolean();
-        
+
         System.out.print("Input IsFramed: ");
         isFramed = sc.nextBoolean();
     }
+
+    @Override
+    public String toString() {
+        return "Painting{" + "height=" + height + ", width=" + width + ", isWatercolour=" + isWatercolour + ", isFramed=" + isFramed + '}';
+    }
+
 }
