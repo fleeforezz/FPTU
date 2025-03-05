@@ -31,7 +31,7 @@ public abstract class Organization {
 
     @Override
     public String toString() {
-        return "Organization{" + "size=" + size + '}';
+        return "The organization's size is " + size;
     }
     
     
