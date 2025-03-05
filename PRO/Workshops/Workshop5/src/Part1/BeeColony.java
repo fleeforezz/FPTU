@@ -37,7 +37,7 @@ public class BeeColony extends Colony implements Role {
 
     @Override
     public void createWorker() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Worker bees perform all the work of the bees");
     }
 
 }

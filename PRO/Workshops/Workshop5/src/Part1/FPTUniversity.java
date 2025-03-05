@@ -31,12 +31,12 @@ public class FPTUniversity extends University implements Role {
 
     @Override
     public String toString() {
-        return "FPTUniversity{" + "address=" + address + '}';
+        return "FPTU has four campuses Hanoi, HCM, DaNang, CanTho, QuyNhon";
     }
 
     @Override
     public void createWorker() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Providing human resources");
     }
 
 }

@@ -22,11 +22,12 @@ public class University extends Organization {
     }
 
     public void enroll() {
-
+        System.out.println("The registration for enrollment is only valid\n"
+                + "when the University has received all enrollment documents and enrollment fees");
     }
 
     public void educate() {
-
+        System.out.println("provide education at university standard");
     }
 
     @Override
