@@ -22,6 +22,8 @@ public class Tester {
         obj2.enroll();
         obj2.educate();
         
-        
+        BeeColony obj3 = new BeeColony(3000, "wasp", "land");
+        System.out.println(obj3);
+        obj3.createWorker();
     }
 }
