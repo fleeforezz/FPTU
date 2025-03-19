@@ -24,9 +24,13 @@ public class SpecLift extends Lift {
     public int getLoad() {
         return load;
     }
-
-    public void setData(int load) {
+    
+    public void setLoad(int load) {
         this.load = load;
+    }
+
+    public void setData(String lable) {
+        
     }
 
     @Override

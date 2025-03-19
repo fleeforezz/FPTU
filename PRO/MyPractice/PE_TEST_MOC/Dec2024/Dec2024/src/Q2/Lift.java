@@ -39,7 +39,7 @@ public class Lift {
 
     @Override
     public String toString() {
-        return label + ", " + type;
+        return label + ", " + getType();
     }
     
     
