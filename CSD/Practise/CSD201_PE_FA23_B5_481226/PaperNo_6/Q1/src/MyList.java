@@ -206,6 +206,20 @@ public class MyList {
         /*You must keep statements pre-given in this function.
        Your task is to insert statements here, just after this comment,
        to complete the question in the exam paper.*/
+        
+        Node t = head;
+        int count = 0;
+        
+        while (t.next != null) {
+            count++;
+            if (count == 4) {
+                
+            }
+            
+            t = t.next;
+        }
+        
+        System.out.println(count);
 
         //------------------------------------------------------------------------------------
         ftraverse(f);
