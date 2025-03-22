@@ -55,7 +55,7 @@ public class MyList {
 
         if (head == null) {
             head = tail = tmp_Node;
-        } else {
+        } else {    
             if (data.price <= 0) {
                 System.out.println("Phone price must be > 0");
             } else {
