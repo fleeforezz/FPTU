@@ -38,16 +38,7 @@ public class App {
 
                     AccountService accountService2 = new AccountService(new InMemoryAccountRepository());
 
-                    System.out.print("Enter id: ");
-                    account.setId(sc.nextLine());
-
-                    System.out.print("Enter name: ");
-                    account.setName(sc.nextLine());
-
-                    System.out.print("Enter password: ");
-                    account.setPassword(sc.nextLine());
-
-                    
+                    accountService2.createAccount(account);
 
                     break;
                 default:
