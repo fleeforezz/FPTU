@@ -4,8 +4,8 @@
  */
 package com.TFM.controller;
 
-import com.TFM.dto.Customers;
-import com.TFM.dto.I_List;
+import com.TFM.model.Customers;
+import com.TFM.business.I_List;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -53,13 +53,13 @@ public class CustomerList extends ArrayList<Customers> implements I_List {
 
     @Override
     public boolean readFromFile(String filePath) throws FileNotFoundExceptions, IOException{
-        FileInputStream fis = new FileInputStream(filePath);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        
-        try {
-            
-        } catch (Exception e) {
-        }
+//        FileInputStream fis = new FileInputStream(filePath);
+//        ObjectInputStream ois = new ObjectInputStream(fis);
+//        
+//        try {
+//            
+//        } catch (Exception e) {
+//        }
     }
 
     @Override
