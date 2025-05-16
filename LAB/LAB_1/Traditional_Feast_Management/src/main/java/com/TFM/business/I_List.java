@@ -10,21 +10,23 @@ import java.util.List;
  *
  * @author jso
  */
-public interface I_List {
+public interface I_List<T> {
 
-    boolean add(); // Add new element
+    boolean addRec(); // Add new element
 
-    boolean update(String code); // Update by code 
+    boolean updateRec(T code); // Update by code 
 
-    Object remove(String code); // Remove by code
+    boolean removeRec(T code); // Remove by code
     
-    void sort(); // Sort element in the List
+    List<T> loadRecFromFile(); // Load record from file
     
-    List<Object> searchByName(String name); // Search element that it's name contain string from the keyboard
+    void sortRec(); // Sort element in the List
     
-    void display(); // Show detail of each element in the List
+    List<T> searchRecByName(T name); // Search element that it's name contain string from the keyboard
+    
+    void displayRec(); // Show detail of each element in the List
 
-    boolean readFromFile(String filePath); // Load data from file
+    boolean readFromFile(); // Load data from file
     
     boolean saveToFile(); // Save element information into file
 }

@@ -1,11 +1,12 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.TFM.view;
 
-import com.TFM.controller.Menu;
-import com.TFM.business.I_Menu;
+import com.TFM.controller.CustomersController;
+import com.TFM.model.Customers;
+import com.TFM.utils.Utils;
+import java.util.Scanner;
 
 /**
  *
@@ -14,33 +15,36 @@ import com.TFM.business.I_Menu;
 public class Traditional_Feast_Management {
 
     public static void main(String[] args) {
-        
-        I_Menu menu = new Menu();
-        
-        menu.addItem("1. Register customers");
-        menu.addItem("2. Update customer information");
-        menu.addItem("3. Search for customer information by name");
-        menu.addItem("4. Display feast menus");
-        menu.addItem("5. Place a feast menu");
-        menu.addItem("6. Update order information");
-        menu.addItem("7. Save data to file");
-        menu.addItem("8. Display customer or Order lists");
-        
+
         int choice = 0;
-        boolean cont = true;
+        Scanner sc = new Scanner(System.in);
         
-        do {            
-            menu.showMenu();
-            choice = menu.getChoice();
+        Customers customers = new Customers() {};
+        CustomersController customerController = new CustomersController();
+
+        do {
+            System.out.println("1. Register customers");
+            System.out.println("2. Update customer information");
+            System.out.println("3. Search for customer information by name");
+            System.out.println("4. Display feast menus");
+            System.out.println("5. Place a feast menu");
+            System.out.println("6. Update order information");
+            System.out.println("7. Save data to file");
+            System.out.println("8. Display customer or Order lists");
+            
+            choice = Utils.getInt("Enter your choice: ", Utils.MIN, Utils.MAX);
             
             switch (choice) {
                 case 1:
-                    
+                    customers.input();
+                    break;
+                case 8: 
+                    customerController.displayCustomerMenu();
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Invalid choice");
             }
             
-        } while (choice > 0 && choice <= 8 && cont);
+        } while (choice >= 1 && choice <= 8);
     }
 }

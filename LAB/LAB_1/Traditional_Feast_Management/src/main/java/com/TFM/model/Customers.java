@@ -5,12 +5,13 @@
 package com.TFM.model;
 
 import com.TFM.utils.Utils;
+import java.io.Serializable;
 
 /**
  *
  * @author jso
  */
-public abstract class Customers {
+public abstract class Customers implements Serializable {
 
     private String id;
     private String name;
@@ -61,11 +62,11 @@ public abstract class Customers {
     }
 
     /*
-        ######
-        Create
-        ######
+        ############
+        Input fields
+        ############
      */
-    public boolean create() {
+    public boolean input() {
         boolean check = false;
 
         try {
