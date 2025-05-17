@@ -32,6 +32,7 @@ public class Traditional_Feast_Management {
             System.out.println("6. Update order information");
             System.out.println("7. Save data to file");
             System.out.println("8. Display customer or Order lists");
+            System.out.println("9. Exit");
             
             choice = Utils.getInt("Enter your choice: ", Utils.MIN, Utils.MAX);
             
@@ -39,7 +40,23 @@ public class Traditional_Feast_Management {
                 case 1:
                     customerController.addRec();
                     break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    customerController.saveToFile();
+                    break;
                 case 8:
+                    customerController.displayRec();
+                    break;
+                case 9:
                     break;
                 default:
                     System.out.println("Invalid choice");

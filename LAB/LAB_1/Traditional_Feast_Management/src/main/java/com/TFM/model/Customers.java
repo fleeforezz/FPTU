@@ -4,15 +4,16 @@
  */
 package com.TFM.model;
 
-import com.TFM.utils.Utils;
 import java.io.Serializable;
 
 /**
  *
  * @author jso
  */
-public abstract class Customers implements Serializable {
+public class Customers implements Serializable, Comparable<Customers> {
 
+    private static final long serialVersionUID = 1L;
+    
     private String id;
     private String name;
     private int phone;
@@ -61,25 +62,9 @@ public abstract class Customers implements Serializable {
         this.email = email;
     }
 
-    /*
-        ############
-        Input fields
-        ############
-     */
-    public boolean input() {
-        boolean check = false;
-
-        try {
-            this.id = Utils.getString("Input ID: ");
-            this.name = Utils.getString("Input name: ");
-            this.phone = Utils.getInt("Input phone number", Utils.MIN, Utils.MAX);
-            this.email = Utils.getString("Input email: ");
-
-            check = true;
-        } catch (Exception e) {
-        }
-
-        return check;
+    @Override
+    public int compareTo(Customers o) {
+        return this.name.compareToIgnoreCase(o.name);
     }
 
     /*

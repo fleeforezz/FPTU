@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/repository/CategoryRepo.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/repository/ProductRepo.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/services/ProductService.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/view/Main.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/entities/Brand.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/entities/Product.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/data/Brand.txt</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/utils/Validation.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/data/Product.txt</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/entities/Category.java</file>
-            <file>file:/D:/Code-Stuff/Github_Landing/FPTU/LAB/Sample/BikeStoreManagement/src/repository/BrandRepo.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

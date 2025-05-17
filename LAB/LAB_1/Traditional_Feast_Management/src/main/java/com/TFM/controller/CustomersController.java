@@ -16,8 +16,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -25,96 +23,99 @@ import java.util.logging.Logger;
  */
 public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
 
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
 
+    /*
+        #####################
+        Add new Customer
+        #####################
+     */
     @Override
     public boolean addRec() {
-        boolean check;
+        boolean isSuccess;
         String customerID = "";
 
         do {
-            check = true;
-            
+            isSuccess = true;
+
             customerID = Utils.getString("Input Customer Code: ", "Input must not be empty");
 
             Customers existCustomers = searchRecById(customerID);
 
             if (existCustomers != null) {
                 System.out.println("Customer already exists !");
-                check = true;
-            } else if (!Acceptable.idValid(customerID, Acceptable.CUS_VALID_ID)) {
-                System.out.println("Customer ID must start with C,G,K and 4 number after that");
-                check = true;
-            } else {
-                check = false;
+                isSuccess = false;
             }
 
-        } while (check);
-        
+            if (!Acceptable.idValid(customerID, Acceptable.CUS_VALID_ID)) {
+                System.out.println("Customer ID must start with C,G,K and 4 number after that");
+                isSuccess = false;
+            }
+
+        } while (!isSuccess);
+
         String customerName = Utils.getString("Input name: ", Acceptable.NAME_VALID);
 
         return true;
     }
 
+    /*
+        #####################
+        Update Customer
+        #####################
+     */
     @Override
     public boolean updateRec(Customers code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /*
+        #####################
+        Remove Customer
+        #####################
+     */
     @Override
     public boolean removeRec(Customers code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /*
+        ####################################################
+        Load .dat file from machine and add to Customer List
+        ####################################################
+     */
     @Override
     public List<Customers> loadRecFromFile() {
 
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
+        List<Customers> customersList = new ArrayList<>();
 
-        Customers customers = null;
-        List list = new ArrayList();
-
-        try {
-            fis = new FileInputStream(FILE_PATH);
-            ois = new ObjectInputStream(fis);
-
-            while (fis.available() > 0) {
-                customers = (Customers) ois.readObject();
-                list.add(customers);
-            }
-
-            System.out.println("List: " + list.toString());
-
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            customersList = (List<Customers>) ois.readObject();
+            System.out.println("List loaded: " + customersList);
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error load file, file not found");
-        } finally {
-            if (ois != null) {
-                try {
-                    ois.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(CustomersController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(CustomersController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+            System.out.println("Cannot load from file: " + e.getMessage());
         }
 
-        Collections.sort(list);
+        Collections.sort(customersList);
 
-        return list;
+        return customersList;
     }
 
+    /*
+        #############
+        Sort Customer 
+        #############
+     */
     @Override
     public void sortRec() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /*
+        #######################
+        Search Customer by Name
+        #######################
+     */
     @Override
     public List<Customers> searchRecByName(Customers inputCustomerName) {
 
@@ -130,6 +131,11 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         return customerList;
     }
 
+    /*
+        #####################
+        Search Customer by Id
+        #####################
+     */
     @Override
     public Customers searchRecById(String inputCustomerId) {
 
@@ -145,20 +151,48 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         return null;
     }
 
+    /*
+        #####################
+        Display Customer list
+        #####################
+     */
     @Override
     public void displayRec() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+        String display_1 = String.format("""
+                                        \n
+                                        ---------------------------------------------------
+                                        Code     | Customer Name      | Phone      | Email
+                                        ---------------------------------------------------
+                                        """
+        );
+
+        String display_2 = String.format("""
+                                         --------------------------------------------------
+                                         """
+        );
+
+        if (this.isEmpty()) {
+            System.out.print(display_1);
+            System.out.println("No data in system");
+            System.out.println(display_2);
+        } else {
+            System.out.print(display_1);
+
+            for (Customers customers : this) {
+                System.out.println(customers.display());
+            }
+        }
     }
 
-    @Override
-    public boolean readFromFile() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    /*
+        ###############################
+        Save Customer list to .dat file
+        ###############################
+     */
     @Override
     public boolean saveToFile() {
 
-        boolean result = false;
         FileOutputStream file = null;
         ObjectOutputStream oos = null;
 

@@ -11,7 +11,7 @@ import java.util.List;
  * @author jso
  */
 public interface I_List<T> {
-
+    
     boolean addRec(); // Add new element
 
     boolean updateRec(T code); // Update by code 
@@ -27,8 +27,6 @@ public interface I_List<T> {
     T searchRecById(String id); // Search element by ID
     
     void displayRec(); // Show detail of each element in the List
-
-    boolean readFromFile(); // Load data from file
     
     boolean saveToFile(); // Save element information into file
 }

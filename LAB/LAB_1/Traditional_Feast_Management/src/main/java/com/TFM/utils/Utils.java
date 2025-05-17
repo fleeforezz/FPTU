@@ -21,9 +21,8 @@ public class Utils {
         ##########
      */
     public static String getString(String welcomeMessage, String errorMessage) {
-        boolean check = true;
+        boolean success = true;
         String result = "";
-        String STRING_VALID = "^[a-zA-Z]$";
 
         do {
             Scanner sc = new Scanner(System.in);
@@ -31,12 +30,12 @@ public class Utils {
             System.out.print(welcomeMessage);
             result = sc.nextLine();
 
-            if (result.isEmpty() || !result.matches(STRING_VALID)) {
+            if (result.isEmpty()) {
                 System.out.println(errorMessage);
             }
             
-            check = false;
-        } while (check);
+            success = false;
+        } while (success);
 
         return result;
     }
@@ -58,9 +57,10 @@ public class Utils {
 
             if (result.isEmpty() || !result.matches(regex)) {
                 System.out.println(errorMessage);
+                check = false;
             }
             
-            check = false;
+            check = true;
         } while (check);
 
         return result;
