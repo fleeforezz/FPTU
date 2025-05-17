@@ -19,8 +19,9 @@ public class Traditional_Feast_Management {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
         
-        Customers customers = new Customers() {};
         CustomersController customerController = new CustomersController();
+        
+        customerController.loadRecFromFile();
 
         do {
             System.out.println("1. Register customers");
@@ -36,10 +37,9 @@ public class Traditional_Feast_Management {
             
             switch (choice) {
                 case 1:
-                    customers.input();
+                    customerController.addRec();
                     break;
-                case 8: 
-                    customerController.displayCustomerMenu();
+                case 8:
                     break;
                 default:
                     System.out.println("Invalid choice");

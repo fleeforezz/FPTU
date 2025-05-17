@@ -6,6 +6,8 @@ package com.TFM.controller;
 
 import com.TFM.business.I_List;
 import com.TFM.model.Customers;
+import com.TFM.utils.Acceptable;
+import com.TFM.utils.Utils;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,24 +25,35 @@ import java.util.logging.Logger;
  */
 public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
 
-    private static final String FILE_PATH = "src/main/java/data/Customers.dat";
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
 
-    public boolean isEmpty() {
-        if (loadRecFromFile() == null) {
-            return true;
-        }
-        
-        return false;
-    }
-    
     @Override
     public boolean addRec() {
-        if (isEmpty()) {
-            System.out.println("Customers file is empty");
-            return false;
-        }
+        boolean check;
+        String customerID = "";
+
+        do {
+            check = true;
+            
+            customerID = Utils.getString("Input Customer Code: ", "Input must not be empty");
+
+            Customers existCustomers = searchRecById(customerID);
+
+            if (existCustomers != null) {
+                System.out.println("Customer already exists !");
+                check = true;
+            } else if (!Acceptable.idValid(customerID, Acceptable.CUS_VALID_ID)) {
+                System.out.println("Customer ID must start with C,G,K and 4 number after that");
+                check = true;
+            } else {
+                check = false;
+            }
+
+        } while (check);
         
-        
+        String customerName = Utils.getString("Input name: ", Acceptable.NAME_VALID);
+
+        return true;
     }
 
     @Override
@@ -103,8 +116,33 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     }
 
     @Override
-    public List<Customers> searchRecByName(Customers name) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Customers> searchRecByName(Customers inputCustomerName) {
+
+        List<Customers> customerList = new ArrayList<>();
+        String searchName = inputCustomerName.getName().toLowerCase();
+
+        for (Customers customers : this) {
+            if (customers.getName().toLowerCase().contains(searchName)) {
+                customerList.add(customers);
+            }
+        }
+
+        return customerList;
+    }
+
+    @Override
+    public Customers searchRecById(String inputCustomerId) {
+
+        List<Customers> customerList = new ArrayList<>();
+        String searchId = inputCustomerId.toLowerCase();
+
+        for (Customers customers : this) {
+            if (customers.getId().toLowerCase().contains(searchId)) {
+                return customers;
+            }
+        }
+
+        return null;
     }
 
     @Override

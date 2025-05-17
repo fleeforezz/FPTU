@@ -22,7 +22,9 @@ public interface I_List<T> {
     
     void sortRec(); // Sort element in the List
     
-    List<T> searchRecByName(T name); // Search element that it's name contain string from the keyboard
+    List<T> searchRecByName(T name); // Search element by name
+    
+    T searchRecById(String id); // Search element by ID
     
     void displayRec(); // Show detail of each element in the List
 

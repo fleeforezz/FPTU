@@ -20,21 +20,47 @@ public class Utils {
         Get String
         ##########
      */
-    public static String getString(String welcome) {
+    public static String getString(String welcomeMessage, String errorMessage) {
+        boolean check = true;
+        String result = "";
+        String STRING_VALID = "^[a-zA-Z]$";
+
+        do {
+            Scanner sc = new Scanner(System.in);
+
+            System.out.print(welcomeMessage);
+            result = sc.nextLine();
+
+            if (result.isEmpty() || !result.matches(STRING_VALID)) {
+                System.out.println(errorMessage);
+            }
+            
+            check = false;
+        } while (check);
+
+        return result;
+    }
+    
+    /*
+        ##########
+        Get String
+        ##########
+     */
+    public static String getString(String welcomeMessage, String errorMessage, String regex) {
         boolean check = true;
         String result = "";
 
         do {
             Scanner sc = new Scanner(System.in);
 
-            System.out.print(welcome);
+            System.out.print(welcomeMessage);
             result = sc.nextLine();
 
-            if (result.isEmpty()) {
-                System.out.println("Input must be a text");
-            } else {
-                check = false;
+            if (result.isEmpty() || !result.matches(regex)) {
+                System.out.println(errorMessage);
             }
+            
+            check = false;
         } while (check);
 
         return result;
@@ -128,21 +154,5 @@ public class Utils {
         } while (check || number > max || number < min);
         
         return number;
-    }
-    
-    /*
-        ##############
-        Confirm Yes/No
-        ##############
-     */
-    public static boolean confirmYesNo(String welcome) {
-        boolean result = false;
-        String confirm = Utils.getString(welcome);
-        
-        if ("Y".equalsIgnoreCase(confirm)) {
-            result = true;
-        }
-        
-        return result;
     }
 }
