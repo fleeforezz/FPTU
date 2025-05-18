@@ -21,49 +21,47 @@ public class Utils {
         ##########
      */
     public static String getString(String welcomeMessage, String errorMessage) {
-        boolean success = true;
-        String result = "";
 
-        do {
-            Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in, "UTF-8");
 
+        String result;
+
+        while (true) {
             System.out.print(welcomeMessage);
-            result = sc.nextLine();
+            result = sc.nextLine().trim();
 
             if (result.isEmpty()) {
                 System.out.println(errorMessage);
             }
             
-            success = false;
-        } while (success);
-
-        return result;
+            return result;
+        }
     }
-    
+
     /*
-        ##########
-        Get String
-        ##########
+        #####################
+        Get String with regex
+        #####################
      */
     public static String getString(String welcomeMessage, String errorMessage, String regex) {
-        boolean check = true;
-        String result = "";
 
-        do {
-            Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in, "UTF-8");
+        String result;
 
+        while (true) {            
             System.out.print(welcomeMessage);
-            result = sc.nextLine();
-
-            if (result.isEmpty() || !result.matches(regex)) {
-                System.out.println(errorMessage);
-                check = false;
+            result = sc.nextLine().trim();
+            
+            if (result.isEmpty()) {
+                System.out.println("Input must not be empty");
             }
             
-            check = true;
-        } while (check);
-
-        return result;
+            if (!result.matches(regex)) {
+                System.out.println(errorMessage);
+            }
+            
+            return result;
+        }
     }
 
     /*
@@ -94,11 +92,11 @@ public class Utils {
     public static int getInt(String welcome, int min, int max) {
         boolean check = true;
         int number = 0;
-        
-        do {            
+
+        do {
             try {
                 Scanner sc = new Scanner(System.in);
-                
+
                 System.out.print(welcome);
                 number = Integer.parseInt(sc.nextLine());
                 check = false;
@@ -106,10 +104,10 @@ public class Utils {
                 System.out.println("Input must be a number");
             }
         } while (check || number > max || number < min);
-        
+
         return number;
     }
-    
+
     /*
         #############
         Update Int
@@ -118,14 +116,14 @@ public class Utils {
     public static int updateInt(String welcome, int min, int max, int oldData) {
         boolean check = true;
         int number = oldData;
-        
-        do {            
+
+        do {
             try {
                 Scanner sc = new Scanner(System.in);
-                
+
                 System.out.print(welcome);
                 String tmp = sc.nextLine();
-                
+
                 if (tmp.isEmpty()) {
                     check = false;
                 } else {
@@ -136,10 +134,10 @@ public class Utils {
                 System.out.println("Input must be a number");
             }
         } while (check || number > max || number < min);
-        
+
         return number;
     }
-    
+
     /*
         ##########
         Get Double
@@ -148,11 +146,11 @@ public class Utils {
     public static double getDouble(String welcome, int min, int max) {
         boolean check = true;
         double number = 0;
-        
-        do {            
-            
+
+        do {
+
         } while (check || number > max || number < min);
-        
+
         return number;
     }
 }

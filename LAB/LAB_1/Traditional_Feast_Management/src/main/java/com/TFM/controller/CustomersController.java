@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
 
-    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
 
     /*
         #####################
@@ -32,37 +32,38 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      */
     @Override
     public boolean addRec() {
-        boolean isSuccess;
-        String customerID = "";
+
+        String customerID;
+        String customerName;
 
         do {
-            isSuccess = true;
-
             customerID = Utils.getString("Input Customer Code: ", "Input must not be empty");
 
             Customers existCustomers = searchRecById(customerID);
 
             if (existCustomers != null) {
                 System.out.println("Customer already exists !");
-                isSuccess = false;
+                customerID = null;
             }
 
             if (!Acceptable.idValid(customerID, Acceptable.CUS_VALID_ID)) {
                 System.out.println("Customer ID must start with C,G,K and 4 number after that");
-                isSuccess = false;
+                customerID = null;
             }
 
-        } while (!isSuccess);
+        } while (customerID == null);
 
-        String customerName = Utils.getString("Input name: ", Acceptable.NAME_VALID);
+        do {
+            customerName = Utils.getString("Input name: ", "Name must be from 2 to 25 characters", Acceptable.NAME_VALID);
+        } while (customerName == null);
 
         return true;
     }
 
     /*
-        #####################
+        ###############
         Update Customer
-        #####################
+        ###############
      */
     @Override
     public boolean updateRec(Customers code) {
@@ -70,9 +71,9 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     }
 
     /*
-        #####################
+        ###############
         Remove Customer
-        #####################
+        ###############
      */
     @Override
     public boolean removeRec(Customers code) {
