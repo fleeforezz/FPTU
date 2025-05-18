@@ -35,6 +35,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         String customerID;
         String customerName;
+        int customerPhoneNumber;
 
         do {
             customerID = Utils.getString("Input Customer Code: ", "Input must not be empty");
@@ -54,8 +55,23 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         } while (customerID == null);
 
         do {
-            customerName = Utils.getString("Input name: ", "Name must be from 2 to 25 characters", Acceptable.NAME_VALID);
+            customerName = Utils.getString("Input name: ", "Input must not be empty");
+            
+            if (!Acceptable.idValid(customerName, Acceptable.NAME_VALID)) {
+                System.out.println("Name must be from 2 to 25 characters");
+                customerName = null;
+            }
+            
         } while (customerName == null);
+        
+//        do {            
+//            customerPhoneNumber = Utils.getInt("Input phone number", Utils.MIN, Utils.MAX);
+//            
+//            if (!Acceptable.idValid(customerPhoneNumber, Acceptable.PHONE_VALID)) {
+//                
+//            }
+//            
+//        } while (true);
 
         return true;
     }
