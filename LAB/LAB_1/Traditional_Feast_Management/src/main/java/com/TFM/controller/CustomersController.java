@@ -23,7 +23,11 @@ import java.util.List;
  */
 public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
 
-    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    // Katana Laptop
+//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    
+    // Shadow Desktop
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
 
     /*
      * ################
@@ -175,11 +179,13 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
             }
         }
 
-//        if (searchList.isEmpty()) {
-//            System.out.println("There's no info to display for: " + searchName);
-//        }
-
-        this.displayRec(searchList);
+        if (searchList.isEmpty()) {
+            System.out.println("\nNo one matches the search criteria !!!");
+            this.displayRec(this);
+        } else {
+            System.out.println("\nFound " + searchList.size() + " record in the list");
+            this.displayRec(searchList);
+        }
     }
 
     /*
@@ -211,7 +217,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     public void displayRec(ArrayList<Customers> customerList) {
 
         String header = String.format("""
-                \n
+                
                 -----------------------------------------------------------------------------
                 Code     | Customer Name            | Phone         | Email
                 -----------------------------------------------------------------------------

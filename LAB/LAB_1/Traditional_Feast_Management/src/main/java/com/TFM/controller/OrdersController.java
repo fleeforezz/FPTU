@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author jso
  */
-public class OrdersController extends ArrayList<Orders> implements I_List<Orders>{
+public class OrdersController extends ArrayList<Orders> implements I_List<Orders> {
 
     @Override
     public boolean addRec() {
@@ -41,7 +41,7 @@ public class OrdersController extends ArrayList<Orders> implements I_List<Orders
     }
 
     @Override
-    public List<Orders> searchRecByName(Orders name) {
+    public void searchRecByName(ArrayList<Orders> recList) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -51,7 +51,7 @@ public class OrdersController extends ArrayList<Orders> implements I_List<Orders
     }
 
     @Override
-    public void displayRec() {
+    public void displayRec(ArrayList<Orders> recList) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -64,5 +64,5 @@ public class OrdersController extends ArrayList<Orders> implements I_List<Orders
     public void loadRecFromFileAndAddToList() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }
