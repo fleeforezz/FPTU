@@ -24,21 +24,22 @@ import java.util.List;
 public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
 
     private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
-
+    
     /*
-        ################
-        Add new Customer
-        ################
+     * ################
+     * Add new Customer
+     * ################
      */
     @Override
     public boolean addRec() {
 
         String customerID;
-        String customerName;
-        String customerEmail;
 
         do {
-            customerID = Utils.getString("Input Customer Code: ", "Input must not be empty");
+            customerID = Utils.getString(
+                    "Input Customer Code: ",
+                    "Input must not be empty"
+            );
 
             Customers existCustomers = searchRecById(customerID);
 
@@ -47,63 +48,72 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
                 customerID = null;
             }
 
-            if (!Acceptable.idValid(customerID, Acceptable.CUS_VALID_ID)) {
+            if (!Acceptable.isValid(customerID, Acceptable.CUS_VALID_ID)) {
                 System.out.println("Customer ID must start with C,G,K and 4 number after that");
                 customerID = null;
             }
 
         } while (customerID == null);
 
-        do {
-            customerName = Utils.getString("Input name: ", "Input must not be empty");
-            
-            if (!Acceptable.idValid(customerName, Acceptable.NAME_VALID)) {
-                System.out.println("Name must be from 2 to 25 characters");
-                customerName = null;
-            }
-            
-        } while (customerName == null);
-        
-        int customerPhoneNumber = Utils.getInt("Input phone number: ", 0, 10);
-        
-        do {            
-            customerEmail = Utils.getString("Input email", "Input must not be empty");
-            
-            if (!Acceptable.idValid(customerEmail, Acceptable.EMAIL_VALID)) {
-                System.out.println("Email must be example@domain.com");
-                customerEmail = null;
-            }
-        } while (customerEmail == null);
-        
-        
+        String customerName = Utils.getString(
+                "Input name: ",
+                "Name must be from 2 to 25 characters",
+                Acceptable.NAME_VALID
+        );
 
-        return true;
+        String customerPhoneNumber = Utils.getString(
+                "Input your phone number: ",
+                "Invalid phone number format",
+                Acceptable.PHONE_VALID
+        );
+
+        String customerEmail = Utils.getString(
+                "Input email: ",
+                "Email must be example@domain.com",
+                Acceptable.EMAIL_VALID
+        );
+
+        Customers customers = new Customers(
+                customerID,
+                customerName,
+                customerPhoneNumber,
+                customerEmail
+        );
+
+        if (customers != null) {
+            this.add(customers);
+            return true;
+        }
+        
+        return false;
     }
 
     /*
-        ###############
-        Update Customer
-        ###############
+     * ###############
+     * Update Customer
+     * ###############
      */
     @Override
     public boolean updateRec(Customers code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /*
-        ###############
-        Remove Customer
-        ###############
+     * ###############
+     * Remove Customer
+     * ###############
      */
     @Override
     public boolean removeRec(Customers code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /*
-        ####################################################
-        Load .dat file from machine and add to Customer List
-        ####################################################
+     * ####################################################
+     * Load .dat file from machine and add to Customer List
+     * ####################################################
      */
     @Override
     public List<Customers> loadRecFromFile() {
@@ -123,19 +133,20 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     }
 
     /*
-        #############
-        Sort Customer 
-        #############
+     * #############
+     * Sort Customer
+     * #############
      */
     @Override
     public void sortRec() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /*
-        #######################
-        Search Customer by Name
-        #######################
+     * #######################
+     * Search Customer by Name
+     * #######################
      */
     @Override
     public List<Customers> searchRecByName(Customers inputCustomerName) {
@@ -153,9 +164,9 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     }
 
     /*
-        #####################
-        Search Customer by Id
-        #####################
+     * #####################
+     * Search Customer by Id
+     * #####################
      */
     @Override
     public Customers searchRecById(String inputCustomerId) {
@@ -173,25 +184,23 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     }
 
     /*
-        #####################
-        Display Customer list
-        #####################
+     * #####################
+     * Display Customer list
+     * #####################
      */
     @Override
     public void displayRec() {
 
         String display_1 = String.format("""
-                                        \n
-                                        ---------------------------------------------------
-                                        Code     | Customer Name      | Phone      | Email
-                                        ---------------------------------------------------
-                                        """
-        );
+                \n
+                ---------------------------------------------------
+                Code     | Customer Name      | Phone      | Email
+                ---------------------------------------------------
+                """);
 
         String display_2 = String.format("""
-                                         --------------------------------------------------
-                                         """
-        );
+                --------------------------------------------------
+                """);
 
         if (this.isEmpty()) {
             System.out.print(display_1);
@@ -207,9 +216,9 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     }
 
     /*
-        ###############################
-        Save Customer list to .dat file
-        ###############################
+     * ###############################
+     * Save Customer list to .dat file
+     * ###############################
      */
     @Override
     public boolean saveToFile() {

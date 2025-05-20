@@ -4,7 +4,6 @@
  */
 package com.TFM.model;
 
-import com.TFM.utils.Utils;
 import java.util.Date;
 
 /**

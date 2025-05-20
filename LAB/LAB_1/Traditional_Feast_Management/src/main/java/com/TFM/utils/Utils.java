@@ -32,6 +32,36 @@ public class Utils {
 
             if (result.isEmpty()) {
                 System.out.println(errorMessage);
+                continue;
+            }
+
+            return result;
+        }
+    }
+    
+    /*
+        ##########
+        Get String with regex
+        ##########
+     */
+    public static String getString(String welcomeMessage, String errorMessage, String regex) {
+
+        Scanner sc = new Scanner(System.in, "UTF-8");
+
+        String result;
+
+        while (true) {
+            System.out.print(welcomeMessage);
+            result = sc.nextLine().trim();
+
+            if (result.isEmpty()) {
+                System.out.println("Input must not be empty");
+                continue;
+            }
+            
+            if (!result.matches(regex)) {
+                System.out.println(errorMessage);
+                continue;
             }
 
             return result;

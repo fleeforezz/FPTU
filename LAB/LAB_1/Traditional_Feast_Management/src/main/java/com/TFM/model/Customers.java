@@ -16,14 +16,14 @@ public class Customers implements Serializable, Comparable<Customers> {
     
     private String id;
     private String name;
-    private int phone;
+    private String phone;
     private String email;
 
     public Customers() {
 
     }
 
-    public Customers(String id, String name, int phone, String email) {
+    public Customers(String id, String name, String phone, String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -46,11 +46,11 @@ public class Customers implements Serializable, Comparable<Customers> {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -74,9 +74,7 @@ public class Customers implements Serializable, Comparable<Customers> {
      */
     public String display() {
         return String.format("""
-                             Customer Details:
-                             -----------------
-                             Code: %s
+                             %-12s
                              Name: %s
                              Phone Number: %s
                              Email: %s
