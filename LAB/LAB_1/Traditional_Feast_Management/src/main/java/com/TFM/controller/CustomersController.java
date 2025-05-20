@@ -166,18 +166,18 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         String searchName = Utils.getString(
                 "Input a customer name for searching: ",
-                "Input must be a character and have to be from 2 to 25 characters",
-                Acceptable.NAME_VALID);
+                "Invalid input"
+        );
 
         for (Customers customers : this) {
             if (customers.getName().toLowerCase().contains(searchName.toLowerCase())) {
                 searchList.add(customers);
             }
         }
-        
-        if (searchList.isEmpty()) {
-            System.out.println("There's no info to display for: " + searchName);
-        }
+
+//        if (searchList.isEmpty()) {
+//            System.out.println("There's no info to display for: " + searchName);
+//        }
 
         this.displayRec(searchList);
     }
