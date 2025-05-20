@@ -23,8 +23,8 @@ import java.util.List;
  */
 public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
 
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
-    
+    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+
     /*
      * ################
      * Add new Customer
@@ -35,7 +35,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         String customerID;
 
-        do {
+        while (true) {
             customerID = Utils.getString(
                     "Input Customer Code: ",
                     "Input must not be empty"
@@ -45,15 +45,15 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
             if (existCustomers != null) {
                 System.out.println("Customer already exists !");
-                customerID = null;
+                continue;
             }
 
             if (!Acceptable.isValid(customerID, Acceptable.CUS_VALID_ID)) {
                 System.out.println("Customer ID must start with C,G,K and 4 number after that");
-                customerID = null;
             }
 
-        } while (customerID == null);
+            break;
+        }
 
         String customerName = Utils.getString(
                 "Input name: ",
@@ -84,7 +84,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
             this.add(customers);
             return true;
         }
-        
+
         return false;
     }
 
@@ -122,7 +122,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
             customersList = (List<Customers>) ois.readObject();
-            System.out.println("List loaded: " + customersList);
+            System.out.println("List loaded: " + customersList.size() + " records");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Cannot load from file: " + e.getMessage());
         }
@@ -130,6 +130,19 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         Collections.sort(customersList);
 
         return customersList;
+    }
+
+    /*
+     * #########################################
+     * Call loadRecFromFile() and add to List<T>
+     * #########################################
+     */
+    @Override
+    public void loadRecFromFileAndAddToList() {
+        List<Customers> loadedCustomers = loadRecFromFile();
+
+        this.clear();
+        this.addAll(loadedCustomers);
     }
 
     /*
@@ -149,18 +162,24 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #######################
      */
     @Override
-    public List<Customers> searchRecByName(Customers inputCustomerName) {
+    public void searchRecByName(ArrayList<Customers> searchList) {
 
-        List<Customers> customerList = new ArrayList<>();
-        String searchName = inputCustomerName.getName().toLowerCase();
+        String searchName = Utils.getString(
+                "Input a customer name for searching: ",
+                "Input must be a character and have to be from 2 to 25 characters",
+                Acceptable.NAME_VALID);
 
         for (Customers customers : this) {
-            if (customers.getName().toLowerCase().contains(searchName)) {
-                customerList.add(customers);
+            if (customers.getName().toLowerCase().contains(searchName.toLowerCase())) {
+                searchList.add(customers);
             }
         }
+        
+        if (searchList.isEmpty()) {
+            System.out.println("There's no info to display for: " + searchName);
+        }
 
-        return customerList;
+        this.displayRec(searchList);
     }
 
     /*
@@ -189,29 +208,31 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #####################
      */
     @Override
-    public void displayRec() {
+    public void displayRec(ArrayList<Customers> customerList) {
 
-        String display_1 = String.format("""
+        String header = String.format("""
                 \n
-                ---------------------------------------------------
-                Code     | Customer Name      | Phone      | Email
-                ---------------------------------------------------
+                -----------------------------------------------------------------------------
+                Code     | Customer Name            | Phone         | Email
+                -----------------------------------------------------------------------------
                 """);
 
-        String display_2 = String.format("""
-                --------------------------------------------------
+        String footer = String.format("""
+                -----------------------------------------------------------------------------
                 """);
 
-        if (this.isEmpty()) {
-            System.out.print(display_1);
+        if (customerList.isEmpty()) {
+            System.out.print(header);
             System.out.println("No data in system");
-            System.out.println(display_2);
+            System.out.println(footer);
         } else {
-            System.out.print(display_1);
+            System.out.print(header);
 
-            for (Customers customers : this) {
-                System.out.println(customers.display());
+            for (Customers customers : customerList) {
+                System.out.print(customers.display());
             }
+
+            System.out.println(footer);
         }
     }
 
@@ -231,7 +252,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
             oos = new ObjectOutputStream(file);
 
             oos.writeObject(this);
-            System.out.println("Customers saved successfully to file");
+            System.out.println("\nCustomers saved successfully to file !!! \n");
             return true;
         } catch (IOException e) {
             System.out.println("Error saving customers to file: " + e.getMessage());

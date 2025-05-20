@@ -74,10 +74,7 @@ public class Customers implements Serializable, Comparable<Customers> {
      */
     public String display() {
         return String.format("""
-                             %-12s
-                             Name: %s
-                             Phone Number: %s
-                             Email: %s
+                             %-8s | %-24s | %-13s | %-12s
                              """,
                 this.id, this.name, this.phone, this.email
         );

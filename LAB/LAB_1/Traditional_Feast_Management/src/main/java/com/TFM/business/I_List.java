@@ -4,6 +4,7 @@
  */
 package com.TFM.business;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,13 +21,15 @@ public interface I_List<T> {
     
     List<T> loadRecFromFile(); // Load record from file
     
+    void loadRecFromFileAndAddToList(); // Call loadRecFromFile() and add to List<T>
+    
     void sortRec(); // Sort element in the List
     
-    List<T> searchRecByName(T name); // Search element by name
+    void searchRecByName(ArrayList<T> recList); // Search element by name
     
     T searchRecById(String id); // Search element by ID
     
-    void displayRec(); // Show detail of each element in the List
+    void displayRec(ArrayList<T> recList); // Show detail of each element in the List
     
     boolean saveToFile(); // Save element information into file
 }

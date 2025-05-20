@@ -6,6 +6,7 @@ package com.TFM.view;
 import com.TFM.controller.CustomersController;
 import com.TFM.model.Customers;
 import com.TFM.utils.Utils;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -21,7 +22,7 @@ public class Traditional_Feast_Management {
         
         CustomersController customerController = new CustomersController();
         
-        customerController.loadRecFromFile();
+        customerController.loadRecFromFileAndAddToList();
 
         do {
             System.out.println("1. Register customers");
@@ -38,11 +39,20 @@ public class Traditional_Feast_Management {
             
             switch (choice) {
                 case 1:
-                    customerController.addRec();
+                    boolean isAdded = customerController.addRec();
+                    
+                    if (isAdded) {
+                        System.out.println("\nCustomer has been created !!!\n");
+                    } else {
+                        System.out.println("Something went wrong !!!");
+                    }
+                    
                     break;
                 case 2:
                     break;
                 case 3:
+                    ArrayList<Customers> searchResult = new ArrayList<>();
+                    customerController.searchRecByName(searchResult);
                     break;
                 case 4:
                     break;
@@ -54,7 +64,7 @@ public class Traditional_Feast_Management {
                     customerController.saveToFile();
                     break;
                 case 8:
-                    customerController.displayRec();
+                    customerController.displayRec(customerController);
                     break;
                 case 9:
                     break;
