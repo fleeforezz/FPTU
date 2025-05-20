@@ -33,33 +33,7 @@ public class Utils {
             if (result.isEmpty()) {
                 System.out.println(errorMessage);
             }
-            
-            return result;
-        }
-    }
 
-    /*
-        #####################
-        Get String with regex
-        #####################
-     */
-    public static String getString(String welcomeMessage, String errorMessage, String regex) {
-
-        Scanner sc = new Scanner(System.in, "UTF-8");
-        String result;
-
-        while (true) {            
-            System.out.print(welcomeMessage);
-            result = sc.nextLine().trim();
-            
-            if (result.isEmpty()) {
-                System.out.println("Input must not be empty");
-            }
-            
-            if (!result.matches(regex)) {
-                System.out.println(errorMessage);
-            }
-            
             return result;
         }
     }
@@ -90,17 +64,18 @@ public class Utils {
         #######
      */
     public static int getInt(String welcome, int min, int max) {
+        
+        Scanner sc = new Scanner(System.in);
+
         boolean check = true;
         int number = 0;
 
         do {
             try {
-                Scanner sc = new Scanner(System.in);
-
                 System.out.print(welcome);
                 number = Integer.parseInt(sc.nextLine());
                 check = false;
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Input must be a number");
             }
         } while (check || number > max || number < min);

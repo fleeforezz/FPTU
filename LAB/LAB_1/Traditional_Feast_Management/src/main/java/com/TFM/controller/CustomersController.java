@@ -26,16 +26,16 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
 
     /*
-        #####################
+        ################
         Add new Customer
-        #####################
+        ################
      */
     @Override
     public boolean addRec() {
 
         String customerID;
         String customerName;
-        int customerPhoneNumber;
+        String customerEmail;
 
         do {
             customerID = Utils.getString("Input Customer Code: ", "Input must not be empty");
@@ -64,14 +64,18 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
             
         } while (customerName == null);
         
-//        do {            
-//            customerPhoneNumber = Utils.getInt("Input phone number", Utils.MIN, Utils.MAX);
-//            
-//            if (!Acceptable.idValid(customerPhoneNumber, Acceptable.PHONE_VALID)) {
-//                
-//            }
-//            
-//        } while (true);
+        int customerPhoneNumber = Utils.getInt("Input phone number: ", 0, 10);
+        
+        do {            
+            customerEmail = Utils.getString("Input email", "Input must not be empty");
+            
+            if (!Acceptable.idValid(customerEmail, Acceptable.EMAIL_VALID)) {
+                System.out.println("Email must be example@domain.com");
+                customerEmail = null;
+            }
+        } while (customerEmail == null);
+        
+        
 
         return true;
     }
