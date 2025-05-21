@@ -19,9 +19,9 @@ public class Traditional_Feast_Management {
 
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        
+
         CustomersController customerController = new CustomersController();
-        
+
         customerController.loadRecFromFileAndAddToList();
 
         do {
@@ -34,21 +34,38 @@ public class Traditional_Feast_Management {
             System.out.println("7. Save data to file");
             System.out.println("8. Display customer or Order lists");
             System.out.println("9. Exit");
-            
+
             choice = Utils.getInt("Enter your choice: ", Utils.MIN, Utils.MAX);
-            
+
             switch (choice) {
                 case 1:
                     boolean isAdded = customerController.addRec();
-                    
+
                     if (isAdded) {
                         System.out.println("\nCustomer has been created !!!\n");
                     } else {
                         System.out.println("Something went wrong !!!");
                     }
-                    
+
                     break;
                 case 2:
+                    String customerId;
+                    boolean isUpdated;
+
+                    do {
+                        isUpdated = false;
+                        
+                        customerId = Utils.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
+                        isUpdated = customerController.updateRec(customerId);
+
+                        if (isUpdated) {
+                            System.out.println("\nUpdate customer successfully !!!\n");
+                            isUpdated = false;
+                        } else {
+                            isUpdated = true;
+                        }
+                    } while (isUpdated);
+
                     break;
                 case 3:
                     ArrayList<Customers> searchResult = new ArrayList<>();
@@ -71,7 +88,7 @@ public class Traditional_Feast_Management {
                 default:
                     System.out.println("Invalid choice");
             }
-            
+
         } while (choice >= 1 && choice <= 8);
     }
 }

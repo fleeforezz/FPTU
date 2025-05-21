@@ -21,7 +21,7 @@ public class OrdersController extends ArrayList<Orders> implements I_List<Orders
     }
 
     @Override
-    public boolean updateRec(Orders code) {
+    public boolean updateRec(String code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

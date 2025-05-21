@@ -25,7 +25,6 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
     // Katana Laptop
 //    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
-    
     // Shadow Desktop
     private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
 
@@ -42,7 +41,8 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         while (true) {
             customerID = Utils.getString(
                     "Input Customer Code: ",
-                    "Input must not be empty"
+                    "Input must not be empty",
+                    false
             );
 
             Customers existCustomers = searchRecById(customerID);
@@ -84,12 +84,8 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
                 customerEmail
         );
 
-        if (customers != null) {
-            this.add(customers);
-            return true;
-        }
-
-        return false;
+        this.add(customers);
+        return true;
     }
 
     /*
@@ -98,9 +94,41 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * ###############
      */
     @Override
-    public boolean updateRec(Customers code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean updateRec(String customerId) {
+
+        Customers exitsCustomer = searchRecById(customerId);
+
+        if (exitsCustomer != null) {
+            String customerName = Utils.getString(
+                    "Input name: ",
+                    "Name must be from 2 to 25 characters",
+                    Acceptable.NAME_VALID
+            );
+
+            String customerPhoneNumber = Utils.getString(
+                    "Input your phone number: ",
+                    "Invalid phone number format",
+                    Acceptable.PHONE_VALID
+            );
+
+            String customerEmail = Utils.getString(
+                    "Input email: ",
+                    "Email must be example@domain.com",
+                    Acceptable.EMAIL_VALID
+            );
+
+            exitsCustomer.setName(customerName);
+            exitsCustomer.setPhone(customerPhoneNumber);
+            exitsCustomer.setEmail(customerEmail);
+
+            this.set(this.indexOf(exitsCustomer), exitsCustomer);
+
+            return true;
+        } else {
+            System.out.println("This customer does not exist.");
+            return false;
+        }
+
     }
 
     /*
@@ -170,7 +198,8 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         String searchName = Utils.getString(
                 "Input a customer name for searching: ",
-                "Invalid input"
+                "Invalid input",
+                false
         );
 
         for (Customers customers : this) {
@@ -200,7 +229,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         String searchId = inputCustomerId.toLowerCase();
 
         for (Customers customers : this) {
-            if (customers.getId().toLowerCase().contains(searchId)) {
+            if (customers.getId().toLowerCase().matches(searchId)) {
                 return customers;
             }
         }

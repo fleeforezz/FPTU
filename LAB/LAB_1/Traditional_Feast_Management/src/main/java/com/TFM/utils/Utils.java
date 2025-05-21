@@ -20,7 +20,7 @@ public class Utils {
         Get String
         ##########
      */
-    public static String getString(String welcomeMessage, String errorMessage) {
+    public static String getString(String welcomeMessage, String errorMessage, boolean allowEmptyInput) {
 
         Scanner sc = new Scanner(System.in, "UTF-8");
 
@@ -30,6 +30,10 @@ public class Utils {
             System.out.print(welcomeMessage);
             result = sc.nextLine().trim();
 
+            if (allowEmptyInput && result.isEmpty()) {
+                return "";
+            }
+            
             if (result.isEmpty()) {
                 System.out.println(errorMessage);
                 continue;

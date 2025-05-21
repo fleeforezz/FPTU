@@ -15,7 +15,7 @@ public interface I_List<T> {
     
     boolean addRec(); // Add new element
 
-    boolean updateRec(T code); // Update by code 
+    boolean updateRec(String code); // Update by code 
 
     boolean removeRec(T code); // Remove by code
     
