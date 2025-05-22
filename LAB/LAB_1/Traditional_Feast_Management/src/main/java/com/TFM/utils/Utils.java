@@ -33,7 +33,7 @@ public class Utils {
             if (allowEmptyInput && result.isEmpty()) {
                 return "";
             }
-            
+
             if (result.isEmpty()) {
                 System.out.println(errorMessage);
                 continue;
@@ -42,13 +42,13 @@ public class Utils {
             return result;
         }
     }
-    
+
     /*
-        ##########
+        #####################
         Get String with regex
-        ##########
+        #####################
      */
-    public static String getString(String welcomeMessage, String errorMessage, String regex) {
+    public static String getString(String welcomeMessage, String errorMessage, String regex, boolean allowEmptyInput) {
 
         Scanner sc = new Scanner(System.in, "UTF-8");
 
@@ -58,11 +58,14 @@ public class Utils {
             System.out.print(welcomeMessage);
             result = sc.nextLine().trim();
 
-            if (result.isEmpty()) {
-                System.out.println("Input must not be empty");
-                continue;
+            if (allowEmptyInput && result.isEmpty()) {
+                return "";
             }
-            
+
+            if (result.isEmpty()) {
+                System.out.println("Input cannot be empty");
+            }
+
             if (!result.matches(regex)) {
                 System.out.println(errorMessage);
                 continue;
@@ -98,7 +101,7 @@ public class Utils {
         #######
      */
     public static int getInt(String welcome, int min, int max) {
-        
+
         Scanner sc = new Scanner(System.in);
 
         boolean check = true;
@@ -161,5 +164,29 @@ public class Utils {
         } while (check || number > max || number < min);
 
         return number;
+    }
+
+    /*
+        ###############
+        Ask to continue
+        ###############
+     */
+    public static void askToContinue(Runnable action) {
+        String decicion = getString(
+                "Do want to continues or go back? (Y/y | N/n): ", 
+                "Input cannot be empty", 
+                false
+        ).trim().toUpperCase();
+
+        switch (decicion) {
+            case "Y":
+                action.run();
+                break;
+            case "N":
+                System.out.println("Returning to main menu");
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
     }
 }

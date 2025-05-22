@@ -108,7 +108,7 @@ public class ProductService {
                 System.out.println("Invalid choice. Please enter 'y' or 'n'.");
             }
         } while (true);
-        askToContinue(this::addProduct);
+        askToContinue(() -> this.addProduct());
     }
 
     public void searchProduct() {
