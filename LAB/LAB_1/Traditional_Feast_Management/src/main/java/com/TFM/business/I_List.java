@@ -10,6 +10,7 @@ import java.util.List;
 /**
  *
  * @author jso
+ * @param <T>
  */
 public interface I_List<T> {
     
