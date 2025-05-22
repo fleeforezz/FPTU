@@ -25,15 +25,15 @@ public class Traditional_Feast_Management {
         customerController.loadRecFromFileAndAddToList();
 
         do {
-            System.out.println("1. Register customers");
-            System.out.println("2. Update customer information");
-            System.out.println("3. Search for customer information by name");
+            System.out.println("1. Register customers"); // Done
+            System.out.println("2. Update customer information"); // Done
+            System.out.println("3. Search for customer information by name"); // Done
             System.out.println("4. Display feast menus");
             System.out.println("5. Place a feast menu");
             System.out.println("6. Update order information");
-            System.out.println("7. Save data to file");
-            System.out.println("8. Display customer or Order lists");
-            System.out.println("9. Exit");
+            System.out.println("7. Save data to file"); // Done
+            System.out.println("8. Display customer or Order lists"); // 50% Done
+            System.out.println("9. Exit"); // Done
 
             choice = Utils.getInt("Enter your choice: ", Utils.MIN, Utils.MAX);
 
