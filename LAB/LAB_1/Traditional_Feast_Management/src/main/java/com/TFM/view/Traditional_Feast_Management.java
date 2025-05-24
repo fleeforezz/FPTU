@@ -4,6 +4,7 @@
 package com.TFM.view;
 
 import com.TFM.controller.CustomersController;
+import com.TFM.controller.FeastMenuController;
 import com.TFM.model.Customers;
 import com.TFM.utils.Utils;
 import java.util.ArrayList;
@@ -21,8 +22,11 @@ public class Traditional_Feast_Management {
         Scanner sc = new Scanner(System.in);
 
         CustomersController customerController = new CustomersController();
+        FeastMenuController feasMenuController = new FeastMenuController();
 
+        System.out.println("Hé lô mình là Trương Minh Nhật");
         customerController.loadRecFromFileAndAddToList();
+        feasMenuController.loadRecFromFile();
 
         do {
             System.out.println("1. Register customers"); // Done
@@ -72,6 +76,7 @@ public class Traditional_Feast_Management {
                     customerController.searchRecByName(searchResult);
                     break;
                 case 4:
+                    feasMenuController.displayRec(feasMenuController);
                     break;
                 case 5:
                     break;

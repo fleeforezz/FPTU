@@ -4,6 +4,9 @@
  */
 package com.TFM.model;
 
+import java.text.DecimalFormat;
+import java.util.StringTokenizer;
+
 /**
  *
  * @author jso
@@ -63,10 +66,25 @@ public class FeastMenu {
         #####################
      */
     public String display() {
+        StringTokenizer st = new StringTokenizer(ingredients, "#");
+        DecimalFormat formatter = new DecimalFormat("#, ###, ### Vnd");
+        
+        String appetizer = st.nextToken().trim();
+        String mainCourse = st.nextToken().trim();
+        String desert = st.nextToken().trim();
+        String priceFormat = formatter.format(price);
+                
         return String.format("""
-                             %-12s | %-12s | %-12f | %-12s
+                             Code       :  %s
+                             Name       :  %s
+                             Price      :  %s
+                             Ingredients: 
+                               %s
+                               %s
+                               %s
+                             -----------------------------------------------------------------------------
                              """,
-                this.id, this.name, this.price, this.ingredients
+                id, name, priceFormat, appetizer, mainCourse, desert
         );
     }
 }

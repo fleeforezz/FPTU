@@ -26,9 +26,9 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     // Katana Laptop
 //    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow Window Desktop
-//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow linux Desktop
-    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
+//    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
     /*
      * ################
@@ -172,7 +172,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
             customersList = (List<Customers>) ois.readObject();
-            System.out.println("List loaded: " + customersList.size() + " records");
+            System.out.println("Customers List loaded: " + customersList.size() + " records");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Cannot load from file: " + e.getMessage());
         }
