@@ -8,6 +8,7 @@ import com.TFM.business.I_List;
 import com.TFM.model.Customers;
 import com.TFM.utils.Acceptable;
 import com.TFM.utils.Utils;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -90,9 +91,9 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         );
 
         this.add(customers);
-        
+
         Utils.askToContinue(() -> this.addRec());
-        
+
         return true;
     }
 
@@ -138,7 +139,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
             }
 
             this.set(this.indexOf(exitsCustomer), exitsCustomer);
-            
+
             Utils.askToContinue(() -> this.updateRec(customerId));
 
             return true;
@@ -169,6 +170,13 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     public List<Customers> loadRecFromFile() {
 
         List<Customers> customersList = new ArrayList<>();
+
+        File file = new File(FILE_PATH);
+
+        if (!file.exists()) {
+            System.out.println("Cannot read data from Customers.dat. Please check it.");
+            return this;
+        }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
             customersList = (List<Customers>) ois.readObject();

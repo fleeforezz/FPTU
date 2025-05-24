@@ -24,7 +24,6 @@ public class Traditional_Feast_Management {
         CustomersController customerController = new CustomersController();
         FeastMenuController feasMenuController = new FeastMenuController();
 
-        System.out.println("Hé lô mình là Trương Minh Nhật");
         customerController.loadRecFromFileAndAddToList();
         feasMenuController.loadRecFromFile();
 

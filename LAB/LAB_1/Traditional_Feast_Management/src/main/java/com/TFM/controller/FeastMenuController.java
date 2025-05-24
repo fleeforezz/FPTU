@@ -7,6 +7,7 @@ package com.TFM.controller;
 import com.TFM.business.I_List;
 import com.TFM.model.FeastMenu;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -43,6 +44,14 @@ public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<
 
     @Override
     public List<FeastMenu> loadRecFromFile() {
+        
+        File file = new File(FILE_PATH);
+        
+        if (!file.exists()) {
+            System.out.println("Cannot read data from FeastMenu.csv. Please check it.");
+            return this;
+        }
+        
         try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream(FILE_PATH), StandardCharsets.UTF_8));) {
