@@ -36,7 +36,7 @@ public class OrdersController extends ArrayList<Orders> implements I_List<Orders
     }
 
     @Override
-    public void sortRec() {
+    public List<Orders> sortRec(ArrayList<Orders> recList) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -64,5 +64,6 @@ public class OrdersController extends ArrayList<Orders> implements I_List<Orders
     public void loadRecFromFileAndAddToList() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
 
 }

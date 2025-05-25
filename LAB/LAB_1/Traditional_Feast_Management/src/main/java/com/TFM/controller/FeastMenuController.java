@@ -9,11 +9,13 @@ import com.TFM.model.FeastMenu;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -90,9 +92,17 @@ public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<
     }
 
     @Override
-    public void sortRec() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<FeastMenu> sortRec(ArrayList<FeastMenu> recList) {
+        Comparator orderAcendByPrice = new Comparator<FeastMenu>() {
+            @Override
+            public int compare(FeastMenu o1, FeastMenu o2) {
+                return o1.getPrice() > o2.getPrice() ? 1 : -1;
+            }
+        };
+        
+        Collections.sort(recList, orderAcendByPrice);
+        
+        return recList;
     }
 
     @Override

@@ -209,9 +209,8 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #############
      */
     @Override
-    public void sortRec() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Customers> sortRec(ArrayList<Customers> recList) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /*

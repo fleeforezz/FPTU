@@ -75,10 +75,10 @@ public class FeastMenu {
         String priceFormat = formatter.format(price);
                 
         return String.format("""
-                             Code       :  %s
-                             Name       :  %s
-                             Price      :  %s
-                             Ingredients: 
+                             Code         :  %s
+                             Name         :  %s
+                             Price        :  %s
+                             Ingredients  : 
                                %s
                                %s
                                %s

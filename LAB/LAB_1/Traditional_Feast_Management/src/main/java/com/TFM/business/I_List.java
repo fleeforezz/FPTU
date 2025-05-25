@@ -24,7 +24,7 @@ public interface I_List<T> {
     
     void loadRecFromFileAndAddToList(); // Call loadRecFromFile() and add to List<T>
     
-    void sortRec(); // Sort element in the List
+    List<T> sortRec(ArrayList<T> recList); // Sort element in the List
     
     void searchRecByName(ArrayList<T> recList); // Search element by name
     

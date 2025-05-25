@@ -31,7 +31,7 @@ public class Traditional_Feast_Management {
             System.out.println("1. Register customers"); // Done
             System.out.println("2. Update customer information"); // Done
             System.out.println("3. Search for customer information by name"); // Done
-            System.out.println("4. Display feast menus");
+            System.out.println("4. Display feast menus"); // Done
             System.out.println("5. Place a feast menu");
             System.out.println("6. Update order information");
             System.out.println("7. Save data to file"); // Done
