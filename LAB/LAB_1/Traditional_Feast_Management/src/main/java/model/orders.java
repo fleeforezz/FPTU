@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.TFM.model;
+package model;
 
 import java.util.Date;
 
@@ -10,22 +10,22 @@ import java.util.Date;
  *
  * @author jso
  */
-public class Orders {
+public class orders {
 
     private String orderId;
     private String customerId;
-    private String menuId;
-    private int numOfTables;
+    private String setMenuId;
+    private int numberOfTables;
     private Date eventDate;
 
-    public Orders() {
+    public orders() {
     }
 
-    public Orders(String orderId, String customerId, String menuId, int numOfTables, Date eventDate) {
+    public orders(String orderId, String customerId, String setMenuId, int numberOfTables, Date eventDate) {
         this.orderId = orderId;
         this.customerId = customerId;
-        this.menuId = menuId;
-        this.numOfTables = numOfTables;
+        this.setMenuId = setMenuId;
+        this.numberOfTables = numberOfTables;
         this.eventDate = eventDate;
     }
 
@@ -45,20 +45,20 @@ public class Orders {
         this.customerId = customerId;
     }
 
-    public String getMenuId() {
-        return menuId;
+    public String getSetMenuId() {
+        return setMenuId;
     }
 
-    public void setMenuId(String menuId) {
-        this.menuId = menuId;
+    public void setSetMenuId(String setMenuId) {
+        this.setMenuId = setMenuId;
     }
 
-    public int getNumOfTables() {
-        return numOfTables;
+    public int getNumberOfTables() {
+        return numberOfTables;
     }
 
-    public void setNumOfTables(int numOfTables) {
-        this.numOfTables = numOfTables;
+    public void setNumberOfTables(int numberOfTables) {
+        this.numberOfTables = numberOfTables;
     }
 
     public Date getEventDate() {

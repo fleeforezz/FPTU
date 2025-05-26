@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.TFM.controller;
+package controller;
 
-import com.TFM.business.I_List;
-import com.TFM.model.Customers;
-import com.TFM.utils.Acceptable;
-import com.TFM.utils.Utils;
+import business.I_List;
+import model.customers;
+import utils.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -17,17 +16,18 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import utils.acceptable;
 
 /**
  *
  * @author jso
  */
-public class CustomersController extends ArrayList<Customers> implements I_List<Customers> {
+public class customersController extends ArrayList<customers> implements I_List<customers> {
 
     // Katana Laptop
-//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -42,48 +42,45 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         String customerID;
 
         while (true) {
-            customerID = Utils.getString(
+            customerID = utils.getString(
                     "Input Customer Code: ",
                     "Input must not be empty",
                     false
             );
 
-            Customers existCustomers = searchRecById(customerID);
+            customers existCustomers = searchRecById(customerID);
 
             if (existCustomers != null) {
                 System.out.println("Customer already exists !");
                 continue;
             }
 
-            if (!Acceptable.isValid(customerID, Acceptable.CUS_VALID_ID)) {
+            if (!acceptable.isValid(customerID, acceptable.CUS_VALID_ID)) {
                 System.out.println("Customer ID must start with C,G,K and 4 number after that");
             }
 
             break;
         }
 
-        String customerName = Utils.getString(
-                "Input name: ",
+        String customerName = utils.getString("Input name: ",
                 "Name must be from 2 to 25 characters",
-                Acceptable.NAME_VALID,
+                acceptable.NAME_VALID,
                 false
         );
 
-        String customerPhoneNumber = Utils.getString(
-                "Input your phone number: ",
+        String customerPhoneNumber = utils.getString("Input your phone number: ",
                 "Invalid phone number format",
-                Acceptable.PHONE_VALID,
+                acceptable.PHONE_VALID,
                 false
         );
 
-        String customerEmail = Utils.getString(
-                "Input email: ",
+        String customerEmail = utils.getString("Input email: ",
                 "Email must be example@domain.com",
-                Acceptable.EMAIL_VALID,
+                acceptable.EMAIL_VALID,
                 false
         );
 
-        Customers customers = new Customers(
+        customers customers = new customers(
                 customerID,
                 customerName,
                 customerPhoneNumber,
@@ -92,7 +89,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
         this.add(customers);
 
-        Utils.askToContinue(() -> this.addRec());
+        utils.askToContinue(() -> this.addRec());
 
         return true;
     }
@@ -105,33 +102,30 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
     @Override
     public boolean updateRec(String customerId) {
 
-        Customers exitsCustomer = searchRecById(customerId);
+        customers exitsCustomer = searchRecById(customerId);
 
         if (exitsCustomer != null) {
-            String customerName = Utils.getString(
-                    "Input name: ",
+            String customerName = utils.getString("Input name: ",
                     "Name must be from 2 to 25 characters",
-                    Acceptable.NAME_VALID,
+                    acceptable.NAME_VALID,
                     true
             );
             if (!customerName.isEmpty()) {
                 exitsCustomer.setName(customerName);
             }
 
-            String customerPhoneNumber = Utils.getString(
-                    "Input your phone number: ",
+            String customerPhoneNumber = utils.getString("Input your phone number: ",
                     "Invalid phone number format",
-                    Acceptable.PHONE_VALID,
+                    acceptable.PHONE_VALID,
                     true
             );
             if (!customerPhoneNumber.isEmpty()) {
                 exitsCustomer.setPhone(customerPhoneNumber);
             }
 
-            String customerEmail = Utils.getString(
-                    "Input email: ",
+            String customerEmail = utils.getString("Input email: ",
                     "Email must be example@domain.com",
-                    Acceptable.EMAIL_VALID,
+                    acceptable.EMAIL_VALID,
                     true
             );
             if (!customerEmail.isEmpty()) {
@@ -140,7 +134,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
 
             this.set(this.indexOf(exitsCustomer), exitsCustomer);
 
-            Utils.askToContinue(() -> this.updateRec(customerId));
+            utils.askToContinue(() -> this.updateRec(customerId));
 
             return true;
         } else {
@@ -156,7 +150,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * ###############
      */
     @Override
-    public boolean removeRec(Customers code) {
+    public boolean removeRec(customers code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
         // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -167,9 +161,9 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * ####################################################
      */
     @Override
-    public List<Customers> loadRecFromFile() {
+    public List<customers> loadRecFromFile() {
 
-        List<Customers> customersList = new ArrayList<>();
+        List<customers> customersList = new ArrayList<>();
 
         File file = new File(FILE_PATH);
 
@@ -179,7 +173,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
-            customersList = (List<Customers>) ois.readObject();
+            customersList = (List<customers>) ois.readObject();
             System.out.println("Customers List loaded: " + customersList.size() + " records");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Cannot load from file: " + e.getMessage());
@@ -197,7 +191,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      */
     @Override
     public void loadRecFromFileAndAddToList() {
-        List<Customers> loadedCustomers = loadRecFromFile();
+        List<customers> loadedCustomers = loadRecFromFile();
 
         this.clear();
         this.addAll(loadedCustomers);
@@ -209,7 +203,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #############
      */
     @Override
-    public List<Customers> sortRec(ArrayList<Customers> recList) {
+    public List<customers> sortRec(ArrayList<customers> recList) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -219,15 +213,15 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #######################
      */
     @Override
-    public void searchRecByName(ArrayList<Customers> searchList) {
+    public void searchRecByName(ArrayList<customers> searchList) {
 
-        String searchName = Utils.getString(
+        String searchName = utils.getString(
                 "Input a customer name for searching: ",
                 "Invalid input",
                 false
         );
 
-        for (Customers customers : this) {
+        for (customers customers : this) {
             if (customers.getName().toLowerCase().contains(searchName.toLowerCase())) {
                 searchList.add(customers);
             }
@@ -248,12 +242,12 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #####################
      */
     @Override
-    public Customers searchRecById(String inputCustomerId) {
+    public customers searchRecById(String inputCustomerId) {
 
-        List<Customers> customerList = new ArrayList<>();
+        List<customers> customerList = new ArrayList<>();
         String searchId = inputCustomerId.toLowerCase();
 
-        for (Customers customers : this) {
+        for (customers customers : this) {
             if (customers.getId().toLowerCase().matches(searchId)) {
                 return customers;
             }
@@ -268,7 +262,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
      * #####################
      */
     @Override
-    public void displayRec(ArrayList<Customers> customerList) {
+    public void displayRec(ArrayList<customers> customerList) {
 
         String header = String.format("""
                 
@@ -288,7 +282,7 @@ public class CustomersController extends ArrayList<Customers> implements I_List<
         } else {
             System.out.print(header);
 
-            for (Customers customers : customerList) {
+            for (customers customers : customerList) {
                 System.out.print(customers.display());
             }
 

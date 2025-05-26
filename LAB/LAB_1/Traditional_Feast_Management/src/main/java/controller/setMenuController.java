@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.TFM.controller;
+package controller;
 
-import com.TFM.business.I_List;
-import com.TFM.model.FeastMenu;
+import business.I_List;
+import model.setMenu;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -22,9 +21,14 @@ import java.util.List;
  *
  * @author jso
  */
-public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<FeastMenu> {
+public class setMenuController extends ArrayList<setMenu> implements I_List<setMenu> {
 
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
+    // Katana Laptop
+    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
+    // Shadow Window Desktop
+//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    // Shadow linux Desktop
+//    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
     @Override
     public boolean addRec() {
@@ -39,21 +43,21 @@ public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<
     }
 
     @Override
-    public boolean removeRec(FeastMenu code) {
+    public boolean removeRec(setMenu code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
         // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<FeastMenu> loadRecFromFile() {
-        
+    public List<setMenu> loadRecFromFile() {
+
         File file = new File(FILE_PATH);
-        
+
         if (!file.exists()) {
             System.out.println("Cannot read data from FeastMenu.csv. Please check it.");
             return this;
         }
-        
+
         try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream(FILE_PATH), StandardCharsets.UTF_8));) {
@@ -72,7 +76,7 @@ public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<
                 double price = Double.parseDouble(fields[2].trim());
                 String ingredients = fields[3].trim();
 
-                this.add(new FeastMenu(id, name, price, ingredients));
+                this.add(new setMenu(id, name, price, ingredients));
 
             }
 
@@ -92,33 +96,34 @@ public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<
     }
 
     @Override
-    public List<FeastMenu> sortRec(ArrayList<FeastMenu> recList) {
-        Comparator orderAcendByPrice = new Comparator<FeastMenu>() {
-            @Override
-            public int compare(FeastMenu o1, FeastMenu o2) {
-                return o1.getPrice() > o2.getPrice() ? 1 : -1;
+    public List<setMenu> sortRec(ArrayList<setMenu> recList) {
+
+        Collections.sort(recList, new Comparator<setMenu>() {
+            public int compare(setMenu obj1, setMenu obj2) {
+                return obj1.getPrice() > obj2.getPrice() ? 1 : -1;
             }
-        };
-        
-        Collections.sort(recList, orderAcendByPrice);
-        
+        });
+
         return recList;
     }
 
     @Override
-    public void searchRecByName(ArrayList<FeastMenu> recList) {
+    public void searchRecByName(ArrayList<setMenu> recList) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
         // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public FeastMenu searchRecById(String id) {
+    public setMenu searchRecById(String id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
         // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void displayRec(ArrayList<FeastMenu> feastMenuList) {
+    public void displayRec(ArrayList<setMenu> feastMenuList) {
+        
+        sortRec(feastMenuList);
+        
         String header = String.format("""
 
                 -----------------------------------------------------------------------------
@@ -137,7 +142,7 @@ public class FeastMenuController extends ArrayList<FeastMenu> implements I_List<
         } else {
             System.out.print(header);
 
-            for (FeastMenu feastMenu : feastMenuList) {
+            for (setMenu feastMenu : feastMenuList) {
                 System.out.print(feastMenu.display());
             }
         }

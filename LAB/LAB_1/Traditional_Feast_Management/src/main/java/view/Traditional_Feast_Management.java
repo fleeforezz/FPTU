@@ -1,12 +1,12 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-package com.TFM.view;
+package view;
 
-import com.TFM.controller.CustomersController;
-import com.TFM.controller.FeastMenuController;
-import com.TFM.model.Customers;
-import com.TFM.utils.Utils;
+import controller.customersController;
+import controller.setMenuController;
+import model.customers;
+import utils.utils;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,8 +21,8 @@ public class Traditional_Feast_Management {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
 
-        CustomersController customerController = new CustomersController();
-        FeastMenuController feasMenuController = new FeastMenuController();
+        customersController customerController = new customersController();
+        setMenuController feasMenuController = new setMenuController();
 
         customerController.loadRecFromFileAndAddToList();
         feasMenuController.loadRecFromFile();
@@ -38,7 +38,7 @@ public class Traditional_Feast_Management {
             System.out.println("8. Display customer or Order lists"); // 50% Done
             System.out.println("9. Exit"); // Done
 
-            choice = Utils.getInt("Enter your choice: ", Utils.MIN, Utils.MAX);
+            choice = utils.getInt("Enter your choice: ", utils.MIN, utils.MAX);
 
             switch (choice) {
                 case 1:
@@ -58,7 +58,7 @@ public class Traditional_Feast_Management {
                     do {
                         isUpdated = false;
                         
-                        customerId = Utils.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
+                        customerId = utils.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
                         isUpdated = customerController.updateRec(customerId);
 
                         if (isUpdated) {
@@ -71,7 +71,7 @@ public class Traditional_Feast_Management {
 
                     break;
                 case 3:
-                    ArrayList<Customers> searchResult = new ArrayList<>();
+                    ArrayList<customers> searchResult = new ArrayList<>();
                     customerController.searchRecByName(searchResult);
                     break;
                 case 4:

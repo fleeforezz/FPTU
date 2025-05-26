@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.TFM.model;
+package model;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author jso
  */
-public class Customers implements Serializable, Comparable<Customers> {
+public class customers implements Serializable, Comparable<customers> {
 
     private static final long serialVersionUID = 1L;
     
@@ -19,11 +19,11 @@ public class Customers implements Serializable, Comparable<Customers> {
     private String phone;
     private String email;
 
-    public Customers() {
+    public customers() {
 
     }
 
-    public Customers(String id, String name, String phone, String email) {
+    public customers(String id, String name, String phone, String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -63,7 +63,7 @@ public class Customers implements Serializable, Comparable<Customers> {
     }
 
     @Override
-    public int compareTo(Customers o) {
+    public int compareTo(customers o) {
         return this.name.compareToIgnoreCase(o.name);
     }
 

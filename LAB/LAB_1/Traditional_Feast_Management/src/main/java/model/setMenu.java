@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.TFM.model;
+package model;
 
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;
@@ -11,17 +11,17 @@ import java.util.StringTokenizer;
  *
  * @author jso
  */
-public class FeastMenu {
+public class setMenu {
 
     private String id;
     private String name;
     private double price;
     private String ingredients;
 
-    public FeastMenu() {
+    public setMenu() {
     }
 
-    public FeastMenu(String id, String name, double price, String ingredients) {
+    public setMenu(String id, String name, double price, String ingredients) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -62,7 +62,7 @@ public class FeastMenu {
 
     /*
         #####################
-        Display Feast Menu Info
+        Display Set Menu Info
         #####################
      */
     public String display() {

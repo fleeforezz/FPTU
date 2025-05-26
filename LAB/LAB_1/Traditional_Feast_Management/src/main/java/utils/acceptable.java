@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.TFM.utils;
+package utils;
 
 /**
  *
  * @author jso
  */
-public interface Acceptable {
+public interface acceptable {
 
     public String CUS_VALID_ID = "^[CGK]\\d{4}$"; // Start with C,G,K and 4 number after
     
