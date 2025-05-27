@@ -18,7 +18,9 @@ public interface acceptable {
     
     public String EMAIL_VALID = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$"; // A valid mail format example@test.com
     
-    public String DATETIME_FORMAT = "dd-MM-yyyy HH:mm"; // A valid date and time format
+    public String ORDER_CODE_DATETIME_FORMAT = "yyyyMMddhhmmss"; // A valid order code with date and time format
+    
+    public String DATETIME_FORMAT = "dd/MM/yyyy"; // A valid date format
 
     public static boolean isValid(String data, String pattern) {
         return data.matches(pattern);

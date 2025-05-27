@@ -4,16 +4,19 @@
  */
 package controller;
 
-import business.I_List;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import model.orders;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import model.customers;
 import model.setMenu;
@@ -24,23 +27,29 @@ import utils.inputter;
  *
  * @author jso
  */
-public class ordersController extends ArrayList<orders> implements I_List<orders> {
+public class ordersController extends ArrayList<orders> {
 
     // Katana Laptop
-//    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
-    @Override
-    public boolean addRec() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
     public boolean updateRec(String code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    /*
+     * #####################################
+     * Auto generated OrderId using datetime
+     * #####################################
+     */
+    private String generateOrderCode() {
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat(acceptable.DATETIME_FORMAT);
+        
+        return sdf.format(now);
     }
 
     /*
@@ -48,12 +57,6 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
      * Load .dat file from machine and add to Orders List
      * ####################################################
      */
-    @Override
-    public boolean removeRec(orders code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
     public List<orders> loadRecFromFile() {
 
         List<orders> ordersList = new ArrayList<>();
@@ -80,7 +83,6 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
      * Call loadRecFromFile() and add to List<T>
      * #########################################
      */
-    @Override
     public void loadRecFromFileAndAddToList() {
         List<orders> loadedOrderList = loadRecFromFile();
 
@@ -88,37 +90,32 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
         this.addAll(loadedOrderList);
     }
 
-    @Override
-    public List<orders> sortRec(ArrayList<orders> recList) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void searchRecByName(ArrayList<orders> recList) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public orders searchRecById(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void displayRec(ArrayList<orders> ordersList) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     /*
      * ###########################################
      * Check if input date is in the future or not
      * ###########################################
      */
-    public boolean checkFutureDate(String inputDateTime) {
-        LocalDateTime now = LocalDateTime.now();
+    public boolean checkFutureDate(String inputDate) {
+        
+        LocalDate date = null;
+        
+        LocalDate now = LocalDate.now();
+        
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
+        
+        try {
+            date = LocalDate.parse(inputDate, dateTimeFormatter);
+            
+            if (date.isAfter(now)) {
+                return true;
+            } else {
+                System.out.println("Input date must be in the future.");
+            }
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid format date. Please try again.");
+        }
 
-        System.out.println("Current date and time: " + now);
-
-        return true;
+        return false;
     }
 
     /*
@@ -140,17 +137,16 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
 
             customers existCustomers = customersList.searchRecById(customerID);
 
-            if (existCustomers != null) {
-                if (!acceptable.isValid(customerID, acceptable.CUS_VALID_ID)) {
-                    System.out.println("Customer ID must start with C,G,K and 4 number after that");
+            if (acceptable.isValid(customerID, acceptable.CUS_VALID_ID)) {
+                if (existCustomers != null) {
+                    break;
+                } else {
+                    System.out.println("There is no Customer with code " + customerID + " in the system");
                 }
-                continue;
+                
             } else {
-                System.out.println("There is no Customer with code " + customerID + " in the system");
+                System.out.println("Customer ID must start with C,G,K and 4 number after that");
             }
-
-            break;
-
         }
 
         // Input Set menu code
@@ -158,7 +154,7 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
 
         while (true) {
             setMenuCode = inputter.getString(
-                    "Input Set Menu to be order",
+                    "Input Set Menu to be order: ",
                     "Input must not be empty",
                     false
             );
@@ -169,13 +165,12 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
                 break;
             } else {
                 System.out.println("There is no Set menu with code " + setMenuCode + " in the system");
-                break;
             }
         }
 
         // Input number of tables
         int numberOfTable = inputter.getInt(
-                "Input number of tables",
+                "Input number of tables: ",
                 1, 100
         );
 
@@ -184,13 +179,16 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
 
         while (true) {
             eventDate = inputter.getString(
-                    "Input preferred event date (must be in the future)",
+                    "Input preferred event date (must be in the future with dd/MM/yyyy format): ",
                     "Input must not be empty",
                     false
             );
 
-            checkFutureDate(eventDate);
-
+            boolean isValidFutureDate = checkFutureDate(eventDate);
+            
+            if (isValidFutureDate) {
+                break;
+            }
         }
 
     }
@@ -200,7 +198,6 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
      * Save Orders list to .dat file
      * ###############################
      */
-    @Override
     public boolean saveToFile() {
 
         FileOutputStream file = null;
