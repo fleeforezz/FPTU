@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,9 +31,9 @@ import utils.inputter;
 public class ordersController extends ArrayList<orders> {
 
     // Katana Laptop
-    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+//    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow Window Desktop
-//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -189,6 +190,41 @@ public class ordersController extends ArrayList<orders> {
             if (isValidFutureDate) {
                 break;
             }
+        }
+        
+        // Parse eventDate string into Date 
+        Date parseEventDate = null;
+        try {
+            parseEventDate = new SimpleDateFormat("dd/MM/yyyy").parse(eventDate);
+        } catch (ParseException e) {
+            System.out.println("Unexpected date parse error: " + e.getMessage());
+        }
+        
+        // Check if order info already exist
+        boolean isDuplicate = false;
+        
+        for (orders order : this) {
+            boolean duplicateCustomer = order.getCustomerId().equalsIgnoreCase(customerID);
+            boolean duplicateSetMenu = order.getSetMenuId().equalsIgnoreCase(setMenuCode);
+            boolean duplicateEventDate = order.getEventDate().equals(parseEventDate);
+            
+            if (duplicateCustomer && duplicateSetMenu && duplicateEventDate) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        
+        if (isDuplicate) {
+            System.out.println("Duplicate data !");
+        } else {
+            String orderId = generateOrderCode();
+            
+            orders order = new orders(
+                    orderId, customerID, setMenuCode, 
+                    numberOfTable, parseEventDate
+            );
+            
+            this.add(order);
         }
 
     }
