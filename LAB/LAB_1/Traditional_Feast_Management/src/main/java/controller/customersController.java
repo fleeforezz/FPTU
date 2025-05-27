@@ -6,7 +6,7 @@ package controller;
 
 import business.I_List;
 import model.customers;
-import utils.utils;
+import utils.inputter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -25,9 +25,9 @@ import utils.acceptable;
 public class customersController extends ArrayList<customers> implements I_List<customers> {
 
     // Katana Laptop
-    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow Window Desktop
-//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -42,7 +42,7 @@ public class customersController extends ArrayList<customers> implements I_List<
         String customerID;
 
         while (true) {
-            customerID = utils.getString(
+            customerID = inputter.getString(
                     "Input Customer Code: ",
                     "Input must not be empty",
                     false
@@ -62,19 +62,19 @@ public class customersController extends ArrayList<customers> implements I_List<
             break;
         }
 
-        String customerName = utils.getString("Input name: ",
+        String customerName = inputter.getString("Input name: ",
                 "Name must be from 2 to 25 characters",
                 acceptable.NAME_VALID,
                 false
         );
 
-        String customerPhoneNumber = utils.getString("Input your phone number: ",
+        String customerPhoneNumber = inputter.getString("Input your phone number: ",
                 "Invalid phone number format",
                 acceptable.PHONE_VALID,
                 false
         );
 
-        String customerEmail = utils.getString("Input email: ",
+        String customerEmail = inputter.getString("Input email: ",
                 "Email must be example@domain.com",
                 acceptable.EMAIL_VALID,
                 false
@@ -89,7 +89,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         this.add(customers);
 
-        utils.askToContinue(() -> this.addRec());
+        inputter.askToContinue(() -> this.addRec());
 
         return true;
     }
@@ -105,7 +105,7 @@ public class customersController extends ArrayList<customers> implements I_List<
         customers exitsCustomer = searchRecById(customerId);
 
         if (exitsCustomer != null) {
-            String customerName = utils.getString("Input name: ",
+            String customerName = inputter.getString("Input name: ",
                     "Name must be from 2 to 25 characters",
                     acceptable.NAME_VALID,
                     true
@@ -114,7 +114,7 @@ public class customersController extends ArrayList<customers> implements I_List<
                 exitsCustomer.setName(customerName);
             }
 
-            String customerPhoneNumber = utils.getString("Input your phone number: ",
+            String customerPhoneNumber = inputter.getString("Input your phone number: ",
                     "Invalid phone number format",
                     acceptable.PHONE_VALID,
                     true
@@ -123,7 +123,7 @@ public class customersController extends ArrayList<customers> implements I_List<
                 exitsCustomer.setPhone(customerPhoneNumber);
             }
 
-            String customerEmail = utils.getString("Input email: ",
+            String customerEmail = inputter.getString("Input email: ",
                     "Email must be example@domain.com",
                     acceptable.EMAIL_VALID,
                     true
@@ -134,7 +134,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
             this.set(this.indexOf(exitsCustomer), exitsCustomer);
 
-            utils.askToContinue(() -> this.updateRec(customerId));
+            inputter.askToContinue(() -> this.updateRec(customerId));
 
             return true;
         } else {
@@ -215,7 +215,7 @@ public class customersController extends ArrayList<customers> implements I_List<
     @Override
     public void searchRecByName(ArrayList<customers> searchList) {
 
-        String searchName = utils.getString(
+        String searchName = inputter.getString(
                 "Input a customer name for searching: ",
                 "Invalid input",
                 false
@@ -243,8 +243,7 @@ public class customersController extends ArrayList<customers> implements I_List<
      */
     @Override
     public customers searchRecById(String inputCustomerId) {
-
-        List<customers> customerList = new ArrayList<>();
+        
         String searchId = inputCustomerId.toLowerCase();
 
         for (customers customers : this) {

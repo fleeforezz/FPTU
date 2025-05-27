@@ -68,19 +68,4 @@ public class orders {
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
     }
-
-    public String display() {
-        return String.format("""
-                             Customer Code  : %s
-                             Customer Name  : %s
-                             Phone Number   : %s
-                             Email          : %s
-                             -----------------------------------------------------------------------------
-                             Code of Set Menu  : %s
-                             Set Menu name     : %s
-                             Event date        : %s
-                             Number of tables  : %s
-                             """,
-        )
-    }
 }

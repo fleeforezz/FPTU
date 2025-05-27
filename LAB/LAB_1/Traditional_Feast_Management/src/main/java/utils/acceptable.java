@@ -17,6 +17,8 @@ public interface acceptable {
     public String PHONE_VALID = "^(03[2-9]|05[689]|07[0-9]|08[1-9]|09[0-9])\\d{7}$"; // 03: Viettel, 05: VietNameMobile, 07: MobiFone, 08: Vinaphone, 09: Mobi, Vina, Viettel...
     
     public String EMAIL_VALID = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$"; // A valid mail format example@test.com
+    
+    public String DATETIME_FORMAT = "dd-MM-yyyy HH:mm"; // A valid date and time format
 
     public static boolean isValid(String data, String pattern) {
         return data.matches(pattern);

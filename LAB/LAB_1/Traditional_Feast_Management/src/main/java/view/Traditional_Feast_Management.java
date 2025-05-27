@@ -4,9 +4,10 @@
 package view;
 
 import controller.customersController;
+import controller.ordersController;
 import controller.setMenuController;
 import model.customers;
-import utils.utils;
+import utils.inputter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,10 +23,14 @@ public class Traditional_Feast_Management {
         Scanner sc = new Scanner(System.in);
 
         customersController customerController = new customersController();
-        setMenuController feasMenuController = new setMenuController();
+        setMenuController setMenuController = new setMenuController();
+        ordersController ordersController = new ordersController();
 
         customerController.loadRecFromFileAndAddToList();
-        feasMenuController.loadRecFromFile();
+        setMenuController.loadRecFromFile();
+        ordersController.loadRecFromFileAndAddToList();
+        
+        
 
         do {
             System.out.println("1. Register customers"); // Done
@@ -38,7 +43,7 @@ public class Traditional_Feast_Management {
             System.out.println("8. Display customer or Order lists"); // 50% Done
             System.out.println("9. Exit"); // Done
 
-            choice = utils.getInt("Enter your choice: ", utils.MIN, utils.MAX);
+            choice = inputter.getInt("Enter your choice: ", inputter.MIN, inputter.MAX);
 
             switch (choice) {
                 case 1:
@@ -58,7 +63,7 @@ public class Traditional_Feast_Management {
                     do {
                         isUpdated = false;
                         
-                        customerId = utils.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
+                        customerId = inputter.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
                         isUpdated = customerController.updateRec(customerId);
 
                         if (isUpdated) {
@@ -75,9 +80,10 @@ public class Traditional_Feast_Management {
                     customerController.searchRecByName(searchResult);
                     break;
                 case 4:
-                    feasMenuController.displayRec(feasMenuController);
+                    setMenuController.displayRec(setMenuController);
                     break;
                 case 5:
+                    ordersController.placeFeastOrder(customerController, setMenuController);
                     break;
                 case 6:
                     break;

@@ -11,9 +11,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDateTime;
 import model.orders;
 import java.util.ArrayList;
 import java.util.List;
+import model.customers;
+import model.setMenu;
+import utils.acceptable;
+import utils.inputter;
 
 /**
  *
@@ -22,7 +27,11 @@ import java.util.List;
 public class ordersController extends ArrayList<orders> implements I_List<orders> {
 
     // Katana Laptop
-    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+//    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+    // Shadow Window Desktop
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+    // Shadow linux Desktop
+//    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
     @Override
     public boolean addRec() {
@@ -96,21 +105,94 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
 
     @Override
     public void displayRec(ArrayList<orders> ordersList) {
-        String header = String.format("""
-                                      -----------------------------------------------------------------------------
-                                      Customer order information [Order ID: %s]
-                                      -----------------------------------------------------------------------------
-                                      """);
-        
-        String footer = String.format("""
-                                      -----------------------------------------------------------------------------
-                                      """);
-        
-        if (ordersList.isEmpty()) {
-            System.out.println(header);
-            System.out.println("There are no order yet !!!");
-            System.out.println(footer);
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    /*
+     * ###########################################
+     * Check if input date is in the future or not
+     * ###########################################
+     */
+    public boolean checkFutureDate(String inputDateTime) {
+        LocalDateTime now = LocalDateTime.now();
+
+        System.out.println("Current date and time: " + now);
+
+        return true;
+    }
+
+    /*
+     * ###################
+     * Place a feast order
+     * ###################
+     */
+    public void placeFeastOrder(customersController customersList, setMenuController setMenuList) {
+
+        // Input Customer code
+        String customerID;
+
+        while (true) {
+            customerID = inputter.getString(
+                    "Input Customer Code: ",
+                    "Input must not be empty",
+                    false
+            );
+
+            customers existCustomers = customersList.searchRecById(customerID);
+
+            if (existCustomers != null) {
+                if (!acceptable.isValid(customerID, acceptable.CUS_VALID_ID)) {
+                    System.out.println("Customer ID must start with C,G,K and 4 number after that");
+                }
+                continue;
+            } else {
+                System.out.println("There is no Customer with code " + customerID + " in the system");
+            }
+
+            break;
+
         }
+
+        // Input Set menu code
+        String setMenuCode;
+
+        while (true) {
+            setMenuCode = inputter.getString(
+                    "Input Set Menu to be order",
+                    "Input must not be empty",
+                    false
+            );
+
+            setMenu existSetMenu = setMenuList.searchRecById(setMenuCode);
+
+            if (existSetMenu != null) {
+                break;
+            } else {
+                System.out.println("There is no Set menu with code " + setMenuCode + " in the system");
+                break;
+            }
+        }
+
+        // Input number of tables
+        int numberOfTable = inputter.getInt(
+                "Input number of tables",
+                1, 100
+        );
+
+        // Input preferred event date (Event date must be in the futrue)
+        String eventDate;
+
+        while (true) {
+            eventDate = inputter.getString(
+                    "Input preferred event date (must be in the future)",
+                    "Input must not be empty",
+                    false
+            );
+
+            checkFutureDate(eventDate);
+
+        }
+
     }
 
     /*
@@ -134,7 +216,7 @@ public class ordersController extends ArrayList<orders> implements I_List<orders
         } catch (IOException e) {
             System.out.println("Error saving orders to file: " + e.getMessage());
         }
-        
+
         return false;
     }
 

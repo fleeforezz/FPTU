@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author jso
  */
-public class utils {
+public class inputter {
 
     public static final int MIN = 1;
     public static final int MAX = 200;
@@ -100,24 +100,26 @@ public class utils {
         Get Int
         #######
      */
-    public static int getInt(String welcome, int min, int max) {
+    public static int getInt(String welcomeMessage, int min, int max) {
 
         Scanner sc = new Scanner(System.in);
+        int number;
 
-        boolean check = true;
-        int number = 0;
-
-        do {
+        while (true) {            
             try {
-                System.out.print(welcome);
-                number = Integer.parseInt(sc.nextLine());
-                check = false;
+                System.out.print(welcomeMessage);
+                number = Integer.parseInt(sc.nextLine().trim());
+                
+                if (number < min || number > max) {
+                    System.out.println("Input must be between: " + min + " and " + max + ".");
+                } else {
+                    return number;
+                }
+                
             } catch (NumberFormatException e) {
-                System.out.println("Input must be a number");
+                System.out.println("Input must be a valid integer.");
             }
-        } while (check || number > max || number < min);
-
-        return number;
+        }
     }
 
     /*
