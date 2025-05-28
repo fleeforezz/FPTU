@@ -17,16 +17,18 @@ public class orders {
     private String setMenuId;
     private int numberOfTables;
     private Date eventDate;
+    private double totalCost;
 
     public orders() {
     }
 
-    public orders(String orderId, String customerId, String setMenuId, int numberOfTables, Date eventDate) {
+    public orders(String orderId, String customerId, String setMenuId, int numberOfTables, Date eventDate, double totalCost) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.setMenuId = setMenuId;
         this.numberOfTables = numberOfTables;
         this.eventDate = eventDate;
+        this.totalCost = totalCost;
     }
 
     public String getOrderId() {
@@ -68,4 +70,14 @@ public class orders {
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
     }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    
 }

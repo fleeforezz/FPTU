@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -19,6 +20,7 @@ import model.orders;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.StringTokenizer;
 import model.customers;
 import model.setMenu;
 import utils.acceptable;
@@ -40,7 +42,7 @@ public class ordersController extends ArrayList<orders> {
     public boolean updateRec(String code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
     /*
      * #####################################
      * Auto generated OrderId using datetime
@@ -48,8 +50,8 @@ public class ordersController extends ArrayList<orders> {
      */
     private String generateOrderCode() {
         Date now = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat(acceptable.DATETIME_FORMAT);
-        
+        SimpleDateFormat sdf = new SimpleDateFormat(acceptable.ORDER_CODE_DATETIME_FORMAT);
+
         return sdf.format(now);
     }
 
@@ -97,16 +99,16 @@ public class ordersController extends ArrayList<orders> {
      * ###########################################
      */
     public boolean checkFutureDate(String inputDate) {
-        
+
         LocalDate date = null;
-        
+
         LocalDate now = LocalDate.now();
-        
+
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
-        
+
         try {
             date = LocalDate.parse(inputDate, dateTimeFormatter);
-            
+
             if (date.isAfter(now)) {
                 return true;
             } else {
@@ -126,6 +128,9 @@ public class ordersController extends ArrayList<orders> {
      */
     public void placeFeastOrder(customersController customersList, setMenuController setMenuList) {
 
+        customers currentCustomer = null;
+        setMenu currentSetMenu = null;
+
         // Input Customer code
         String customerID;
 
@@ -140,11 +145,12 @@ public class ordersController extends ArrayList<orders> {
 
             if (acceptable.isValid(customerID, acceptable.CUS_VALID_ID)) {
                 if (existCustomers != null) {
+                    currentCustomer = existCustomers;
                     break;
                 } else {
                     System.out.println("There is no Customer with code " + customerID + " in the system");
                 }
-                
+
             } else {
                 System.out.println("Customer ID must start with C,G,K and 4 number after that");
             }
@@ -163,6 +169,7 @@ public class ordersController extends ArrayList<orders> {
             setMenu existSetMenu = setMenuList.searchRecById(setMenuCode);
 
             if (existSetMenu != null) {
+                currentSetMenu = existSetMenu;
                 break;
             } else {
                 System.out.println("There is no Set menu with code " + setMenuCode + " in the system");
@@ -186,12 +193,12 @@ public class ordersController extends ArrayList<orders> {
             );
 
             boolean isValidFutureDate = checkFutureDate(eventDate);
-            
+
             if (isValidFutureDate) {
                 break;
             }
         }
-        
+
         // Parse eventDate string into Date 
         Date parseEventDate = null;
         try {
@@ -199,34 +206,137 @@ public class ordersController extends ArrayList<orders> {
         } catch (ParseException e) {
             System.out.println("Unexpected date parse error: " + e.getMessage());
         }
-        
+
         // Check if order info already exist
         boolean isDuplicate = false;
-        
+
         for (orders order : this) {
             boolean duplicateCustomer = order.getCustomerId().equalsIgnoreCase(customerID);
             boolean duplicateSetMenu = order.getSetMenuId().equalsIgnoreCase(setMenuCode);
             boolean duplicateEventDate = order.getEventDate().equals(parseEventDate);
-            
+
             if (duplicateCustomer && duplicateSetMenu && duplicateEventDate) {
                 isDuplicate = true;
                 break;
             }
         }
-        
+
         if (isDuplicate) {
             System.out.println("Duplicate data !");
         } else {
             String orderId = generateOrderCode();
-            
+
+            double totalCost = currentSetMenu.getPrice() * numberOfTable;
+
             orders order = new orders(
-                    orderId, customerID, setMenuCode, 
-                    numberOfTable, parseEventDate
+                    orderId, customerID, setMenuCode,
+                    numberOfTable, parseEventDate, totalCost
             );
-            
-            this.add(order);
+
+            // Display 
+            StringTokenizer stringTokenizer = new StringTokenizer(currentSetMenu.getIngredients(), "#");
+            DecimalFormat formatter = new DecimalFormat("#, ###, ### Vnd");
+
+            String appetizer = stringTokenizer.nextToken().trim();
+            String mainCourse = stringTokenizer.nextToken().trim();
+            String desert = stringTokenizer.nextToken().trim();
+            String totalCostFormat = formatter.format(totalCost);
+
+            String displayOrderMenu = String.format(
+                    """
+                    ------------------------------------------------------------------------------------------
+                    Customer order information [Order ID: %s]
+                    ------------------------------------------------------------------------------------------
+                      Customer Code   :   %s
+                      Customer Name   :   %s
+                      Phone Number    :   %s
+                      Email           :   %s
+                    ------------------------------------------------------------------------------------------
+                      Code of the Set Menu  :   %s
+                      Set Menu name         :   %s
+                      Event date            :   %s
+                      Price                 :   %f
+                      Ingredients:
+                        %s
+                        %s
+                        %s
+                    ------------------------------------------------------------------------------------------
+                    Total Cost  :   %s
+                    ------------------------------------------------------------------------------------------
+                    """,
+                    orderId,
+                    customerID,
+                    currentCustomer.getName(),
+                    currentCustomer.getPhone(),
+                    currentCustomer.getEmail(),
+                    currentSetMenu.getId(),
+                    currentSetMenu.getName(),
+                    parseEventDate,
+                    currentSetMenu.getPrice(),
+                    appetizer,
+                    mainCourse,
+                    desert,
+                    totalCostFormat
+            );
+
+            boolean isPlacedSuccessfull = this.add(order);
+            if (isPlacedSuccessfull) {
+                System.out.println("\nOrder place successfully !!!");
+                System.out.println("Here's the preview of your placed order\n");
+                System.out.println(displayOrderMenu);
+
+                inputter.askToContinue(() -> this.placeFeastOrder(customersList, setMenuList));
+            } else {
+                System.out.println("Something when wrong while placing your order. Please try again !!!");
+            }
         }
 
+    }
+
+    public void displayRec(ArrayList<orders> orderList) {
+
+        String header = String.format(
+                """
+            
+                ------------------------------------------------------------------------------------------
+                ID     | Event date  | Customer ID  | Set Menu  | Price       | Tables |              Cost 
+                ------------------------------------------------------------------------------------------
+                """
+        );
+
+        String footer = String.format(
+                """
+                ------------------------------------------------------------------------------------------                 
+                """
+        );
+
+        if (orderList.isEmpty()) {
+            System.out.println(header);
+            System.out.println("No data in the system");
+            System.out.println(footer);
+        } else {
+            System.out.println(header);
+            for (orders order : orderList) {
+                
+                double price = order.getTotalCost() / order.getNumberOfTables();
+                
+                String orderDetail = String.format(
+                        """
+                        %-8s | %-8s | %-8s | %-8s | %-8s | %-8s | %-8s
+                        """,
+                        order.getOrderId(),
+                        order.getEventDate(),
+                        order.getCustomerId(),
+                        order.getSetMenuId(),
+                        price,
+                        order.getNumberOfTables(),
+                        order.getTotalCost()
+                );
+                
+                System.out.println(orderDetail);
+            }
+            System.out.println(footer);
+        }
     }
 
     /*

@@ -66,12 +66,12 @@ public class setMenu {
         #####################
      */
     public String display() {
-        StringTokenizer st = new StringTokenizer(ingredients, "#");
+        StringTokenizer stringTokenizer = new StringTokenizer(ingredients, "#");
         DecimalFormat formatter = new DecimalFormat("#, ###, ### Vnd");
         
-        String appetizer = st.nextToken().trim();
-        String mainCourse = st.nextToken().trim();
-        String desert = st.nextToken().trim();
+        String appetizer = stringTokenizer.nextToken().trim();
+        String mainCourse = stringTokenizer.nextToken().trim();
+        String desert = stringTokenizer.nextToken().trim();
         String priceFormat = formatter.format(price);
                 
         return String.format("""
@@ -82,7 +82,7 @@ public class setMenu {
                                %s
                                %s
                                %s
-                             -----------------------------------------------------------------------------
+                             ------------------------------------------------------------------------------------------
                              """,
                 id, name, priceFormat, appetizer, mainCourse, desert
         );

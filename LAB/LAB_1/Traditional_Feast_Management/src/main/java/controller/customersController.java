@@ -243,7 +243,7 @@ public class customersController extends ArrayList<customers> implements I_List<
      */
     @Override
     public customers searchRecById(String inputCustomerId) {
-        
+
         String searchId = inputCustomerId.toLowerCase();
 
         for (customers customers : this) {
@@ -263,16 +263,20 @@ public class customersController extends ArrayList<customers> implements I_List<
     @Override
     public void displayRec(ArrayList<customers> customerList) {
 
-        String header = String.format("""
+        String header = String.format(
+            """
                 
-                -----------------------------------------------------------------------------
-                Code     | Customer Name            | Phone         | Email
-                -----------------------------------------------------------------------------
-                """);
+            -----------------------------------------------------------------------------
+            Code     | Customer Name            | Phone         | Email
+            -----------------------------------------------------------------------------
+            """
+        );
 
-        String footer = String.format("""
-                -----------------------------------------------------------------------------
-                """);
+        String footer = String.format(
+            """
+            -----------------------------------------------------------------------------
+            """
+        );
 
         if (customerList.isEmpty()) {
             System.out.print(header);

@@ -29,8 +29,6 @@ public class Traditional_Feast_Management {
         customerController.loadRecFromFileAndAddToList();
         setMenuController.loadRecFromFile();
         ordersController.loadRecFromFileAndAddToList();
-        
-        
 
         do {
             System.out.println("1. Register customers"); // Done
@@ -62,7 +60,7 @@ public class Traditional_Feast_Management {
 
                     do {
                         isUpdated = false;
-                        
+
                         customerId = inputter.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
                         isUpdated = customerController.updateRec(customerId);
 
@@ -91,7 +89,29 @@ public class Traditional_Feast_Management {
                     customerController.saveToFile();
                     break;
                 case 8:
-                    customerController.displayRec(customerController);
+                    int subMenuChoice = 0;
+
+                    do {
+                        System.out.println("1. Display Customers List");
+                        System.out.println("2. Display Orders List");
+                        System.out.println("3. Return to main menu");
+
+                        subMenuChoice = inputter.getInt("Enter your choice: ", inputter.MIN, inputter.MAX);
+
+                        switch (subMenuChoice) {
+                            case 1:
+                                customerController.displayRec(customerController);
+                                break;
+                            case 2:
+                                ordersController.displayRec(ordersController);
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Invalid choice");
+                        }
+
+                    } while (subMenuChoice >= 1 && subMenuChoice <= 2);
                     break;
                 case 9:
                     break;
