@@ -9,10 +9,9 @@ import model.customers;
 import utils.inputter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,12 +21,12 @@ import utils.acceptable;
  *
  * @author jso
  */
-public class customersController extends ArrayList<customers> implements I_List<customers> {
+public class customersController extends ArrayList<customers> implements I_List<customers>, Serializable {
 
     // Katana Laptop
-//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -89,6 +88,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         this.add(customers);
 
+        inputter.confirmSaveFile("Customer", this, FILE_PATH);
         inputter.askToContinue(() -> this.addRec());
 
         return true;
@@ -174,27 +174,15 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
             customersList = (List<customers>) ois.readObject();
+            this.clear();
+            this.addAll(customersList);
             System.out.println("Customers List loaded: " + customersList.size() + " records");
+            Collections.sort(customersList);
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Cannot load from file: " + e.getMessage());
         }
 
-        Collections.sort(customersList);
-
         return customersList;
-    }
-
-    /*
-     * #########################################
-     * Call loadRecFromFile() and add to List<T>
-     * #########################################
-     */
-    @Override
-    public void loadRecFromFileAndAddToList() {
-        List<customers> loadedCustomers = loadRecFromFile();
-
-        this.clear();
-        this.addAll(loadedCustomers);
     }
 
     /*
@@ -264,7 +252,7 @@ public class customersController extends ArrayList<customers> implements I_List<
     public void displayRec(ArrayList<customers> customerList) {
 
         String header = String.format(
-            """
+                """
                 
             -----------------------------------------------------------------------------
             Code     | Customer Name            | Phone         | Email
@@ -273,7 +261,7 @@ public class customersController extends ArrayList<customers> implements I_List<
         );
 
         String footer = String.format(
-            """
+                """
             -----------------------------------------------------------------------------
             """
         );
@@ -292,29 +280,4 @@ public class customersController extends ArrayList<customers> implements I_List<
             System.out.println(footer);
         }
     }
-
-    /*
-     * ###############################
-     * Save Customer list to .dat file
-     * ###############################
-     */
-    @Override
-    public boolean saveToFile() {
-
-        FileOutputStream file = null;
-        ObjectOutputStream oos = null;
-
-        try {
-            file = new FileOutputStream(FILE_PATH);
-            oos = new ObjectOutputStream(file);
-
-            oos.writeObject(this);
-            System.out.println("\nCustomers saved successfully to file !!! \n");
-            return true;
-        } catch (IOException e) {
-            System.out.println("Error saving customers to file: " + e.getMessage());
-            return false;
-        }
-    }
-
 }

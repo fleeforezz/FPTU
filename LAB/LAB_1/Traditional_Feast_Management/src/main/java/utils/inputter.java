@@ -4,6 +4,9 @@
  */
 package utils;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
@@ -105,17 +108,17 @@ public class inputter {
         Scanner sc = new Scanner(System.in);
         int number;
 
-        while (true) {            
+        while (true) {
             try {
                 System.out.print(welcomeMessage);
                 number = Integer.parseInt(sc.nextLine().trim());
-                
+
                 if (number < min || number > max) {
                     System.out.println("Input must be between: " + min + " and " + max + ".");
                 } else {
                     return number;
                 }
-                
+
             } catch (NumberFormatException e) {
                 System.out.println("Input must be a valid integer.");
             }
@@ -174,13 +177,13 @@ public class inputter {
         ###############
      */
     public static void askToContinue(Runnable action) {
-        String decicion = getString(
-                "Do want to continues or go back? (Y/y | N/n): ", 
-                "Input cannot be empty", 
+        String decision = getString(
+                "Do want to continues or go back? (Y/y | N/n): ",
+                "Input cannot be empty",
                 false
         ).trim().toUpperCase();
 
-        switch (decicion) {
+        switch (decision) {
             case "Y":
                 action.run();
                 break;
@@ -188,7 +191,35 @@ public class inputter {
                 System.out.println("Returning to main menu");
                 break;
             default:
-                System.out.println("Invalid choice");
+                System.out.println("Invalid choice !!! Only (Y/y | N/n) are allowed");
+        }
+    }
+
+    /*
+        #################
+        Confirm save file
+        #################
+     */
+    public static void confirmSaveFile(String recordName, Object listToSave,String FILE_PATH) {
+        String decision = getString(
+                "Do you want to save this " + recordName + " to file ? (Y/y | N/n): ",
+                "Input must not be empty",
+                false
+        ).trim().toUpperCase();
+
+        switch (decision) {
+            case "Y":
+                try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+                    oos.writeObject(listToSave);
+                    System.out.println("\nCustomers saved successfully to file !!! \n");
+                } catch (IOException e) {
+                    System.out.println("Error saving customers to file: " + e.getMessage());
+                }
+                break;
+            case "N":
+                break;
+            default:
+                System.out.println("Invalid choice !!! Only (Y/y | N/n) are allowed");
         }
     }
 }

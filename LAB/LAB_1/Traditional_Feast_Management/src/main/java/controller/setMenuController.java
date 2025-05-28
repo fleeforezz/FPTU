@@ -24,9 +24,9 @@ import java.util.List;
 public class setMenuController extends ArrayList<setMenu> implements I_List<setMenu> {
 
     // Katana Laptop
-//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
+    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
     // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
+//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -90,12 +90,6 @@ public class setMenuController extends ArrayList<setMenu> implements I_List<setM
     }
 
     @Override
-    public void loadRecFromFileAndAddToList() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
     public List<setMenu> sortRec(ArrayList<setMenu> recList) {
 
         Collections.sort(recList, new Comparator<setMenu>() {
@@ -154,12 +148,6 @@ public class setMenuController extends ArrayList<setMenu> implements I_List<setM
                 System.out.print(feastMenu.display());
             }
         }
-    }
-
-    @Override
-    public boolean saveToFile() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

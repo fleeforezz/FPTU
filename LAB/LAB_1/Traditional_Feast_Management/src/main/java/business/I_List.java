@@ -22,8 +22,6 @@ public interface I_List<T> {
     
     List<T> loadRecFromFile(); // Load record from file
     
-    void loadRecFromFileAndAddToList(); // Call loadRecFromFile() and add to List<T>
-    
     List<T> sortRec(ArrayList<T> recList); // Sort element in the List
     
     void searchRecByName(ArrayList<T> recList); // Search element by name
@@ -31,6 +29,4 @@ public interface I_List<T> {
     T searchRecById(String id); // Search element by ID
     
     void displayRec(ArrayList<T> recList); // Show detail of each element in the List
-    
-    boolean saveToFile(); // Save element information into file
 }

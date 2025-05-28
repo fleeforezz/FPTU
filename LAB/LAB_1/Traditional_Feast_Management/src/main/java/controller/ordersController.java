@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,12 +31,12 @@ import utils.inputter;
  *
  * @author jso
  */
-public class ordersController extends ArrayList<orders> {
+public class ordersController extends ArrayList<orders> implements Serializable {
 
     // Katana Laptop
-//    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -67,7 +68,7 @@ public class ordersController extends ArrayList<orders> {
         File orderFile = new File(FILE_PATH);
 
         if (!orderFile.exists()) {
-            System.out.println("Cannot read feast_order_service.dat");
+            System.out.println("Cannot read feast_order_service.dat. Please check it.");
             return this;
         }
 
@@ -79,18 +80,6 @@ public class ordersController extends ArrayList<orders> {
         }
 
         return ordersList;
-    }
-
-    /*
-     * #########################################
-     * Call loadRecFromFile() and add to List<T>
-     * #########################################
-     */
-    public void loadRecFromFileAndAddToList() {
-        List<orders> loadedOrderList = loadRecFromFile();
-
-        this.clear();
-        this.addAll(loadedOrderList);
     }
 
     /*
@@ -280,10 +269,13 @@ public class ordersController extends ArrayList<orders> {
             );
 
             boolean isPlacedSuccessfull = this.add(order);
+
             if (isPlacedSuccessfull) {
                 System.out.println("\nOrder place successfully !!!");
                 System.out.println("Here's the preview of your placed order\n");
                 System.out.println(displayOrderMenu);
+
+                inputter.confirmSaveFile("Order", this, FILE_PATH);
 
                 inputter.askToContinue(() -> this.placeFeastOrder(customersList, setMenuList));
             } else {
@@ -317,9 +309,9 @@ public class ordersController extends ArrayList<orders> {
         } else {
             System.out.println(header);
             for (orders order : orderList) {
-                
+
                 double price = order.getTotalCost() / order.getNumberOfTables();
-                
+
                 String orderDetail = String.format(
                         """
                         %-8s | %-8s | %-8s | %-8s | %-8s | %-8s | %-8s
@@ -332,35 +324,10 @@ public class ordersController extends ArrayList<orders> {
                         order.getNumberOfTables(),
                         order.getTotalCost()
                 );
-                
+
                 System.out.println(orderDetail);
             }
             System.out.println(footer);
         }
     }
-
-    /*
-     * ###############################
-     * Save Orders list to .dat file
-     * ###############################
-     */
-    public boolean saveToFile() {
-
-        FileOutputStream file = null;
-        ObjectOutputStream oos = null;
-
-        try {
-            file = new FileOutputStream(FILE_PATH);
-            oos = new ObjectOutputStream(file);
-
-            oos.writeObject(this);
-            System.out.println("\n Orders saved successfully to file !!! \n");
-            return true;
-        } catch (IOException e) {
-            System.out.println("Error saving orders to file: " + e.getMessage());
-        }
-
-        return false;
-    }
-
 }
