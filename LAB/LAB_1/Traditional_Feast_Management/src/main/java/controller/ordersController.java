@@ -210,7 +210,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         }
 
         if (isDuplicate) {
-            System.out.println("Duplicate data !");
+            System.out.println("\nDuplicate data !\n");
         } else {
             String orderId = generateOrderCode();
 
