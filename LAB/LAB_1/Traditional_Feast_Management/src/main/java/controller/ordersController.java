@@ -6,10 +6,7 @@ package controller;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -34,9 +31,9 @@ import utils.inputter;
 public class ordersController extends ArrayList<orders> implements Serializable {
 
     // Katana Laptop
-    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+//    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow Window Desktop
-//    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
+    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
@@ -74,6 +71,8 @@ public class ordersController extends ArrayList<orders> implements Serializable 
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
             ordersList = (List<orders>) ois.readObject();
+            this.clear();
+            this.addAll(ordersList);
             System.out.println("Order List loaded: " + ordersList.size() + " records");
         } catch (Exception e) {
             System.out.println("Cannot load from file: " + e.getMessage());
@@ -200,8 +199,8 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         boolean isDuplicate = false;
 
         for (orders order : this) {
-            boolean duplicateCustomer = order.getCustomerId().equalsIgnoreCase(customerID);
-            boolean duplicateSetMenu = order.getSetMenuId().equalsIgnoreCase(setMenuCode);
+            boolean duplicateCustomer = order.getCustomerId().matches(customerID);
+            boolean duplicateSetMenu = order.getSetMenuId().matches(setMenuCode);
             boolean duplicateEventDate = order.getEventDate().equals(parseEventDate);
 
             if (duplicateCustomer && duplicateSetMenu && duplicateEventDate) {
@@ -229,6 +228,8 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             String appetizer = stringTokenizer.nextToken().trim();
             String mainCourse = stringTokenizer.nextToken().trim();
             String desert = stringTokenizer.nextToken().trim();
+
+            String priceFormat = formatter.format(currentSetMenu.getPrice());
             String totalCostFormat = formatter.format(totalCost);
 
             String displayOrderMenu = String.format(
@@ -244,7 +245,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                       Code of the Set Menu  :   %s
                       Set Menu name         :   %s
                       Event date            :   %s
-                      Price                 :   %f
+                      Price                 :   %s
                       Ingredients:
                         %s
                         %s
@@ -261,7 +262,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                     currentSetMenu.getId(),
                     currentSetMenu.getName(),
                     parseEventDate,
-                    currentSetMenu.getPrice(),
+                    priceFormat,
                     appetizer,
                     mainCourse,
                     desert,
@@ -290,15 +291,15 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         String header = String.format(
                 """
             
-                ------------------------------------------------------------------------------------------
-                ID     | Event date  | Customer ID  | Set Menu  | Price       | Tables |              Cost 
-                ------------------------------------------------------------------------------------------
+                --------------------------------------------------------------------------------------------------
+                ID              | Event date  | Customer ID  | Set Menu  | Price          | Tables |          Cost 
+                --------------------------------------------------------------------------------------------------
                 """
         );
 
         String footer = String.format(
                 """
-                ------------------------------------------------------------------------------------------                 
+                --------------------------------------------------------------------------------------------------         
                 """
         );
 
@@ -310,19 +311,26 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             System.out.println(header);
             for (orders order : orderList) {
 
-                double price = order.getTotalCost() / order.getNumberOfTables();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String formattedEventDate = dateFormat.format(order.getEventDate());
+                
+                DecimalFormat formatter = new DecimalFormat("#, ###, ###");
+
+                String priceFormat = formatter.format(order.getTotalCost() / order.getNumberOfTables());
+                
+                String totalPriceFormat = formatter.format(order.getTotalCost());
 
                 String orderDetail = String.format(
                         """
-                        %-8s | %-8s | %-8s | %-8s | %-8s | %-8s | %-8s
+                        %-15s | %-11s | %-12s | %-9s | %14s | %6s | %15s
                         """,
                         order.getOrderId(),
-                        order.getEventDate(),
+                        formattedEventDate,
                         order.getCustomerId(),
                         order.getSetMenuId(),
-                        price,
+                        priceFormat,
                         order.getNumberOfTables(),
-                        order.getTotalCost()
+                        totalPriceFormat
                 );
 
                 System.out.println(orderDetail);
