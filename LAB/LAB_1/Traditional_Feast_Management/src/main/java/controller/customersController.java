@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import utils.acceptable;
+import utils.dataSource;
 
 /**
  *
@@ -23,13 +24,8 @@ import utils.acceptable;
  */
 public class customersController extends ArrayList<customers> implements I_List<customers>, Serializable {
 
-    // Katana Laptop
-//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
-    // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
-    // Shadow linux Desktop
-//    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
-
+    dataSource dataSource = new dataSource();
+    
     /*
      * ################
      * Add new Customer
@@ -88,7 +84,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         this.add(customers);
 
-        inputter.confirmSaveFile("Customer", this, FILE_PATH);
+        inputter.confirmSaveFile("Customer", this, dataSource.getCUSTOMERS_FILE_PATH());
         inputter.askToContinue(() -> this.addRec());
 
         return true;
@@ -165,14 +161,14 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         List<customers> customersList = new ArrayList<>();
 
-        File file = new File(FILE_PATH);
+        File file = new File(dataSource.getCUSTOMERS_FILE_PATH());
 
         if (!file.exists()) {
             System.out.println("Cannot read data from Customers.dat. Please check it.");
             return this;
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataSource.getCUSTOMERS_FILE_PATH()))) {
             customersList = (List<customers>) ois.readObject();
             this.clear();
             this.addAll(customersList);

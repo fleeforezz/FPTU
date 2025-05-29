@@ -22,6 +22,7 @@ import java.util.StringTokenizer;
 import model.customers;
 import model.setMenu;
 import utils.acceptable;
+import utils.dataSource;
 import utils.inputter;
 
 /**
@@ -29,14 +30,9 @@ import utils.inputter;
  * @author jso
  */
 public class ordersController extends ArrayList<orders> implements Serializable {
-
-    // Katana Laptop
-//    public static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
-    // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\feast_order_service.dat";
-    // Shadow linux Desktop
-//    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
-
+    
+    dataSource dataSource = new dataSource();
+    
     /*
      * #####################################
      * Auto generated OrderId using datetime
@@ -58,14 +54,14 @@ public class ordersController extends ArrayList<orders> implements Serializable 
 
         List<orders> ordersList = new ArrayList<>();
 
-        File orderFile = new File(FILE_PATH);
+        File orderFile = new File(dataSource.getFEAST_ORDER_FILE_PATH());
 
         if (!orderFile.exists()) {
             System.out.println("Cannot read feast_order_service.dat. Please check it.");
             return this;
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataSource.getFEAST_ORDER_FILE_PATH()))) {
             ordersList = (List<orders>) ois.readObject();
             this.clear();
             this.addAll(ordersList);
@@ -275,7 +271,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 System.out.println("Here's the preview of your placed order\n");
                 System.out.println(displayOrderMenu);
 
-                inputter.confirmSaveFile("Order", this, FILE_PATH);
+                inputter.confirmSaveFile("Order", this, dataSource.getFEAST_ORDER_FILE_PATH());
 
                 inputter.askToContinue(() -> this.placeFeastOrder(customersList, setMenuList));
             } else {
@@ -349,13 +345,13 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                     } catch (ParseException e) {
                         System.out.println("Unexpected date parse error: " + e.getMessage());
                     }
-
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-                    String formattedEventDate = dateFormat.format(parseEventDate);
-                    formattedEventDate = eventDate;
+                    
+                    existOrder.setEventDate(parseEventDate);
                     break;
                 }
             }
+            
+            this.set(this.indexOf(existOrder), existOrder);
 
         } else {
             System.out.println("This order does not exist.");

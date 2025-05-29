@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import utils.dataSource;
 
 /**
  *
@@ -23,13 +24,8 @@ import java.util.List;
  */
 public class setMenuController extends ArrayList<setMenu> implements I_List<setMenu> {
 
-    // Katana Laptop
-//    private static final String FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
-    // Shadow Window Desktop
-    private static final String FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
-    // Shadow linux Desktop
-//    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
-
+    dataSource dataSource = new dataSource();
+    
     @Override
     public boolean addRec() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
@@ -51,7 +47,7 @@ public class setMenuController extends ArrayList<setMenu> implements I_List<setM
     @Override
     public List<setMenu> loadRecFromFile() {
 
-        File file = new File(FILE_PATH);
+        File file = new File(dataSource.getSET_MENU_FILE_PATH());
 
         if (!file.exists()) {
             System.out.println("Cannot read data from FeastMenu.csv. Please check it.");
@@ -60,7 +56,7 @@ public class setMenuController extends ArrayList<setMenu> implements I_List<setM
 
         try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream(FILE_PATH), StandardCharsets.UTF_8));) {
+                        new FileInputStream(dataSource.getSET_MENU_FILE_PATH()), StandardCharsets.UTF_8));) {
             String line;
             boolean isFirstLine = true;
 
