@@ -37,10 +37,6 @@ public class ordersController extends ArrayList<orders> implements Serializable 
     // Shadow linux Desktop
 //    private static final String FILE_PATH = "/home/jso/Documents/GitHub/FPTU/LAB/LAB_1/Traditional_Feast_Management/src/main/java/data/Customers.dat";
 
-    public boolean updateRec(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     /*
      * #####################################
      * Auto generated OrderId using datetime
@@ -224,7 +220,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             // Display 
             StringTokenizer stringTokenizer = new StringTokenizer(currentSetMenu.getIngredients(), "#");
             DecimalFormat formatter = new DecimalFormat("#, ###, ### Vnd");
-            
+
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             String formattedEventDate = dateFormat.format(parseEventDate);
 
@@ -289,6 +285,86 @@ public class ordersController extends ArrayList<orders> implements Serializable 
 
     }
 
+    /*
+     * #####################
+     * Search Customer by Id
+     * #####################
+     */
+    public orders searchRecById(String inputOrderId) {
+
+        for (orders order : this) {
+            if (order.getOrderId().matches(inputOrderId)) {
+                return order;
+            }
+        }
+
+        return null;
+    }
+
+    /*
+     * ##################
+     * Update Order by Id
+     * ##################
+     */
+    public boolean updateRec(String inputOrderId) {
+
+        orders existOrder = searchRecById(inputOrderId);
+
+        if (existOrder != null) {
+            String setMenuCode = inputter.getString(
+                    "Input new Set Menu code",
+                    "Input must not be empty",
+                    acceptable.SETMEU_CODE_VALID,
+                    false
+            );
+            if (!setMenuCode.isEmpty()) {
+                existOrder.setSetMenuId(setMenuCode);
+            }
+
+            int numberOfTable = inputter.getInt(
+                    "Input new number of table",
+                    inputter.MIN,
+                    inputter.MAX
+            );
+            if (numberOfTable > 0) {
+                existOrder.setNumberOfTables(numberOfTable);
+            }
+
+            String eventDate;
+           
+            while (true) {
+                eventDate = inputter.getString(
+                        "Input new event date (must be in the future with dd/MM/yyyy format): ",
+                        "Invalid",
+                        true
+                );
+
+                boolean isValidFutureDate = checkFutureDate(eventDate);
+
+                if (isValidFutureDate) {
+                    // Parse eventDate string into Date 
+                    Date parseEventDate = null;
+                    try {
+                        parseEventDate = new SimpleDateFormat("dd/MM/yyyy").parse(eventDate);
+                    } catch (ParseException e) {
+                        System.out.println("Unexpected date parse error: " + e.getMessage());
+                    }
+
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    String formattedEventDate = dateFormat.format(parseEventDate);
+                    formattedEventDate = eventDate;
+                    break;
+                }
+            }
+
+        } else {
+            System.out.println("This order does not exist.");
+        }
+
+        return true;
+
+    }
+
     public void displayRec(ArrayList<orders> orderList) {
 
         String header = String.format(
@@ -316,11 +392,11 @@ public class ordersController extends ArrayList<orders> implements Serializable 
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 String formattedEventDate = dateFormat.format(order.getEventDate());
-                
+
                 DecimalFormat formatter = new DecimalFormat("#, ###, ###");
 
                 String priceFormat = formatter.format(order.getTotalCost() / order.getNumberOfTables());
-                
+
                 String totalPriceFormat = formatter.format(order.getTotalCost());
 
                 String orderDetail = String.format(

@@ -18,6 +18,8 @@ public interface acceptable {
     
     public String EMAIL_VALID = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$"; // A valid mail format example@test.com
     
+    public String SETMEU_CODE_VALID = "^{\\d{5}$"; // A valid Set Menu Code is 5 characters long
+    
     public String ORDER_CODE_DATETIME_FORMAT = "yyyyMMddhhmmss"; // A valid order code with date and time format
     
     public String DATETIME_FORMAT = "dd/MM/yyyy"; // A valid date format
