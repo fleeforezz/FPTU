@@ -31,6 +31,8 @@ import utils.inputter;
  */
 public class ordersController extends ArrayList<orders> implements Serializable {
     
+    private static final long serialVersionUID = 1L;
+    
     String URL_PATH = dataSource.getFEAST_ORDER_FILE_PATH();
     
     /*
@@ -278,7 +280,6 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 System.out.println("Something when wrong while placing your order. Please try again !!!");
             }
         }
-
     }
 
     /*
@@ -309,43 +310,43 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         if (existOrder != null) {
             
             // Input Set Menu code
-            String setMenuCode = inputter.getString(
+            String newSetMenuCode = inputter.getString(
                     "Input new Set Menu code",
                     "Input must not be empty",
                     acceptable.SETMEU_CODE_VALID,
                     false
             );
-            if (!setMenuCode.isEmpty()) {
-                existOrder.setSetMenuId(setMenuCode);
+            if (!newSetMenuCode.isEmpty()) {
+                existOrder.setSetMenuId(newSetMenuCode);
             }
 
             // Input number of table
-            int numberOfTable = inputter.getInt(
+            int newNumberOfTable = inputter.getInt(
                     "Input new number of table",
                     inputter.MIN,
                     inputter.MAX
             );
-            if (numberOfTable > 0) {
-                existOrder.setNumberOfTables(numberOfTable);
+            if (newNumberOfTable > 0) {
+                existOrder.setNumberOfTables(newNumberOfTable);
             }
 
             // Input event date
-            String eventDate;
+            String newEventDate;
            
             while (true) {
-                eventDate = inputter.getString(
+                newEventDate = inputter.getString(
                         "Input new event date (must be in the future with dd/MM/yyyy format): ",
                         "Invalid",
                         true
                 );
 
-                boolean isValidFutureDate = checkFutureDate(eventDate);
+                boolean isValidFutureDate = checkFutureDate(newEventDate);
 
                 if (isValidFutureDate) {
                     // Parse eventDate string into Date 
                     Date parseEventDate = null;
                     try {
-                        parseEventDate = new SimpleDateFormat("dd/MM/yyyy").parse(eventDate);
+                        parseEventDate = new SimpleDateFormat("dd/MM/yyyy").parse(newEventDate);
                     } catch (ParseException e) {
                         System.out.println("Unexpected date parse error: " + e.getMessage());
                     }
@@ -355,16 +356,29 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 }
             }
             
-            // Change price since the number of table change 
+            // Change price since the number of table change
+            setMenuController setController = new setMenuController();
             
+            setMenu existSetMenu = setController.searchRecById(newSetMenuCode);
+            
+            if (existSetMenu != null) {
+                double newTotalCost = existSetMenu.getPrice() * newNumberOfTable;
+                
+                existOrder.setTotalCost(newTotalCost);
+            } else {
+                System.out.println("Cannot find current set menu");
+            }
             
             this.set(this.indexOf(existOrder), existOrder);
+            
+            inputter.askToContinue(() -> this.updateRec(inputOrderId));
+            
+            return true;
 
         } else {
             System.out.println("This order does not exist.");
+            return false;
         }
-
-        return true;
 
     }
 
