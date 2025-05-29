@@ -24,6 +24,8 @@ import utils.dataSource;
  */
 public class customersController extends ArrayList<customers> implements I_List<customers>, Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     dataSource dataSource = new dataSource();
     
     /*

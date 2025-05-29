@@ -307,6 +307,8 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         orders existOrder = searchRecById(inputOrderId);
 
         if (existOrder != null) {
+            
+            // Input Set Menu code
             String setMenuCode = inputter.getString(
                     "Input new Set Menu code",
                     "Input must not be empty",
@@ -317,6 +319,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 existOrder.setSetMenuId(setMenuCode);
             }
 
+            // Input number of table
             int numberOfTable = inputter.getInt(
                     "Input new number of table",
                     inputter.MIN,
@@ -326,6 +329,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 existOrder.setNumberOfTables(numberOfTable);
             }
 
+            // Input event date
             String eventDate;
            
             while (true) {
@@ -350,6 +354,9 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                     break;
                 }
             }
+            
+            // Change price since the number of table change 
+            
             
             this.set(this.indexOf(existOrder), existOrder);
 

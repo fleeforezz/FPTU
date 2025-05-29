@@ -42,7 +42,7 @@ public class Traditional_Feast_Management {
             System.out.println("  5. Place a feast menu");
             System.out.println("  6. Update order information");
             System.out.println("  7. Save data to file");
-            System.out.println("  8. Display customer or Order lists"); // 50% Done
+            System.out.println("  8. Display customer or Order lists"); // Done
             System.out.println("  9. Exit"); // Done
             System.out.println("-------------------------------------------");
 
@@ -67,7 +67,12 @@ public class Traditional_Feast_Management {
                     do {
                         isUpdated = false;
 
-                        customerId = inputter.getString("Enter customer id: ", "Invalid input customer code ! Please type again", true);
+                        customerId = inputter.getString(
+                                "Enter customer id: ",
+                                "Invalid input customer code ! Please type again",
+                                true
+                        );
+
                         isUpdated = customerController.updateRec(customerId);
 
                         if (isUpdated) {
@@ -90,6 +95,23 @@ public class Traditional_Feast_Management {
                     ordersController.placeFeastOrder(customerController, setMenuController);
                     break;
                 case 6:
+                    String orderId;
+
+                    while (true) {
+                        orderId = inputter.getString(
+                                "Enter order id",
+                                "Input must not be empty",
+                                false
+                        );
+                        
+                        boolean isUpdatedOrder = ordersController.updateRec(orderId);
+                        
+                        if (isUpdatedOrder) {
+                            System.out.println("\nOrder update successfully !!!\n");
+                            break;
+                        }
+                    }
+
                     break;
                 case 7:
 //                    customerController.saveToFile();
