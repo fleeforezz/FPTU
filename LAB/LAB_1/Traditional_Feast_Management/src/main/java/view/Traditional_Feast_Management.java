@@ -31,6 +31,7 @@ public class Traditional_Feast_Management {
         ordersController.loadRecFromFile();
 
         do {
+            System.out.println("\n");
             System.out.println("-------------------------------------------");
             System.out.println("Traditional Feast Management System");
             System.out.println("-------------------------------------------");

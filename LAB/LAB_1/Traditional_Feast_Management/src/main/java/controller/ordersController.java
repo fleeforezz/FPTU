@@ -224,6 +224,9 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             // Display 
             StringTokenizer stringTokenizer = new StringTokenizer(currentSetMenu.getIngredients(), "#");
             DecimalFormat formatter = new DecimalFormat("#, ###, ### Vnd");
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String formattedEventDate = dateFormat.format(parseEventDate);
 
             String appetizer = stringTokenizer.nextToken().trim();
             String mainCourse = stringTokenizer.nextToken().trim();
@@ -261,7 +264,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                     currentCustomer.getEmail(),
                     currentSetMenu.getId(),
                     currentSetMenu.getName(),
-                    parseEventDate,
+                    formattedEventDate,
                     priceFormat,
                     appetizer,
                     mainCourse,
