@@ -26,7 +26,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
     private static final long serialVersionUID = 1L;
     
-    dataSource dataSource = new dataSource();
+    String URL_PATH = dataSource.getCUSTOMERS_FILE_PATH();
     
     /*
      * ################
@@ -86,7 +86,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         this.add(customers);
 
-        inputter.confirmSaveFile("Customer", this, dataSource.getCUSTOMERS_FILE_PATH());
+        inputter.confirmSaveFile("Customer", this, URL_PATH);
         inputter.askToContinue(() -> this.addRec());
 
         return true;
@@ -163,14 +163,14 @@ public class customersController extends ArrayList<customers> implements I_List<
 
         List<customers> customersList = new ArrayList<>();
 
-        File file = new File(dataSource.getCUSTOMERS_FILE_PATH());
+        File file = new File(URL_PATH);
 
         if (!file.exists()) {
             System.out.println("Cannot read data from Customers.dat. Please check it.");
             return this;
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataSource.getCUSTOMERS_FILE_PATH()))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(URL_PATH))) {
             customersList = (List<customers>) ois.readObject();
             this.clear();
             this.addAll(customersList);

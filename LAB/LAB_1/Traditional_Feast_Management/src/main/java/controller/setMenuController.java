@@ -24,7 +24,7 @@ import utils.dataSource;
  */
 public class setMenuController extends ArrayList<setMenu> implements I_List<setMenu> {
 
-    dataSource dataSource = new dataSource();
+    String URL_PATH = dataSource.getSET_MENU_FILE_PATH();
     
     @Override
     public boolean addRec() {
@@ -47,7 +47,7 @@ public class setMenuController extends ArrayList<setMenu> implements I_List<setM
     @Override
     public List<setMenu> loadRecFromFile() {
 
-        File file = new File(dataSource.getSET_MENU_FILE_PATH());
+        File file = new File(URL_PATH);
 
         if (!file.exists()) {
             System.out.println("Cannot read data from FeastMenu.csv. Please check it.");
@@ -56,7 +56,7 @@ public class setMenuController extends ArrayList<setMenu> implements I_List<setM
 
         try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream(dataSource.getSET_MENU_FILE_PATH()), StandardCharsets.UTF_8));) {
+                        new FileInputStream(URL_PATH), StandardCharsets.UTF_8));) {
             String line;
             boolean isFirstLine = true;
 

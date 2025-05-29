@@ -31,7 +31,7 @@ import utils.inputter;
  */
 public class ordersController extends ArrayList<orders> implements Serializable {
     
-    dataSource dataSource = new dataSource();
+    String URL_PATH = dataSource.getFEAST_ORDER_FILE_PATH();
     
     /*
      * #####################################
@@ -54,14 +54,14 @@ public class ordersController extends ArrayList<orders> implements Serializable 
 
         List<orders> ordersList = new ArrayList<>();
 
-        File orderFile = new File(dataSource.getFEAST_ORDER_FILE_PATH());
+        File orderFile = new File(URL_PATH);
 
         if (!orderFile.exists()) {
             System.out.println("Cannot read feast_order_service.dat. Please check it.");
             return this;
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataSource.getFEAST_ORDER_FILE_PATH()))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(URL_PATH))) {
             ordersList = (List<orders>) ois.readObject();
             this.clear();
             this.addAll(ordersList);
@@ -271,7 +271,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 System.out.println("Here's the preview of your placed order\n");
                 System.out.println(displayOrderMenu);
 
-                inputter.confirmSaveFile("Order", this, dataSource.getFEAST_ORDER_FILE_PATH());
+                inputter.confirmSaveFile("Order", this, URL_PATH);
 
                 inputter.askToContinue(() -> this.placeFeastOrder(customersList, setMenuList));
             } else {
