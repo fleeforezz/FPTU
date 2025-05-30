@@ -161,7 +161,8 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         // Input number of tables
         int numberOfTable = inputter.getInt(
                 "Input number of tables: ",
-                1, 100
+                1, 100,
+                false
         );
 
         // Input preferred event date (Event date must be in the futrue)
@@ -303,7 +304,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
      * Update Order by Id
      * ##################
      */
-    public boolean updateRec(String inputOrderId) {
+    public boolean updateRec(String inputOrderId, setMenuController setMenuList) {
 
         orders existOrder = searchRecById(inputOrderId);
 
@@ -311,9 +312,9 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             
             // Input Set Menu code
             String newSetMenuCode = inputter.getString(
-                    "Input new Set Menu code",
+                    "Input new Set Menu code: ",
                     "Input must not be empty",
-                    acceptable.SETMEU_CODE_VALID,
+                    acceptable.SETMENU_CODE_VALID,
                     false
             );
             if (!newSetMenuCode.isEmpty()) {
@@ -321,10 +322,11 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             }
 
             // Input number of table
-            int newNumberOfTable = inputter.getInt(
-                    "Input new number of table",
+            Integer newNumberOfTable = inputter.getInt(
+                    "Input new number of tables: ",
                     inputter.MIN,
-                    inputter.MAX
+                    inputter.MAX,
+                    true
             );
             if (newNumberOfTable > 0) {
                 existOrder.setNumberOfTables(newNumberOfTable);
@@ -356,14 +358,12 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 }
             }
             
-            // Change price since the number of table change
-            setMenuController setController = new setMenuController();
-            
-            setMenu existSetMenu = setController.searchRecById(newSetMenuCode);
+            // Change price since the number of table chang
+            double newTotalCost;
+            setMenu existSetMenu = setMenuList.searchRecById(newSetMenuCode);
             
             if (existSetMenu != null) {
-                double newTotalCost = existSetMenu.getPrice() * newNumberOfTable;
-                
+                newTotalCost = existSetMenu.getPrice() * existOrder.getNumberOfTables();
                 existOrder.setTotalCost(newTotalCost);
             } else {
                 System.out.println("Cannot find current set menu");
@@ -371,7 +371,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             
             this.set(this.indexOf(existOrder), existOrder);
             
-            inputter.askToContinue(() -> this.updateRec(inputOrderId));
+            inputter.askToContinue(() -> this.updateRec(inputOrderId, setMenuList));
             
             return true;
 

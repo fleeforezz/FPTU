@@ -79,80 +79,37 @@ public class inputter {
     }
 
     /*
-        #############
-        Update String
-        #############
-     */
-    public static String updateString(String welcome, String oldData) {
-        String result = oldData;
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print(welcome);
-        String tmp = sc.nextLine();
-
-        if (!tmp.isEmpty()) {
-            result = tmp;
-        }
-
-        return result;
-    }
-
-    /*
         #######
         Get Int
         #######
      */
-    public static int getInt(String welcomeMessage, int min, int max) {
+    public static int getInt(String welcomeMessage, int min, int max, boolean allowEmptyInput) {
 
         Scanner sc = new Scanner(System.in);
-        int number;
+        String input;
 
         while (true) {
+            System.out.print(welcomeMessage);
+            input = sc.nextLine().trim();
+
+            if (input.isEmpty()) {
+                return 0;
+            }
+            
             try {
-                System.out.print(welcomeMessage);
-                number = Integer.parseInt(sc.nextLine().trim());
+                int number = Integer.parseInt(input);
 
                 if (number < min || number > max) {
                     System.out.println("Input must be between: " + min + " and " + max + ".");
-                } else {
-                    return number;
+                    continue;
                 }
+                
+                return number;
 
             } catch (NumberFormatException e) {
                 System.out.println("Input must be a valid integer.");
             }
         }
-    }
-
-    /*
-        #############
-        Update Int
-        #############
-     */
-    public static int updateInt(String welcome, int min, int max, int oldData) {
-        boolean check = true;
-        int number = oldData;
-
-        do {
-            try {
-                Scanner sc = new Scanner(System.in);
-
-                System.out.print(welcome);
-                String tmp = sc.nextLine();
-
-                if (tmp.isEmpty()) {
-                    check = false;
-                } else {
-                    number = Integer.parseInt(tmp);
-                    check = false;
-                }
-            } catch (Exception e) {
-                System.out.println("Input must be a number");
-            }
-        } while (check || number > max || number < min);
-
-        return number;
     }
 
     /*
@@ -200,7 +157,7 @@ public class inputter {
         Confirm save file
         #################
      */
-    public static void confirmSaveFile(String recordName, Object listToSave,String FILE_PATH) {
+    public static void confirmSaveFile(String recordName, Object listToSave, String FILE_PATH) {
         String decision = getString(
                 "Do you want to save this " + recordName + " to file ? (Y/y | N/n): ",
                 "Input must not be empty",

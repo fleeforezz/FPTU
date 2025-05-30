@@ -46,7 +46,7 @@ public class Traditional_Feast_Management {
             System.out.println("  9. Exit"); // Done
             System.out.println("-------------------------------------------");
 
-            choice = inputter.getInt("Enter your choice: ", inputter.MIN, inputter.MAX);
+            choice = inputter.getInt("Enter your choice: ", inputter.MIN, inputter.MAX, false);
             System.out.println("-------------------------------------------");
 
             switch (choice) {
@@ -99,12 +99,12 @@ public class Traditional_Feast_Management {
 
                     while (true) {
                         orderId = inputter.getString(
-                                "Enter order id",
+                                "Enter order id: ",
                                 "Input must not be empty",
                                 false
                         );
                         
-                        boolean isUpdatedOrder = ordersController.updateRec(orderId);
+                        boolean isUpdatedOrder = ordersController.updateRec(orderId, setMenuController);
                         
                         if (isUpdatedOrder) {
                             System.out.println("\nOrder update successfully !!!\n");
@@ -124,7 +124,11 @@ public class Traditional_Feast_Management {
                         System.out.println("2. Display Orders List");
                         System.out.println("3. Return to main menu");
 
-                        subMenuChoice = inputter.getInt("Enter your choice: ", inputter.MIN, inputter.MAX);
+                        subMenuChoice = inputter.getInt(
+                                "Enter your choice: ", 
+                                inputter.MIN, inputter.MAX,
+                                false
+                        );
 
                         switch (subMenuChoice) {
                             case 1:
