@@ -14,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import utils.acceptable;
 import utils.dataSource;
@@ -25,9 +26,9 @@ import utils.dataSource;
 public class customersController extends ArrayList<customers> implements I_List<customers>, Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     String URL_PATH = dataSource.getCUSTOMERS_FILE_PATH();
-    
+
     /*
      * ################
      * Add new Customer
@@ -176,7 +177,6 @@ public class customersController extends ArrayList<customers> implements I_List<
             this.clear();
             this.addAll(customersList);
             System.out.println("Customers List loaded: " + customersList.size() + " records");
-            Collections.sort(customersList);
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Cannot load from file: " + e.getMessage());
         }
@@ -190,8 +190,13 @@ public class customersController extends ArrayList<customers> implements I_List<
      * #############
      */
     @Override
-    public List<customers> sortRec(ArrayList<customers> recList) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<customers> sortRec(ArrayList<customers> customersList) {
+        customersList.sort(Comparator.comparing(
+                customers::getName,
+                String.CASE_INSENSITIVE_ORDER
+        ));
+        
+        return customersList;
     }
 
     /*
@@ -250,6 +255,8 @@ public class customersController extends ArrayList<customers> implements I_List<
     @Override
     public void displayRec(ArrayList<customers> customerList) {
 
+        List<customers> sortedCustomerList = sortRec(customerList);
+        
         String header = String.format(
                 """
                 
@@ -265,14 +272,14 @@ public class customersController extends ArrayList<customers> implements I_List<
             """
         );
 
-        if (customerList.isEmpty()) {
+        if (sortedCustomerList.isEmpty()) {
             System.out.print(header);
             System.out.println("No data in system");
             System.out.println(footer);
         } else {
             System.out.print(header);
 
-            for (customers customers : customerList) {
+            for (customers customers : sortedCustomerList) {
                 System.out.print(customers.display());
             }
 
