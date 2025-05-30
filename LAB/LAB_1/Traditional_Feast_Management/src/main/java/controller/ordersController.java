@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import model.orders;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -315,7 +316,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             Integer newNumberOfTable = 0;
             double newTotalCost;
             String newEventDate;
-            
+
             // Input Set Menu code
             while (true) {
                 newSetMenuCode = inputter.getString(
@@ -359,7 +360,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                         "Invalid",
                         true
                 );
-                
+
                 if (newEventDate.equals("")) {
                     break;
                 }
@@ -381,7 +382,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             }
 
             this.set(this.indexOf(existOrder), existOrder);
-            
+
             inputter.confirmSaveFile("Order", this, URL_PATH);
             inputter.askToContinue(() -> this.updateRec(inputOrderId, setMenuList));
 
@@ -394,7 +395,17 @@ public class ordersController extends ArrayList<orders> implements Serializable 
 
     }
 
+    public List<orders> sortByEventDate(ArrayList<orders> orderList) {
+        orderList.sort(Comparator.comparing(
+                orders::getEventDate
+        ));
+        
+        return orderList;
+    }
+
     public void displayRec(ArrayList<orders> orderList) {
+        
+        List<orders> sortedEventDate = sortByEventDate(orderList);
 
         String header = String.format(
                 """
@@ -411,13 +422,13 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 """
         );
 
-        if (orderList.isEmpty()) {
+        if (sortedEventDate.isEmpty()) {
             System.out.println(header);
             System.out.println("No data in the system");
             System.out.println(footer);
         } else {
             System.out.println(header);
-            for (orders order : orderList) {
+            for (orders order : sortedEventDate) {
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 String formattedEventDate = dateFormat.format(order.getEventDate());
