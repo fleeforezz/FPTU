@@ -186,7 +186,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         // Parse eventDate string into Date 
         Date parseEventDate = null;
         try {
-            parseEventDate = new SimpleDateFormat("dd/MM/yyyy").parse(eventDate);
+            parseEventDate = new SimpleDateFormat(acceptable.DATETIME_FORMAT).parse(eventDate);
         } catch (ParseException e) {
             System.out.println("Unexpected date parse error: " + e.getMessage());
         }
@@ -221,7 +221,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             StringTokenizer stringTokenizer = new StringTokenizer(currentSetMenu.getIngredients(), "#");
             DecimalFormat formatter = new DecimalFormat("#, ###, ### Vnd");
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat(acceptable.DATETIME_FORMAT);
             String formattedEventDate = dateFormat.format(parseEventDate);
 
             String appetizer = stringTokenizer.nextToken().trim();
@@ -371,7 +371,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                     // Parse eventDate string into Date 
                     Date parseEventDate = null;
                     try {
-                        parseEventDate = new SimpleDateFormat("dd/MM/yyyy").parse(newEventDate);
+                        parseEventDate = new SimpleDateFormat(acceptable.DATETIME_FORMAT).parse(newEventDate);
                     } catch (ParseException e) {
                         System.out.println("Unexpected date parse error: " + e.getMessage());
                     }
@@ -430,7 +430,7 @@ public class ordersController extends ArrayList<orders> implements Serializable 
             System.out.println(header);
             for (orders order : sortedEventDate) {
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat dateFormat = new SimpleDateFormat(acceptable.DATETIME_FORMAT);
                 String formattedEventDate = dateFormat.format(order.getEventDate());
 
                 DecimalFormat formatter = new DecimalFormat("#, ###, ###");

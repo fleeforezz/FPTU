@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import utils.acceptable;
@@ -212,6 +211,11 @@ public class customersController extends ArrayList<customers> implements I_List<
                 "Invalid input",
                 false
         );
+        
+        searchList.sort(Comparator.comparing(
+                customers::getName,
+                String.CASE_INSENSITIVE_ORDER
+        ));
 
         for (customers customers : this) {
             if (customers.getName().toLowerCase().contains(searchName.toLowerCase())) {
