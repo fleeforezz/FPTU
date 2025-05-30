@@ -168,9 +168,9 @@ public class inputter {
             case "Y":
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
                     oos.writeObject(listToSave);
-                    System.out.println("\nCustomers saved successfully to file !!! \n");
+                    System.out.println("\n" + recordName + " saved successfully to file !!! \n");
                 } catch (IOException e) {
-                    System.out.println("Error saving customers to file: " + e.getMessage());
+                    System.out.println("Error saving " + recordName + " to file: " + e.getMessage());
                 }
                 break;
             case "N":

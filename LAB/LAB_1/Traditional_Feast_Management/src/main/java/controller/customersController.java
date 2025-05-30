@@ -132,6 +132,7 @@ public class customersController extends ArrayList<customers> implements I_List<
 
             this.set(this.indexOf(exitsCustomer), exitsCustomer);
 
+            inputter.confirmSaveFile("Customer", this, URL_PATH);
             inputter.askToContinue(() -> this.updateRec(customerId));
 
             return true;

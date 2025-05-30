@@ -30,11 +30,11 @@ import utils.inputter;
  * @author jso
  */
 public class ordersController extends ArrayList<orders> implements Serializable {
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     String URL_PATH = dataSource.getFEAST_ORDER_FILE_PATH();
-    
+
     /*
      * #####################################
      * Auto generated OrderId using datetime
@@ -309,20 +309,34 @@ public class ordersController extends ArrayList<orders> implements Serializable 
         orders existOrder = searchRecById(inputOrderId);
 
         if (existOrder != null) {
+
+            String newSetMenuCode;
+            setMenu existSetMenu = null;
+            Integer newNumberOfTable = 0;
+            double newTotalCost;
+            String newEventDate;
             
             // Input Set Menu code
-            String newSetMenuCode = inputter.getString(
-                    "Input new Set Menu code: ",
-                    "Input must not be empty",
-                    acceptable.SETMENU_CODE_VALID,
-                    false
-            );
-            if (!newSetMenuCode.isEmpty()) {
-                existOrder.setSetMenuId(newSetMenuCode);
+            while (true) {
+                newSetMenuCode = inputter.getString(
+                        "Input new Set Menu code: ",
+                        "Set Menu code must not be empty or wrong format (must be a 5 characters long)",
+                        acceptable.SETMENU_CODE_VALID,
+                        false
+                );
+
+                existSetMenu = setMenuList.searchRecById(newSetMenuCode);
+
+                if (!newSetMenuCode.isEmpty() && existSetMenu != null) {
+                    existOrder.setSetMenuId(newSetMenuCode);
+                    break;
+                } else {
+                    System.out.println("Cannot find current set menu");
+                }
             }
 
             // Input number of table
-            Integer newNumberOfTable = inputter.getInt(
+            newNumberOfTable = inputter.getInt(
                     "Input new number of tables: ",
                     inputter.MIN,
                     inputter.MAX,
@@ -332,15 +346,23 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                 existOrder.setNumberOfTables(newNumberOfTable);
             }
 
+            // Change price since the number of table chang
+            if (existSetMenu != null) {
+                newTotalCost = existSetMenu.getPrice() * existOrder.getNumberOfTables();
+                existOrder.setTotalCost(newTotalCost);
+            }
+
             // Input event date
-            String newEventDate;
-           
             while (true) {
                 newEventDate = inputter.getString(
                         "Input new event date (must be in the future with dd/MM/yyyy format): ",
                         "Invalid",
                         true
                 );
+                
+                if (newEventDate.equals("")) {
+                    break;
+                }
 
                 boolean isValidFutureDate = checkFutureDate(newEventDate);
 
@@ -352,27 +374,17 @@ public class ordersController extends ArrayList<orders> implements Serializable 
                     } catch (ParseException e) {
                         System.out.println("Unexpected date parse error: " + e.getMessage());
                     }
-                    
+
                     existOrder.setEventDate(parseEventDate);
                     break;
                 }
             }
-            
-            // Change price since the number of table chang
-            double newTotalCost;
-            setMenu existSetMenu = setMenuList.searchRecById(newSetMenuCode);
-            
-            if (existSetMenu != null) {
-                newTotalCost = existSetMenu.getPrice() * existOrder.getNumberOfTables();
-                existOrder.setTotalCost(newTotalCost);
-            } else {
-                System.out.println("Cannot find current set menu");
-            }
-            
+
             this.set(this.indexOf(existOrder), existOrder);
             
+            inputter.confirmSaveFile("Order", this, URL_PATH);
             inputter.askToContinue(() -> this.updateRec(inputOrderId, setMenuList));
-            
+
             return true;
 
         } else {
