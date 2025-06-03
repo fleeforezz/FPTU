@@ -34,7 +34,7 @@ public class Room_Management_System {
             System.out.println("  10. Save guest information");
             System.out.println("  11. Exit");
 
-            choice = inputter.getInt("Enter your choice", 1, 11, false);
+            choice = inputter.getInt("Enter your choice: ", 1, 11, false);
             System.out.println("--------------------------------------------");
 
             switch (choice) {
