@@ -4,10 +4,29 @@
  */
 package business;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author jso
  */
-public interface I_List {
+public interface I_List<T> {
+    
+    boolean addRec();
+    
+    boolean updatRec(String code);
+    
+    boolean removeRec(String code);
+    
+    List<T> loadRecFromFile();
+    
+    List<T> sortRec(ArrayList<T> recList);
+    
+    void searchRecByName(ArrayList<T> recList);
+    
+    T searchRecById(String code);
+    
+    void displayrec(ArrayList<T> recList);
     
 }
