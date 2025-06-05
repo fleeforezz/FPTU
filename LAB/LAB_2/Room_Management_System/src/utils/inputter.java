@@ -117,15 +117,34 @@ public class inputter {
         Get Double
         ##########
      */
-    public static double getDouble(String welcome, int min, int max) {
-        boolean check = true;
-        double number = 0;
-
-        do {
-
-        } while (check || number > max || number < min);
-
-        return number;
+    public static double getDouble(String welcomeMessage, int min, int max, boolean allowEmptyInput) {
+        
+        Scanner sc = new Scanner(System.in);
+        String input;
+        
+        while (true) {            
+            System.out.println(welcomeMessage);
+            input = sc.nextLine().trim();
+            
+            if (input.isEmpty()) {
+                return 0;
+            }
+            
+            try {
+                double number = Double.parseDouble(input);
+                
+                if (number > min || number < max) {
+                    System.out.println("Input must be between: " + min + " and " + max + ".");
+                    continue;
+                }
+                
+                return number;
+                
+            } catch (NumberFormatException e) {
+                System.out.println("Input must be a valid double.");
+            }
+        }
+        
     }
 
     /*

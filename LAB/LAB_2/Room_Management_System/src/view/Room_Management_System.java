@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.room_controller;
 import java.util.Scanner;
 import utils.inputter;
 
@@ -16,6 +17,8 @@ public class Room_Management_System {
     public static void main(String[] args) {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
+        
+        room_controller room_controller = new room_controller();
 
         do {
             System.out.println("\n");
@@ -40,6 +43,7 @@ public class Room_Management_System {
             switch (choice) {
                 case 1:
                     // Import room data
+                    room_controller.loadRecFromFile();
                     break;
                 case 2:
                     // Display available room list
