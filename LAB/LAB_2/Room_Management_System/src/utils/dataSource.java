@@ -16,9 +16,9 @@ public class dataSource {
      * ###################
      */
     // Katana Laptop
-    private static final String ACTIVE_ROOM_LIST_FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
+//    private static final String ACTIVE_ROOM_LIST_FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
     // Shadow Window Desktop
-//    private static final String ACTIVE_ROOM_LIST_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
+    private static final String ACTIVE_ROOM_LIST_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
 
     /*
      * #####

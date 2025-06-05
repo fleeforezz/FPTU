@@ -52,7 +52,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
                 String roomName = field[1];
                 String roomType = field[2];
                 double dailyRate = Double.parseDouble(field[3]);
-                int capacity = Integer.parseInt(field[4]);
+                int capacity = Integer.parseInt(field[4].trim());
                 String furnitureDescription = field[5];
                 
                 boolean isLoaded = this.add(new rooms(roomId, roomName, roomType, dailyRate, capacity, furnitureDescription));
