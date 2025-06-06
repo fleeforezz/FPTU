@@ -72,10 +72,12 @@ public class Room_Management_System {
                 case 10:
                     // Save guest information
                     break;
+                case 11: 
+                    break;
                 default:
                     System.out.println("Invalid choice");
             }
 
-        } while (choice >= 1 && choice <= 8);
+        } while (choice >= 1 && choice <= 11);
     }
 }
