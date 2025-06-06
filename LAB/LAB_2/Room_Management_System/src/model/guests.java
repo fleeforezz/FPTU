@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -15,17 +15,17 @@ public class guests {
     private String reservationId;
     private int nationalId;
     private String fullname;
-    private Date birthdate;
+    private LocalDate birthdate;
     private String gender;
     private int phoneNumber;
     private String desiredRoomId;
     private int numOfRentalDays;
-    private Date startDate;
+    private LocalDate startDate;
 
     public guests() {
     }
 
-    public guests(String reservationId, int nationalId, String fullname, Date birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, Date startDate) {
+    public guests(String reservationId, int nationalId, String fullname, LocalDate birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, LocalDate startDate) {
         this.reservationId = reservationId;
         this.nationalId = nationalId;
         this.fullname = fullname;
@@ -61,11 +61,11 @@ public class guests {
         this.fullname = fullname;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -103,7 +103,7 @@ public class guests {
 
     
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 

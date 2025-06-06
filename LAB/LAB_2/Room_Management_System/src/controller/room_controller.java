@@ -61,7 +61,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
             }
 
             if (isLoaded) {
-                System.out.println("File loaded: " + this.size() + " records");
+                System.out.println("Room file loaded: " + this.size() + " records");
             }
 
         } catch (IOException e) {
@@ -105,7 +105,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
         
         if (recList.isEmpty()) {
             System.out.print(header);
-            System.out.println("No data in system");
+            System.out.println("Room list is currently empty, not loaded yet.");
             System.out.println(footer);
         } else {
             System.out.print(header);

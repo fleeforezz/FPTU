@@ -10,6 +10,8 @@ package utils;
  */
 public interface acceptable {
     
+    public String DATETIME_FORMAT = "dd/MM/yyyy";
+    
     public static boolean isValid(String data, String pattern) {
         return data.matches(pattern);
     }
