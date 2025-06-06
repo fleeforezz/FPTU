@@ -23,7 +23,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
 
     private static final long serialVersionUID = 1L;
 
-    String FILE_PATH = dataSource.getACTIVE_ROOM_LIST_FILE_PATH();
+    private String FILE_PATH = dataSource.getACTIVE_ROOM_LIST_FILE_PATH();
 
     @Override
     public boolean addRec() {

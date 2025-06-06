@@ -5,15 +5,21 @@
 package controller;
 
 import business.I_List;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import model.guests;
+import utils.dataSource;
 
 /**
  *
  * @author jso
  */
-public class guest_controller extends ArrayList<guests> implements I_List<guests>{
+public class guest_controller extends ArrayList<guests> implements I_List<guests>, Serializable{
+    
+    private static final long serialVersionUID = 1L;
+    
+    private String FILE_PATH = dataSource.getGUEST_FILE_PATH();
 
     @Override
     public boolean addRec() {

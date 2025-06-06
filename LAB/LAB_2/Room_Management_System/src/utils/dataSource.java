@@ -26,19 +26,19 @@ public class dataSource {
      * #####
      */
     // Katana Laptop
-    private static final String GUEST_FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Guest_List.txt";
+//    private static final String GUEST_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Guest_List.txt";
     // Shadow Window Desktop
-//    private static final String CUSTOMERS_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\Customers.dat";
+    private static final String GUEST_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Guest_List.txt";
     
     /*
-     * ########
-     * Set Menu
-     * ########
+     * ###########
+     * Reservation
+     * ###########
      */
     // Katana Laptop
-//    private static final String SET_MENU_FILE_PATH = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
+//    private static final String SET_MENU_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Guest_List.txt";
     // Shadow Window Desktop
-    private static final String SET_MENU_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_1\\Traditional_Feast_Management\\src\\main\\java\\data\\FeastMenu.csv";
+    private static final String SET_MENU_FILE_PATH = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Guest_List.txt";
 
     private dataSource() {
     }
