@@ -47,6 +47,7 @@ public class Room_Management_System {
                     break;
                 case 2:
                     // Display available room list
+                    room_controller.displayrec(room_controller);
                     break;
                 case 3:
                     // Enter guest information
@@ -78,6 +79,6 @@ public class Room_Management_System {
                     System.out.println("Invalid choice");
             }
 
-        } while (choice >= 1 && choice <= 11);
+        } while (choice >= 1 && choice <= 10);
     }
 }

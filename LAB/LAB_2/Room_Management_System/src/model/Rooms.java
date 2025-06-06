@@ -4,11 +4,15 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author jso
  */
-public class rooms {
+public class rooms implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
 
     private String roomId;
     private String roomName;
@@ -85,12 +89,7 @@ public class rooms {
     public String display() {
         return String.format(
                 """
-                Room ID: %s
-                Room Name: %s
-                Room Type: %s
-                Daily Rate: %f
-                Capacity: %s
-                Furniture Description: %s
+                %-7s | %-16s | %-8s | %7.2f | %8d | %s
                 """,
                 roomId, roomName, roomType, dailyRate, capacity, furnitureDescription);
     }

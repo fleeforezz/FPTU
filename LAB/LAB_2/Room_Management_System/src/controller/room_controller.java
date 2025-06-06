@@ -90,8 +90,30 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
     public void displayrec(ArrayList<rooms> recList) {
         
         String header = String.format(
-                , 
+                """
+                \n
+                RoomID  | Room Name        | Type     | Rate    | Capacity | Furniture  
+                --------+------------------+----------+---------+----------+--------------------------------
+                """
         );
+        
+        String footer = String.format(
+                """
+                --------------------------------------------------------------------------------------------
+                """
+        );
+        
+        if (recList.isEmpty()) {
+            System.out.print(header);
+            System.out.println("No data in system");
+            System.out.println(footer);
+        } else {
+            System.out.print(header);
+            for (rooms room : recList) {
+                System.out.print(room.display());
+            }
+            System.out.println(footer);
+        }
         
     }
 
