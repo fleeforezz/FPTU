@@ -4,8 +4,10 @@
  */
 package view;
 
+import controller.guest_controller;
 import controller.room_controller;
 import java.util.Scanner;
+import model.guests;
 import utils.inputter;
 
 /**
@@ -19,6 +21,7 @@ public class Room_Management_System {
         Scanner sc = new Scanner(System.in);
         
         room_controller room_controller = new room_controller();
+        guest_controller guest_controller = new guest_controller();
 
         do {
             System.out.println("\n");
@@ -44,6 +47,7 @@ public class Room_Management_System {
                 case 1:
                     // Import room data
                     room_controller.loadRecFromFile();
+                    guest_controller.loadRecFromFile();
                     break;
                 case 2:
                     // Display available room list
@@ -51,6 +55,14 @@ public class Room_Management_System {
                     break;
                 case 3:
                     // Enter guest information
+                    guests isGuestAdded = guest_controller.addRec();
+                    
+                    if (isGuestAdded != null) {
+                        System.out.println("Guest registed successfully for room " + isGuestAdded.getDesiredRoomId());
+                        System.out.println("");
+                    } else {
+                        System.out.println("There's something wrong while add guest information!!! Please try again");
+                    }
                     break;
                 case 4:
                     // Update guest stay information

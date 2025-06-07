@@ -26,12 +26,12 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
     private String FILE_PATH = dataSource.getACTIVE_ROOM_LIST_FILE_PATH();
 
     @Override
-    public boolean addRec() {
+    public rooms addRec() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean updatRec(String code) {
+    public boolean updateRec(String code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

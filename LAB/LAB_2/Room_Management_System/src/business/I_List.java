@@ -13,9 +13,9 @@ import java.util.List;
  */
 public interface I_List<T> {
     
-    boolean addRec();
+    T addRec();
     
-    boolean updatRec(String code);
+    boolean updateRec(String code);
     
     boolean removeRec(String code);
     

@@ -7,6 +7,9 @@ package utils;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -111,6 +114,44 @@ public class inputter {
             }
         }
     }
+    
+    /*
+        ##################
+        Get Int with regex
+        ##################
+     */
+    public static int getInt(String welcomeMessage, String errorMessage, String regex, int min, int max, boolean allowEmptyInput) {
+
+        Scanner sc = new Scanner(System.in);
+        String input;
+
+        while (true) {
+            System.out.print(welcomeMessage);
+            input = sc.nextLine().trim();
+
+            if (input.isEmpty()) {
+                return 0;
+            }
+            
+            if (!input.matches(regex)) {
+                System.out.println(errorMessage);
+            }
+
+            try {
+                int number = Integer.parseInt(input);
+
+                if (number < min || number > max) {
+                    System.out.println("Input must be between: " + min + " and " + max + ".");
+                    continue;
+                }
+
+                return number;
+
+            } catch (NumberFormatException e) {
+                System.out.println("Input must be a valid integer.");
+            }
+        }
+    }
 
     /*
         ##########
@@ -145,6 +186,49 @@ public class inputter {
             }
         }
         
+    }
+    
+    /*
+        #############
+        Get LocalDate
+        #############
+     */
+    public static LocalDateTime getLocalDateTime(String welcomeMessage, String errorMessage, String regex, boolean allowEmptyInput) {
+        
+        Scanner sc = new Scanner(System.in);
+        String input;
+        
+        while (true) {            
+            System.out.println(welcomeMessage);
+            input = sc.nextLine().trim();
+            
+            if (input.isEmpty()) {
+                return LocalDateTime.parse("");
+            }
+            
+            if (!input.matches(regex)) {
+                System.out.println(errorMessage);
+            }
+            
+            try {
+                LocalDateTime dateTime = LocalDateTime.parse(input);
+                return dateTime;
+            } catch (Exception e) {
+            }
+        }
+        
+    }
+    
+    /*
+        ##################
+        Auto generate code
+        ##################
+     */
+    public static String generateCode() {
+        Date now = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(acceptable.AUTO_GENERATE_CODE_TIME_FORMAT);
+        
+        return simpleDateFormat.format(now);
     }
 
     /*
