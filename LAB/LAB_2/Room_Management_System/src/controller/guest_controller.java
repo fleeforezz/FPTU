@@ -63,9 +63,10 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
         
         String reservationId = inputter.generateCode();
         
-        int nationalId = inputter.getInt(
-                "Input National Id: ", 
-                1, 12,
+        String nationalId = inputter.getString(
+                "Inpput national Id: ", 
+                "Input must be includes 12 digits", 
+                acceptable.NATIONAL_ID_VALID, 
                 false
         );
         
@@ -167,7 +168,7 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
                 String[] field = line.split(";");
                 
                 String reservationId = field[0].trim();
-                int nationalId = Integer.parseInt(field[1].trim());
+                String nationalId = field[1].trim();
                 String fullname = field[2].trim();
                 LocalDateTime birthdate = LocalDateTime.parse(field[3].trim(), dateFormatter);
                 String gender = field[4].trim();
