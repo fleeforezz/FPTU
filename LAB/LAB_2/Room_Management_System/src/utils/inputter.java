@@ -95,12 +95,8 @@ public class inputter {
             System.out.print(welcomeMessage);
             input = sc.nextLine().trim();
 
-            if (input.isEmpty() && allowEmptyInput) {
-                return 0;
-            }
-            
             if (input.isEmpty()) {
-                System.out.println("Input cannot be empty");
+                return 0;
             }
 
             try {
