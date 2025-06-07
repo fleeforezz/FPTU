@@ -65,7 +65,7 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
         
         int nationalId = inputter.getInt(
                 "Input National Id: ", 
-                1, 12, 
+                1, 12,
                 false
         );
         
