@@ -8,7 +8,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -70,6 +72,7 @@ public class inputter {
 
             if (result.isEmpty()) {
                 System.out.println("Input cannot be empty");
+                continue;
             }
 
             if (!result.matches(regex)) {
@@ -197,25 +200,30 @@ public class inputter {
         Get LocalDate
         #############
      */
-    public static LocalDateTime getLocalDateTime(String welcomeMessage, String errorMessage, String regex, boolean allowEmptyInput) {
+    public static LocalDateTime getLocalDateTime(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
         
         Scanner sc = new Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormatPattern);
         String input;
         
         while (true) {            
-            System.out.println(welcomeMessage);
+            System.out.print(welcomeMessage);
             input = sc.nextLine().trim();
             
-            if (input.isEmpty()) {
-                return LocalDateTime.parse("");
+            if (input.isEmpty() && allowEmptyInput) {
+                return null;
             }
             
-            if (!input.matches(regex)) {
-                System.out.println(errorMessage);
+            if (input.isEmpty()) {
+                System.out.println("Input cannot be empty");
+                continue;
             }
             
             try {
-                LocalDateTime dateTime = LocalDateTime.parse(input);
+                LocalDate date = LocalDate.parse(input, formatter);
+                
+                LocalDateTime dateTime = date.atStartOfDay();
+                
                 return dateTime;
             } catch (Exception e) {
             }

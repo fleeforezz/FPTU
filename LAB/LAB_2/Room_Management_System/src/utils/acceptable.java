@@ -12,7 +12,7 @@ public interface acceptable {
 
     public String NATIONAL_ID_VALID = "^\\d{12,}$"; // valid national id
 
-    public String FULLNAME_VALID = "^[A-Za-z][A-Za-z]\s'{1-24}]"; // Valid fullname
+    public String FULLNAME_VALID = "^[A-Za-z][A-Za-z\\s]{1,24}$"; // Valid fullname
 
     public String DATETIME_FORMAT = "dd/MM/yyyy"; // Valid date time 
     

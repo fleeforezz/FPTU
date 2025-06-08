@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class guests {
 
     private String reservationId;
-    private String nationalId;
+    private int nationalId;
     private String fullname;
     private LocalDateTime birthdate;
     private String gender;
@@ -25,7 +25,7 @@ public class guests {
     public guests() {
     }
 
-    public guests(String reservationId, String nationalId, String fullname, LocalDateTime birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, LocalDateTime startDate) {
+    public guests(String reservationId, int nationalId, String fullname, LocalDateTime birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, LocalDateTime startDate) {
         this.reservationId = reservationId;
         this.nationalId = nationalId;
         this.fullname = fullname;
@@ -45,11 +45,11 @@ public class guests {
         this.reservationId = reservationId;
     }
 
-    public String getNationalId() {
+    public int getNationalId() {
         return nationalId;
     }
 
-    public void setNationalId(String nationalId) {
+    public void setNationalId(int nationalId) {
         this.nationalId = nationalId;
     }
 

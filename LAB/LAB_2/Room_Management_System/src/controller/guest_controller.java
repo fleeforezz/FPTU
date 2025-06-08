@@ -91,23 +91,22 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
                 false
         );
         
-        int phoneNumber = inputter.getInt(
-                "Input guest phone number", 
-                "Input must be ", 
-                acceptable.PHONE_VALID, 
-                1, 10,
+        String phoneNumber = inputter.getString(
+                "Input guest phone number: ", 
+                "Invalid phone number format", 
+                acceptable.PHONE_VALID,
                 false
         );
         
         String desiredRoomId = inputter.getString(
-                "Input Desirec Room Id", 
+                "Input Desirec Room Id: ", 
                 "Input must be 5 character long and starting with a letter followed by digits", 
                 acceptable.DESIRED_ROOM_ID_VALID,
                 true
         );
         
         int numberOfRentalDay = inputter.getInt(
-                "Input number of rental days", 
+                "Input number of rental days: ", 
                 inputter.MIN, inputter.MAX, 
                 false
         );
@@ -115,7 +114,7 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
         LocalDateTime startDate;
         while (true) {            
             startDate = inputter.getLocalDateTime(
-                    "Input start date", 
+                    "Input start date: ", 
                     "Wrong birthdate format (Must be dd/MM/yyyy)", 
                     acceptable.DATETIME_FORMAT,
                     false
@@ -130,11 +129,11 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
         
         guests guest = new guests();
         guest.setReservationId(reservationId);
-        guest.setNationalId(nationalId);
+        guest.setNationalId(Integer.parseInt(nationalId));
         guest.setFullname(fullname);
         guest.setBirthdate(birthdate);
         guest.setGender(gender);
-        guest.setPhoneNumber(phoneNumber);
+        guest.setPhoneNumber(Integer.parseInt(phoneNumber));
         guest.setDesiredRoomId(desiredRoomId);
         guest.setNumOfRentalDays(numberOfRentalDay);
         guest.setStartDate(startDate);
@@ -168,7 +167,7 @@ public class guest_controller extends ArrayList<guests> implements I_List<guests
                 String[] field = line.split(";");
                 
                 String reservationId = field[0].trim();
-                String nationalId = field[1].trim();
+                int nationalId = Integer.parseInt(field[1].trim());
                 String fullname = field[2].trim();
                 LocalDateTime birthdate = LocalDateTime.parse(field[3].trim(), dateFormatter);
                 String gender = field[4].trim();
