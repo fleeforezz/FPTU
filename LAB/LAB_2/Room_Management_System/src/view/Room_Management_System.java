@@ -21,7 +21,7 @@ public class Room_Management_System {
         Scanner sc = new Scanner(System.in);
         
         room_controller room_controller = new room_controller();
-        reservation_controller guest_controller = new reservation_controller();
+        reservation_controller reservation_controller = new reservation_controller();
 
         do {
             System.out.println("\n");
@@ -46,8 +46,18 @@ public class Room_Management_System {
             switch (choice) {
                 case 1:
                     // Import room data
-                    room_controller.loadRecFromFile();
-                    guest_controller.loadRecFromFile();
+                    if (room_controller.loadRecFromFile() != null) {
+                        System.out.println("Room list loaded: " + room_controller.size() + " records");
+                    } else {
+                        System.out.println("Room list is empty !!!");
+                    }
+                    
+                    // Import reservation data
+                    if (reservation_controller.loadRecFromFile() != null) {
+                        System.out.println("Reservation list list loaded: " + reservation_controller.size() + " records");
+                    } else {
+                        System.out.println("Reservation list is empty !!!");
+                    }
                     break;
                 case 2:
                     // Display available room list
@@ -55,7 +65,7 @@ public class Room_Management_System {
                     break;
                 case 3:
                     // Enter guest information
-                    guests isGuestAdded = guest_controller.addRec();
+                    guests isGuestAdded = reservation_controller.addRec();
                     
                     if (isGuestAdded != null) {
                         System.out.println("Guest registed successfully for room " + isGuestAdded.getDesiredRoomId());

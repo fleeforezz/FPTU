@@ -45,7 +45,6 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
 
             String line;
-            boolean isLoaded = true;
 
             while ((line = br.readLine()) != null) {
                 String[] field = line.split(";");
@@ -57,11 +56,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
                 int capacity = Integer.parseInt(field[4].trim());
                 String furnitureDescription = String.join(";", Arrays.copyOfRange(field, 5, field.length)).trim();
 
-                isLoaded = this.add(new rooms(roomId, roomName, roomType, dailyRate, capacity, furnitureDescription));
-            }
-
-            if (isLoaded) {
-                System.out.println("Room file loaded: " + this.size() + " records");
+                this.add(new rooms(roomId, roomName, roomType, dailyRate, capacity, furnitureDescription));
             }
 
         } catch (IOException e) {
@@ -83,8 +78,9 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
 
     @Override
     public rooms searchRecById(String code) {
+        
         for (rooms room : this) {
-            if (room.getRoomId().matches(code.trim())) {
+            if (room.getRoomId().trim().equals(code.trim())) {
                 return room;
             }
         }
