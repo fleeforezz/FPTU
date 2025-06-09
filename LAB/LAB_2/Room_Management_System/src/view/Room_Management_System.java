@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.guest_controller;
+import controller.reservation_controller;
 import controller.room_controller;
 import java.util.Scanner;
 import model.guests;
@@ -21,7 +21,7 @@ public class Room_Management_System {
         Scanner sc = new Scanner(System.in);
         
         room_controller room_controller = new room_controller();
-        guest_controller guest_controller = new guest_controller();
+        reservation_controller guest_controller = new reservation_controller();
 
         do {
             System.out.println("\n");

@@ -83,7 +83,13 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
 
     @Override
     public rooms searchRecById(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (rooms room : this) {
+            if (room.getRoomId().matches(code.trim())) {
+                return room;
+            }
+        }
+        
+        return null;
     }
 
     @Override

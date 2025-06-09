@@ -24,7 +24,7 @@ import utils.inputter;
  * @author jso
  */
 
-public class guest_controller extends ArrayList<guests> implements I_List<guests>, Serializable{
+public class reservation_controller extends ArrayList<guests> implements I_List<guests>, Serializable{
     
     private static final long serialVersionUID = 1L;
     
