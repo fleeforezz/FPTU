@@ -101,7 +101,9 @@ public class guests {
         this.numOfRentalDays = numOfRentalDays;
     }
 
-    
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
 
     public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
