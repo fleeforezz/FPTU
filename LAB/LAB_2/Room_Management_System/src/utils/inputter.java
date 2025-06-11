@@ -206,7 +206,7 @@ public class inputter {
         Get LocalDate
         #############
      */
-    public static LocalDateTime getLocalDateTime(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
+    public static LocalDate getLocalDateTime(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
 
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormatPattern);
@@ -228,9 +228,7 @@ public class inputter {
             try {
                 LocalDate date = LocalDate.parse(input, formatter);
 
-                LocalDateTime dateTime = date.atStartOfDay();
-
-                return dateTime;
+                return date;
             } catch (Exception e) {
             }
         }

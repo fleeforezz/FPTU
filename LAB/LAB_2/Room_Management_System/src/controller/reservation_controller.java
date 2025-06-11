@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -31,12 +32,28 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     private String FILE_PATH = dataSource.getRESERVATION_FILE_PATH();
 
     /*
+     * ####################################################
+     * Check if is there any guest already booked that room
+     * ####################################################
+     */
+    public boolean isRoomBooked(String inputRoomId) {
+        for (guests guest : this) {
+            if (guest.getDesiredRoomId().equalsIgnoreCase(inputRoomId)) {
+                System.out.println("Room " + inputRoomId + " has been booked");
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    /*
      * ####################################
      * Check if input date is in the future
      * ####################################
      */
-    public boolean checkFutureDate(LocalDateTime inputData) {
-        LocalDateTime now = LocalDateTime.now();
+    public boolean checkFutureDate(LocalDate inputData) {
+        LocalDate now = LocalDate.now();
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
 
@@ -58,10 +75,10 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      * Get Checkout date
      * #################
      */
-    public LocalDateTime getCheckOutDate(LocalDateTime inputStartDate, int inputNumOfRentalDate) {
+    public LocalDate getCheckOutDate(LocalDate inputStartDate, int inputNumOfRentalDate) {
         
         for (int i = 0; i <= inputNumOfRentalDate; i++) {
-            LocalDateTime checkOutDate = inputStartDate.plusDays(i);
+            LocalDate checkOutDate = inputStartDate.plusDays(i);
             return checkOutDate;
         }
         
@@ -73,11 +90,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      * Check if is there any guest booked room on that days
      * ####################################################
      */
-    public boolean checkBookedDate(LocalDateTime checkInDate, LocalDateTime checkOutDate) {
+    public boolean checkBookedDate(LocalDate checkInDate, LocalDate checkOutDate) {
         
         for (guests guest : this) {
-            LocalDateTime guestCheckIn = guest.getStartDate();
-            LocalDateTime guestCheckOut = guestCheckIn.plusDays(guest.getNumOfRentalDays());
+            LocalDate guestCheckIn = guest.getStartDate();
+            LocalDate guestCheckOut = guestCheckIn.plusDays(guest.getNumOfRentalDays());
             boolean isOverLapping = !(checkOutDate.isBefore(guestCheckIn) || checkInDate.isAfter(guestCheckOut));
             
             if (isOverLapping) {
@@ -109,12 +126,16 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             room_controller room_controller = new room_controller();
             room_controller.loadRecFromFile();
             rooms isRoomExist = room_controller.searchRecById(desiredRoomId);
+            boolean isRoomBooked = isRoomBooked(desiredRoomId);
             
             if (isRoomExist != null) {
-                break;
+                if (!isRoomBooked) {
+                    break;
+                }
             } else {
-                System.out.println("Room " + desiredRoomId + " does not exist");
+                System.out.println("Room " + desiredRoomId + " does not exist!!!");
             }
+            
         }
         
         int numberOfRentalDay = inputter.getInt(
@@ -123,7 +144,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 false
         );
         
-        LocalDateTime startDate;
+        LocalDate startDate;
         while (true) {
             startDate = inputter.getLocalDateTime(
                     "Input start date: ",
@@ -156,7 +177,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 true
         );
 
-        LocalDateTime birthdate = inputter.getLocalDateTime(
+        LocalDate birthdate = inputter.getLocalDateTime(
                 "Input guest birthdate: ",
                 "Wrong birthdate format (Must be dd/MM/yyyy)",
                 acceptable.DATETIME_FORMAT,
@@ -220,12 +241,12 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 String reservationId = field[0].trim();
                 String nationalId = field[1].trim();
                 String fullname = field[2].trim();
-                LocalDateTime birthdate = LocalDateTime.parse(field[3].trim(), dateFormatter);
+                LocalDate birthdate = LocalDate.parse(field[3].trim(), dateFormatter);
                 String gender = field[4].trim();
                 int phoneNumber = Integer.parseInt(field[5].trim());
                 String desiredRoomId = field[6].trim();
                 int numOfRentalDays = Integer.parseInt(field[7].trim());
-                LocalDateTime startDate = LocalDateTime.parse(field[8].trim(), dateFormatter);
+                LocalDate startDate = LocalDate.parse(field[8].trim(), dateFormatter);
 
                 this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate));
             }

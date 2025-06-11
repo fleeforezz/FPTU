@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import utils.acceptable;
@@ -17,17 +18,17 @@ public class guests {
     private String reservationId;
     private String nationalId;
     private String fullname;
-    private LocalDateTime birthdate;
+    private LocalDate birthdate;
     private String gender;
     private int phoneNumber;
     private String desiredRoomId;
     private int numOfRentalDays;
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     public guests() {
     }
 
-    public guests(String reservationId, String nationalId, String fullname, LocalDateTime birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, LocalDateTime startDate) {
+    public guests(String reservationId, String nationalId, String fullname, LocalDate birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, LocalDate startDate) {
         this.reservationId = reservationId;
         this.nationalId = nationalId;
         this.fullname = fullname;
@@ -63,11 +64,11 @@ public class guests {
         this.fullname = fullname;
     }
 
-    public LocalDateTime getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(LocalDateTime birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -103,11 +104,11 @@ public class guests {
         this.numOfRentalDays = numOfRentalDays;
     }
 
-    public LocalDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
     
