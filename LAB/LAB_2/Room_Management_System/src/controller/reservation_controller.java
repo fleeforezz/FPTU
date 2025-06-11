@@ -54,22 +54,6 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     }
     
     /*
-     * ####################################
-     * Check if the start date is duplicate
-     * ####################################
-     */
-//    public boolean isDuplicateStartDate(LocalDateTime inputStartDate) {
-//        
-//        for (guests guest : this) {
-//            if (!(guest.getStartDate() != null && guest.getStartDate().isEqual(inputStartDate))) {
-//                return false;
-//            }
-//        }
-//        
-//        return true;
-//    }
-    
-    /*
      * #################
      * Get Checkout date
      * #################
@@ -89,12 +73,21 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      * Check if is there any guest booked room on that days
      * ####################################################
      */
-//    public boolean checkBookedDate(LocalDateTime checkInDate, LocalDateTime checkOutDate, int inputNumOfRentalDate) {
-//        
-//        if ()
-//        
-//        return false;
-//    }
+    public boolean checkBookedDate(LocalDateTime checkInDate, LocalDateTime checkOutDate) {
+        
+        for (guests guest : this) {
+            LocalDateTime guestCheckIn = guest.getStartDate();
+            LocalDateTime guestCheckOut = guestCheckIn.plusDays(guest.getNumOfRentalDays());
+            boolean isOverLapping = !(checkOutDate.isBefore(guestCheckIn) || checkInDate.isAfter(guestCheckOut));
+            
+            if (isOverLapping) {
+                System.out.println("Your selected date has been booked.");
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
     /*
      * #############
@@ -124,6 +117,12 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             }
         }
         
+        int numberOfRentalDay = inputter.getInt(
+                "Input number of rental days: ",
+                inputter.MIN, inputter.MAX,
+                false
+        );
+        
         LocalDateTime startDate;
         while (true) {
             startDate = inputter.getLocalDateTime(
@@ -132,10 +131,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                     acceptable.DATETIME_FORMAT,
                     false
             );
-
+ 
             boolean isValidFutureDate = checkFutureDate(startDate);
+            boolean isOverlappingBookedDate = checkBookedDate(startDate, getCheckOutDate(startDate, numberOfRentalDay));
             
-            if (isValidFutureDate) {
+            if (isValidFutureDate && !isOverlappingBookedDate) {
                 break;
             }
         }
@@ -177,12 +177,6 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 false
         );
 
-        int numberOfRentalDay = inputter.getInt(
-                "Input number of rental days: ",
-                inputter.MIN, inputter.MAX,
-                false
-        );
-
         guests guest = new guests();
         guest.setReservationId(reservationId);
         guest.setNationalId(nationalId);
@@ -195,6 +189,8 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         guest.setStartDate(startDate);
 
         this.add(guest);
+        
+        inputter.confirmSaveFile("Reservation", this, FILE_PATH);
 
         return guest;
 

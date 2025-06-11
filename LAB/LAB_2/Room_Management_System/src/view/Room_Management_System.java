@@ -68,8 +68,8 @@ public class Room_Management_System {
                     guests isGuestAdded = reservation_controller.addRec();
                     
                     if (isGuestAdded != null) {
-                        System.out.println("Guest registed successfully for room " + isGuestAdded.getDesiredRoomId());
-                        System.out.println("");
+                        System.out.println("\nGuest registed successfully for room " + isGuestAdded.getDesiredRoomId());
+                        System.out.println("Rental from " + isGuestAdded.getStartDate() + " for " + isGuestAdded.getNumOfRentalDays() + " days");
                     } else {
                         System.out.println("There's something wrong while add guest information!!! Please try again");
                     }
