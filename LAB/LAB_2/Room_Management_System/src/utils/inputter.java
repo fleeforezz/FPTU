@@ -4,15 +4,21 @@
  */
 package utils;
 
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
+import model.guests;
 
 /**
  *
@@ -101,7 +107,7 @@ public class inputter {
             if (input.isEmpty() && allowEmptyInput) {
                 return 0;
             }
-            
+
             if (input.isEmpty()) {
                 System.out.println("Input cannot be empty");
             }
@@ -121,7 +127,7 @@ public class inputter {
             }
         }
     }
-    
+
     /*
         ##################
         Get Int with regex
@@ -139,7 +145,7 @@ public class inputter {
             if (input.isEmpty()) {
                 return 0;
             }
-            
+
             if (!input.matches(regex)) {
                 System.out.println(errorMessage);
             }
@@ -166,71 +172,71 @@ public class inputter {
         ##########
      */
     public static double getDouble(String welcomeMessage, int min, int max, boolean allowEmptyInput) {
-        
+
         Scanner sc = new Scanner(System.in);
         String input;
-        
-        while (true) {            
+
+        while (true) {
             System.out.println(welcomeMessage);
             input = sc.nextLine().trim();
-            
+
             if (input.isEmpty()) {
                 return 0;
             }
-            
+
             try {
                 double number = Double.parseDouble(input);
-                
+
                 if (number > min || number < max) {
                     System.out.println("Input must be between: " + min + " and " + max + ".");
                     continue;
                 }
-                
+
                 return number;
-                
+
             } catch (NumberFormatException e) {
                 System.out.println("Input must be a valid double.");
             }
         }
-        
+
     }
-    
+
     /*
         #############
         Get LocalDate
         #############
      */
     public static LocalDateTime getLocalDateTime(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
-        
+
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormatPattern);
         String input;
-        
-        while (true) {            
+
+        while (true) {
             System.out.print(welcomeMessage);
             input = sc.nextLine().trim();
-            
+
             if (input.isEmpty() && allowEmptyInput) {
                 return null;
             }
-            
+
             if (input.isEmpty()) {
                 System.out.println("Input cannot be empty");
                 continue;
             }
-            
+
             try {
                 LocalDate date = LocalDate.parse(input, formatter);
-                
+
                 LocalDateTime dateTime = date.atStartOfDay();
-                
+
                 return dateTime;
             } catch (Exception e) {
             }
         }
-        
+
     }
-    
+
     /*
         ##################
         Auto generate code
@@ -239,7 +245,7 @@ public class inputter {
     public static String generateCode() {
         Date now = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(acceptable.AUTO_GENERATE_CODE_TIME_FORMAT);
-        
+
         return simpleDateFormat.format(now);
     }
 
@@ -281,11 +287,25 @@ public class inputter {
 
         switch (decision) {
             case "Y":
-                try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
-                    oos.writeObject(listToSave);
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+                    for (Object object : (List<?>) listToSave) {
+                        if (object != null) {
+                            try {
+                                // Use reflextion to call toFileString() dynamically
+                                Method getToFileString = object.getClass().getMethod("toFileString");
+                                String line = (String) getToFileString.invoke(object);
+                                
+                                bw.write(line);
+                                bw.newLine();
+                            } catch (IOException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
+                                System.out.println("Error saving " + recordName + " to file: " + ex.getMessage());
+                            }
+                        }
+                    }
+                    
                     System.out.println("\n" + recordName + " saved successfully to file !!! \n");
-                } catch (IOException e) {
-                    System.out.println("Error saving " + recordName + " to file: " + e.getMessage());
+                } catch (IOException ioex) {
+                    System.out.println("Error saving " + recordName + " to file: " + ioex.getMessage());
                 }
                 break;
             case "N":

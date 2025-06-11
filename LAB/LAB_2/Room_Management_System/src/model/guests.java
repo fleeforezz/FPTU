@@ -5,6 +5,8 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import utils.acceptable;
 
 /**
  *
@@ -107,6 +109,24 @@ public class guests {
 
     public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
+    }
+    
+    /*
+     * ##############
+     * To file String
+     * ##############
+     */
+    public String toFileString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
+        return reservationId + ";" +
+                nationalId + ";" +
+                fullname + ";" +
+                birthdate.format(formatter) + ";" +
+                gender + ";" +
+                phoneNumber + ";" +
+                desiredRoomId + ";" +
+                numOfRentalDays + ";" +
+                startDate.format(formatter);
     }
 
     /*

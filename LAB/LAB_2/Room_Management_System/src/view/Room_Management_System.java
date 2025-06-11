@@ -54,7 +54,7 @@ public class Room_Management_System {
                     
                     // Import reservation data
                     if (reservation_controller.loadRecFromFile() != null) {
-                        System.out.println("Reservation list list loaded: " + reservation_controller.size() + " records");
+                        System.out.println("Reservation list loaded: " + reservation_controller.size() + " records");
                     } else {
                         System.out.println("Reservation list is empty !!!");
                     }
