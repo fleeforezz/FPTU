@@ -8,6 +8,7 @@ import controller.reservation_controller;
 import controller.room_controller;
 import java.util.Scanner;
 import model.guests;
+import utils.acceptable;
 import utils.inputter;
 
 /**
@@ -19,7 +20,7 @@ public class Room_Management_System {
     public static void main(String[] args) {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        
+
         room_controller room_controller = new room_controller();
         reservation_controller reservation_controller = new reservation_controller();
 
@@ -39,7 +40,7 @@ public class Room_Management_System {
             System.out.println("  9. Revenue report by room type");
             System.out.println("  10. Save guest information");
             System.out.println("  11. Exit");
- 
+
             choice = inputter.getInt("Enter your choice: ", 1, 11, false);
             System.out.println("--------------------------------------------");
 
@@ -51,7 +52,7 @@ public class Room_Management_System {
                     } else {
                         System.out.println("Room list is empty !!!");
                     }
-                    
+
                     // Import reservation data
                     if (reservation_controller.loadRecFromFile() != null) {
                         System.out.println("Reservation list loaded: " + reservation_controller.size() + " records");
@@ -66,7 +67,7 @@ public class Room_Management_System {
                 case 3:
                     // Enter guest information
                     guests isGuestAdded = reservation_controller.addRec();
-                    
+
                     if (isGuestAdded != null) {
                         System.out.println("\nGuest registed successfully for room " + isGuestAdded.getDesiredRoomId());
                         System.out.println("Rental from " + isGuestAdded.getStartDate() + " for " + isGuestAdded.getNumOfRentalDays() + " days");
@@ -82,6 +83,22 @@ public class Room_Management_System {
                     break;
                 case 6:
                     // Delete guest reservation before arrival
+                    String nationalId;
+                    while (true) {
+                        nationalId = inputter.getString(
+                                "Input national Id: ",
+                                "Input must be includes 12 digits",
+                                acceptable.NATIONAL_ID_VALID,
+                                false
+                        );
+                        
+                        boolean isRemove = reservation_controller.removeRec(nationalId);
+                        
+                        if (isRemove) {
+                            System.out.println("The booking associated with ID" + nationalId + " has been successfully canceled.");
+                            break;
+                        }
+                    }
                     break;
                 case 7:
                     // List vacant rooms
@@ -95,7 +112,7 @@ public class Room_Management_System {
                 case 10:
                     // Save guest information
                     break;
-                case 11: 
+                case 11:
                     break;
                 default:
                     System.out.println("Invalid choice");

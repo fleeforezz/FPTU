@@ -20,6 +20,7 @@ import model.rooms;
 import utils.acceptable;
 import utils.dataSource;
 import utils.inputter;
+import static utils.inputter.getString;
 
 /**
  *
@@ -43,10 +44,10 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 return true;
             }
         }
-        
+
         return false;
     }
-    
+
     /*
      * ####################################
      * Check if input date is in the future
@@ -54,8 +55,6 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      */
     public boolean checkFutureDate(LocalDate inputData) {
         LocalDate now = LocalDate.now();
-
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
 
         try {
             if (inputData.isAfter(now)) {
@@ -69,40 +68,40 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
 
         return false;
     }
-    
+
     /*
      * #################
      * Get Checkout date
      * #################
      */
     public LocalDate getCheckOutDate(LocalDate inputStartDate, int inputNumOfRentalDate) {
-        
+
         for (int i = 0; i <= inputNumOfRentalDate; i++) {
             LocalDate checkOutDate = inputStartDate.plusDays(i);
             return checkOutDate;
         }
-        
+
         return null;
     }
-    
+
     /*
      * ####################################################
      * Check if is there any guest booked room on that days
      * ####################################################
      */
     public boolean checkBookedDate(LocalDate checkInDate, LocalDate checkOutDate) {
-        
+
         for (guests guest : this) {
             LocalDate guestCheckIn = guest.getStartDate();
             LocalDate guestCheckOut = guestCheckIn.plusDays(guest.getNumOfRentalDays());
             boolean isOverLapping = !(checkOutDate.isBefore(guestCheckIn) || checkInDate.isAfter(guestCheckOut));
-            
+
             if (isOverLapping) {
                 System.out.println("Your selected date has been booked.");
                 return true;
             }
         }
-        
+
         return false;
     }
 
@@ -122,66 +121,82 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                     acceptable.DESIRED_ROOM_ID_VALID,
                     true
             );
-            
+
             room_controller room_controller = new room_controller();
             room_controller.loadRecFromFile();
             rooms isRoomExist = room_controller.searchRecById(desiredRoomId);
-            boolean isRoomBooked = isRoomBooked(desiredRoomId);
-            
+//            boolean isRoomBooked = isRoomBooked(desiredRoomId);
+
             if (isRoomExist != null) {
-                if (!isRoomBooked) {
-                    break;
-                }
+//                if (!isRoomBooked) {
+//                    break;
+//                }
+                break;
             } else {
                 System.out.println("Room " + desiredRoomId + " does not exist!!!");
             }
-            
+
         }
-        
-        int numberOfRentalDay = inputter.getInt(
-                "Input number of rental days: ",
-                inputter.MIN, inputter.MAX,
-                false
-        );
-        
+
         LocalDate startDate;
+        int numberOfRentalDay;
         while (true) {
-            startDate = inputter.getLocalDateTime(
+            startDate = inputter.getLocalDate(
                     "Input start date: ",
                     "Wrong birthdate format (Must be dd/MM/yyyy)",
                     acceptable.DATETIME_FORMAT,
                     false
             );
- 
+
             boolean isValidFutureDate = checkFutureDate(startDate);
+
+            if (!isValidFutureDate) {
+                continue;
+            }
+
+            numberOfRentalDay = inputter.getInt(
+                    "Input number of rental days: ",
+                    inputter.MIN, inputter.MAX,
+                    false
+            );
+
             boolean isOverlappingBookedDate = checkBookedDate(startDate, getCheckOutDate(startDate, numberOfRentalDay));
-            
-            if (isValidFutureDate && !isOverlappingBookedDate) {
+
+            if (!isOverlappingBookedDate) {
                 break;
             }
         }
-        
+
         String reservationId = inputter.generateCode();
 
-        String nationalId = inputter.getString(
-                "Inpput national Id: ",
-                "Input must be includes 12 digits",
-                acceptable.NATIONAL_ID_VALID,
-                false
-        );
+        String nationalId;
+        while (true) {
+            nationalId = inputter.getString(
+                    "Input national Id: ",
+                    "Input must be includes 12 digits",
+                    acceptable.NATIONAL_ID_VALID,
+                    false
+            );
+
+            if (searchRecById(nationalId) == null) {
+                break;
+            } else {
+                System.out.println("NationalID already exist.");
+            }
+        }
 
         String fullname = inputter.getString(
                 "Input guest fullname: ",
                 "Input must be between 2 and 25 characters long and must start with a letter",
                 acceptable.FULLNAME_VALID,
-                true
+                false
         );
 
-        LocalDate birthdate = inputter.getLocalDateTime(
+        LocalDate birthdate = inputter.getLocalDate(
                 "Input guest birthdate: ",
                 "Wrong birthdate format (Must be dd/MM/yyyy)",
                 acceptable.DATETIME_FORMAT,
-                true
+                false
         );
 
         String gender = inputter.getString(
@@ -210,7 +225,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         guest.setStartDate(startDate);
 
         this.add(guest);
-        
+
         inputter.confirmSaveFile("Reservation", this, FILE_PATH);
 
         return guest;
@@ -224,7 +239,37 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
 
     @Override
     public boolean removeRec(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+        guests guest = searchRecById(code);
+
+        if (guest == null) {
+            System.out.println("\nBooking details for ID " + code + " could not be found.");
+            return false;
+        } else {
+            if (checkFutureDate(guest.getStartDate())) {
+                String decision = getString(
+                        "Do want to cancel this reservation? (Y/y | N/n): ",
+                        "Input cannot be empty",
+                        false
+                ).trim().toUpperCase();
+
+                switch (decision) {
+                    case "Y":
+                        guest.deleteGuest();
+                        inputter.confirmSaveFile("Reservation", this, FILE_PATH);
+                        break;
+                    case "N":
+                        break;
+                    default:
+                        System.out.println("Invalid choice !!! Only (Y/y | N/n) are allowed");
+                }
+
+                return true;
+            }
+
+            System.out.println("The room booking for this guest cannot be cancelled");
+            return false;
+        }
     }
 
     @Override
@@ -247,6 +292,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 String desiredRoomId = field[6].trim();
                 int numOfRentalDays = Integer.parseInt(field[7].trim());
                 LocalDate startDate = LocalDate.parse(field[8].trim(), dateFormatter);
+//                int deleteGuest = Integer.parseInt(field[9].trim());
 
                 this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate));
             }
@@ -259,18 +305,27 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     }
 
     @Override
-    public List<guests> sortRec(ArrayList<guests> recList) {
+    public List<guests> sortRec(ArrayList<guests> recList
+    ) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void searchRecByName(ArrayList<guests> recList) {
+    public void searchRecByName(ArrayList<guests> recList
+    ) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public guests searchRecById(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public guests searchRecById(String code
+    ) {
+        for (guests guest : this) {
+            if (guest.getNationalId().equalsIgnoreCase(code)) {
+                return guest;
+            }
+        }
+
+        return null;
     }
 
     @Override

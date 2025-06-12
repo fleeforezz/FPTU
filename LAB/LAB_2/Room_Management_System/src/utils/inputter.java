@@ -5,20 +5,16 @@
 package utils;
 
 import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-import model.guests;
 
 /**
  *
@@ -206,7 +202,7 @@ public class inputter {
         Get LocalDate
         #############
      */
-    public static LocalDate getLocalDateTime(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
+    public static LocalDate getLocalDate(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
 
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormatPattern);
@@ -230,6 +226,7 @@ public class inputter {
 
                 return date;
             } catch (Exception e) {
+                System.out.println("There's an error while try to parse: " + e.getMessage());
             }
         }
 

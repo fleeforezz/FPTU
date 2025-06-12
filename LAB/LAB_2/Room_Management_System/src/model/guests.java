@@ -5,7 +5,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import utils.acceptable;
 
@@ -24,11 +23,21 @@ public class guests {
     private String desiredRoomId;
     private int numOfRentalDays;
     private LocalDate startDate;
+    private int deleted = 0;
 
     public guests() {
     }
 
-    public guests(String reservationId, String nationalId, String fullname, LocalDate birthdate, String gender, int phoneNumber, String desiredRoomId, int numOfRentalDays, LocalDate startDate) {
+    public guests(
+            String reservationId, 
+            String nationalId,
+            String fullname, 
+            LocalDate birthdate, 
+            String gender, 
+            int phoneNumber, 
+            String desiredRoomId, 
+            int numOfRentalDays, 
+            LocalDate startDate) {
         this.reservationId = reservationId;
         this.nationalId = nationalId;
         this.fullname = fullname;
@@ -112,6 +121,11 @@ public class guests {
         this.startDate = startDate;
     }
     
+    // Soft delete a guest
+    public void deleteGuest() {
+        this.deleted = 1;
+    }
+    
     /*
      * ##############
      * To file String
@@ -127,7 +141,8 @@ public class guests {
                 phoneNumber + ";" +
                 desiredRoomId + ";" +
                 numOfRentalDays + ";" +
-                startDate.format(formatter);
+                startDate.format(formatter) + ";" +
+                deleted;
     }
 
     /*
