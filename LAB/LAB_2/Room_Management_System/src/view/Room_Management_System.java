@@ -108,7 +108,7 @@ public class Room_Management_System {
                         boolean isRemove = reservation_controller.removeRec(nationalId);
 
                         if (isRemove) {
-                            System.out.println("The booking associated with ID" + nationalId + " has been successfully canceled.");
+                            System.out.println("The booking associated with ID: " + nationalId + " has been successfully canceled.");
                         } else {
                             System.out.println("Ignored to cancel the booking.");
                         }
