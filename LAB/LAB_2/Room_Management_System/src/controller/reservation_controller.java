@@ -10,7 +10,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -76,12 +75,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      */
     public LocalDate getCheckOutDate(LocalDate inputStartDate, int inputNumOfRentalDate) {
 
-        for (int i = 0; i <= inputNumOfRentalDate; i++) {
-            LocalDate checkOutDate = inputStartDate.plusDays(i);
-            return checkOutDate;
-        }
+        LocalDate checkOutDate = inputStartDate.plusDays(inputNumOfRentalDate);
 
-        return null;
+        return checkOutDate;
     }
 
     /*
@@ -167,6 +163,8 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             }
         }
 
+        LocalDate checkOutDate = getCheckOutDate(startDate, numberOfRentalDay);
+
         String reservationId = inputter.generateCode();
 
         String nationalId;
@@ -223,6 +221,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         guest.setDesiredRoomId(desiredRoomId);
         guest.setNumOfRentalDays(numberOfRentalDay);
         guest.setStartDate(startDate);
+        guest.setCheckOutDate(checkOutDate);
 
         this.add(guest);
 
@@ -240,6 +239,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     @Override
     public boolean removeRec(String code) {
 
+        boolean removeStatus = true;
         guests guest = searchRecById(code);
 
         if (guest == null) {
@@ -248,7 +248,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         } else {
             if (checkFutureDate(guest.getStartDate())) {
                 String decision = getString(
-                        "Do want to cancel this reservation? (Y/y | N/n): ",
+                        "Do you really want to cancel this reservation? (Y/y | N/n): ",
                         "Input cannot be empty",
                         false
                 ).trim().toUpperCase();
@@ -257,19 +257,21 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                     case "Y":
                         guest.deleteGuest();
                         inputter.confirmSaveFile("Reservation", this, FILE_PATH);
+                        removeStatus = true;
                         break;
                     case "N":
+                        removeStatus = false;
                         break;
                     default:
                         System.out.println("Invalid choice !!! Only (Y/y | N/n) are allowed");
                 }
-
-                return true;
+            } else {
+                System.out.println("The room booking for this guest cannot be cancelled");
+                removeStatus = false;
             }
-
-            System.out.println("The room booking for this guest cannot be cancelled");
-            return false;
         }
+        
+        return removeStatus;
     }
 
     @Override
@@ -292,9 +294,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 String desiredRoomId = field[6].trim();
                 int numOfRentalDays = Integer.parseInt(field[7].trim());
                 LocalDate startDate = LocalDate.parse(field[8].trim(), dateFormatter);
-//                int deleteGuest = Integer.parseInt(field[9].trim());
+                LocalDate checkOutDate = LocalDate.parse(field[9].trim(), dateFormatter);
 
-                this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate));
+                this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate, checkOutDate));
             }
 
         } catch (IOException e) {
@@ -317,8 +319,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     }
 
     @Override
-    public guests searchRecById(String code
-    ) {
+    public guests searchRecById(String code) {
         for (guests guest : this) {
             if (guest.getNationalId().equalsIgnoreCase(code)) {
                 return guest;
@@ -326,6 +327,43 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         }
 
         return null;
+    }
+
+    public void displayReservationDetail(guests guest, rooms room, String nationalId) {
+
+        guests currentGuest = searchRecById(nationalId);
+
+        String roomDetailInfo = room.subMenuForReservation();
+
+        String header = String.format(
+                """
+                \n
+                -------------------------------------------------------------------------------------
+                Guest information [National ID: %s]
+                -------------------------------------------------------------------------------------
+                """,
+                currentGuest.getNationalId()
+        );
+
+        String footer = String.format(
+                """
+                -------------------------------------------------------------------------------------
+                """
+        );
+
+        if ((guest == null && room == null) || currentGuest.getDelete() == 1) {
+            System.out.print(header);
+            System.out.println("No data in the system");
+            System.out.println(footer);
+        } else {
+            System.out.print(header);
+            System.out.println(currentGuest.display());
+            if (!roomDetailInfo.isEmpty()) {
+                System.out.println(roomDetailInfo);
+            }
+            System.out.println(footer);
+        }
+
     }
 
     @Override

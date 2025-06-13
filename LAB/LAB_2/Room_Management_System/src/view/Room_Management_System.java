@@ -6,8 +6,8 @@ package view;
 
 import controller.reservation_controller;
 import controller.room_controller;
-import java.util.Scanner;
 import model.guests;
+import model.rooms;
 import utils.acceptable;
 import utils.inputter;
 
@@ -18,8 +18,7 @@ import utils.inputter;
 public class Room_Management_System {
 
     public static void main(String[] args) {
-        int choice = 0;
-        Scanner sc = new Scanner(System.in);
+        int choice;
 
         room_controller room_controller = new room_controller();
         reservation_controller reservation_controller = new reservation_controller();
@@ -91,13 +90,29 @@ public class Room_Management_System {
                                 acceptable.NATIONAL_ID_VALID,
                                 false
                         );
-                        
-                        boolean isRemove = reservation_controller.removeRec(nationalId);
-                        
-                        if (isRemove) {
-                            System.out.println("The booking associated with ID" + nationalId + " has been successfully canceled.");
+
+                        guests guest = reservation_controller.searchRecById(nationalId);
+                        if (guest == null) {
+                            System.out.println("No guest found with national ID: " + nationalId);
                             break;
                         }
+
+                        rooms room = room_controller.searchRecById(guest.getDesiredRoomId());
+                        if (room == null) {
+                            System.out.println("No room found with room ID: " + guest.getDesiredRoomId());
+                            break;
+                        }
+
+                        reservation_controller.displayReservationDetail(guest, room, nationalId);
+
+                        boolean isRemove = reservation_controller.removeRec(nationalId);
+
+                        if (isRemove) {
+                            System.out.println("The booking associated with ID" + nationalId + " has been successfully canceled.");
+                        } else {
+                            System.out.println("Ignored to cancel the booking.");
+                        }
+                        break;
                     }
                     break;
                 case 7:

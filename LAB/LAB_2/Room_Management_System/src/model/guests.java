@@ -23,21 +23,19 @@ public class guests {
     private String desiredRoomId;
     private int numOfRentalDays;
     private LocalDate startDate;
+    private LocalDate checkOutDate;
     private int deleted = 0;
 
     public guests() {
     }
 
     public guests(
-            String reservationId, 
-            String nationalId,
-            String fullname, 
-            LocalDate birthdate, 
-            String gender, 
-            int phoneNumber, 
-            String desiredRoomId, 
-            int numOfRentalDays, 
-            LocalDate startDate) {
+            String reservationId, String nationalId,
+            String fullname, LocalDate birthdate,
+            String gender, int phoneNumber,
+            String desiredRoomId, int numOfRentalDays,
+            LocalDate startDate, LocalDate checkOutDate
+    ) {
         this.reservationId = reservationId;
         this.nationalId = nationalId;
         this.fullname = fullname;
@@ -47,6 +45,7 @@ public class guests {
         this.desiredRoomId = desiredRoomId;
         this.numOfRentalDays = numOfRentalDays;
         this.startDate = startDate;
+        this.checkOutDate = checkOutDate;
     }
 
     public String getReservationId() {
@@ -120,12 +119,24 @@ public class guests {
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
-    
+
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public int getDelete() {
+        return deleted;
+    }
+
     // Soft delete a guest
     public void deleteGuest() {
         this.deleted = 1;
     }
-    
+
     /*
      * ##############
      * To file String
@@ -133,16 +144,17 @@ public class guests {
      */
     public String toFileString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
-        return reservationId + ";" +
-                nationalId + ";" +
-                fullname + ";" +
-                birthdate.format(formatter) + ";" +
-                gender + ";" +
-                phoneNumber + ";" +
-                desiredRoomId + ";" +
-                numOfRentalDays + ";" +
-                startDate.format(formatter) + ";" +
-                deleted;
+        return reservationId + ";"
+                + nationalId + ";"
+                + fullname + ";"
+                + birthdate.format(formatter) + ";"
+                + gender + ";"
+                + phoneNumber + ";"
+                + desiredRoomId + ";"
+                + numOfRentalDays + ";"
+                + startDate.format(formatter) + ";"
+                + checkOutDate.format(formatter) + ";"
+                + deleted;
     }
 
     /*
@@ -153,15 +165,17 @@ public class guests {
     public String display() {
         return String.format(
                 """
-                National ID: %s
-                Fullname: %s
-                BirthDate: %s
-                Gender: %s
-                Phone Number: %s
-                Desired Room ID: %s
-                Number of rental days: %s
-                Start date: %s
+                  Fullname        : %s
+                  Phone Number    : %s
+                  Birth Day       : %s
+                  Gender          : %s
+                -------------------------------------------------------------------------------------
+                  Rental room     : %s
+                  Start date      : %s
+                  Rental days     : %s
+                  Check out       : %s
+                -------------------------------------------------------------------------------------
                 """,
-                nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate);
+                fullname, phoneNumber, birthdate, gender, desiredRoomId, startDate, numOfRentalDays, checkOutDate);
     }
 }

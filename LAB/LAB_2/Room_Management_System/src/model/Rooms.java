@@ -10,8 +10,8 @@ import java.io.Serializable;
  *
  * @author jso
  */
-public class rooms implements Serializable{
-    
+public class rooms implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     private String roomId;
@@ -91,7 +91,20 @@ public class rooms implements Serializable{
                 """
                 %-7s | %-16s | %-8s | %7.2f | %8d | %s
                 """,
-                roomId, roomName, roomType, dailyRate, capacity, furnitureDescription);
+                roomId, roomName, roomType, 
+                dailyRate, capacity, furnitureDescription);
+    }
+
+    public String subMenuForReservation() {
+        return String.format(
+                """
+                Room information:
+                  + ID      : %s
+                  + Room    : %s
+                  + Type    : %s
+                """,
+                roomId, roomName, roomType
+        );
     }
 
 }
