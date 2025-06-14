@@ -153,7 +153,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
             }
         }
         if (!isAnyVacant) {
-            System.out.print("All rooms are currently rented out - no availability at the moment!");
+            System.out.print("All rooms have currently been rented out - no room available");
         }
         System.out.print(footer);
     }
