@@ -165,6 +165,7 @@ public class guests {
      * ##################
      */
     public String display() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT);
         return String.format(
                 """
                   Fullname        : %s
@@ -178,6 +179,11 @@ public class guests {
                   Check out       : %s
                 -------------------------------------------------------------------------------------
                 """,
-                fullname, phoneNumber, birthdate, gender, desiredRoomId, startDate, numOfRentalDays, checkOutDate);
+                fullname, phoneNumber,
+                birthdate.format(formatter), gender,
+                desiredRoomId,
+                startDate.format(formatter), numOfRentalDays,
+                checkOutDate.format(formatter)
+        );
     }
 }
