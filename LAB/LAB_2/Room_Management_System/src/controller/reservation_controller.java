@@ -270,7 +270,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 removeStatus = false;
             }
         }
-        
+
         return removeStatus;
     }
 
@@ -295,8 +295,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 int numOfRentalDays = Integer.parseInt(field[7].trim());
                 LocalDate startDate = LocalDate.parse(field[8].trim(), dateFormatter);
                 LocalDate checkOutDate = LocalDate.parse(field[9].trim(), dateFormatter);
+                int deleted = Integer.parseInt(field[10].trim());
 
-                this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate, checkOutDate));
+                this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate, checkOutDate, deleted));
             }
 
         } catch (IOException e) {
@@ -321,12 +322,38 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     @Override
     public guests searchRecById(String code) {
         for (guests guest : this) {
-            if (guest.getNationalId().equalsIgnoreCase(code)) {
+            if (guest.getNationalId().equalsIgnoreCase(code) && guest.getDelete() == 0) {
                 return guest;
             }
         }
 
         return null;
+    }
+
+    public void displaySearchedGuest(room_controller roomList) {
+        String nationalId = inputter.getString(
+                "Input national Id: ",
+                "Input must be includes 12 digits",
+                acceptable.NATIONAL_ID_VALID,
+                false
+        );
+
+        guests guest = searchRecById(nationalId);
+        if (guest == null) {
+            System.out.println("No guest found with the requested ID: " + nationalId);
+            inputter.askToContinue(() -> displaySearchedGuest(roomList));
+            return;
+        }
+
+        rooms room = roomList.searchRecById(guest.getDesiredRoomId());
+        if (room == null) {
+            System.out.println("No room found with room ID: " + guest.getDesiredRoomId());
+        }
+        
+        displayReservationDetail(guest, room, nationalId);
+        
+        inputter.askToContinue(() -> displaySearchedGuest(roomList));
+        
     }
 
     public void displayReservationDetail(guests guest, rooms room, String nationalId) {

@@ -24,7 +24,7 @@ public class guests {
     private int numOfRentalDays;
     private LocalDate startDate;
     private LocalDate checkOutDate;
-    private int deleted = 0;
+    private int deleted;
 
     public guests() {
     }
@@ -34,7 +34,8 @@ public class guests {
             String fullname, LocalDate birthdate,
             String gender, int phoneNumber,
             String desiredRoomId, int numOfRentalDays,
-            LocalDate startDate, LocalDate checkOutDate
+            LocalDate startDate, LocalDate checkOutDate,
+            int deleted
     ) {
         this.reservationId = reservationId;
         this.nationalId = nationalId;
@@ -46,6 +47,7 @@ public class guests {
         this.numOfRentalDays = numOfRentalDays;
         this.startDate = startDate;
         this.checkOutDate = checkOutDate;
+        this.deleted = 0;
     }
 
     public String getReservationId() {

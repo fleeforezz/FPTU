@@ -79,21 +79,22 @@ public class Room_Management_System {
                     break;
                 case 5:
                     // Search guest by national Id
+                    reservation_controller.displaySearchedGuest(room_controller);
                     break;
                 case 6:
                     // Delete guest reservation before arrival
-                    String nationalId;
+                    String nationalIdForCancel;
                     while (true) {
-                        nationalId = inputter.getString(
+                        nationalIdForCancel = inputter.getString(
                                 "Input national Id: ",
                                 "Input must be includes 12 digits",
                                 acceptable.NATIONAL_ID_VALID,
                                 false
                         );
 
-                        guests guest = reservation_controller.searchRecById(nationalId);
+                        guests guest = reservation_controller.searchRecById(nationalIdForCancel);
                         if (guest == null) {
-                            System.out.println("No guest found with national ID: " + nationalId);
+                            System.out.println("No guest found with national ID: " + nationalIdForCancel);
                             break;
                         }
 
@@ -103,12 +104,12 @@ public class Room_Management_System {
                             break;
                         }
 
-                        reservation_controller.displayReservationDetail(guest, room, nationalId);
+                        reservation_controller.displayReservationDetail(guest, room, nationalIdForCancel);
 
-                        boolean isRemove = reservation_controller.removeRec(nationalId);
+                        boolean isRemove = reservation_controller.removeRec(nationalIdForCancel);
 
                         if (isRemove) {
-                            System.out.println("The booking associated with ID: " + nationalId + " has been successfully canceled.");
+                            System.out.println("The booking associated with ID: " + nationalIdForCancel + " has been successfully canceled.");
                         } else {
                             System.out.println("Ignored to cancel the booking.");
                         }
