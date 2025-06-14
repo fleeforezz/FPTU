@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import model.guests;
 import model.rooms;
 import utils.dataSource;
 
@@ -78,19 +79,19 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
 
     @Override
     public rooms searchRecById(String code) {
-        
+
         for (rooms room : this) {
             if (room.getRoomId().trim().equals(code.trim())) {
                 return room;
             }
         }
-        
+
         return null;
     }
 
     @Override
     public void displayrec(ArrayList<rooms> recList) {
-        
+
         String header = String.format(
                 """
                 \n
@@ -98,25 +99,63 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
                 --------+------------------+----------+---------+----------+--------------------------------
                 """
         );
-        
+
+        String footer = String.format(
+                """
+                --------------------------------------------------------------------------------------------
+                """
+        );
+
+        if (recList.isEmpty()) {
+            System.out.print(header);
+            System.out.println("Room list is currently empty, not loaded yet.");
+            System.out.print(footer);
+        } else {
+            System.out.print(header);
+            for (rooms room : recList) {
+                System.out.print(room.display());
+            }
+            System.out.print(footer);
+        }
+
+    }
+
+    public void displayVacantRooms(reservation_controller guestList) {
+        String header = String.format(
+                """
+                \n
+                RoomID  | Room Name        | Type     | Rate    | Capacity | Furniture  
+                --------+------------------+----------+---------+----------+--------------------------------
+                """
+        );
+
         String footer = String.format(
                 """
                 --------------------------------------------------------------------------------------------
                 """
         );
         
-        if (recList.isEmpty()) {
-            System.out.print(header);
-            System.out.println("Room list is currently empty, not loaded yet.");
-            System.out.println(footer);
-        } else {
-            System.out.print(header);
-            for (rooms room : recList) {
-                System.out.print(room.display());
-            }
-            System.out.println(footer);
-        }
+        boolean isAnyVacant = false;
         
+        System.out.print(header);
+        for (rooms room : this) {
+            boolean isVacant = true;
+            for (guests guest : guestList) {
+                if (room.getRoomId().equalsIgnoreCase(guest.getDesiredRoomId())) {
+                    isVacant = false;
+                    break;
+                }
+            }
+            
+            if (isVacant) {
+                System.out.print(room.display());
+                isAnyVacant = true;
+            }
+        }
+        if (!isAnyVacant) {
+            System.out.print("All rooms are currently rented out - no availability at the moment!");
+        }
+        System.out.print(footer);
     }
 
 }

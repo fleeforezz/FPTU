@@ -127,6 +127,7 @@ public class Room_Management_System {
                     break;
                 case 7:
                     // List vacant rooms
+                    room_controller.displayVacantRooms(reservation_controller);
                     break;
                 case 8:
                     // Monthly revenue report
