@@ -85,14 +85,14 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      * Check if is there any guest booked room on that days
      * ####################################################
      */
-    public boolean checkBookedDate(LocalDate checkInDate, LocalDate checkOutDate) {
+    public boolean checkBookedDate(LocalDate checkInDate, LocalDate checkOutDate, String roomId) {
 
         for (guests guest : this) {
             LocalDate guestCheckIn = guest.getStartDate();
             LocalDate guestCheckOut = getCheckOutDate(guestCheckIn, guest.getNumOfRentalDays());
             boolean isOverLapping = checkInDate.isBefore(guestCheckOut) && checkOutDate.isAfter(guestCheckIn);
 
-            if (isOverLapping) {
+            if (isOverLapping && guest.getDesiredRoomId().equals(roomId)) {
                 System.out.println("Your selected date has been booked.");
                 return true;
             }
@@ -151,7 +151,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                     false
             );
 
-            boolean isOverlappingBookedDate = checkBookedDate(startDate, getCheckOutDate(startDate, numberOfRentalDay));
+            boolean isOverlappingBookedDate = checkBookedDate(startDate, getCheckOutDate(startDate, numberOfRentalDay), desiredRoomId);
             if (!isOverlappingBookedDate) {
                 break;
             }
