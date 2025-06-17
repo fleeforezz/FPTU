@@ -85,6 +85,18 @@ public class Room_Management_System {
                     break;
                 case 4:
                     // Update guest stay information
+                    String nationalId = inputter.getString(
+                            "Input national Id: ",
+                            "Input must be includes 12 digits",
+                            acceptable.NATIONAL_ID_VALID,
+                            false
+                    );
+
+                    guests isReservationUpdated = reservation_controller.updateRec(nationalId);
+                    if (isReservationUpdated != null) {
+                        System.out.println("Guest information updated for ID: " + nationalId);
+                    }
+
                     break;
                 case 5:
                     // Search guest by national Id

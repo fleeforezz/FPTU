@@ -32,7 +32,7 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
     }
 
     @Override
-    public boolean updateRec(String code) {
+    public rooms updateRec(String code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

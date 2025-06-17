@@ -15,7 +15,7 @@ public interface I_List<T> {
     
     T addRec();
     
-    boolean updateRec(String code);
+    T updateRec(String code);
     
     boolean removeRec(String code);
     

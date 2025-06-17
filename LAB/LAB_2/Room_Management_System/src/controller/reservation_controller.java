@@ -155,7 +155,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             if (!isOverlappingBookedDate) {
                 break;
             }
-            
+
             System.out.println("Please choose a different date or duration.");
         }
 
@@ -210,13 +210,13 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         guests guest = new guests();
         guest.setReservationId(reservationId);
         guest.setNationalId(nationalId);
-        guest.setFullname(fullname);
-        guest.setBirthdate(birthdate);
-        guest.setGender(gender);
-        guest.setPhoneNumber(Integer.parseInt(phoneNumber));
-        guest.setDesiredRoomId(desiredRoomId);
-        guest.setNumOfRentalDays(numberOfRentalDay);
-        guest.setStartDate(startDate);
+        guest.setFullname(fullname); //
+        guest.setBirthdate(birthdate);//
+        guest.setGender(gender);//
+        guest.setPhoneNumber(Integer.parseInt(phoneNumber));//
+        guest.setDesiredRoomId(desiredRoomId);//
+        guest.setNumOfRentalDays(numberOfRentalDay);//
+        guest.setStartDate(startDate);//
         guest.setCheckOutDate(checkOutDate);
 
         this.add(guest);
@@ -233,8 +233,121 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      * ##################
      */
     @Override
-    public boolean updateRec(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public guests updateRec(String code) {
+        guests guest = searchRecById(code);
+
+        if (guest != null) {
+            String newFullname = inputter.getString(
+                    "Input guest fullname: ",
+                    "Input must be between 2 and 25 characters long and must start with a letter",
+                    acceptable.FULLNAME_VALID,
+                    true
+            );
+            if (!newFullname.isEmpty()) {
+                guest.setFullname(newFullname);
+            }
+
+            LocalDate newBirthdate = inputter.getLocalDate(
+                    "Input guest birthdate: ",
+                    "Wrong birthdate format (Must be dd/MM/yyyy)",
+                    acceptable.DATETIME_FORMAT,
+                    true
+            );
+            if (newBirthdate != null) {
+                guest.setBirthdate(newBirthdate);
+            }
+
+            String newGender = inputter.getString(
+                    "Input gender: ",
+                    "Input must be (Male, Female) only",
+                    acceptable.GENDER_VALID,
+                    true
+            );
+            if (!newGender.isEmpty()) {
+                guest.setGender(newGender);
+            }
+
+            String newPhoneNumber = inputter.getString(
+                    "Input guest phone number: ",
+                    "Invalid phone number format",
+                    acceptable.PHONE_VALID,
+                    true
+            );
+            if (!newPhoneNumber.isEmpty()) {
+                guest.setPhoneNumber(Integer.parseInt(newPhoneNumber));
+            }
+
+            String newDesiredRoomId;
+            while (true) {
+                newDesiredRoomId = inputter.getString(
+                        "Input Desired Room Id: ",
+                        "Input must be 5 character long and starting with a letter followed by digits",
+                        acceptable.DESIRED_ROOM_ID_VALID,
+                        true
+                );
+
+                room_controller room_controller = new room_controller();
+                room_controller.loadRecFromFile();
+                rooms isRoomExist = room_controller.searchRecById(newDesiredRoomId);
+
+                if (isRoomExist != null) {
+                    break;
+                } else {
+                    System.out.println("Room " + newDesiredRoomId + " does not exist!!!");
+                }
+            }
+            if (!newDesiredRoomId.isEmpty()) {
+                guest.setDesiredRoomId(newDesiredRoomId);
+            }
+
+            LocalDate newStartDate;
+            int newNumberOfRentalDay;
+            while (true) {
+                newStartDate = inputter.getLocalDate(
+                        "Input start date: ",
+                        "Wrong birthdate format (Must be dd/MM/yyyy)",
+                        acceptable.DATETIME_FORMAT,
+                        true
+                );
+                if (newStartDate != null) {
+                    guest.setStartDate(newStartDate);
+                    continue;
+                }
+
+                boolean isValidFutureDate = checkFutureDate(newStartDate);
+                if (!isValidFutureDate) {
+                    continue;
+                }
+
+                newNumberOfRentalDay = inputter.getInt(
+                        "Input number of rental days: ",
+                        inputter.MIN, inputter.MAX,
+                        true
+                );
+                if (newNumberOfRentalDay > inputter.MIN) {
+                    guest.setNumOfRentalDays(newNumberOfRentalDay);
+                }
+
+                boolean isOverlappingBookedDate = checkBookedDate(newStartDate, getCheckOutDate(newStartDate, newNumberOfRentalDay), newDesiredRoomId);
+                if (!isOverlappingBookedDate) {
+                    break;
+                }
+
+                System.out.println("Please choose a different date or duration.");
+            }
+            
+            LocalDate newCheckOutDate = getCheckOutDate(newStartDate, newNumberOfRentalDay);
+            guest.setCheckOutDate(newCheckOutDate);
+            
+            this.set(this.indexOf(guest), guest);
+            
+            inputter.confirmSaveFile("updated reservation", this, FILE_PATH);
+
+            return guest;
+        } else {
+            System.out.println("No guest found with the requested ID: " + code);
+            return null;
+        }
     }
 
     /*
@@ -370,11 +483,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         if (room == null) {
             System.out.println("No room found with room ID: " + guest.getDesiredRoomId());
         }
-        
+
         displayReservationDetail(guest, room, nationalId);
-        
+
         inputter.askToContinue(() -> displaySearchedGuest(roomList));
-        
+
     }
 
     /*
