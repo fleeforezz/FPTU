@@ -90,7 +90,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         for (guests guest : this) {
             LocalDate guestCheckIn = guest.getStartDate();
             LocalDate guestCheckOut = getCheckOutDate(guestCheckIn, guest.getNumOfRentalDays());
-            boolean isOverLapping = !(checkOutDate.isBefore(guestCheckIn) || checkInDate.isAfter(guestCheckOut));
+            boolean isOverLapping = checkInDate.isBefore(guestCheckOut) && checkOutDate.isAfter(guestCheckIn);
 
             if (isOverLapping) {
                 System.out.println("Your selected date has been booked.");
@@ -145,7 +145,6 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             );
 
             boolean isValidFutureDate = checkFutureDate(startDate);
-
             if (!isValidFutureDate) {
                 continue;
             }
@@ -157,10 +156,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             );
 
             boolean isOverlappingBookedDate = checkBookedDate(startDate, getCheckOutDate(startDate, numberOfRentalDay));
-
             if (!isOverlappingBookedDate) {
                 break;
             }
+            
+            System.out.println("Please choose a different date or duration.");
         }
 
         LocalDate checkOutDate = getCheckOutDate(startDate, numberOfRentalDay);
