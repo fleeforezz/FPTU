@@ -121,12 +121,8 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             room_controller room_controller = new room_controller();
             room_controller.loadRecFromFile();
             rooms isRoomExist = room_controller.searchRecById(desiredRoomId);
-//            boolean isRoomBooked = isRoomBooked(desiredRoomId);
 
             if (isRoomExist != null) {
-//                if (!isRoomBooked) {
-//                    break;
-//                }
                 break;
             } else {
                 System.out.println("Room " + desiredRoomId + " does not exist!!!");
@@ -231,11 +227,21 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
 
     }
 
+    /*
+     * ##################
+     * Update Reservation
+     * ##################
+     */
     @Override
     public boolean updateRec(String code) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /*
+     * ##################
+     * Remove Reservation
+     * ##################
+     */
     @Override
     public boolean removeRec(String code) {
 
@@ -274,6 +280,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         return removeStatus;
     }
 
+    /*
+     * ##############################
+     * Load Reservation_List.txt file
+     * ##############################
+     */
     @Override
     public List<guests> loadRecFromFile() {
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
@@ -319,6 +330,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /*
+     * #################################
+     * Search Reservation by National Id
+     * #################################
+     */
     @Override
     public guests searchRecById(String code) {
         for (guests guest : this) {
@@ -330,6 +346,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         return null;
     }
 
+    /*
+     * #####################
+     * Display search result
+     * #####################
+     */
     public void displaySearchedGuest(room_controller roomList) {
         String nationalId = inputter.getString(
                 "Input national Id: ",
@@ -356,6 +377,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         
     }
 
+    /*
+     * ###########################
+     * Display Reseravation detail
+     * ###########################
+     */
     public void displayReservationDetail(guests guest, rooms room, String nationalId) {
 
         guests currentGuest = searchRecById(nationalId);
