@@ -20,7 +20,7 @@ public class dataSource {
 //            = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
     // Shadow Window Desktop
     private static final String ACTIVE_ROOM_LIST_FILE_PATH 
-            = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
+            = "E:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Active_Room_List.txt";
 
     /*
      * ################
@@ -32,7 +32,7 @@ public class dataSource {
 //            = "D:\\Code-Stuff\\Github_Landing\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Reservation_List.txt";
     // Shadow Window Desktop
     private static final String RESERVATION_FILE_PATH 
-            = "D:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Reservation_List.txt";
+            = "E:\\Cabinet\\Github\\FPTU\\LAB\\LAB_2\\Room_Management_System\\src\\data\\Reservation_List.txt";
     
     private dataSource() {
     }

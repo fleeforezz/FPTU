@@ -285,6 +285,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                         acceptable.DESIRED_ROOM_ID_VALID,
                         true
                 );
+                if (newDesiredRoomId.isEmpty()) {
+                    break;
+                }
 
                 room_controller room_controller = new room_controller();
                 room_controller.loadRecFromFile();
@@ -309,14 +312,13 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                         acceptable.DATETIME_FORMAT,
                         true
                 );
-                if (newStartDate != null) {
-                    guest.setStartDate(newStartDate);
+                if (newStartDate == null) {
                     continue;
-                }
-
-                boolean isValidFutureDate = checkFutureDate(newStartDate);
-                if (!isValidFutureDate) {
-                    continue;
+                } else {
+                    boolean isValidFutureDate = checkFutureDate(newStartDate);
+                    if (!isValidFutureDate) {
+                        continue;
+                    }
                 }
 
                 newNumberOfRentalDay = inputter.getInt(
@@ -324,23 +326,29 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                         inputter.MIN, inputter.MAX,
                         true
                 );
-                if (newNumberOfRentalDay > inputter.MIN) {
-                    guest.setNumOfRentalDays(newNumberOfRentalDay);
-                }
-
-                boolean isOverlappingBookedDate = checkBookedDate(newStartDate, getCheckOutDate(newStartDate, newNumberOfRentalDay), newDesiredRoomId);
-                if (!isOverlappingBookedDate) {
+                if (newNumberOfRentalDay < inputter.MIN) {
                     break;
+                } else {
+                    boolean isOverlappingBookedDate = checkBookedDate(newStartDate, getCheckOutDate(newStartDate, newNumberOfRentalDay), newDesiredRoomId);
+                    if (!isOverlappingBookedDate) {
+                        break;
+                    }
                 }
 
                 System.out.println("Please choose a different date or duration.");
             }
-            
+            if (newStartDate != null) {
+                guest.setStartDate(newStartDate);
+            }
+            if (newNumberOfRentalDay > inputter.MIN) {
+                guest.setNumOfRentalDays(newNumberOfRentalDay);
+            }
+
             LocalDate newCheckOutDate = getCheckOutDate(newStartDate, newNumberOfRentalDay);
             guest.setCheckOutDate(newCheckOutDate);
-            
+
             this.set(this.indexOf(guest), guest);
-            
+
             inputter.confirmSaveFile("updated reservation", this, FILE_PATH);
 
             return guest;
