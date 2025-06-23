@@ -235,6 +235,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     @Override
     public guests updateRec(String code) {
         guests guest = searchRecById(code);
+        LocalDate newCheckOutDate;
 
         if (guest != null) {
             String newFullname = inputter.getString(
@@ -303,8 +304,19 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setDesiredRoomId(newDesiredRoomId);
             }
 
-            LocalDate newStartDate;
             int newNumberOfRentalDay;
+            newNumberOfRentalDay = inputter.getInt(
+                    "Input number of rental days: ",
+                    inputter.MIN, inputter.MAX,
+                    true
+            );
+            if (newNumberOfRentalDay > inputter.MIN) {
+                guest.setNumOfRentalDays(newNumberOfRentalDay);
+                newCheckOutDate = getCheckOutDate(guest.getStartDate(), newNumberOfRentalDay);
+                guest.setCheckOutDate(newCheckOutDate);
+            }
+
+            LocalDate newStartDate;
             while (true) {
                 newStartDate = inputter.getLocalDate(
                         "Input start date: ",
@@ -312,40 +324,27 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                         acceptable.DATETIME_FORMAT,
                         true
                 );
+
                 if (newStartDate == null) {
-                    continue;
+                    break;
                 } else {
                     boolean isValidFutureDate = checkFutureDate(newStartDate);
                     if (!isValidFutureDate) {
                         continue;
                     }
-                }
 
-                newNumberOfRentalDay = inputter.getInt(
-                        "Input number of rental days: ",
-                        inputter.MIN, inputter.MAX,
-                        true
-                );
-                if (newNumberOfRentalDay < inputter.MIN) {
-                    break;
-                } else {
                     boolean isOverlappingBookedDate = checkBookedDate(newStartDate, getCheckOutDate(newStartDate, newNumberOfRentalDay), newDesiredRoomId);
                     if (!isOverlappingBookedDate) {
                         break;
                     }
+                    System.out.println("Please choose a different date or duration.");
                 }
-
-                System.out.println("Please choose a different date or duration.");
             }
             if (newStartDate != null) {
                 guest.setStartDate(newStartDate);
+                newCheckOutDate = getCheckOutDate(newStartDate, guest.getNumOfRentalDays());
+                guest.setCheckOutDate(newCheckOutDate);
             }
-            if (newNumberOfRentalDay > inputter.MIN) {
-                guest.setNumOfRentalDays(newNumberOfRentalDay);
-            }
-
-            LocalDate newCheckOutDate = getCheckOutDate(newStartDate, newNumberOfRentalDay);
-            guest.setCheckOutDate(newCheckOutDate);
 
             this.set(this.indexOf(guest), guest);
 
