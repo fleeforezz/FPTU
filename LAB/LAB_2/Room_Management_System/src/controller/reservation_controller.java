@@ -109,6 +109,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     @Override
     public guests addRec() {
 
+        // Input Desired Room id
         String desiredRoomId;
         while (true) {
             desiredRoomId = inputter.getString(
@@ -130,6 +131,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
 
         }
 
+        // Input Start Date && Number of rental day
         LocalDate startDate;
         int numberOfRentalDay;
         while (true) {
@@ -159,10 +161,13 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             System.out.println("Please choose a different date or duration.");
         }
 
+        // Checkout date
         LocalDate checkOutDate = getCheckOutDate(startDate, numberOfRentalDay);
 
+        // Generate ReservationId
         String reservationId = inputter.generateCode();
 
+        // Input National Id
         String nationalId;
         while (true) {
             nationalId = inputter.getString(
@@ -179,6 +184,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             }
         }
 
+        // Input fullname
         String fullname = inputter.getString(
                 "Input guest fullname: ",
                 "Input must be between 2 and 25 characters long and must start with a letter",
@@ -186,6 +192,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 false
         );
 
+        // Input birthdate
         LocalDate birthdate = inputter.getLocalDate(
                 "Input guest birthdate: ",
                 "Wrong birthdate format (Must be dd/MM/yyyy)",
@@ -193,6 +200,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 false
         );
 
+        // Input gender
         String gender = inputter.getString(
                 "Input gender: ",
                 "Input must be (Male, Female) only",
@@ -200,6 +208,7 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 false
         );
 
+        // Input Phone Number
         String phoneNumber = inputter.getString(
                 "Input guest phone number: ",
                 "Invalid phone number format",
@@ -210,13 +219,13 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         guests guest = new guests();
         guest.setReservationId(reservationId);
         guest.setNationalId(nationalId);
-        guest.setFullname(fullname); //
-        guest.setBirthdate(birthdate);//
-        guest.setGender(gender);//
-        guest.setPhoneNumber(Integer.parseInt(phoneNumber));//
-        guest.setDesiredRoomId(desiredRoomId);//
-        guest.setNumOfRentalDays(numberOfRentalDay);//
-        guest.setStartDate(startDate);//
+        guest.setFullname(fullname);
+        guest.setBirthdate(birthdate);
+        guest.setGender(gender);
+        guest.setPhoneNumber(Integer.parseInt(phoneNumber));
+        guest.setDesiredRoomId(desiredRoomId);
+        guest.setNumOfRentalDays(numberOfRentalDay);
+        guest.setStartDate(startDate);
         guest.setCheckOutDate(checkOutDate);
 
         this.add(guest);
@@ -238,8 +247,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
         LocalDate newCheckOutDate;
 
         if (guest != null) {
+            // New Fullname
             String newFullname = inputter.getString(
-                    "Input guest fullname: ",
+                    "Input new fullname: ",
                     "Input must be between 2 and 25 characters long and must start with a letter",
                     acceptable.FULLNAME_VALID,
                     true
@@ -248,8 +258,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setFullname(newFullname);
             }
 
+            // New birthdate
             LocalDate newBirthdate = inputter.getLocalDate(
-                    "Input guest birthdate: ",
+                    "Input new birthdate: ",
                     "Wrong birthdate format (Must be dd/MM/yyyy)",
                     acceptable.DATETIME_FORMAT,
                     true
@@ -258,8 +269,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setBirthdate(newBirthdate);
             }
 
+            // New gender
             String newGender = inputter.getString(
-                    "Input gender: ",
+                    "Input new gender: ",
                     "Input must be (Male, Female) only",
                     acceptable.GENDER_VALID,
                     true
@@ -268,8 +280,9 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setGender(newGender);
             }
 
+            // New Phone Number
             String newPhoneNumber = inputter.getString(
-                    "Input guest phone number: ",
+                    "Input new phone number: ",
                     "Invalid phone number format",
                     acceptable.PHONE_VALID,
                     true
@@ -278,10 +291,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setPhoneNumber(Integer.parseInt(newPhoneNumber));
             }
 
+            // New Desired Room Id
             String newDesiredRoomId;
             while (true) {
                 newDesiredRoomId = inputter.getString(
-                        "Input Desired Room Id: ",
+                        "Input new Desired Room Id: ",
                         "Input must be 5 character long and starting with a letter followed by digits",
                         acceptable.DESIRED_ROOM_ID_VALID,
                         true
@@ -304,9 +318,10 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setDesiredRoomId(newDesiredRoomId);
             }
 
+            // New Number of rental day
             int newNumberOfRentalDay;
             newNumberOfRentalDay = inputter.getInt(
-                    "Input number of rental days: ",
+                    "Input new number of rental days: ",
                     inputter.MIN, inputter.MAX,
                     true
             );
@@ -316,10 +331,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 guest.setCheckOutDate(newCheckOutDate);
             }
 
+            // New Start date
             LocalDate newStartDate;
             while (true) {
                 newStartDate = inputter.getLocalDate(
-                        "Input start date: ",
+                        "Input new start date: ",
                         "Wrong birthdate format (Must be dd/MM/yyyy)",
                         acceptable.DATETIME_FORMAT,
                         true
