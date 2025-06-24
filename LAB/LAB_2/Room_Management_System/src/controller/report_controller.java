@@ -62,9 +62,25 @@ public class report_controller extends ArrayList<reports> {
             System.out.println("RoomID  | Room Name        | Type     | DailyRate  |     Amount");
             System.out.println("---------------------------------------------------------------");
             for (reports report : this) {
-                System.out.print(report.display());
+                System.out.print(report.displayFull());
             }
             System.out.println("---------------------------------------------------------------");
+        }
+    }
+
+    public void revenueReportByRoomType(reservation_controller reservationList, room_controller roomList) {
+        String roomType = inputter.getString(
+                "Input room type for report: ",
+                "Input must be a String",
+                acceptable.ROOM_TYPE,
+                false
+        );
+        
+        for (rooms room : roomList) {
+            if (room.getRoomType().equals(roomType)) {
+                System.out.println(room.display());
+                
+            }
         }
     }
 }

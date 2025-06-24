@@ -149,6 +149,7 @@ public class Room_Management_System {
                     break;
                 case 9:
                     // Revenue report by room type
+                    report_controller.revenueReportByRoomType(reservation_controller, room_controller);
                     break;
                 case 10:
                     // Save guest information

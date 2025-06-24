@@ -24,6 +24,8 @@ public interface acceptable {
     
     public String DESIRED_ROOM_ID_VALID = "^[A-Za-z]\\d{0,4}$";
     
+    public String ROOM_TYPE = "^[A-Za-z]+$";
+    
     public String AUTO_GENERATE_CODE_TIME_FORMAT = "yyyyMMddhhmmss";
 
     public static boolean isValid(String data, String pattern) {

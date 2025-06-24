@@ -77,12 +77,21 @@ public class reports {
         this.amount = amount;
     }
 
-    public String display() {
+    public String displayFull() {
         return String.format(
                 """
                 %-7s | %-16s | %-8s | %10.2f | %10.2f
                 """,
                 roomId, roomName, roomType, dailyRate, amount
+        );
+    }
+    
+    public String displayByRoomType() {
+        return String.format(
+                """
+                %-8s | %10.2f
+                """,
+                roomType, amount
         );
     }
 }
