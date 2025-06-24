@@ -11,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
@@ -229,7 +230,37 @@ public class inputter {
                 System.out.println("There's an error while try to parse: " + e.getMessage());
             }
         }
+    }
 
+    /*
+        ###################
+        Get Year Month only
+        ###################
+     */
+    public static YearMonth getYearMonth(String welcomeMessage, String errorMessage, String dateFormatPattern, boolean allowEmptyInput) {
+        Scanner sc = new Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormatPattern);
+        String input;
+
+        while (true) {
+            System.out.print(welcomeMessage);
+            input = sc.nextLine().trim();
+
+            if (input.isEmpty() && allowEmptyInput) {
+                return null;
+            }
+
+            if (input.isEmpty()) {
+                System.out.println("Input cannot be empty");
+                continue;
+            }
+
+            try {
+                return YearMonth.parse(input, formatter);
+            } catch (Exception e) {
+                System.out.println("There's an error while try to parse: " + e.getMessage());
+            }
+        }
     }
 
     /*
@@ -289,7 +320,7 @@ public class inputter {
                                 // Use reflextion to call toFileString() dynamically
                                 Method getToFileString = object.getClass().getMethod("toFileString");
                                 String line = (String) getToFileString.invoke(object);
-                                
+
                                 bw.write(line);
                                 bw.newLine();
                             } catch (IOException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
@@ -297,7 +328,7 @@ public class inputter {
                             }
                         }
                     }
-                    
+
                     System.out.println("\n" + recordName + " saved successfully to file !!! \n");
                 } catch (IOException ioex) {
                     System.out.println("Error saving " + recordName + " to file: " + ioex.getMessage());

@@ -15,6 +15,8 @@ public interface acceptable {
     public String FULLNAME_VALID = "^[A-Za-z][A-Za-z\\s]{1,24}$"; // Valid fullname
 
     public String DATETIME_FORMAT = "dd/MM/yyyy"; // Valid date time 
+
+    public String MONTH_REVENUE_FORMAT = "MM/yyyy"; // Valid revenue report input
     
     public String GENDER_VALID = "^(Male|Female)$"; // Valid gender
     

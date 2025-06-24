@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.report_controller;
 import controller.reservation_controller;
 import controller.room_controller;
 import model.guests;
@@ -22,6 +23,7 @@ public class Room_Management_System {
 
         room_controller room_controller = new room_controller();
         reservation_controller reservation_controller = new reservation_controller();
+        report_controller report_controller = new report_controller();
 
         do {
             System.out.println("\n");
@@ -143,6 +145,7 @@ public class Room_Management_System {
                     break;
                 case 8:
                     // Monthly revenue report
+                    report_controller.monthlyRevenueReport(reservation_controller, room_controller);
                     break;
                 case 9:
                     // Revenue report by room type
