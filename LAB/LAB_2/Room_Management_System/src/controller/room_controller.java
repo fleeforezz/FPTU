@@ -158,4 +158,9 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
         System.out.print(footer);
     }
 
+    @Override
+    public void saveToFile() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

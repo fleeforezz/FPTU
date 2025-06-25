@@ -153,6 +153,21 @@ public class Room_Management_System {
                     break;
                 case 10:
                     // Save guest information
+                    String confirmation = inputter.getString(
+                            "Do you want to save to file? (Y/yes or N/no): ",
+                            "Invalid input",
+                            false
+                    ).trim().toUpperCase();
+
+                    switch (confirmation) {
+                        case "Y":
+                            reservation_controller.saveToFile();
+                            break;
+                        case "N":
+                            break;
+                        default:
+                            System.out.println("Invalid choice");
+                    }
                     break;
                 case 11:
                     break;

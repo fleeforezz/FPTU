@@ -6,7 +6,9 @@ package controller;
 
 import business.I_List;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -558,6 +560,30 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
     @Override
     public void displayrec(ArrayList<guests> recList) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void saveToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (guests guest : this) {
+                String line = String.join(";",
+                        guest.getReservationId(),
+                        guest.getNationalId(),
+                        guest.getFullname(),
+                        guest.getBirthdate().format(DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT)),
+                        guest.getGender(),
+                        String.valueOf(guest.getPhoneNumber()),
+                        guest.getStartDate().format(DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT)),
+                        guest.getCheckOutDate().format(DateTimeFormatter.ofPattern(acceptable.DATETIME_FORMAT)),
+                        String.valueOf(guest.getDelete())
+                );
+                writer.write(line);
+                writer.newLine();
+            }
+            System.out.println("Reservation file saved successfully to Reservation_List.txt");
+        } catch (IOException e) {
+            System.out.println("There's an error while saving reservation file: " + e.getMessage());
+        }
     }
 
 }

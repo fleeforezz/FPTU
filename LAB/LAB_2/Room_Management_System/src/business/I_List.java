@@ -29,4 +29,5 @@ public interface I_List<T> {
     
     void displayrec(ArrayList<T> recList);
     
+    void saveToFile();
 }
