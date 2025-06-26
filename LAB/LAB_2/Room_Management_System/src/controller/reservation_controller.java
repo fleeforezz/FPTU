@@ -425,6 +425,8 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
      */
     @Override
     public List<guests> loadRecFromFile() {
+        int errorCounter = 0;
+        
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
 
             String line;
@@ -434,6 +436,11 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
             while ((line = br.readLine()) != null) {
                 String[] field = line.split(";");
 
+                if (field.length != 11) {
+                    errorCounter++;
+                    continue;
+                }
+                
                 String reservationId = field[0].trim();
                 String nationalId = field[1].trim();
                 String fullname = field[2].trim();
@@ -447,6 +454,10 @@ public class reservation_controller extends ArrayList<guests> implements I_List<
                 int deleted = Integer.parseInt(field[10].trim());
 
                 this.add(new guests(reservationId, nationalId, fullname, birthdate, gender, phoneNumber, desiredRoomId, numOfRentalDays, startDate, checkOutDate, deleted));
+            }
+            
+            if (errorCounter > 0) {
+                System.out.println(errorCounter + " entries failed due to wrong format (must be 11 field)");
             }
 
         } catch (IOException e) {
