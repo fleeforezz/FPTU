@@ -24,7 +24,10 @@ public class rooms implements Serializable {
     public rooms() {
     }
 
-    public rooms(String roomId, String roomName, String roomType, double dailyRate, int capacity, String furnitureDescription) {
+    public rooms(
+            String roomId, String roomName,
+            String roomType, double dailyRate,
+            int capacity, String furnitureDescription) {
         this.roomId = roomId;
         this.roomName = roomName;
         this.roomType = roomType;
@@ -91,7 +94,7 @@ public class rooms implements Serializable {
                 """
                 %-7s | %-16s | %-8s | %7.2f | %8d | %s
                 """,
-                roomId, roomName, roomType, 
+                roomId, roomName, roomType,
                 dailyRate, capacity, furnitureDescription);
     }
 

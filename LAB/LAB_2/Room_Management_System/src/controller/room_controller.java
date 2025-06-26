@@ -46,16 +46,17 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
 
             String line;
-
+            
             while ((line = br.readLine()) != null) {
                 String[] field = line.split(";");
 
+                
                 String roomId = field[0].trim();
                 String roomName = field[1].trim();
                 String roomType = field[2].trim();
                 double dailyRate = Double.parseDouble(field[3].trim());
                 int capacity = Integer.parseInt(field[4].trim());
-                String furnitureDescription = String.join(";", Arrays.copyOfRange(field, 5, field.length)).trim();
+                String furnitureDescription = field[5].trim();
 
                 this.add(new rooms(roomId, roomName, roomType, dailyRate, capacity, furnitureDescription));
             }
