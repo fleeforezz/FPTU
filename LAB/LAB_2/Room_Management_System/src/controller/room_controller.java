@@ -6,11 +6,11 @@ package controller;
 
 import business.I_List;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import model.guests;
 import model.rooms;
@@ -41,8 +41,25 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    private boolean roomIdExist(String roomId) {
+        for (rooms room : this) {
+            if (room.getRoomId().equals(roomId)) {
+                return true;
+            }
+        }
+        return false;
+    }
     @Override
     public List<rooms> loadRecFromFile() {
+        int errorCounter = 0;
+        int duplicateCounter = 0;
+        
+        File file = new File(FILE_PATH);
+        if (!file.exists()) {
+            System.out.println("File not found at: " + FILE_PATH);
+            return this;
+        }
+        
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
 
             String line;
@@ -50,6 +67,10 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
             while ((line = br.readLine()) != null) {
                 String[] field = line.split(";");
 
+                if (field.length != 6) {
+                    errorCounter++;
+                    continue;
+                }
                 
                 String roomId = field[0].trim();
                 String roomName = field[1].trim();
@@ -57,8 +78,21 @@ public class room_controller extends ArrayList<rooms> implements I_List<rooms>, 
                 double dailyRate = Double.parseDouble(field[3].trim());
                 int capacity = Integer.parseInt(field[4].trim());
                 String furnitureDescription = field[5].trim();
+                
+                if (roomIdExist(roomId)) {
+                    duplicateCounter++;
+                    continue;
+                }
 
                 this.add(new rooms(roomId, roomName, roomType, dailyRate, capacity, furnitureDescription));
+            }
+            
+            if (errorCounter > 0) {
+                System.out.println(errorCounter + " entries failed due to format error.");
+            }
+            
+            if (duplicateCounter > 0) {
+                System.out.println(duplicateCounter + " entries skipped due to duplicate roomIDs.");
             }
 
         } catch (IOException e) {

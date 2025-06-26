@@ -79,7 +79,6 @@ public class report_controller extends ArrayList<reports> {
         for (rooms room : roomList) {
             if (room.getRoomType().equals(roomType)) {
                 System.out.println(room.display());
-                
             }
         }
     }
