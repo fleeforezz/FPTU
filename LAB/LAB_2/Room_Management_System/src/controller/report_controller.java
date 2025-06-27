@@ -6,6 +6,8 @@ package controller;
 
 import java.time.YearMonth;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import model.guests;
 import model.reports;
 import model.rooms;
@@ -69,17 +71,73 @@ public class report_controller extends ArrayList<reports> {
     }
 
     public void revenueReportByRoomType(reservation_controller reservationList, room_controller roomList) {
+
+        String header = String.format(
+                """
+                \n
+                Revenue Report by Room Type
+                ---------------------------
+                  Room type   | Amount
+                ---------------------------
+                """
+        );
+
+        String footer = String.format(
+                """
+                ---------------------------
+                """
+        );
+
         String roomType = inputter.getString(
                 "Input room type for report: ",
                 "Input must be a String",
                 acceptable.ROOM_TYPE,
-                false
+                true
         );
-        
-        for (rooms room : roomList) {
-            if (room.getRoomType().equals(roomType)) {
-                System.out.println(room.display());
+
+        if (roomType.isEmpty()) {
+            Map<String, Double> roomTypeAmounts = new HashMap<>();
+
+            for (guests guest : reservationList) {
+                for (rooms room : roomList) {
+                    String currentRoomType = room.getRoomType();
+                    if (room.getRoomId().equals(guest.getDesiredRoomId())) {
+                        double eachRoomAmount = room.getDailyRate() * guest.getNumOfRentalDays();
+                        roomTypeAmounts.put(currentRoomType, roomTypeAmounts.getOrDefault(currentRoomType, 0.0) + eachRoomAmount);
+                    }
+                }
             }
+
+            reports report = new reports();
+
+            System.out.print(header);
+            for (Map.Entry< String, Double> entry : roomTypeAmounts.entrySet()) {
+                report.setRoomType(entry.getKey());
+                report.setAmount(entry.getValue());
+                System.out.print(report.displayByRoomType());
+            }
+            System.out.println(footer);
+        } else {
+            double eachRoomAmount = 0;
+            double roomTypeAmount = 0;
+            reports report = new reports();
+
+            for (guests guest : reservationList) {
+                for (rooms room : roomList) {
+                    if (room.getRoomType().equalsIgnoreCase(roomType)
+                            && room.getRoomId().equals(guest.getDesiredRoomId())) {
+                        eachRoomAmount = room.getDailyRate() * guest.getNumOfRentalDays();
+                        roomTypeAmount += eachRoomAmount;
+
+                        report.setRoomType(roomType);
+                        report.setAmount(roomTypeAmount);
+                    }
+                }
+            }
+
+            System.out.print(header);
+            System.out.print(report.displayByRoomType());
+            System.out.println(footer);
         }
     }
 }

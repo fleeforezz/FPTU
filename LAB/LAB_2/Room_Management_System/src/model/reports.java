@@ -89,7 +89,7 @@ public class reports {
     public String displayByRoomType() {
         return String.format(
                 """
-                %-8s | %10.2f
+                  %-11s | %1.2f
                 """,
                 roomType, amount
         );
