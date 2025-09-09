@@ -1,0 +1,15 @@
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\bin\Debug\net9.0\HelloFA.exe
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\bin\Debug\net9.0\HelloFA.deps.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\bin\Debug\net9.0\HelloFA.runtimeconfig.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\bin\Debug\net9.0\HelloFA.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\bin\Debug\net9.0\HelloFA.pdb
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.GeneratedMSBuildEditorConfig.editorconfig
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.AssemblyInfoInputs.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.AssemblyInfo.cs
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.csproj.CoreCompileInputs.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.sourcelink.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\refint\HelloFA.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.pdb
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\HelloFA.genruntimeconfig.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session01-Hello\HelloFA\obj\Debug\net9.0\ref\HelloFA.dll
