@@ -1,0 +1,51 @@
+﻿<Application x:Class="AirConditionerShop_HoangNgocTrinh.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AirConditionerShop_HoangNgocTrinh"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>       
+
+        <!-- Primary/ Default Button Style: Nền Vàng, Chữ Đỏ Crimson -->
+        <Style TargetType="Button">
+            
+            <Setter Property="Background" Value="#ffff00" />
+            <Setter Property="Foreground" Value="#dc143c" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="ExtraBold" />            
+        </Style>
+
+        <!-- Secondary/ Red Button Style: Nền Đỏ Crimson, Chữ Vàng -->
+        <Style x:Key="RedButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#dc143c" />
+            <Setter Property="Foreground" Value="#ffff00" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+        </Style>
+
+        <!-- Primary/ Default Label Style: Nền Trong Suốt, Chữ Đỏ Orange-Red Đậm -->
+        <Style TargetType="Label">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#ff4500" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!-- Secondary/ Yellow Label Style: Nền Trong Suốt, Chữ Vàng Đậm -->
+        <Style  x:Key="YellowLabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#ffff00" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!-- Primary/ Default TextBox Style: Nền Đỏ Orange-Red, Chữ Vàng Đậm, Căn Chữ Giữa Ô -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#ff4500" />
+            <Setter Property="Foreground" Value="#ffff00" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+    </Application.Resources>
+</Application>
