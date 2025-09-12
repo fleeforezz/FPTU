@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Art\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E7D1C4BD-44E4-4183-8E0A-2A47171AB260}|Music\\Music.csproj|d:\\stuff\\gitlab\\fptu\\prn212_re\\session02-language\\art\\music\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7D1C4BD-44E4-4183-8E0A-2A47171AB260}|Music\\Music.csproj|solutionrelative:music\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Art\\Music\\Program.cs",
+              "RelativeDocumentMoniker": "Music\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Art\\Music\\Program.cs",
+              "RelativeToolTip": "Music\\Program.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T01:28:46.735Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

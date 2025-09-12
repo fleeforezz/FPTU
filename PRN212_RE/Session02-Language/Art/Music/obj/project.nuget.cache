@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "TGc7wfrd9p8=",
+  "success": true,
+  "projectFilePath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Art\\Music\\Music.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jso\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512",
+    "C:\\Users\\jso\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.18\\microsoft.windowsdesktop.app.ref.8.0.18.nupkg.sha512",
+    "C:\\Users\\jso\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.18\\microsoft.netcore.app.ref.8.0.18.nupkg.sha512",
+    "C:\\Users\\jso\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.18\\microsoft.aspnetcore.app.ref.8.0.18.nupkg.sha512",
+    "C:\\Users\\jso\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.18\\microsoft.netcore.app.host.win-x64.8.0.18.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Art\\Music\\Music.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Art\\Music\\Music.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
