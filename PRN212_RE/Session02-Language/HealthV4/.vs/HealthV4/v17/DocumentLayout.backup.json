@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7D591488-A720-467C-8B04-BFCBE1C7A630}|BmiTester\\BmiTester.csproj|d:\\stuff\\gitlab\\fptu\\prn212_re\\session02-language\\healthv4\\bmitester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D591488-A720-467C-8B04-BFCBE1C7A630}|BmiTester\\BmiTester.csproj|solutionrelative:bmitester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\Program.cs",
+              "RelativeDocumentMoniker": "BmiTester\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\Program.cs",
+              "RelativeToolTip": "BmiTester\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T02:11:35.209Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

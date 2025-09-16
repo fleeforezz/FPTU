@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BmiTester", "BmiTester\BmiTester.csproj", "{803FA6B9-DB5D-4CE6-8ED5-C8EF7D85E116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bmi", "Bmi\Bmi.csproj", "{7FADC1EE-C511-4E7A-A4FB-227F33395D74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{803FA6B9-DB5D-4CE6-8ED5-C8EF7D85E116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803FA6B9-DB5D-4CE6-8ED5-C8EF7D85E116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803FA6B9-DB5D-4CE6-8ED5-C8EF7D85E116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803FA6B9-DB5D-4CE6-8ED5-C8EF7D85E116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FADC1EE-C511-4E7A-A4FB-227F33395D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FADC1EE-C511-4E7A-A4FB-227F33395D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FADC1EE-C511-4E7A-A4FB-227F33395D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FADC1EE-C511-4E7A-A4FB-227F33395D74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E732C67A-1B67-4B35-8D1C-84F119116A23}
+	EndGlobalSection
+EndGlobal

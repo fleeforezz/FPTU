@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bmi</name>
+    </assembly>
+    <members>
+        <member name="T:Bmi.BmiCalculator">
+            <summary>
+            This class offer method to measure health status base on weight and height
+            </summary>
+        </member>
+        <member name="M:Bmi.BmiCalculator.GetBmi(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="weight">kg</param>
+            <param name="height">metre</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

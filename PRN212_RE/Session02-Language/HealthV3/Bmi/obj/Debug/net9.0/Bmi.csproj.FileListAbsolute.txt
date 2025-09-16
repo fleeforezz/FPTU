@@ -1,0 +1,14 @@
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\bin\Debug\net9.0\Bmi.deps.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\bin\Debug\net9.0\Bmi.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\bin\Debug\net9.0\Bmi.pdb
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\bin\Debug\net9.0\Bmi.xml
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.AssemblyInfoInputs.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.AssemblyInfo.cs
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.csproj.CoreCompileInputs.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.sourcelink.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\refint\Bmi.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.xml
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\Bmi.pdb
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\HealthV3\Bmi\obj\Debug\net9.0\ref\Bmi.dll
