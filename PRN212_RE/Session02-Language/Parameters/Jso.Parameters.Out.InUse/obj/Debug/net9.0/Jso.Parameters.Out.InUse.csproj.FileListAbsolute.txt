@@ -1,0 +1,15 @@
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\bin\Debug\net9.0\Jso.Parameters.Out.InUse.exe
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\bin\Debug\net9.0\Jso.Parameters.Out.InUse.deps.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\bin\Debug\net9.0\Jso.Parameters.Out.InUse.runtimeconfig.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\bin\Debug\net9.0\Jso.Parameters.Out.InUse.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\bin\Debug\net9.0\Jso.Parameters.Out.InUse.pdb
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.GeneratedMSBuildEditorConfig.editorconfig
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.AssemblyInfoInputs.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.AssemblyInfo.cs
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.csproj.CoreCompileInputs.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.sourcelink.json
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\refint\Jso.Parameters.Out.InUse.dll
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.pdb
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\Jso.Parameters.Out.InUse.genruntimeconfig.cache
+D:\Stuff\Gitlab\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameters.Out.InUse\obj\Debug\net9.0\ref\Jso.Parameters.Out.InUse.dll

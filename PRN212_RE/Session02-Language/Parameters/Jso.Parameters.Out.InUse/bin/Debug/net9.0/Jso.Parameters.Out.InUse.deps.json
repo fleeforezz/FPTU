@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Jso.Parameters.Out.InUse/1.0.0": {
+        "runtime": {
+          "Jso.Parameters.Out.InUse.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Jso.Parameters.Out.InUse/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
