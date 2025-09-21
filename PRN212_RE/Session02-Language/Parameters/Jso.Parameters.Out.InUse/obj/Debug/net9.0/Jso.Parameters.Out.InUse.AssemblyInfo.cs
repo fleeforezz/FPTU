@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Jso.Parameters.Out.InUse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f530326dc3bb4e7bcac2eb1bec423d9e32f09de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+324949632c57e5e16e93034de323623735675f1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Jso.Parameters.Out.InUse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Jso.Parameters.Out.InUse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

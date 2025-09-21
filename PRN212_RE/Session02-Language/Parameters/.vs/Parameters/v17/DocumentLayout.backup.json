@@ -34,9 +34,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs",
               "RelativeDocumentMoniker": "Jso.Parameters.Out.InUse\\Program.cs",
-              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs*",
-              "RelativeToolTip": "Jso.Parameters.Out.InUse\\Program.cs*",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCEAAAAXAAAAAAAAAA==",
+              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs",
+              "RelativeToolTip": "Jso.Parameters.Out.InUse\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T02:03:16.099Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Jso.Parameters.Out\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T01:38:07.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T01:38:07.382Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Jso.Parameters\\Program.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAzwBMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T01:13:48.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T01:13:48.034Z"
             }
           ]
         }
