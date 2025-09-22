@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BmiTester")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a32a29fdcb2d5816d6e89f4083fc12efa8ed7559")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f580499f907d101a9259d93e7d4472c1b1d95951")]
 [assembly: System.Reflection.AssemblyProductAttribute("BmiTester")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BmiTester")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
