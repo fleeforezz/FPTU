@@ -1,17 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\",
+  "WorkspaceRootPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20DBCC2E-AB6A-4F29-93CF-67657FAD1EC2}|Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj|d:\\stuff\\gitlab\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameters.out.inuse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6806A163-D3BC-48E5-BE0F-5D3EA63C0205}|Jso.Parameter.In\\Jso.Parameter.In.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameter.in\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6806A163-D3BC-48E5-BE0F-5D3EA63C0205}|Jso.Parameter.In\\Jso.Parameter.In.csproj|solutionrelative:jso.parameter.in\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7FCF96D-3F12-4D0C-A6D1-47CDAF126420}|Jso.Parameter.Ref\\Jso.Parameter.Ref.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameter.ref\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7FCF96D-3F12-4D0C-A6D1-47CDAF126420}|Jso.Parameter.Ref\\Jso.Parameter.Ref.csproj|solutionrelative:jso.parameter.ref\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20DBCC2E-AB6A-4F29-93CF-67657FAD1EC2}|Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameters.out.inuse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20DBCC2E-AB6A-4F29-93CF-67657FAD1EC2}|Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj|solutionrelative:jso.parameters.out.inuse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B92CA62-8DD5-4C0E-9F65-16EFB5DA2EB3}|Jso.Parameters.Out\\Jso.Parameters.Out.csproj|d:\\stuff\\gitlab\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameters.out\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B92CA62-8DD5-4C0E-9F65-16EFB5DA2EB3}|Jso.Parameters.Out\\Jso.Parameters.Out.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameters.out\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B92CA62-8DD5-4C0E-9F65-16EFB5DA2EB3}|Jso.Parameters.Out\\Jso.Parameters.Out.csproj|solutionrelative:jso.parameters.out\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7949364-F932-4631-9359-C8831BE60773}|Jso.Parameters\\Jso.Parameters.csproj|d:\\stuff\\gitlab\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameters\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C7949364-F932-4631-9359-C8831BE60773}|Jso.Parameters\\Jso.Parameters.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session02-language\\parameters\\jso.parameters\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7949364-F932-4631-9359-C8831BE60773}|Jso.Parameters\\Jso.Parameters.csproj|solutionrelative:jso.parameters\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,32 +30,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f4fc5ff1-28ef-4b04-ad02-6b298310ccc7}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs",
-              "RelativeDocumentMoniker": "Jso.Parameters.Out.InUse\\Program.cs",
-              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs",
-              "RelativeToolTip": "Jso.Parameters.Out.InUse\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameter.In\\Program.cs",
+              "RelativeDocumentMoniker": "Jso.Parameter.In\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameter.In\\Program.cs",
+              "RelativeToolTip": "Jso.Parameter.In\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T02:03:16.099Z",
+              "WhenOpened": "2025-09-23T01:16:34.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameter.Ref\\Program.cs",
+              "RelativeDocumentMoniker": "Jso.Parameter.Ref\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameter.Ref\\Program.cs",
+              "RelativeToolTip": "Jso.Parameter.Ref\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T01:02:34.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs",
+              "RelativeDocumentMoniker": "Jso.Parameters.Out.InUse\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Program.cs",
+              "RelativeToolTip": "Jso.Parameters.Out.InUse\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T02:03:16.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Program.cs",
               "RelativeDocumentMoniker": "Jso.Parameters.Out\\Program.cs",
-              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Program.cs",
               "RelativeToolTip": "Jso.Parameters.Out\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -55,15 +117,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters\\Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters\\Program.cs",
               "RelativeDocumentMoniker": "Jso.Parameters\\Program.cs",
-              "ToolTip": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters\\Program.cs",
               "RelativeToolTip": "Jso.Parameters\\Program.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAzwBMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T01:13:48.034Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

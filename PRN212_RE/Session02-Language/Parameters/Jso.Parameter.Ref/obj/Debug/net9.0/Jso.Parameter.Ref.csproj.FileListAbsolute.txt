@@ -1,0 +1,15 @@
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\bin\Debug\net9.0\Jso.Parameter.Ref.exe
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\bin\Debug\net9.0\Jso.Parameter.Ref.deps.json
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\bin\Debug\net9.0\Jso.Parameter.Ref.runtimeconfig.json
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\bin\Debug\net9.0\Jso.Parameter.Ref.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\bin\Debug\net9.0\Jso.Parameter.Ref.pdb
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.GeneratedMSBuildEditorConfig.editorconfig
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.AssemblyInfoInputs.cache
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.AssemblyInfo.cs
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.csproj.CoreCompileInputs.cache
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.sourcelink.json
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\refint\Jso.Parameter.Ref.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.pdb
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\Jso.Parameter.Ref.genruntimeconfig.cache
+D:\Stuff\Github\FPTU\PRN212_RE\Session02-Language\Parameters\Jso.Parameter.Ref\obj\Debug\net9.0\ref\Jso.Parameter.Ref.dll

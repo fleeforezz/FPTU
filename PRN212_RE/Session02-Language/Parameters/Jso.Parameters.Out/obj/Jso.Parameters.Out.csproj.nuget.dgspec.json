@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj": {}
+    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj": {}
   },
   "projects": {
-    "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj": {
+    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj",
+        "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj",
         "projectName": "Jso.Parameters.Out",
-        "projectPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj",
+        "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\Jso.Parameters.Out.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\obj\\",
+        "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
