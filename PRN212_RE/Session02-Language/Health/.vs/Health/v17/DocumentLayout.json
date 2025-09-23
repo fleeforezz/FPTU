@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\",
+  "WorkspaceRootPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2824580E-9C89-4A83-A975-713C1F7F487E}|BmiTester\\BmiTester.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session02-language\\health\\bmitester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2824580E-9C89-4A83-A975-713C1F7F487E}|BmiTester\\BmiTester.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session02-language\\health\\bmitester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2824580E-9C89-4A83-A975-713C1F7F487E}|BmiTester\\BmiTester.csproj|solutionrelative:bmitester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -52,9 +52,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\Program.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\Program.cs",
               "RelativeDocumentMoniker": "BmiTester\\Program.cs",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\Program.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\Program.cs",
               "RelativeToolTip": "BmiTester\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAC4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

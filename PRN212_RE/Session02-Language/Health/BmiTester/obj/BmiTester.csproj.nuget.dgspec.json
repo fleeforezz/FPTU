@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj": {}
+    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj": {}
   },
   "projects": {
-    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj": {
+    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj",
+        "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj",
         "projectName": "BmiTester",
-        "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj",
+        "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\BmiTester.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\obj\\",
+        "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Health\\BmiTester\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

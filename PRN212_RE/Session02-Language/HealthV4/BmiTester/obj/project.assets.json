@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\BmiTester.csproj",
+      "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\BmiTester.csproj",
       "projectName": "BmiTester",
-      "projectPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\BmiTester.csproj",
+      "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\BmiTester.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Stuff\\Gitlab\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\obj\\",
+      "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\HealthV4\\BmiTester\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
