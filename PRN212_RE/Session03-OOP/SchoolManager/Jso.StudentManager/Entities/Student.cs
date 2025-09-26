@@ -27,6 +27,18 @@ namespace Jso.StudentManager.Entities
             this.gpa = gpa;
         }
 
+        public void SetId(string id) { _id = id; }
+        public void SetName(string name) { _name = name; }
+        public void SetYob(string yob) { this.yob = yob; }
+        public void SetGpa(double gpa) { this.gpa = gpa; }
+
+        public string GetId(string id) { return _id; }
+        public string GetName() { return _name; }
+        public string GetYob() { return yob; }
+        public double GetGpa() { return gpa; }
+
+        
+
         // Form có chứa chỗ để ai đó điền info vào.Hành động điền vào gọi là Constructor. Tạo dựng 1 object
         // Ctrl + . để tạo constructor nhanh
 

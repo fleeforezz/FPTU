@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jso\\.nuget\\packages\\": {},
+    "C:\\Users\\Hikari\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj",
+      "projectUniqueName": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj",
       "projectName": "Jso.Parameters.Out.InUse",
-      "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj",
-      "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\obj\\",
+      "projectPath": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\Jso.Parameters.Out.InUse.csproj",
+      "packagesPath": "C:\\Users\\Hikari\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session02-Language\\Parameters\\Jso.Parameters.Out.InUse\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hikari\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -1,0 +1,15 @@
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\bin\Debug\net8.0\Jso.StudentManager.Property.exe
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\bin\Debug\net8.0\Jso.StudentManager.Property.deps.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\bin\Debug\net8.0\Jso.StudentManager.Property.runtimeconfig.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\bin\Debug\net8.0\Jso.StudentManager.Property.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\bin\Debug\net8.0\Jso.StudentManager.Property.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.AssemblyInfoInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.AssemblyInfo.cs
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.csproj.CoreCompileInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.sourcelink.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\refint\Jso.StudentManager.Property.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\Jso.StudentManager.Property.genruntimeconfig.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.Property\obj\Debug\net8.0\ref\Jso.StudentManager.Property.dll
