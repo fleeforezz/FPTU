@@ -1,0 +1,15 @@
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\bin\Debug\net9.0\Jso.StudentManager.exe
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\bin\Debug\net9.0\Jso.StudentManager.deps.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\bin\Debug\net9.0\Jso.StudentManager.runtimeconfig.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\bin\Debug\net9.0\Jso.StudentManager.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\bin\Debug\net9.0\Jso.StudentManager.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.AssemblyInfoInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.AssemblyInfo.cs
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.csproj.CoreCompileInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.sourcelink.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\refint\Jso.StudentManager.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\Jso.StudentManager.genruntimeconfig.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager\obj\Debug\net9.0\ref\Jso.StudentManager.dll

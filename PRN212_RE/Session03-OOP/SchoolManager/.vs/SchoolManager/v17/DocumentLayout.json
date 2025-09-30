@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}|Jso.StudentManager.Property\\Jso.StudentManager.Property.csproj|c:\\users\\hikari\\downloads\\github\\fptu\\prn212_re\\session03-oop\\schoolmanager\\jso.studentmanager.property\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}|Jso.StudentManager.Property\\Jso.StudentManager.Property.csproj|solutionrelative:jso.studentmanager.property\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE6D9EB-7FBE-486B-A6C6-730B93875178}|Jso.StudentManager\\Jso.StudentManager.csproj|c:\\users\\hikari\\downloads\\github\\fptu\\prn212_re\\session03-oop\\schoolmanager\\jso.studentmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE6D9EB-7FBE-486B-A6C6-730B93875178}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}|Jso.StudentManager.Property\\Jso.StudentManager.Property.csproj|c:\\users\\hikari\\downloads\\github\\fptu\\prn212_re\\session03-oop\\schoolmanager\\jso.studentmanager.property\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}|Jso.StudentManager.Property\\Jso.StudentManager.Property.csproj|solutionrelative:jso.studentmanager.property\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 62,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,45 +38,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\Jso.StudentManager\\Program.cs",
-              "RelativeDocumentMoniker": "Jso.StudentManager\\Program.cs",
-              "ToolTip": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\Jso.StudentManager\\Program.cs",
-              "RelativeToolTip": "Jso.StudentManager\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T02:17:06.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\Jso.StudentManager.Property\\Program.cs",
-              "RelativeDocumentMoniker": "Jso.StudentManager.Property\\Program.cs",
-              "ToolTip": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\Jso.StudentManager.Property\\Program.cs",
-              "RelativeToolTip": "Jso.StudentManager.Property\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T01:11:03.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\Jso.StudentManager.Property\\Entities\\Student.cs",
-              "RelativeDocumentMoniker": "Jso.StudentManager.Property\\Entities\\Student.cs",
-              "ToolTip": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\SchoolManager\\Jso.StudentManager.Property\\Entities\\Student.cs",
-              "RelativeToolTip": "Jso.StudentManager.Property\\Entities\\Student.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwEUAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T01:03:46.936Z",
-              "EditorCaption": ""
             }
           ]
         },

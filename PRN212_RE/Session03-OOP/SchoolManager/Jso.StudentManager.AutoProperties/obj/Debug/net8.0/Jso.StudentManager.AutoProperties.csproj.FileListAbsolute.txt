@@ -1,0 +1,15 @@
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\bin\Debug\net8.0\Jso.StudentManager.AutoProperties.exe
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\bin\Debug\net8.0\Jso.StudentManager.AutoProperties.deps.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\bin\Debug\net8.0\Jso.StudentManager.AutoProperties.runtimeconfig.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\bin\Debug\net8.0\Jso.StudentManager.AutoProperties.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\bin\Debug\net8.0\Jso.StudentManager.AutoProperties.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.AssemblyInfoInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.AssemblyInfo.cs
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.csproj.CoreCompileInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.sourcelink.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\refint\Jso.StudentManager.AutoProperties.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\Jso.StudentManager.AutoProperties.genruntimeconfig.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session03-OOP\SchoolManager\Jso.StudentManager.AutoProperties\obj\Debug\net8.0\ref\Jso.StudentManager.AutoProperties.dll

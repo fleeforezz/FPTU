@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jso.StudentManager", "Jso.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jso.StudentManager.Property", "Jso.StudentManager.Property\Jso.StudentManager.Property.csproj", "{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jso.StudentManagement.FullProperty", "Jso.StudentManagement.FullProperty\Jso.StudentManagement.FullProperty.csproj", "{A12BA388-1D91-46A0-AD6A-905AFC7F34DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jso.StudentManager.AutoProperties", "Jso.StudentManager.AutoProperties\Jso.StudentManager.AutoProperties.csproj", "{48AEC8FD-6917-4035-8CDB-6F4E15F413B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00DCD27B-ADCB-4BBE-9D0F-E52744DEC1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12BA388-1D91-46A0-AD6A-905AFC7F34DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12BA388-1D91-46A0-AD6A-905AFC7F34DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12BA388-1D91-46A0-AD6A-905AFC7F34DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12BA388-1D91-46A0-AD6A-905AFC7F34DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AEC8FD-6917-4035-8CDB-6F4E15F413B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AEC8FD-6917-4035-8CDB-6F4E15F413B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AEC8FD-6917-4035-8CDB-6F4E15F413B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AEC8FD-6917-4035-8CDB-6F4E15F413B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

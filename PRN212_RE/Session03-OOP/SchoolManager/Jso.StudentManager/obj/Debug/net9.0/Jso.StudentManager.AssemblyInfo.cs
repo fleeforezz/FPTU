@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Jso.StudentManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d7170042f3ea6833a4c648c4bbcefbb8614e3b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8e96413806eea0db7e39007e749fb91abe52dc1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Jso.StudentManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Jso.StudentManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
