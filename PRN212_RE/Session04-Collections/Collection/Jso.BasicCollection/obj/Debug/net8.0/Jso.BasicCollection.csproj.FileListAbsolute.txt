@@ -1,0 +1,15 @@
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\bin\Debug\net8.0\Jso.BasicCollection.exe
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\bin\Debug\net8.0\Jso.BasicCollection.deps.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\bin\Debug\net8.0\Jso.BasicCollection.runtimeconfig.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\bin\Debug\net8.0\Jso.BasicCollection.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\bin\Debug\net8.0\Jso.BasicCollection.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.AssemblyInfoInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.AssemblyInfo.cs
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.csproj.CoreCompileInputs.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.sourcelink.json
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\refint\Jso.BasicCollection.dll
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.pdb
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\Jso.BasicCollection.genruntimeconfig.cache
+C:\Users\Hikari\Downloads\Github\FPTU\PRN212_RE\Session04-Collections\Collection\Jso.BasicCollection\obj\Debug\net8.0\ref\Jso.BasicCollection.dll

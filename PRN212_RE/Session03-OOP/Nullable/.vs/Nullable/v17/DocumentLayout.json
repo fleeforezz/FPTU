@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\Nullable\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C84E5796-9263-4DD6-BEBE-CE49EA7A2EEA}|Jso.Nullable\\Jso.Nullable.csproj|c:\\users\\hikari\\downloads\\github\\fptu\\prn212_re\\session03-oop\\nullable\\jso.nullable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C84E5796-9263-4DD6-BEBE-CE49EA7A2EEA}|Jso.Nullable\\Jso.Nullable.csproj|solutionrelative:jso.nullable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C84E5796-9263-4DD6-BEBE-CE49EA7A2EEA}|Jso.Nullable\\Jso.Nullable.csproj|c:\\users\\hikari\\downloads\\github\\fptu\\prn212_re\\session03-oop\\nullable\\jso.nullable\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C84E5796-9263-4DD6-BEBE-CE49EA7A2EEA}|Jso.Nullable\\Jso.Nullable.csproj|solutionrelative:jso.nullable\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84E5796-9263-4DD6-BEBE-CE49EA7A2EEA}|Jso.Nullable\\Jso.Nullable.csproj|c:\\users\\hikari\\downloads\\github\\fptu\\prn212_re\\session03-oop\\nullable\\jso.nullable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C84E5796-9263-4DD6-BEBE-CE49EA7A2EEA}|Jso.Nullable\\Jso.Nullable.csproj|solutionrelative:jso.nullable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 62,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,26 +50,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\Nullable\\Jso.Nullable\\Entities\\Student.cs",
               "RelativeDocumentMoniker": "Jso.Nullable\\Entities\\Student.cs",
               "ToolTip": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\Nullable\\Jso.Nullable\\Entities\\Student.cs",
               "RelativeToolTip": "Jso.Nullable\\Entities\\Student.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T01:54:41.525Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\Nullable\\Jso.Nullable\\Program.cs",
               "RelativeDocumentMoniker": "Jso.Nullable\\Program.cs",
               "ToolTip": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session03-OOP\\Nullable\\Jso.Nullable\\Program.cs",
               "RelativeToolTip": "Jso.Nullable\\Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAiwCcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T01:52:35.785Z",
               "EditorCaption": ""
