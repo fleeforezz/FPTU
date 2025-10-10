@@ -1,0 +1,12 @@
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\bin\Debug\net8.0\Jso.StudentManager.DAL.deps.json
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\bin\Debug\net8.0\Jso.StudentManager.DAL.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\bin\Debug\net8.0\Jso.StudentManager.DAL.pdb
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.AssemblyInfoInputs.cache
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.AssemblyInfo.cs
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.csproj.CoreCompileInputs.cache
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.sourcelink.json
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\refint\Jso.StudentManager.DAL.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\Jso.StudentManager.DAL.pdb
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\SchoolManager\Jso.StudentManager.DAL\obj\Debug\net8.0\ref\Jso.StudentManager.DAL.dll

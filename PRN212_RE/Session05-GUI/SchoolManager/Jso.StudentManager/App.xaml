@@ -16,8 +16,42 @@
             <Setter
                 Property="FontSize"
                 Value="16" />
-
         </Style>
         
+        <!-- Áp dụng đồng loạt mọi nhãn trên màn hình có màu chữ vàng, font size 20, đậm, nền trong suốt -->
+        <Style TargetType="Label">
+            <Setter 
+                Property="Foreground"
+                Value="Yellow" />
+
+            <Setter
+                Property="FontSize"
+                Value="20" />
+
+            <Setter
+                Property="FontWeight"
+                Value="bold" />
+
+            <Setter
+                Property="Background"
+                Value="Transparent" />
+        </Style>
+
+        <!-- mọi ô nhập trên màn hình có màu chữ đỏ đậm, font size 20, đậm, nền trắng -->
+        <Style
+            TargetType="TextBox">
+            <Setter
+                Property="Foreground"
+                Value="red" />
+
+            <Setter
+                Property="FontSize"
+                Value="20" />
+
+            <Setter
+                Property="FontWeight"
+                Value="bold" />
+        </Style>
+
     </Application.Resources>
 </Application>

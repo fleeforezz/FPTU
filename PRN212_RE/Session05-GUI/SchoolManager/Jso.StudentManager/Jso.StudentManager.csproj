@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Jso.StudentManager.DAL\Jso.StudentManager.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

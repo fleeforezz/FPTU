@@ -26,6 +26,13 @@ namespace Jso.StudentManager
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+
+            // Thông bảo thử xem user gõ email gì, pass gì, .Text
+            string email = EmailTextBox.Text; // Lấy email user gõ r bỏ vào biến
+            string password = PasswordTextBox.Text;
+
+            MessageBox.Show($"Bạn vừa nhập: {email} : {password}");
+
             //MainWindow main = new();
             //for (int i = 1; i <= 20; i++)
             //{
@@ -38,6 +45,18 @@ namespace Jso.StudentManager
             this.Hide(); // Giấu login r mới show main
             main.ShowDialog(); // modal cấm quay về màn hình trc nếu chưa tắt màn hình hiện tại
             
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            // hỏi confirm trc khi thoát, chọn yes để thoát app
+            MessageBoxResult anwser = MessageBox.Show("Are you sure?", "Quit", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (anwser == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }

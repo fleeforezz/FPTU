@@ -24,7 +24,8 @@
             FontWeight="Bold"
             FontSize="16px"
             Background="Purple"
-            Width="120" />
+            Width="120"
+            Click="LoadDataButton_Click" />
         <Button
             x:Name="UpdateButton"
             Content="Update"
@@ -54,12 +55,32 @@
             Width="120"
             Click="QuitButton_Click" />
         <DataGrid
+            x:Name="StudentListDataGrid"
             HorizontalAlignment="Left"
             Height="274"
             Margin="34,41,0,0"
             VerticalAlignment="Top"
-            Width="656"
-            d:ItemsSource="{d:SampleData ItemCount=5}" />
+            Width="656" 
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Mã sinh viên"
+                    Width="100"
+                    Binding="{Binding Id}" />
+                <DataGridTextColumn
+                    Header="Tên sinh viên"
+                    Width="150"
+                    Binding="{Binding Name}" />
+                <DataGridTextColumn
+                    Header="Năm sinh"
+                    Width="100"
+                    Binding="{Binding Yob}" />
+                <DataGridTextColumn
+                    Header="GPA"
+                    Width="100"
+                    Binding="{Binding Gpa}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

@@ -1,30 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {}
+    "net8.0-windows7.0": {
+      "Jso.StudentManager.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Jso.StudentManager.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Jso.StudentManager.DAL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Jso.StudentManager.DAL/1.0.0": {
+      "type": "project",
+      "path": "../Jso.StudentManager.DAL/Jso.StudentManager.DAL.csproj",
+      "msbuildProject": "../Jso.StudentManager.DAL/Jso.StudentManager.DAL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": []
+    "net8.0-windows7.0": [
+      "Jso.StudentManager.DAL >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\Hikari\\.nuget\\packages\\": {},
+    "C:\\Users\\jso\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
+      "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
       "projectName": "Jso.StudentManager",
-      "projectPath": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
-      "packagesPath": "C:\\Users\\Hikari\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hikari\\Downloads\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\obj\\",
+      "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
+      "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
+      "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hikari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,13 +52,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj": {
+              "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

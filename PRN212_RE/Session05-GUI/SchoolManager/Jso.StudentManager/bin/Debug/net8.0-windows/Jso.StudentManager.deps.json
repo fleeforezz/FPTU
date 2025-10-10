@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "Jso.StudentManager/1.0.0": {
+        "dependencies": {
+          "Jso.StudentManager.DAL": "1.0.0"
+        },
         "runtime": {
           "Jso.StudentManager.dll": {}
+        }
+      },
+      "Jso.StudentManager.DAL/1.0.0": {
+        "runtime": {
+          "Jso.StudentManager.DAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "Jso.StudentManager/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Jso.StudentManager.DAL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

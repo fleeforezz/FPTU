@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Jso.StudentManager;
+using Jso.StudentManager.DAL.Entities;
 
 namespace Jso.StudentManager
 {
@@ -54,6 +56,25 @@ namespace Jso.StudentManager
 
             // Nhớ đoạn code này để làm tính năng delete
             // thang điểm chấm cho tính năng delete là khi delete phải hỏi có chắc xóa ko, yes mới xóa, no ko làm gì. thiếu confirm, xóa ko hỏi, bị trừ 0.5
+        }
+
+        private void LoadDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Chuẩn bị 1 list student từ db đem lên, tạm thời hardcode, cho data sãn vào
+            // Gửi cái list chứa hồ sơ nhiều sinh viên cho datagrid
+
+            List<Student> students = new();
+
+            students.Add(new Student()
+            {
+                Id = "SE1",
+                Name = "User1",
+                Yob = 2005,
+                Gpa = 8.12
+            });
+
+            StudentListDataGrid.ItemsSource = students;
+
         }
     }
 }
