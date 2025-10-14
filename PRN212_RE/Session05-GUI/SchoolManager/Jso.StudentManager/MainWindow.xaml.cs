@@ -73,8 +73,78 @@ namespace Jso.StudentManager
                 Gpa = 8.12
             });
 
+            students.Add(new Student()
+            {
+                Id = "SE2",
+                Name = "User2",
+                Yob = 2005,
+                Gpa = 4.0
+            });
+
+            students.Add(new Student()
+            {
+                Id = "SE3",
+                Name = "User3",
+                Yob = 2005,
+                Gpa = 9.0
+            });
+
+            students.Add(new Student()
+            {
+                Id = "SE4",
+                Name = "User1",
+                Yob = 2005,
+                Gpa = 8.12
+            });
+
             StudentListDataGrid.ItemsSource = students;
 
+        }
+
+        private void DeleteeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 1. Kiểm tra xem user đã chọn 1 dòng trên grid chưa, nếu chưa thì hiện thông báo chưa chọn
+            // 2. Hiển thị are you sure to delete/update ?
+            // 3. Nếu Yes thì xóa trong DB, và F5(Refresh) lại cái grid, nếu no thì ko làm gì!
+            // StudentListDataGrid nó lắng nghe xem user có chọn hay ko, và mỗi dòng nếu chọn thì là 1 Student x, vì mình đưa 1 cái bag student vào!!!
+            // Mình chỉ việc hỏi nó có dòng chọn hay ko, qua cái Property
+
+            Student? selected = StudentListDataGrid.SelectedItem as Student; // as: ép kiểu 1 dòng về Student, hoặc ép ko đc thì là null, nghĩa là chưa chọn dòng cụ thể
+
+
+            if (selected == null)
+            {
+                // Nhấn nút delete mà ko chọn dòng, hiện thông báo lỗi
+                MessageBox.Show("Please select a student before deleting", "Alert", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; // Thoát hàm nút delete
+            }
+
+            MessageBox.Show($"Delete Successfully {selected.Id}, {selected.Name}", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            DetailWindow detailWindow = new();
+
+            detailWindow.Show();
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Student? selected = StudentListDataGrid.SelectedItem as Student; // as: ép kiểu 1 dòng về Student, hoặc ép ko đc thì là null, nghĩa là chưa chọn dòng cụ thể
+
+
+            if (selected == null)
+            {
+                // Nhấn nút delete mà ko chọn dòng, hiện thông báo lỗi
+                MessageBox.Show("Please select a student before updating", "Alert", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; // Thoát hàm nút delete
+            }
+
+            // Đã chọn 1 dòng gửi nó sang Detail
+            DetailWindow detailWindow = new();
+            detailWindow.EditOne = selected; // Gửi student sang detail, ko tạo mới
+            detailWindow.ShowDialog();
         }
     }
 }

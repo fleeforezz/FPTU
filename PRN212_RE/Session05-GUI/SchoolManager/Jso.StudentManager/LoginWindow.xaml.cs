@@ -33,18 +33,17 @@ namespace Jso.StudentManager
 
             MessageBox.Show($"Bạn vừa nhập: {email} : {password}");
 
-            //MainWindow main = new();
-            //for (int i = 1; i <= 20; i++)
-            //{
-            //    MainWindow main = new();
-            //    main.Show();
-            //}
+            string correctEmail = "fleeforezz@gmail.com";
+            string correctPassword = "0822863716";
 
-            MainWindow main = new();
-            //main.Show();
-            this.Hide(); // Giấu login r mới show main
-            main.ShowDialog(); // modal cấm quay về màn hình trc nếu chưa tắt màn hình hiện tại
-            
+            if (String.Equals(email, correctEmail, StringComparison.OrdinalIgnoreCase) && String.Equals(password, correctPassword, StringComparison.Ordinal)) {
+                MainWindow main = new();
+                this.Hide(); // Giấu login r mới show main
+                main.ShowDialog(); // modal cấm quay về màn hình trc nếu chưa tắt màn hình hiện tại
+            } else
+            {
+                MessageBox.Show("Wrong email or password");
+            }
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)

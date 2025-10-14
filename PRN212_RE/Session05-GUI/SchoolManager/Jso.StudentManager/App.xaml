@@ -9,7 +9,7 @@
             TargetType="Button">
             <Setter
                 Property="Background"
-                Value="DarkRed" />
+                Value="Black" />
             <Setter
                 Property="Foreground"
                 Value="White" />
@@ -17,12 +17,26 @@
                 Property="FontSize"
                 Value="16" />
         </Style>
-        
+
+        <Style 
+            x:Key="Blue_Violet_Button"
+            TargetType="Button">
+            <Setter
+                Property="Background"
+                Value="BlueViolet" />
+            <Setter
+                Property="Foreground"
+                Value="White" />
+            <Setter
+                Property="FontSize"
+                Value="16" />
+        </Style>
+
         <!-- Áp dụng đồng loạt mọi nhãn trên màn hình có màu chữ vàng, font size 20, đậm, nền trong suốt -->
         <Style TargetType="Label">
             <Setter 
                 Property="Foreground"
-                Value="Yellow" />
+                Value="Black" />
 
             <Setter
                 Property="FontSize"
@@ -42,7 +56,7 @@
             TargetType="TextBox">
             <Setter
                 Property="Foreground"
-                Value="red" />
+                Value="Black" />
 
             <Setter
                 Property="FontSize"

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Jso.StudentManager.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfa88fb7a1efbd55ce4064dbe3a8f2e957eab3c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d744f8205cabfc81018a7a6a3f2bcdfdc8e8c4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Jso.StudentManager.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Jso.StudentManager.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,16 +6,101 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:Jso.StudentManager"
     mc:Ignorable="d"
-    Title="DetailWindow"
-    Height="450"
-    Width="800">
-    <Grid>
+    Title="Detail"
+    Height="658"
+    Width="800"
+    Background="White"
+    WindowStartupLocation="CenterScreen">
+    <Grid
+        Loaded="Grid_Loaded">
+
         <Button
-            Content="Button"
-            HorizontalAlignment="Center"
-            Height="68"
-            VerticalAlignment="Center"
-            Width="210" />
+            x:Name="SaveButton"
+            Content="Save"
+            HorizontalAlignment="Left"
+            Height="52"
+            Margin="633,105,0,0"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            FontWeight="Bold"
+            FontSize="16px"
+            Width="138"
+            Click="SaveButton_Click" />
+        <Label
+            Content="Id: "
+            Margin="24,103,702,495"
+            RenderTransformOrigin="-0.378,0.488" />
+
+        <Label
+            Content="Name: "
+            Margin="24,188,667,410"
+            RenderTransformOrigin="1.132,-0.563" />
+        <TextBox
+            x:Name="IdTextBox"
+            HorizontalAlignment="Left"
+            Margin="24,147,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="312" />
+        <TextBox
+            x:Name="NameTextBox"
+            HorizontalAlignment="Left"
+            Margin="24,232,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="312" />
+
+        <Button
+            x:Name="CloseButton"
+            Content="Close"
+            HorizontalAlignment="Left"
+            Height="52"
+            Margin="633,175,0,0"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            FontWeight="Bold"
+            FontSize="16px"
+            Width="138"
+            Click="CloseButton_Click" />
+        <Label
+            Content="Yob: "
+            Margin="24,270,667,328"
+            RenderTransformOrigin="1.132,-0.563" />
+        <TextBox
+            x:Name="YobTextBox"
+            HorizontalAlignment="Left"
+            Margin="24,314,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="312" />
+        <Label
+            Content="Gpa: "
+            Margin="24,358,667,240"
+            RenderTransformOrigin="1.132,-0.563" />
+        <TextBox
+            x:Name="GpaTextBox"
+            HorizontalAlignment="Left"
+            Margin="24,402,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="312" />
+        <Label
+            Content="Major: "
+            Margin="24,446,667,153"
+            RenderTransformOrigin="1.132,-0.563" />
+        <Label
+            x:Name="TitleLabel"
+            Content="Create new | Edit Student information"
+            Foreground="BlueViolet"
+            FontSize="20"
+            Margin="24,34,29,564"
+            RenderTransformOrigin="-0.378,0.488" />
+        <ComboBox
+            HorizontalAlignment="Left"
+            Margin="24,489,0,0"
+            VerticalAlignment="Top"
+            Width="312"
+            Height="30" />
 
     </Grid>
 </Window>

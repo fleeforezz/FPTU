@@ -9,73 +9,58 @@
     Title="Login"
     Height="450"
     Width="800"
-    Background="Pink"
+    Background="White"
     WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle
-            HorizontalAlignment="Left"
-            Height="305"
-            Margin="155,106,0,0"
-            Stroke="Black"
-            VerticalAlignment="Top"
-            Width="432"
-            Fill="Red" 
-            RadiusX="16"
-            RadiusY="16"/>
 
         <Button
             x:Name="LoginButton"
             Content="Login"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             Height="52"
-            Margin="388,317,0,0"
+            Margin="0,257,0,0"
             VerticalAlignment="Top"
             Cursor="Hand"
-            Foreground="White"
             FontWeight="Bold"
             FontSize="16px"
-            Background="Purple"
-            Width="120"
+            Width="312"
             Click="LoginButton_Click" />
         <Label
             Content="Email: "
-            Margin="275,133,335,262"
-            Width="190" />
+            Margin="244,79,482,316"
+            RenderTransformOrigin="-0.378,0.488" />
 
         <Label
             Content="Password: "
-            Margin="280,216,330,179"
-            Width="190"
+            Margin="244,164,447,231"
             RenderTransformOrigin="1.132,-0.563" />
         <TextBox
             x:Name="EmailTextBox"
-            HorizontalAlignment="Left"
-            Margin="280,177,0,0"
+            HorizontalAlignment="Center"
+            Margin="0,123,0,0"
+            Text="fleeforezz@gmail.com"
             TextWrapping="Wrap"
-            Text="Enter email"
             VerticalAlignment="Top"
-            Width="190" />
+            Width="312" />
         <TextBox
             x:Name="PasswordTextBox"
-            HorizontalAlignment="Left"
-            Margin="280,260,0,0"
+            HorizontalAlignment="Center"
+            Margin="0,208,0,0"
+            Text="0822863716"
             TextWrapping="Wrap"
-            Text="Enter password"
             VerticalAlignment="Top"
-            Width="190" />
+            Width="312" />
         <Button
             x:Name="QuitButton"
             Content="Quit"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             Height="52"
-            Margin="237,317,0,0"
+            Margin="0,327,0,0"
             VerticalAlignment="Top"
             Cursor="Hand"
-            Foreground="White"
             FontWeight="Bold"
             FontSize="16px"
-            Background="Purple"
-            Width="120"
+            Width="312"
             Click="QuitButton_Click" />
 
     </Grid>

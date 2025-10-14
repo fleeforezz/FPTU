@@ -9,7 +9,7 @@
     Title="The List of students"
     Height="450"
     Width="870"
-    Background="DarkRed"
+    Background="White"
     WindowStartupLocation="CenterScreen">
     <Grid>
         <Button
@@ -20,38 +20,35 @@
             Margin="722,27,0,0"
             VerticalAlignment="Top"
             Cursor="Hand"
-            Foreground="White"
             FontWeight="Bold"
             FontSize="16px"
-            Background="Purple"
             Width="120"
+            Style="{StaticResource Blue_Violet_Button}"
             Click="LoadDataButton_Click" />
         <Button
             x:Name="UpdateButton"
             Content="Update"
             HorizontalAlignment="Left"
             Height="52"
-            Margin="722,97,0,0"
+            Margin="722,178,0,0"
             VerticalAlignment="Top"
             Cursor="Hand"
-            Foreground="White"
+            Style="{StaticResource Blue_Violet_Button}"
             FontWeight="Bold"
             FontSize="16px"
-            Background="Purple"
-            Width="120" />
+            Width="120"
+            Click="UpdateButton_Click" />
 
         <Button
             x:Name="QuitButton"
             Content="Quit"
             HorizontalAlignment="Left"
             Height="52"
-            Margin="722,165,0,0"
+            Margin="722,321,0,0"
             VerticalAlignment="Top"
             Cursor="Hand"
-            Foreground="White"
             FontWeight="Bold"
             FontSize="16px"
-            Background="Purple"
             Width="120"
             Click="QuitButton_Click" />
         <DataGrid
@@ -60,7 +57,7 @@
             Height="274"
             Margin="34,41,0,0"
             VerticalAlignment="Top"
-            Width="656" 
+            Width="656"
             AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn
@@ -81,6 +78,33 @@
                     Binding="{Binding Gpa}" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button
+            x:Name="DeleteeButton"
+            Content="Delete"
+            HorizontalAlignment="Left"
+            Height="52"
+            Margin="722,251,0,0"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            Style="{StaticResource Blue_Violet_Button}"
+            FontWeight="Bold"
+            FontSize="16px"
+            Width="120"
+            RenderTransformOrigin="0.517,-0.076"
+            Click="DeleteeButton_Click" />
+        <Button
+            x:Name="CreateButton"
+            Content="Create"
+            HorizontalAlignment="Left"
+            Height="52"
+            Margin="722,103,0,0"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            Style="{StaticResource Blue_Violet_Button}"
+            FontWeight="Bold"
+            FontSize="16px"
+            Width="120"
+            Click="CreateButton_Click" />
 
     </Grid>
 </Window>
