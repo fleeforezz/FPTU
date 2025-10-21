@@ -1,0 +1,54 @@
+﻿<Window x:Class="Jso.BookManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Jso.BookManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid
+            x:Name="StudentListDataGrid"
+            AutoGenerateColumns="False"
+            Loaded="StudentListDataGrid_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="BookID"
+                    Width="100"
+                    Binding="{Binding BookId}" />
+                <DataGridTextColumn
+                    Header="Book Name"
+                    Width="150"
+                    Binding="{Binding BookName}" />
+                <DataGridTextColumn
+                    Header="Description"
+                    Width="100"
+                    Binding="{Binding Description}" />
+                <DataGridTextColumn
+                    Header="Publication Date"
+                    Width="100"
+                    Binding="{Binding PublicationDate}" />
+                <DataGridTextColumn
+                    Header="Quantity"
+                    Width="100"
+                    Binding="{Binding Quantity}" />
+                <DataGridTextColumn
+                    Header="Price"
+                    Width="100"
+                    Binding="{Binding Price}" />
+                <DataGridTextColumn
+                    Header="Author"
+                    Width="100"
+                    Binding="{Binding Author}" />
+                <DataGridTextColumn
+                    Header="BookCategoryId"
+                    Width="100"
+                    Binding="{Binding BookCategoryId}" />
+                <DataGridTextColumn
+                    Header="BookCategoryType"
+                    Width="100"
+                    Binding="{Binding BookCategory.BookGenreType}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
