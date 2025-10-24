@@ -31,7 +31,87 @@ namespace Jso.BookManagement
 
             List<Book> join_bag = ctx.Books.Include("BookCategory").ToList();
 
-            StudentListDataGrid.ItemsSource = bag;
+            StudentListDataGrid.ItemsSource = join_bag;
+        }
+
+        private void Create_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Prn212BookStoreContext ctx = new();
+
+            Book newBook = new Book()
+            {
+                BookId = 100,
+                BookName = "Test",
+                Description = "Book Descrition",
+                PublicationDate = DateTime.Now,
+                Quantity = 1,
+                Price = 1000,
+                Author = "Jso",
+                BookCategoryId = 1,
+            };
+
+            var book = ctx.Books.FirstOrDefault(b => b.BookId == newBook.BookId);
+            if (book == null)
+            {
+                ctx.Books.Add(newBook);
+                ctx.SaveChanges();
+
+                MessageBox.Show("A book has been added successfully");
+
+                // F5, để refresh lại grid để cập nhật thông tin mới
+                ctx = new();
+                List<Book> join_bag = ctx.Books.Include("BookCategory").ToList();
+                StudentListDataGrid.ItemsSource = join_bag;
+            }
+            else
+            {
+                MessageBox.Show($"Book with id already exist: BookID({newBook.BookId})");
+            }
+        }
+
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Prn212BookStoreContext ctx = new();
+
+            Book? selected = StudentListDataGrid.SelectedItem as Book;
+
+            if (selected == null)
+            {
+                MessageBox.Show("Please select a book in order to update");
+                return;
+            }
+
+            selected.BookName = "Harry Potter";
+            selected.Author = "Jso";
+            ctx.Books.Update(selected);
+
+            ctx = new();
+            List<Book> join_bag = ctx.Books.Include("BookCategory").ToList();
+            StudentListDataGrid.ItemsSource = join_bag;
+        }
+
+        private void Delete_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Prn212BookStoreContext ctx = new();
+
+            Book? selected = StudentListDataGrid.SelectedItem as Book;
+
+            if (selected != null)
+            {
+                ctx.Books.Remove(selected);
+                ctx.SaveChanges();
+
+                MessageBox.Show("Delete success");
+
+                // F5, để refresh lại grid để cập nhật thông tin mới
+                ctx = new();
+                List<Book> join_bag = ctx.Books.Include("BookCategory").ToList();
+                StudentListDataGrid.ItemsSource = join_bag;
+            }
+            else
+            {
+                MessageBox.Show("Please select a book in order to update");
+            }
         }
     }
 }

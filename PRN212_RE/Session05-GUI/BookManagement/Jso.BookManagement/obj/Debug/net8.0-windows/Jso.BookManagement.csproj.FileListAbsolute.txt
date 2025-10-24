@@ -145,3 +145,10 @@ D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\o
 D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\obj\Debug\net8.0-windows\Jso.BookManagement.pdb
 D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\obj\Debug\net8.0-windows\Jso.BookManagement.genruntimeconfig.cache
 D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\obj\Debug\net8.0-windows\ref\Jso.BookManagement.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\appsettings.json
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Stuff\Github\FPTU\PRN212_RE\Session05-GUI\BookManagement\Jso.BookManagement\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
