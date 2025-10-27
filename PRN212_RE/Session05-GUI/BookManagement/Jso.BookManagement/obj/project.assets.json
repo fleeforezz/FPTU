@@ -5023,11 +5023,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Jso.BookManagement.csproj",
+      "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Jso.BookManagement.csproj",
       "projectName": "Jso.BookManagement",
-      "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Jso.BookManagement.csproj",
+      "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Jso.BookManagement.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\obj\\",
+      "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\",
+  "WorkspaceRootPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|solutionrelative:jso.bookmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\prn212bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\prn212bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|solutionrelative:jso.bookmanagement\\prn212bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|solutionrelative:jso.bookmanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|solutionrelative:jso.bookmanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\bookmanagement\\jso.bookmanagement\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DDBB0A2-1DD3-480F-97E8-41999E5BC83B}|Jso.BookManagement\\Jso.BookManagement.csproj|solutionrelative:jso.bookmanagement\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,15 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 113,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{f4fc5ff1-28ef-4b04-ad02-6b298310ccc7}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -58,11 +62,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -72,9 +76,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\appsettings.json",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\appsettings.json",
               "RelativeDocumentMoniker": "Jso.BookManagement\\appsettings.json",
-              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\appsettings.json",
+              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\appsettings.json",
               "RelativeToolTip": "Jso.BookManagement\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -85,52 +89,48 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Prn212BookStoreContext.cs",
-              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Prn212BookStoreContext.cs",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Prn212BookStoreContext.cs",
               "RelativeDocumentMoniker": "Jso.BookManagement\\Prn212BookStoreContext.cs",
-              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Prn212BookStoreContext.cs",
+              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Prn212BookStoreContext.cs",
               "RelativeToolTip": "Jso.BookManagement\\Prn212BookStoreContext.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAA6wCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:09:48.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T01:09:48.059Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Jso.BookManagement\\MainWindow.xaml",
-              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml",
+              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml",
               "RelativeToolTip": "Jso.BookManagement\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-21T00:58:27.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T00:58:27.973Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Jso.BookManagement\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\MainWindow.xaml.cs",
               "RelativeToolTip": "Jso.BookManagement\\MainWindow.xaml.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAmwB8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T01:05:51.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T01:05:51.37Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Book.cs",
-              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Entities\\Book.cs",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Entities\\Book.cs",
               "RelativeDocumentMoniker": "Jso.BookManagement\\Entities\\Book.cs",
-              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Entities\\Book.cs",
+              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\BookManagement\\Jso.BookManagement\\Entities\\Book.cs",
               "RelativeToolTip": "Jso.BookManagement\\Entities\\Book.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T01:08:06.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T01:08:06.849Z"
             }
           ]
         },

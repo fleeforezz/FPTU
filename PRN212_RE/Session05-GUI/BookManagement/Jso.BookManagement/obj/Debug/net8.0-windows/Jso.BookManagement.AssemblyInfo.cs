@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Jso.BookManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c8809364cdee86c91455ea79b9a5d261e40b7d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1acd067ee97627af46c29d40be8e037fccd720a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Jso.BookManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Jso.BookManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
