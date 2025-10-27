@@ -1,40 +1,40 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\",
+  "WorkspaceRootPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jso\\AppData\\Local\\Temp\\ldynihbo..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{331B8CF7-9752-4BA4-BFAA-FF72972C6CE5}|Jso.StudentManager\\Jso.StudentManager.csproj|solutionrelative:jso.studentmanager\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9121D60F-2224-4A8C-B57E-70A0809417B6}|Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj|e:\\cabinet\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager.dal\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9121D60F-2224-4A8C-B57E-70A0809417B6}|Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj|d:\\stuff\\github\\fptu\\prn212_re\\session05-gui\\schoolmanager\\jso.studentmanager.dal\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9121D60F-2224-4A8C-B57E-70A0809417B6}|Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj|solutionrelative:jso.studentmanager.dal\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -45,19 +45,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 62,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{f4fc5ff1-28ef-4b04-ad02-6b298310ccc7}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -77,15 +73,23 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Document",
@@ -100,9 +104,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "DetailWindow.xaml",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml",
               "RelativeDocumentMoniker": "Jso.StudentManager\\DetailWindow.xaml",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml",
               "RelativeToolTip": "Jso.StudentManager\\DetailWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-14T01:04:38.716Z"
@@ -111,9 +115,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "Jso.StudentManager\\LoginWindow.xaml",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml",
               "RelativeToolTip": "Jso.StudentManager\\LoginWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-14T00:36:04.004Z"
@@ -122,9 +126,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "App.xaml",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\App.xaml",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\App.xaml",
               "RelativeDocumentMoniker": "Jso.StudentManager\\App.xaml",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\App.xaml",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\App.xaml",
               "RelativeToolTip": "Jso.StudentManager\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-14T00:33:53.081Z",
@@ -134,9 +138,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Jso.StudentManager\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml.cs",
               "RelativeToolTip": "Jso.StudentManager\\MainWindow.xaml.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAAAlwJMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -146,9 +150,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "DetailWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml.cs",
               "RelativeDocumentMoniker": "Jso.StudentManager\\DetailWindow.xaml.cs",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\DetailWindow.xaml.cs",
               "RelativeToolTip": "Jso.StudentManager\\DetailWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -158,9 +162,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml.cs",
               "RelativeDocumentMoniker": "Jso.StudentManager\\LoginWindow.xaml.cs",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\LoginWindow.xaml.cs",
               "RelativeToolTip": "Jso.StudentManager\\LoginWindow.xaml.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAkwC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -170,9 +174,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Jso.StudentManager\\MainWindow.xaml",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\MainWindow.xaml",
               "RelativeToolTip": "Jso.StudentManager\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-14T00:25:08.632Z",
@@ -182,9 +186,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Student.cs",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Entities\\Student.cs",
+              "DocumentMoniker": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Entities\\Student.cs",
               "RelativeDocumentMoniker": "Jso.StudentManager.DAL\\Entities\\Student.cs",
-              "ToolTip": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Entities\\Student.cs",
+              "ToolTip": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Entities\\Student.cs",
               "RelativeToolTip": "Jso.StudentManager.DAL\\Entities\\Student.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
