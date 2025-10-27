@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
+      "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
       "projectName": "Jso.StudentManager.DAL",
-      "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
+      "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\obj\\",
+      "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
