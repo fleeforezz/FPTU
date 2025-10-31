@@ -1,0 +1,13 @@
+CorrelationId: 3cdb095c-3d0d-4f97-a26e-b81422666f4b
+UTC DateTime: 10/31/2025 00:03:35
+
+The following files/folders have not been downloaded
+0. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.BLL/obj/Debug/net9.0/AirConditionerShop.BLL.csproj.BuildWithSkipAnalyzers
+1. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.BLL/obj/Debug/net9.0/AirConditionerShop.BLL.csproj.FileListAbsolute.txt
+2. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.DAL/obj/Debug/net9.0/AirConditionerShop.DAL.csproj.BuildWithSkipAnalyzers
+3. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.DAL/obj/Debug/net9.0/AirConditionerShop.DAL.csproj.FileListAbsolute.txt
+4. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.TruongMinhNhat/obj/Debug/net9.0-windows/AirConditionerShop.TruongMinhNhat.csproj.BuildWithSkipAnalyzers
+5. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.TruongMinhNhat/obj/Debug/net9.0-windows/AirConditionerShop.TruongMinhNhat.csproj.FileListAbsolute.txt
+6. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.TruongMinhNhat/obj/Debug/net9.0-windows/AirConditionerShop.TruongMinhNhat_2xuskigf_wpftmp.csproj.BuildWithSkipAnalyzers
+7. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.TruongMinhNhat/obj/Debug/net9.0-windows/AirConditionerShop.TruongMinhNhat_e0dmlu0s_wpftmp.csproj.BuildWithSkipAnalyzers
+8. PE_PRN212_361/PE.PRN212.FA25.TruongMinhNhat/AirConditionerShop.TruongMinhNhat/obj/Debug/net9.0-windows/AirConditionerShop.TruongMinhNhat_p3qv40qg_wpftmp.csproj.BuildWithSkipAnalyzers
