@@ -19,6 +19,8 @@ namespace AirConditionerShop.TruongMinhNhat
     /// </summary>
     public partial class Login : Window
     {
+        private AccountService _service = new();
+
         public Login()
         {
             InitializeComponent();
@@ -26,7 +28,49 @@ namespace AirConditionerShop.TruongMinhNhat
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Lấy email hoặc pass đã nhập gưir cho service giúp 
+            string email = EmailTexBox.Text;
+            string pass = PasswordTextBox.Text;
 
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(pass))
+            {
+                MessageBox.Show("Both email and password are required!", "Validation", MessageBoxButton.Ok, MessageBoxImage.Error);
+                return;
+            }
+
+            StaffMember? acc = _service.Authenticate(email, pass);
+            if (acc == null)
+            {
+                MessageBox.Show("Email does not exist, Sign-up please", "Wrong credentials", MessageBoxButton.Ok, MessageBoxImage.Error);
+                return;
+            }
+
+            if (acc.Password != pass)
+            {
+                MessageBox.Show("Invalidate password, Reset it, please", "Wrong credentials", MessageBoxButton.Ok, MessageBoxImage.Error);
+                // count++; // Số lần sai
+                return;
+
+                // Brute force tấn công dô password
+            }
+            
+            // Phân quyền 1 phần ở đây
+            // Nếu là member, ko cho vào App, VÌ đây là app quản lý
+            // Staff hoặc Admin mới đc vào
+            // bài này mình ko cho manager role 3 vào
+            if (acc.Role == 3)
+            {
+                MessageBox.Show("You have no permission to access", "Wrong credentials", MessageBoxButton.Ok, MessageBoxImage.Error);
+            }
+
+
+            MainWindow main = new();
+            
+            // Gửi role
+            main.Role = acc.Role;
+
+            main.Show();
+            this.Hide(); // do chạy từ đầu giống như hàm Main
         }
     }
 }

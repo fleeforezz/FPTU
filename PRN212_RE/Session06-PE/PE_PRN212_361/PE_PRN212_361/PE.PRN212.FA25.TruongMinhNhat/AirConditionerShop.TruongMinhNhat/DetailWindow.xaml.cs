@@ -76,8 +76,50 @@ namespace AirConditionerShop.TruongMinhNhat
 
         }
 
+        private bool CheckVar()
+        {
+            // Toàn bộ các câu lệnh kiểm tra tính hợp lệ của các ô nhập -> đề thi yêu cầu: ko ô nào đc bỏ trống
+            // Name thì từ 5...50 characters, số từ 50...100..
+            // Sai cái nào chửi cái đó, return false ngay!!!
+            // Check required, ô nhập đã gõ chưa ta dùng hàm is null or whitespace
+            if (string.isNullOrWhiteSpace(AirConditionerIdTextBox.Text))
+            {
+                MessageBox.Show("Id is required!", "Validation", MessageButton.Ok, MessageBoxImage.Error);
+                return false;
+            }
+
+            if (string.isNullOrWhiteSpace(AirConditionerNameTextBox.Text))
+            {
+                MessageBox.Show("Name is required!", "Validation", MessageButton.Ok, MessageBoxImage.Error);
+                return false;
+            }
+
+            int len = AirConditionerNameTextBox.Text.Length;
+            if (len < 5 || len > 50) {}
+            {
+                MessageBox.Show("Name must be 5 to 50 characters length!", "Validation", MessageButton.Ok, MessageBoxImage.Error);
+                return false;
+            }
+
+            // ChatGpt: Kiểm tra 1 ô nhập bắt buộc phải là số
+            // B1: Đảm bảo nhập số
+            // Hàm int.Parse() nguy hiểm -> ném ra ngoài lệ khi nó convert chữ số, Java y chang -> phải try catch
+            // int.TryParse() ko ném ngoại lệ, nhưng cách nhập phức tạp hơn xíu
+            // B2: Đảm bảo số > MIN và < MAX
+            // if (num < 5 || num > 100) thì messageBox
+
+
+
+            return true;
+        }
+
         private void SaveButton_Click(object sender, RoutedEvenArgs e)
         {
+            if (!CheckVar())
+            {
+                return; // vi phạm nhập dữ liệu -> thoát, ko save
+            }
+
             AirConditioner obj = new() { };
             obj.AirConditionerId = int.Parse(AirconditionerIdTextBox);
             obj.AirConditionerName = AirconditionerNameTextBox.Text;

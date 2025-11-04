@@ -18,6 +18,10 @@ namespace AirConditionerShop.TruongMinhNhat
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Khai báo 1 prop để hứng role gửi từ login sang
+        // Biến int là role, hoặc biến staffmemeber, thì phải chấm role
+
+        public int? Role { get; set; } // 1:admin, 2:Staff
         private AirConService _airConService = new();
         // OOP: khai báo biến và new mới đc xài
 
@@ -29,6 +33,13 @@ namespace AirConditionerShop.TruongMinhNhat
         private void AirConDataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             AirConDataGrid.ItemsSource = _airConService.GetAllAirCons();
+
+            if (Role == 2)
+            {
+                CreateButton_Click.IsEnable = false;
+                UpdateButton_Click.IsEnable = false;
+                DeleteButton_Click.IsEnable = false;
+            }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -81,6 +92,18 @@ namespace AirConditionerShop.TruongMinhNhat
 
             DetailWindow detailWindow = new();
             //Gửi selected sang
+            detailWindow.EditedOne = selected;
+            // 3 chàng 1 nàng: EditedOne, selected, grid có 1 con trỏ -> trỏ vùng new AirCon đang cần edit
+            detailWindow.ShowDialog();
+
+            FillDataGrid(_airConService.GetAllAirCons());
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            DetailWindow detailWindow = new();
+            // Ko có và ko cần gửi editedOne sang detail do tạo mới 
+            // Thì để màn hình bên detail trống trơn chờ nhập vào
             detailWindow.EditedOne = selected;
             // 3 chàng 1 nàng: EditedOne, selected, grid có 1 con trỏ -> trỏ vùng new AirCon đang cần edit
             detailWindow.ShowDialog();
