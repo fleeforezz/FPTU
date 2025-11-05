@@ -35,6 +35,7 @@ namespace AirConditionerShop.DAL.Repositories
         {
             _db = new(); // luôn new lại DbContext để đảm bảo tính đồng bộ trong ram và table
             _db.AirConditioners.Add(obj);
+            _db.SaveChanges();
         }
 
 

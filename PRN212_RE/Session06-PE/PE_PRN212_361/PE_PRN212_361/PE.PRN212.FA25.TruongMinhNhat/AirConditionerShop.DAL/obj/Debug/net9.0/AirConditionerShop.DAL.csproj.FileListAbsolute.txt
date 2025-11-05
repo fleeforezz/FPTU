@@ -1,0 +1,15 @@
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\bin\Debug\net9.0\AirConditionerShop.DAL.deps.json
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\bin\Debug\net9.0\AirConditionerShop.DAL.runtimeconfig.json
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\bin\Debug\net9.0\AirConditionerShop.DAL.dll
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\bin\Debug\net9.0\AirConditionerShop.DAL.pdb
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.csproj.AssemblyReference.cache
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.AssemblyInfoInputs.cache
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.AssemblyInfo.cs
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.csproj.CoreCompileInputs.cache
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.sourcelink.json
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.dll
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\refint\AirConditionerShop.DAL.dll
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.pdb
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\AirConditionerShop.DAL.genruntimeconfig.cache
+E:\Cabinet\Github\FPTU\PRN212_RE\Session06-PE\PE_PRN212_361\PE_PRN212_361\PE.PRN212.FA25.TruongMinhNhat\AirConditionerShop.DAL\obj\Debug\net9.0\ref\AirConditionerShop.DAL.dll

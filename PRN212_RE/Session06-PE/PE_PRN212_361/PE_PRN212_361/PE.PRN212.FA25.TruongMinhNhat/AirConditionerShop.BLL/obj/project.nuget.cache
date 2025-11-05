@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VdzF/eGERUM=",
+  "dgSpecHash": "yisLA5wLgxU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj",
+  "projectFilePath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jso\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\jso\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

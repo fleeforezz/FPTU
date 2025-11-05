@@ -19,11 +19,11 @@ namespace AirConditionerShop.TruongMinhNhat
     /// <summary>
     /// Interaction logic for CreateWindow.xaml
     /// </summary>
-    public partial class CreateWindow : Window
+    public partial class DetailWindow : Window
     {
         // private AirConditioner _editedOne;
 
-        public AirConditioner EditedOne { get; set; }
+        public AirConditioner? EditedOne { get; set; }
 
         // Cần 2 service bên detail
         // SupplierService dành cho treo đầu dê
@@ -31,12 +31,12 @@ namespace AirConditionerShop.TruongMinhNhat
         private AirConService _airConServ = new();
         private SupplierService _supServ = new();
 
-        public CreateWindow()
+        public DetailWindow()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEvenArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Phải đổ vào combo cả 2 mode
             // Tạo mới cũng chọn, edit cũng chọn ncc
@@ -46,22 +46,22 @@ namespace AirConditionerShop.TruongMinhNhat
             SupplierComboBox.DisplayMemberPath = "SupplierName";
             SupplierComboBox.SelectedValuePath = "SupplierId";
 
-            // Lưu ý biến EditedOne chính là biến flagm biến cờ ddaasnh dấu trạng thái, mode của màn hình này
+            // Lưu ý biến EditedOne chính là biến flag biến cờ đánh dấu trạng thái, mode của màn hình này
             // nếu biến này == null, tạo mới, vì ko có selected đc gửi sang
             // Khác null là do đi từ nút bấm [Update], thì có gửi sang selected
             // Mình dùng biến này đẻe biết khi nào create, update khi ấn nút [save] do màn hình này sài chung cho tạo mới và update
             if (EditedOne != null)
             {
                 DetailWindowMode.Content = "Edit Airconditioner";
-                AirconditionerIdTextBox.Text = EditedOne.AirconditionerIdTextBox.ToString();
-                AirConditionerIdTextBox.IsEnable = false;
+                ACIdTextBox.Text = EditedOne.AirConditionerId.ToString();
+                ACIdTextBox.IsEnabled = false;
 
-                AirConditionerNameTextBox.Text = EditedOne.AirConditionerNameTextBox.ToString();
-                QuantityTextBox.Text = EditedOne.QuantityTextBox.ToString();
-                DollarTextBox.Text = EditedOne.DollarTextBox.ToString();
-                WarrantyTextBox.Text = EditedOne.WarrantyTextBox;
-                SoundPressureTextBox.Text = EditedOne.SoundPressureTextBox;
-                FeatureFunctionTextBox.Text = EditedOne.FeatureFunctionTextBox;
+                ACNameTextBox.Text = EditedOne.AirConditionerName.ToString();
+                QuantityTextBox.Text = EditedOne.Quantity.ToString();
+                DollarPriceTextBox.Text = EditedOne.DollarPrice.ToString();
+                WarrantyTextBox.Text = EditedOne.Warranty;
+                SoundPressureLevelTextBox.Text = EditedOne.SoundPressureLevel;
+                FeatureFunctionTextBox.Text = EditedOne.FeatureFunction;
 
                 // Nhảy đến đúng supplier mà sản phẩm thuộc về
                 SupplierComboBox.SelectedValue = EditedOne.SupplierId;
@@ -82,22 +82,22 @@ namespace AirConditionerShop.TruongMinhNhat
             // Name thì từ 5...50 characters, số từ 50...100..
             // Sai cái nào chửi cái đó, return false ngay!!!
             // Check required, ô nhập đã gõ chưa ta dùng hàm is null or whitespace
-            if (string.isNullOrWhiteSpace(AirConditionerIdTextBox.Text))
+            if (string.IsNullOrWhiteSpace(ACIdTextBox.Text))
             {
-                MessageBox.Show("Id is required!", "Validation", MessageButton.Ok, MessageBoxImage.Error);
+                MessageBox.Show("Id is required!", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
-            if (string.isNullOrWhiteSpace(AirConditionerNameTextBox.Text))
+            if (string.IsNullOrWhiteSpace(ACNameTextBox.Text))
             {
-                MessageBox.Show("Name is required!", "Validation", MessageButton.Ok, MessageBoxImage.Error);
+                MessageBox.Show("Name is required!", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
-            int len = AirConditionerNameTextBox.Text.Length;
-            if (len < 5 || len > 50) {}
+            int len = ACNameTextBox.Text.Length;
+            if (len < 5 || len > 50)
             {
-                MessageBox.Show("Name must be 5 to 50 characters length!", "Validation", MessageButton.Ok, MessageBoxImage.Error);
+                MessageBox.Show("Name must be 5 to 50 characters length!", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
@@ -108,12 +108,10 @@ namespace AirConditionerShop.TruongMinhNhat
             // B2: Đảm bảo số > MIN và < MAX
             // if (num < 5 || num > 100) thì messageBox
 
-
-
             return true;
         }
 
-        private void SaveButton_Click(object sender, RoutedEvenArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             if (!CheckVar())
             {
@@ -121,12 +119,12 @@ namespace AirConditionerShop.TruongMinhNhat
             }
 
             AirConditioner obj = new() { };
-            obj.AirConditionerId = int.Parse(AirconditionerIdTextBox);
-            obj.AirConditionerName = AirconditionerNameTextBox.Text;
-            obj.Quantity = int.Parse(QuantityTextBox);
-            obj.DollarPrice = int.Parse(DollarTextBox);
+            obj.AirConditionerId = int.Parse(ACIdTextBox.Text);
+            obj.AirConditionerName = ACNameTextBox.Text;
+            obj.Quantity = int.Parse(QuantityTextBox.Text);
+            obj.DollarPrice = int.Parse(DollarPriceTextBox.Text);
             obj.Warranty = WarrantyTextBox.Text;
-            obj.SoundPressureLevel = SoundPressureTextBox.Text;
+            obj.SoundPressureLevel = SoundPressureLevelTextBox.Text;
             obj.FeatureFunction = FeatureFunctionTextBox.Text;
 
             // 

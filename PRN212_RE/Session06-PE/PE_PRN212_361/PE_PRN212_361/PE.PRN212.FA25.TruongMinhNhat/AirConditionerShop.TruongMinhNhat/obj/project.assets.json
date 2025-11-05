@@ -3082,11 +3082,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat.csproj",
+      "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat.csproj",
       "projectName": "AirConditionerShop.TruongMinhNhat",
-      "projectPath": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat.csproj",
+      "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat.csproj",
       "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat\\obj\\",
+      "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3107,8 +3107,8 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj": {
-              "projectPath": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj"
+            "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj": {
+              "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj"
             }
           }
         }

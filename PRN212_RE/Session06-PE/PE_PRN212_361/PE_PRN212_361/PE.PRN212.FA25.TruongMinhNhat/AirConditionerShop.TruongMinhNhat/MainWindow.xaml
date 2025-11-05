@@ -73,7 +73,8 @@
             Height="26"
             Margin="480,67,0,0"
             VerticalAlignment="Top"
-            Width="75" />
+            Width="75"
+            Click="CreateButton_Click" />
         <Button
             x:Name="UpdateButton"
             Content="Update"
@@ -81,7 +82,8 @@
             Height="26"
             Margin="480,104,0,0"
             VerticalAlignment="Top"
-            Width="75" />
+            Width="75"
+            Click="UpdateButton_Click" />
         <Button
             x:Name="DeleteButton"
             Content="Delete"

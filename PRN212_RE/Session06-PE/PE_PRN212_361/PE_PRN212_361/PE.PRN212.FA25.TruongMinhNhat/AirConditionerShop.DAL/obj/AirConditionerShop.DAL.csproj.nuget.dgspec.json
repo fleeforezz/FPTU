@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj": {}
+    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj": {
+    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
+        "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
         "projectName": "AirConditionerShop.DAL",
-        "projectPath": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
+        "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jso\\OneDrive\\Máy tính\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\obj\\",
+        "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE_PRN212_361\\PE_PRN212_361\\PE.PRN212.FA25.TruongMinhNhat\\AirConditionerShop.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

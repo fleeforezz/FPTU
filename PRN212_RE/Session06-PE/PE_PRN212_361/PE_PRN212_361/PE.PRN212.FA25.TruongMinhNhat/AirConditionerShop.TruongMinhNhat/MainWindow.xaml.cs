@@ -3,6 +3,7 @@ using AirConditionerShop.DAL.Entities;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -36,43 +37,26 @@ namespace AirConditionerShop.TruongMinhNhat
 
             if (Role == 2)
             {
-                CreateButton_Click.IsEnable = false;
-                UpdateButton_Click.IsEnable = false;
-                DeleteButton_Click.IsEnable = false;
+                CreateButton.IsEnabled = false;
+                UpdateButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
             }
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        public void FillDataGrid(List<AirConditioner> data)
         {
-            // Check xem đã click đúng dòng chưa
-            // hiện are you sure
-            // nhờ service xóa, service đi nhờ repo
+            AirConDataGrid.ItemsSource = null;
+            AirConDataGrid.ItemsSource = data;
+        }
 
-            AirConditioner selected = AirConDataGrid.SelectedItem as AirConditioner;
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            DetailWindow detailWindow = new();
+            // Ko có và ko cần gửi editedOne sang detail do tạo mới 
+            // Thì để màn hình bên detail trống trơn chờ nhập vào
+            // 3 chàng 1 nàng: EditedOne, selected, grid có 1 con trỏ -> trỏ vùng new AirCon đang cần edit
+            detailWindow.ShowDialog();
 
-            if (selected == null)
-            {
-                MessageBox.Show("Please select a row before deleting", "Select One", MessageBoxButton.OK, MessageBoxImage.Stop);
-                return;
-            }
-
-            MessageBoxResult answer = MessageBox.Show("Are you sure ?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (answer == MessageBoxResult.No)
-            {
-                return;
-            }
-
-            // MessageBox.Show($"Real Delete: ${selected.AirConditionerId}, ${selected.AirConditionerName}", "Select One", MessageBoxButton.OK, MessageBoxImage.Stop);
-            _airConService.Delete(selected);
-
-            // F5 - Refresh để thấy dòng đã mất
-            // Việc refresh GRID này xuất hiện ở:
-            // Nút Create (Thêm mới thì phải cho thấy đã thêm)
-            // Nút Delete (Mất dòng trên GRID luôn)
-            // Nút Search (Lưới phải hiển thị 1 - N dòng search thấy)
-            // Loaded (Màn hình mở lên, lưới phải đc đổ sẵn data)
-            // Giúp code trong sáng về ý nghĩa 
             FillDataGrid(_airConService.GetAllAirCons());
         }
 
@@ -99,22 +83,38 @@ namespace AirConditionerShop.TruongMinhNhat
             FillDataGrid(_airConService.GetAllAirCons());
         }
 
-        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            DetailWindow detailWindow = new();
-            // Ko có và ko cần gửi editedOne sang detail do tạo mới 
-            // Thì để màn hình bên detail trống trơn chờ nhập vào
-            detailWindow.EditedOne = selected;
-            // 3 chàng 1 nàng: EditedOne, selected, grid có 1 con trỏ -> trỏ vùng new AirCon đang cần edit
-            detailWindow.ShowDialog();
+            // Check xem đã click đúng dòng chưa
+            // hiện are you sure
+            // nhờ service xóa, service đi nhờ repo
 
+            AirConditioner selected = AirConDataGrid.SelectedItem as AirConditioner;
+
+            if (selected == null)
+            {
+                MessageBox.Show("Please select a row before deleting", "Select One", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
+
+            MessageBoxResult answer = MessageBox.Show("Are you sure ?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (answer == MessageBoxResult.No)
+            {
+                return;
+            }
+
+            // MessageBox.Show($"Real Delete: ${selected.AirConditionerId}, ${selected.AirConditionerName}", "Select One", MessageBoxButton.OK, MessageBoxImage.Stop);
+            _airConService.DeleteAirCon(selected);
+
+            // F5 - Refresh để thấy dòng đã mất
+            // Việc refresh GRID này xuất hiện ở:
+            // Nút Create (Thêm mới thì phải cho thấy đã thêm)
+            // Nút Delete (Mất dòng trên GRID luôn)
+            // Nút Search (Lưới phải hiển thị 1 - N dòng search thấy)
+            // Loaded (Màn hình mở lên, lưới phải đc đổ sẵn data)
+            // Giúp code trong sáng về ý nghĩa 
             FillDataGrid(_airConService.GetAllAirCons());
-        }
-
-        public void FillDataGrid(List<AirConditioner> data)
-        {
-            AirConDataGrid.ItemsSource = null;
-            AirConDataGrid.ItemsSource = data;
         }
     }
 }
