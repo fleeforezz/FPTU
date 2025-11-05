@@ -23,6 +23,8 @@ namespace AirConditionerShop.TruongMinhNhat
     {
         StaffMemberService _serv = new();
 
+        private int _retryAttempt = 0;
+
         public LoginWindow()
         {
             InitializeComponent();
@@ -33,7 +35,6 @@ namespace AirConditionerShop.TruongMinhNhat
             // Get from input
             string email = EmailTextBox.Text;
             string password = PasswordTextBox.Text;
-            int retryAttempt = 0;
 
             // Check if inputs are valid
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
@@ -46,24 +47,18 @@ namespace AirConditionerShop.TruongMinhNhat
             StaffMember? account = _serv.Authenticate(email, password);
             if (account == null)
             {
-                MessageBox.Show("Email does not exist!", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
+                _retryAttempt++;
+                MessageBox.Show($"Email or password is incorrect! ({_retryAttempt}/3)", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (_retryAttempt >= 3)
+                {
+                    MessageBox.Show("Too many failed attempts. The application will now close.", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Application.Current.Shutdown();
+                }
                 return;
             }
 
-            // Check valid password and retry attempt
-            if (account.Password != password)
-            {
-                MessageBox.Show("Password is incorrect! Please try again", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
-                retryAttempt++;
-                return;
-            }
-
-            // Hit max retries
-            if (retryAttempt > 3)
-            {
-                MessageBox.Show("Max tries hit (3) times", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+            // Reset retry counter after successful login
+            _retryAttempt = 0;
 
             // Check valid role
             if (account.Role == 3)

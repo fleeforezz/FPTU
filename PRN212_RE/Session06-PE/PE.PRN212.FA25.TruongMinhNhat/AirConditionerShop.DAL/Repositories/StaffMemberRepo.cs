@@ -26,7 +26,7 @@ namespace AirConditionerShop.DAL.Repositories
         public StaffMember? FindByEmailAndPassword(string email, string password)
         {
             _db = new();
-            return _db.StaffMembers.FirstOrDefault(acc => acc.Equals(email) && acc.Password == password);
+            return _db.StaffMembers.FirstOrDefault(acc => acc.EmailAddress == email && acc.Password == password);
         }
     }
 }
