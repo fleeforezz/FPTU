@@ -66,7 +66,17 @@ namespace AirConditionerShop.TruongMinhNhat
          */
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
+            AirConditioner selectedRow = ACDataGrid.SelectedItem as AirConditioner;
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Please select a row before deleting", "Select One", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
 
+            DetailWindow detailWindow = new();
+            detailWindow.EditedOne = selectedRow;
+            detailWindow.ShowDialog();
+            FillDataGrid(_acService.GetAllAirConditioners());
         }
 
         /*
@@ -74,7 +84,21 @@ namespace AirConditionerShop.TruongMinhNhat
          */
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            AirConditioner? selectedRow = ACDataGrid.SelectedItem as AirConditioner;
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Please select a row before deleting", "Select One", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
 
+            MessageBoxResult confirmDelete = MessageBox.Show("Are you sure ?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (confirmDelete == MessageBoxResult.No)
+            {
+                return;
+            }
+
+            _acService.DeleteAirConditioner(selectedRow);
+            FillDataGrid(_acService.GetAllAirConditioners());
         }
     }
 }

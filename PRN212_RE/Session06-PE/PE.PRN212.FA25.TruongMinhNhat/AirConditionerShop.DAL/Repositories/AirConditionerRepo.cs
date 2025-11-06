@@ -1,4 +1,5 @@
 ﻿using AirConditionerShop.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace AirConditionerShop.DAL.Repositories
         public List<AirConditioner> GetAll()
         {
             _db = new AirConditionerShopDbContext();
-            return _db.AirConditioners.ToList();
+            return _db.AirConditioners.Include("Supplier").ToList();
         }
 
         /*
