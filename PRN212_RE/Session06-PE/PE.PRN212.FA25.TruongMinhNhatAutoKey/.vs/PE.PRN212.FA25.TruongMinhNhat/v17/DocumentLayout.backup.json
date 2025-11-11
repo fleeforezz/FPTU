@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6748579C-B8A6-4232-BF69-B6B6BDADB6B0}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|c:\\users\\fleef\\documents\\github\\fptu\\prn212_re\\session06-pe\\pe.prn212.fa25.truongminhnhatautokey\\airconditionershop.dal\\airconditionershopdbautokeycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6748579C-B8A6-4232-BF69-B6B6BDADB6B0}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\airconditionershopdbautokeycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7101C76-89F6-41FF-96A1-27435B3F664A}|AirConditionerShop.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat.csproj|c:\\users\\fleef\\documents\\github\\fptu\\prn212_re\\session06-pe\\pe.prn212.fa25.truongminhnhatautokey\\airconditionershop.truongminhnhat\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7101C76-89F6-41FF-96A1-27435B3F664A}|AirConditionerShop.TruongMinhNhat\\AirConditionerShop.TruongMinhNhat.csproj|solutionrelative:airconditionershop.truongminhnhat\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{6748579C-B8A6-4232-BF69-B6B6BDADB6B0}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\repositories\\airconditionerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6748579C-B8A6-4232-BF69-B6B6BDADB6B0}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|c:\\users\\fleef\\documents\\github\\fptu\\prn212_re\\session06-pe\\pe.prn212.fa25.truongminhnhatautokey\\airconditionershop.dal\\airconditionershopdbautokeycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6748579C-B8A6-4232-BF69-B6B6BDADB6B0}|AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj|solutionrelative:airconditionershop.dal\\airconditionershopdbautokeycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4C6FCFF1-D8FC-4F16-A4AF-882844CE024D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|c:\\users\\fleef\\documents\\github\\fptu\\prn212_re\\session06-pe\\pe.prn212.fa25.truongminhnhatautokey\\airconditionershop.bll\\services\\suppliercompanyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C6FCFF1-D8FC-4F16-A4AF-882844CE024D}|AirConditionerShop.BLL\\AirConditionerShop.BLL.csproj|solutionrelative:airconditionershop.bll\\services\\suppliercompanyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 302,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AirConditioner.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\Entities\\AirConditioner.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Entities\\AirConditioner.cs",
@@ -118,15 +118,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "AirConditionerShopDbautoKeyContext.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\AirConditionerShopDbautoKeyContext.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\AirConditionerShopDbautoKeyContext.cs",
               "ToolTip": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\AirConditionerShopDbautoKeyContext.cs",
               "RelativeToolTip": "AirConditionerShop.DAL\\AirConditionerShopDbautoKeyContext.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAQwC0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T01:15:13.844Z"
+              "WhenOpened": "2025-11-07T01:15:13.844Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -142,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SupplierCompanyRepo.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\Repositories\\SupplierCompanyRepo.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\SupplierCompanyRepo.cs",
@@ -154,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DetailWindow.xaml",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.TruongMinhNhat\\DetailWindow.xaml",
               "RelativeDocumentMoniker": "AirConditionerShop.TruongMinhNhat\\DetailWindow.xaml",
@@ -165,20 +166,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DetailWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.TruongMinhNhat\\DetailWindow.xaml.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.TruongMinhNhat\\DetailWindow.xaml.cs",
               "ToolTip": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.TruongMinhNhat\\DetailWindow.xaml.cs",
               "RelativeToolTip": "AirConditionerShop.TruongMinhNhat\\DetailWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwCAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T15:49:45.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "StaffMemberRepo.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\Repositories\\StaffMemberRepo.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\StaffMemberRepo.cs",
@@ -201,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AirConditionerService.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.BLL\\Services\\AirConditionerService.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.BLL\\Services\\AirConditionerService.cs",
@@ -213,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AirConditionerRepo.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\Repositories\\AirConditionerRepo.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.DAL\\Repositories\\AirConditionerRepo.cs",
@@ -225,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.TruongMinhNhat\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AirConditionerShop.TruongMinhNhat\\MainWindow.xaml",
@@ -236,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.TruongMinhNhat\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "AirConditionerShop.TruongMinhNhat\\MainWindow.xaml.cs",
