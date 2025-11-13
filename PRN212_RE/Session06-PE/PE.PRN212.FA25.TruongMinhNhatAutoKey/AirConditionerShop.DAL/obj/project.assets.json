@@ -5005,23 +5005,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fleef\\.nuget\\packages\\": {},
+    "C:\\Users\\jso\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
+      "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
       "projectName": "AirConditionerShop.DAL",
-      "projectPath": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
-      "packagesPath": "C:\\Users\\fleef\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\obj\\",
+      "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\AirConditionerShop.DAL.csproj",
+      "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
+      "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session06-PE\\PE.PRN212.FA25.TruongMinhNhatAutoKey\\AirConditionerShop.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\fleef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jso\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5099,7 +5099,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

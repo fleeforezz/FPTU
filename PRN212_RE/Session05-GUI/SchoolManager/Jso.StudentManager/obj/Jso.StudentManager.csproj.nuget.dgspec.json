@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj": {}
+    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj": {}
   },
   "projects": {
-    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj": {
+    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
+        "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
         "projectName": "Jso.StudentManager.DAL",
-        "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
+        "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\obj\\",
+        "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,18 +65,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj": {
+    "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
+        "projectUniqueName": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
         "projectName": "Jso.StudentManager",
-        "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
+        "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\Jso.StudentManager.csproj",
         "packagesPath": "C:\\Users\\jso\\.nuget\\packages\\",
-        "outputPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\obj\\",
+        "outputPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj": {
-                "projectPath": "D:\\Stuff\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj"
+              "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj": {
+                "projectPath": "E:\\Cabinet\\Github\\FPTU\\PRN212_RE\\Session05-GUI\\SchoolManager\\Jso.StudentManager.DAL\\Jso.StudentManager.DAL.csproj"
               }
             }
           }
@@ -153,7 +153,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
