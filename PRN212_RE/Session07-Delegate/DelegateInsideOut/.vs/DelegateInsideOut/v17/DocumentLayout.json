@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session07-Delegate\\DelegateInsideOut\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F960FFE-B774-48AC-B8B2-6FB201A89A0C}|Delegates.AnonymousMethod\\Delegates.AnonymousMethod.csproj|c:\\users\\fleef\\documents\\github\\fptu\\prn212_re\\session07-delegate\\delegateinsideout\\delegates.anonymousmethod\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F960FFE-B774-48AC-B8B2-6FB201A89A0C}|Delegates.AnonymousMethod\\Delegates.AnonymousMethod.csproj|solutionrelative:delegates.anonymousmethod\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13A305D7-23C4-4D91-844B-1A38D2F9F205}|Delegate.Basic\\Delegate.Basic.csproj|c:\\users\\fleef\\documents\\github\\fptu\\prn212_re\\session07-delegate\\delegateinsideout\\delegate.basic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13A305D7-23C4-4D91-844B-1A38D2F9F205}|Delegate.Basic\\Delegate.Basic.csproj|solutionrelative:delegate.basic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 302,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f4fc5ff1-28ef-4b04-ad02-6b298310ccc7}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 71,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session07-Delegate\\DelegateInsideOut\\Delegates.AnonymousMethod\\Program.cs",
+              "RelativeDocumentMoniker": "Delegates.AnonymousMethod\\Program.cs",
+              "ToolTip": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session07-Delegate\\DelegateInsideOut\\Delegates.AnonymousMethod\\Program.cs",
+              "RelativeToolTip": "Delegates.AnonymousMethod\\Program.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAowCUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:08:55.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session07-Delegate\\DelegateInsideOut\\Delegate.Basic\\Program.cs",
+              "RelativeDocumentMoniker": "Delegate.Basic\\Program.cs",
+              "ToolTip": "C:\\Users\\fleef\\Documents\\GitHub\\FPTU\\PRN212_RE\\Session07-Delegate\\DelegateInsideOut\\Delegate.Basic\\Program.cs",
+              "RelativeToolTip": "Delegate.Basic\\Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAIA8wDYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:35:21.133Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 25,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

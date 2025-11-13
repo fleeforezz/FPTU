@@ -1,0 +1,15 @@
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\bin\Debug\net9.0\Delegate.Basic.exe
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\bin\Debug\net9.0\Delegate.Basic.deps.json
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\bin\Debug\net9.0\Delegate.Basic.runtimeconfig.json
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\bin\Debug\net9.0\Delegate.Basic.dll
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\bin\Debug\net9.0\Delegate.Basic.pdb
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.AssemblyInfoInputs.cache
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.AssemblyInfo.cs
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.csproj.CoreCompileInputs.cache
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.sourcelink.json
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.dll
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\refint\Delegate.Basic.dll
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.pdb
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\Delegate.Basic.genruntimeconfig.cache
+C:\Users\fleef\Documents\GitHub\FPTU\PRN212_RE\Session07-Delegate\DelegateInsideOut\Delegate.Basic\obj\Debug\net9.0\ref\Delegate.Basic.dll
