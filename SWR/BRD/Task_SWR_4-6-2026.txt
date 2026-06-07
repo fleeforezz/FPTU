@@ -1,0 +1,54 @@
+=========================
+BRD:
+=========================
+4. Context diagram
+4.1 Huy chỉnh lại format của context diagram cho nó cùng màu (cho nó đồng bộ màu sắc)
+
+5. Business process diagrams
+Kiên -> 5.3
+Bảo -> 5.4
+Kiệt -> 5.5
+Nhật -> 5.6
+note: Vẽ theo swimland và mỗi business process sẽ kèm theo table các bước thực hiện
+
+8. Use case diagram
+Huy + Bảo -> 8.2
+Nhật + Đạt -> 8.3
+Kiệt + Kiên -> 8.4
+
+Task chung:
++ Chỉnh lại format trên confluence cho gọn gàng (căn dòng, table,....)
+
+Deadline:
+Trước 18h chủ nhật tuần này
+
+
+=========================
+RBL:
+=========================
+Research về những khó khăn khi stakeholder nch vs fresher và intern BA, những khó khăn khi stakeholder nch vs senior. 
+So sánh những gì khác biệt giữa ng BA ít kinh nghiệm hơn so với ng BA có kinh nghiệm lâu năm hơn.
+
+Task:
++ Tìm những bài báo để đề cập đến về vấn đề và tổng hợp lại những dữ kiện đó
++ Mỗi người tìm tầm 5-10 bài report
+
+Steps thực tế: 
+-        Chọn topic (đã có)
+-        Vẽ mindmap mô tả các khía cạnh của topic 
+-        Dùng 5why questions để phản biện và làm sinh ra các rq. 
+-        Viết ra các RQ: 10 câu 
+-        Chọn câu ưa thích 
+-        Kiểm tra các yếu tố specific, researchable, meaningful, … 
+Yêu cầu research questions: 
+-        Specific but Not Obvious 
+-        Researchable
+-        Meaningful 
+-        Not to be Too easy
+
+Nộp bài:
++ Mỗi người gồm 2 file: Research_Proposal, Research_Satement
+
+Deadline:
+Hết thứ 3 tuần sau
+
