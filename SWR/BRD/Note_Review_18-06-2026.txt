@@ -1,0 +1,45 @@
+1. Use-case diagramn (swimland)
++ nên nhóm theo user
++ Có thể lấy hình Đạt gửi làm business process 
++ Có thể lấy 2 đối tượng chính làm trc 
++ Usecase quản lý sự kiện:
+	+ Thiếu phần use-case cho định danh user (login)
+	+ Xem lại phần tạo tài khoản cho guest judge
+	
++ Usecase tạo đội thi:
+	+ Đang vẽ sai hướng giữa invite team members vs create team
+	+ Register track ko phụ thuộc vs create team 
+	+ Bỏ phần extend giữa update submission vs submit project
+	+ Accept invation có thể để extend vs decline invation
+	
++ Thống nhất ngôn ngữ giữa diagram vs nhau
+
+
+2. Business diagram
++ Tập trung chính vào 2 đối tượng chính (event-cordinator, examiner). Nếu có thgian làm mấy cái còn lại
++ Phần có hình sequence sử dụng activity diagram
+
+3. Use spec diagram
++ 
+
+4. Business process
++ vẽ theo swimland
+
+Quy trình tổng quan nghiệp vụ
++ dùng diagram hoặc srs để mô tả riêng
++ làm rõ quy trình
++ hệ thống nó vận hành ntn chứ ko cần bik hệ thống làm đc ra sao
++ không cần quan tâm đến phần hệ thống làm gì 
++ Giám khảo sau khi chấm điểm thì sự kiên đc làm gì hay giám khảo làm đc gì (mục số 8)
++ 
+
+
+
+
+Note:
++ sequence diagram mô tả giữa 2 hệ thống qua từng sự kiện
++ swimland mô tả bước ngta làm trên hệ thống 
+
+
+
+
